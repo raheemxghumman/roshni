@@ -1,0 +1,23 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
+python-dotenv
+httpx
+tenacity
+google-genai
+groq
+edge-tts
+gTTS
+textstat
+wordfreq
+pillow
+pillow-heif
+pypdf
+pymupdf
+# optional fallbacks
+pytesseract
+# evaluation + tests
+jiwer
+pytest

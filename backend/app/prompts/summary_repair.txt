@@ -1,0 +1,15 @@
+# used by services/summarize.py after Fact Guard flags summary claims  (model: GROQ_REWRITE_MODEL)
+Fact Guard found summary bullets that the lecture transcript does not fully support. Fix them.
+Return ONLY JSON: {"summary": ["5 bullets max, each 20 words or fewer"]}
+Rules:
+- Rewrite each flagged bullet so it says only what the transcript says (same numbers, same terms). If it can't be fixed, remove it.
+- Keep the bullets that were not flagged exactly as they are.
+<flagged>
+{flagged_json}
+</flagged>
+<summary>
+{summary_json}
+</summary>
+<transcript>
+{transcript}
+</transcript>

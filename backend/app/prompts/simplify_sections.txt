@@ -1,0 +1,14 @@
+# used by services/simplify.py  (model: GROQ_REWRITE_MODEL)
+Rewrite each textbook section below for a student who finds the original too hard: students with dyslexia, weaker readers, and students from Urdu-medium schools learning in English.
+Target reading level: {level_name} (about grade {target_grade}). Average sentence length: {max_words} words or fewer.
+Return ONLY JSON: {"sections": [{"id": "s1", "text": "..."}]}  (one entry per input section, same ids, same order)
+Rules:
+- Keep EVERY fact: every definition, number, cause, step, example and relationship. Do not drop any.
+- Do not add any fact, example, number or claim that is not in the original.
+- Keep each section's protected items EXACTLY as written (numbers with units, formulas, symbols, names).
+- Keep key terms. The first time a hard key term appears, explain it in a few plain words, e.g. "chlorophyll (the green colour in leaves)", but only if the explanation is true and stated or clearly implied in the original.
+- Use short sentences, everyday words and active voice. One idea per sentence. Keep the order of ideas.
+- Plain text only: no headings, no markdown, no bullet symbols unless the original section is a list.
+<sections>
+{sections_json}
+</sections>

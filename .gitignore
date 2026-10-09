@@ -1,0 +1,35 @@
+# Secrets
+.env
+.env.local
+frontend/.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Data that must not be published (copyright / size / privacy)
+data/raw/*
+data/lectures/*
+data/demo_cache/*
+journey/*
+!data/raw/.gitkeep
+!data/lectures/.gitkeep
+!data/demo_cache/.gitkeep
+!journey/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+backend/run_dev.sh.bak

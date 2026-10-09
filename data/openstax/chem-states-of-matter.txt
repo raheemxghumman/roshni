@@ -1,0 +1,13 @@
+
+
+1.2 Phases and Classification of Matter
+
+Matter is defined as anything that occupies space and has mass, and it is all around us. Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass. Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.
+
+Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6). A solid is rigid and possesses a definite shape. A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity. (In zero gravity, liquids assume a spherical shape.) Both liquid and solid samples have volumes that are very nearly independent of pressure. A gas takes both the shape and volume of its container.
+
+A fourth state of matter, plasma, occurs naturally in the interiors of stars. A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7). The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases. In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.
+
+In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color. The composite of these tiny dots of color makes up the image that you see. Watch this video to learn more about plasma and the places you encounter it.
+
+Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time. This can occur when the sample is composed of many small pieces. For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand. Matter can also have properties of more than one state when it is a mixture, such as with clouds. Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).

@@ -1,0 +1,7 @@
+# used by services/summarize.py  (model: GROQ_REWRITE_MODEL); the summary is then checked by Fact Guard against the transcript
+Summarise this lecture transcript for a deaf student.
+Return ONLY JSON: {"summary": ["5 bullets max, each <= 20 words"], "key_terms": [{"term": "...", "meaning": "<= 12 words"}], "homework_or_actions": ["..."]}
+Rules: use only what was said; keep every number and term exactly; if the speaker corrected themselves, use the correction.
+<transcript>
+{transcript}
+</transcript>

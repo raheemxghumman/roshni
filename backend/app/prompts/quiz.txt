@@ -1,0 +1,7 @@
+# used by services/quiz.py  (model: GROQ_REWRITE_MODEL)
+Write {n} questions for a student at reading level {level_name}, using ONLY these verified facts.
+Return ONLY JSON: {"questions": [{"id": "q1", "type": "mcq|true_false", "question": "...", "options": ["..."], "answer": "...", "fact_id": "f1"}]}
+Rules: one fact per question; short, clear wording; no trick questions; for multiple choice, 3 options with exactly one correct.
+<facts>
+{facts_json}
+</facts>

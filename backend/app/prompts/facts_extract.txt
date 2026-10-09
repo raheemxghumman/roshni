@@ -1,0 +1,11 @@
+# used by services/factguard.py  (model: GROQ_FACTGUARD_MODEL, a different family from the rewriter)
+List every atomic fact stated in this textbook text. One fact = one checkable statement: a definition, number, cause, relationship, step, property or example.
+Return ONLY JSON: {"facts": [{"id": "f1", "section_id": "s1", "text": "the fact in one short sentence", "source_sentence": "the sentence it comes from, copied exactly"}]}
+Rules:
+- Cover every sentence that states something; a long sentence may give several facts. Do not merge two facts into one.
+- Keep numbers, units, names and key terms exactly as written.
+- Skip headings, questions to the reader and figure references like "(Figure 5.4)".
+- Use the section ids shown in square brackets.
+<content>
+{original_text}
+</content>

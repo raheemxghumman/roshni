@@ -1,0 +1,8 @@
+# used by services/glossary.py  (model: GROQ_REWRITE_MODEL)
+For each word below, as used in this text, write a short explanation for a student from an Urdu-medium school.
+Return ONLY JSON: {"items": [{"term": "...", "simple_en": "<= 12 words", "urdu": "1 short sentence in Urdu script; keep the English term itself in English", "example": "<= 12 words"}]}
+Rules: be correct for THIS context; don't add facts that aren't in the text; keep the Urdu simple, everyday and polite.
+Words: {words}
+<content>
+{section_text}
+</content>

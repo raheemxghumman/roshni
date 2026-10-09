@@ -1,0 +1,15 @@
+# used by services/simplify.py after Fact Guard finds problems  (model: GROQ_REWRITE_MODEL)
+Fact Guard found problems in your simplified sections. Fix ONLY these problems and keep everything else as it is.
+Keep the reading level: {level_name}, average sentence length {max_words} words or fewer.
+Return ONLY JSON: {"sections": [{"id": "s1", "text": "..."}]}  (return every section listed below, fixed)
+For each section:
+- Add back every missing fact, using simple words but the exact numbers, units and terms.
+- Correct every changed fact so it matches the original.
+- Remove every unsupported claim.
+- Make sure every protected item appears exactly.
+<problems>
+{problems_json}
+</problems>
+<sections>
+{sections_json}
+</sections>
