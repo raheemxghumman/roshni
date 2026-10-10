@@ -134,6 +134,7 @@
   --font-display: "Unbounded", "Atkinson Hyperlegible Next", system-ui, sans-serif;
   --font-mono: "Martian Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --font-urdu: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  --font-pashto: "Noto Naskh Arabic", "Bahij Nassim", "Segoe UI", serif;
   --shadow-soft: var(--shadow);
   --shadow-deep: var(--shadow-lg);
 }
@@ -184,6 +185,7 @@ h1 { font-weight: 700; }
 .reading-surface { background: linear-gradient(var(--overlay), var(--overlay)), var(--surface); }
 
 .urdu { font-family: var(--font-urdu); direction: rtl; line-height: 2.35; }
+.pashto { font-family: var(--font-pashto); direction: rtl; line-height: 1.95; }
 
 .sentence { border-radius: 6px; transition: background-color .2s ease, box-shadow .2s ease; cursor: pointer; }
 .sentence:hover { background: var(--surface-2); }

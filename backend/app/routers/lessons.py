@@ -181,8 +181,10 @@ def stress_test(lesson_id: str, body: LevelRequest) -> dict:
 @router.post("/lessons/{lesson_id}/glossary")
 def lesson_glossary(lesson_id: str) -> dict:
     lesson = load_lesson(lesson_id)
-    if lesson.get("glossary"):
-        return lesson["glossary"]
+    existing = lesson.get("glossary")
+    # glossaries made before Pashto was added are rebuilt once (kept as they are in demo mode)
+    if existing and (not existing["items"] or all("pashto" in it for it in existing["items"]) or get_settings().demo_mode):
+        return existing
     demo_guard("the glossary")
     items, model = glossary.build(originals(lesson))
     result = {"items": items, "model": model, "created_at": now()}
@@ -225,6 +227,6 @@ def answer_quiz(quiz_id: str, body: QuizAnswers) -> dict:
 
 
 @router.get("/tts")
-async def text_to_speech(text: str = Query(..., max_length=1500), lang: str = Query("ur", pattern="^(ur|en)$")) -> FileResponse:
+async def text_to_speech(text: str = Query(..., max_length=1500), lang: str = Query("ur", pattern="^(ur|ps|en)$")) -> FileResponse:
     path = await tts.speak(text, lang)
     return FileResponse(path, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})

@@ -18,12 +18,12 @@ Built at **AICON'26 Build With AI** (domain: **EdTech & Workforce**) by **404 Te
 |---|---|
 | **Problem** | One printed page works for almost nobody who needs help. Blind students can't read it, dyslexic students and students from Urdu-medium schools struggle to follow it, and deaf students miss the lecture that explains it. Teachers have no time to adapt every page three ways, so it doesn't happen. |
 | **Data in** | A phone photo, scan or PDF of a textbook page; optionally a lecture recording. |
-| **AI** | Gemini reads the page and describes every diagram. Qwen rewrites it at an easier level and explains hard words in Urdu. **Fact Guard**, GPT-OSS from a different model family, extracts every fact and audits the rewrite. Whisper transcribes the lecture. |
-| **Solution** | One lesson in three modes: **Read Easy** (simpler text, Urdu help, read-aloud with highlighting, adaptive quiz), **Listen** (section-by-section audio with figure descriptions, full keyboard and screen-reader control), **Captions** (transcript synced to audio plus a summary checked against the lecture). |
+| **AI** | Gemini reads the page and describes every diagram. Qwen rewrites it at an easier level, and hard words are explained in Urdu or Pashto (Gemini first, it writes better Pashto). **Fact Guard**, GPT-OSS from a different model family, extracts every fact and audits the rewrite. Whisper transcribes the lecture. |
+| **Solution** | One lesson in three modes: **Read Easy** (simpler text, Urdu or Pashto help, read-aloud with highlighting, adaptive quiz), **Listen** (section-by-section audio with figure descriptions, full keyboard and screen-reader control), **Captions** (transcript synced to audio plus a summary checked against the lecture). |
 | **Impact** | Reading level drops by several grades, nearly every fact is verifiably kept, planted errors are caught, and a page is ready in about a minute instead of hours of manual adaptation. See **Evidence** below. SDG 4.5 (equal access for persons with disabilities), 4.1, 10.2. |
 
 ## Why the AI is essential
-Reading a printed page, describing a diagram for a blind student, rewriting while keeping meaning, explaining in Urdu, transcribing speech and checking facts are all AI tasks. Remove the AI and the product does nothing.
+Reading a printed page, describing a diagram for a blind student, rewriting while keeping meaning, explaining in Urdu and Pashto, transcribing speech and checking facts are all AI tasks. Remove the AI and the product does nothing.
 
 ## Fact Guard: why you can trust a rewrite
 1. **Independent checker.** Facts are extracted and audited by a model from a *different family* than the rewriter. The code refuses a same-family checker.
@@ -73,10 +73,10 @@ On first start, the backend copies the ready-made sample lessons from `data/samp
 | Deploy | Hugging Face Space (Docker SDK) from the root `Dockerfile`; add the keys as Space secrets |
 
 ## Free stack (PKR 0, no card)
-Gemini 3.5 Flash with four fallback Gemini models (each has its own free quota) · Groq: Qwen 3.8 27B, GPT-OSS 120B/20B, Whisper large-v3-turbo · edge-tts and gTTS voices · browser speech synthesis · FastAPI · React + Vite + Tailwind + Motion. Models whose quota runs out are skipped automatically, results are cached by content hash, and demo mode serves everything from the cache. Details: `docs/APIS_AND_ACCOUNTS.md`.
+Gemini 3.5 Flash with four fallback Gemini models (each has its own free quota) · Groq: Qwen 3.8 27B, GPT-OSS 120B/20B, Whisper large-v3-turbo · edge-tts voices (Urdu, Pashto, English) with gTTS fallback · browser speech synthesis · FastAPI · React + Vite + Tailwind + Motion. Models whose quota runs out are skipped automatically, results are cached by content hash, and demo mode serves everything from the cache. Details: `docs/APIS_AND_ACCOUNTS.md`.
 
 ## Accessibility of the app itself
-Keyboard control everywhere (Alt+K play/pause, Alt+N/P sections, Alt+R repeat, Alt+S/F speed). Screen-reader labels and live announcements. A skip link. Dark and high-contrast themes. Adjustable font (Atkinson Hyperlegible, Lexend), size, line, letter and word spacing, plus coloured reading overlays. Status is never shown by colour alone. `lang="ur"` and right-to-left layout for Urdu. All 3D motion stops when the system's "reduce motion" setting is on.
+Keyboard control everywhere (Alt+K play/pause, Alt+N/P sections, Alt+R repeat, Alt+S/F speed). Screen-reader labels and live announcements. A skip link. Dark and high-contrast themes. Adjustable font (Atkinson Hyperlegible, Lexend), size, line, letter and word spacing, plus coloured reading overlays. Status is never shown by colour alone. `lang="ur"`/`lang="ps"` and right-to-left layout for Urdu (Nastaliq) and Pashto (Naskh). All 3D motion stops when the system's "reduce motion" setting is on.
 
 ## Rulebook checklist
 | Requirement | Where |
@@ -110,7 +110,8 @@ roshni/
 
 ## Honest limitations
 - Not yet tested with blind, dyslexic or deaf students; the next step is a pilot with a special-education school.
-- Printed Urdu (Nastaliq) pages are read but not yet evaluated; English pages are the focus.
+- Printed Urdu and Pashto pages are read but not yet evaluated; English pages are the focus.
+- Pashto word explanations are AI-written and haven't been reviewed by a Pashto teacher yet.
 - Free-tier limits mean a fresh page can take a minute when the services are busy; samples and demo mode avoid that on stage.
 - Readability formulas are a proxy for difficulty, not a measure of comprehension.
 

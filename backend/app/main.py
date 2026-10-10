@@ -59,7 +59,7 @@ def health() -> dict:
         "ok": True,
         "demo_mode": s.demo_mode,
         "models": {"reader": s.gemini_model, "rewriter": s.groq_rewrite_model, "fact_guard": s.groq_factguard_model,
-                   "speech_to_text": s.groq_stt_model, "urdu_voice": s.tts_urdu_voice},
+                   "speech_to_text": s.groq_stt_model, "urdu_voice": s.tts_urdu_voice, "pashto_voice": s.tts_pashto_voice},
         "keys": {"gemini": bool(s.gemini_api_key), "groq": bool(s.groq_api_key)},
     }
 

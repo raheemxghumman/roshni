@@ -63,6 +63,7 @@ export function LectureUpload({ lessonId, onDone }) {
               <option value="auto">Detect automatically</option>
               <option value="en">English</option>
               <option value="ur">Urdu</option>
+              <option value="ps">Pashto</option>
             </select>
           </div>
           <Button variant="primary" onClick={submit} disabled={!file}>
@@ -70,7 +71,7 @@ export function LectureUpload({ lessonId, onDone }) {
           </Button>
         </div>
         <ErrorNotice error={error} onRetry={submit} />
-        <p className="text-xs text-muted">Up to about 10 minutes (24 MB). For mixed Urdu and English lectures, choosing the main language improves accuracy.</p>
+        <p className="text-xs text-muted">Up to about 10 minutes (24 MB). For mixed lectures (Urdu or Pashto with English), choosing the main language improves accuracy.</p>
       </div>
     </Card>
   )

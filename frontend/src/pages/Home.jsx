@@ -9,8 +9,8 @@ import { CountUp, EASE, Reveal, TiltCard, item, stagger } from '../components/mo
 import { ErrorNotice, Pill, Skeleton, cx } from '../components/ui'
 
 const MODES = [
-  { icon: BookOpen, name: 'Read Easy', who: 'Dyslexic learners, weaker readers, Urdu-medium students', tone: 'text-brand bg-brand/10',
-    text: 'The page rewritten at an easier level, hard words explained in Urdu, and read-aloud that highlights each sentence as it goes.' },
+  { icon: BookOpen, name: 'Read Easy', who: 'Dyslexic learners, weaker readers, Urdu- and Pashto-medium students', tone: 'text-brand bg-brand/10',
+    text: 'The page rewritten at an easier level, hard words explained in Urdu or Pashto, and read-aloud that highlights each sentence as it goes.' },
   { icon: Headphones, name: 'Listen', who: 'Blind and low-vision learners', tone: 'text-teal bg-teal-soft',
     text: 'The page read aloud section by section, every figure described in words, and full keyboard and screen-reader control.' },
   { icon: Captions, name: 'Captions', who: 'Deaf and hard-of-hearing learners', tone: 'text-accent-ink bg-accent-soft',
@@ -19,7 +19,7 @@ const MODES = [
 
 const STEPS = [
   { icon: ScanText, title: 'Read the page', text: 'Gemini reads the photo, keeps headings and tables, and describes each diagram for blind learners.' },
-  { icon: Sparkles, title: 'Rewrite it simply', text: 'A writing model rewrites the page at an easier level and explains hard words in Urdu.' },
+  { icon: Sparkles, title: 'Rewrite it simply', text: 'A writing model rewrites the page at an easier level and explains hard words in Urdu or Pashto.' },
   { icon: ShieldCheck, title: 'Fact Guard checks', text: 'A different AI lists every fact and checks the rewrite kept each one. Problems are repaired.' },
   { icon: Headphones, title: 'Learn your way', text: 'Read, listen or follow captions. The original page is always one tap away.' },
 ]

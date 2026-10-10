@@ -1,7 +1,7 @@
-# used by services/glossary.py  (model: GROQ_REWRITE_MODEL)
-For each word below, as used in this text, write a short explanation for a student from an Urdu-medium school.
-Return ONLY JSON: {"items": [{"term": "...", "simple_en": "<= 12 words", "urdu": "1 short sentence in Urdu script; keep the English term itself in English", "example": "<= 12 words"}]}
-Rules: be correct for THIS context; don't add facts that aren't in the text; keep the Urdu simple, everyday and polite.
+# used by services/glossary.py  (role: glossary; Gemini first, it writes better Pashto)
+For each word below, as used in this text, write a short explanation for a student from an Urdu-medium or Pashto-medium school.
+Return ONLY JSON: {"items": [{"term": "...", "simple_en": "<= 12 words", "urdu": "1 short sentence in Urdu script", "pashto": "1 short sentence in Pashto script"}]}
+Rules: be correct for THIS context; don't add facts that aren't in the text; keep the English term itself in English inside the Urdu and Pashto sentences; use simple, everyday, polite Urdu and standard Pashto (Pashto letters such as ښ ږ ځ څ ټ ډ ړ ګ ڼ ې ۍ where the word needs them, not Urdu spellings).
 Words: {words}
 <content>
 {section_text}

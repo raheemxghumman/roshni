@@ -1,4 +1,4 @@
-"""Server-side audio: edge-tts (Urdu/English) -> gTTS fallback. Each clip is cached as an MP3 by content hash."""
+"""Server-side audio: edge-tts (Urdu/Pashto/English) -> gTTS fallback (Urdu/English only). Each clip is cached as an MP3 by content hash."""
 from __future__ import annotations
 
 import asyncio
@@ -22,7 +22,7 @@ async def speak(text: str, lang: str = "ur", rate: str = "+0%") -> Path:
         raise AppError("BAD_REQUEST", "Nothing to read aloud.")
     text = text[:MAX_CHARS]
     s = get_settings()
-    voice = s.tts_urdu_voice if lang == "ur" else s.tts_english_voice
+    voice = {"ur": s.tts_urdu_voice, "ps": s.tts_pashto_voice}.get(lang, s.tts_english_voice)
     key = cache.make_key("tts", voice, rate, text)
     path = cache.path_for("audio", f"{key}.mp3")
     if path.exists() and path.stat().st_size > 0:
@@ -35,6 +35,9 @@ async def speak(text: str, lang: str = "ur", rate: str = "+0%") -> Path:
             return path
     except Exception as e:  # noqa: BLE001 - fall back to gTTS
         log.warning("edge-tts failed (%s), falling back to gTTS", e)
+    if lang == "ps":
+        path.unlink(missing_ok=True)
+        raise AppError("MODEL_UNAVAILABLE", "The Pashto voice isn't available right now. Please try again in a minute.", 503, True)
     try:
         await asyncio.to_thread(lambda: gTTS(text=text, lang="ur" if lang == "ur" else "en").save(str(path)))
         return path

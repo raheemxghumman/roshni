@@ -3,7 +3,8 @@ from __future__ import annotations
 
 import re
 
-URDU_RE = re.compile(r"[؀-ۿ]")
+URDU_RE = re.compile(r"[؀-ۿ]")  # Arabic script (Urdu and Pashto)
+PASHTO_RE = re.compile(r"[ښږځڅټډړګڼېۍ]")  # letters Pashto has and Urdu doesn't (Urdu writes ٹ ڈ ڑ, other code points)
 
 
 def block_text(block: dict) -> str:
@@ -22,7 +23,8 @@ def detect_language(blocks: list[dict]) -> str:
     if not letters:
         return "en"
     share = sum(1 for c in letters if URDU_RE.match(c)) / len(letters)
-    return "ur" if share > 0.6 else "mixed" if share > 0.15 else "en"
+    script = "ps" if len(PASHTO_RE.findall(text)) >= 3 else "ur"
+    return script if share > 0.6 else "mixed" if share > 0.15 else "en"
 
 
 FURNITURE_RE = re.compile(r"(licensed under|creative commons|all rights reserved|^page \d+$|^\d{1,4}$|^chapter \d+$)", re.I)

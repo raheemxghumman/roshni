@@ -1227,77 +1227,77 @@
   "items": [
    {
     "term": "plasmas",
-    "simple_en": "States of matter made of gas with electrically charged particles.",
-    "urdu": "stars کے اندر پائے جانے والے مادے کو plasmas کہتے ہیں۔",
-    "example": "Plasmas contain charged particles and occur naturally in stars.",
+    "simple_en": "A gaseous state with charged particles found in stars.",
+    "urdu": "Plasmas ستاروں کے اندر پائے جانے والے ایک ایسا گیس کا حالت ہے جس میں چارج شدہ ذرات ہوتے ہیں۔",
+    "pashto": "Plasmas ستوريو د منځني برخو کې موندل کیدونکې یوې ګازي حالت څخه عبارت دي چې چارج شوي ذرات لري.",
     "section_id": "s1"
    },
    {
     "term": "imparts",
-    "simple_en": "Gives or provides a particular quality to something.",
-    "urdu": "چارج شدہ ذرات مادے کو نئی خصوصیات imparts کرتے ہیں۔",
-    "example": "The presence of particles imparts unique properties to plasma.",
+    "simple_en": "Gives unique properties to plasmas due to charged particles.",
+    "urdu": "چارج شدہ ذرات plasmas کو ان کی خاص خصوصیات عطا کرتے ہیں۔",
+    "pashto": "چارج شوي ذرات plasmas ته خپل ځانګړي ځانګړنې ورکوي.",
     "section_id": "s1"
    },
    {
     "term": "appreciable",
-    "simple_en": "Large or noticeable enough to be important.",
-    "urdu": "اس گیس میں چارج شدہ ذرات کی ایک appreciable مقدار ہوتی ہے۔",
-    "example": "Plasma contains an appreciable number of charged particles.",
+    "simple_en": "A noticeable or significant amount of charged particles.",
+    "urdu": "Plasma میں چارج شدہ ذرات کی قابلِ ذکر تعداد ہوتی ہے۔",
+    "pashto": "پلازما کې د چارج شویو ذراتو شمیر د پام وړ وي.",
     "section_id": "s1"
    },
    {
     "term": "gaseous",
-    "simple_en": "Having the form or state of a gas.",
-    "urdu": "پلازما دراصل مادے کی ایک gaseous حالت ہے۔",
-    "example": "Plasma is a gaseous state containing charged particles.",
+    "simple_en": "Describes plasma as being in a gas-like state.",
+    "urdu": "Plasma کو مادے کی ایک گیس جیسی حالت کہا جاتا ہے۔",
+    "pashto": "پلازما د مادې د یوې ګازي حالت په توګه پیژندل کیږي.",
     "section_id": "s1"
    },
    {
     "term": "inflate",
-    "simple_en": "To fill with gas and increase in volume.",
-    "urdu": "گیس بھرنے سے غبارہ inflate ہو کر بڑا ہو جاتا ہے۔",
-    "example": "A balloon will inflate when filled with gas.",
+    "simple_en": "To increase volume, like a balloon filling with gas.",
+    "urdu": "جب گیس سے بھرا جاتا ہے تو بالون inflate ہو جاتا ہے۔",
+    "pashto": "کله چې بالون د ګاز سره ډک شي، inflate کیږي.",
     "section_id": "s1"
    },
    {
     "term": "mixtures",
-    "simple_en": "Combinations of two or more different substances mixed together.",
-    "urdu": "بادل دراصل ہوا اور پانی کے ذرات کے mixtures ہوتے ہیں۔",
-    "example": "Clouds are mixtures of air and tiny water particles.",
+    "simple_en": "Combinations of different substances, like air and water in clouds.",
+    "urdu": "بادل ہوا اور پانی کے ذرات کے mixtures کی مثال ہیں۔",
+    "pashto": "برېښنا د هوا او د اوبو د ذراتو د mixtures یو مثال دی.",
     "section_id": "s1"
    },
    {
     "term": "electrically",
-    "simple_en": "In a manner related to an electric charge.",
-    "urdu": "پلازما میں موجود ذرات electrically چارج شدہ ہوتے ہیں۔",
-    "example": "Plasmas contain electrically charged particles.",
+    "simple_en": "Refers to particles that carry an electric charge.",
+    "urdu": "Plasma میں electrically charged ذرات موجود ہوتے ہیں۔",
+    "pashto": "پلازما کې electrically چارج شوي ذرات شتون لري.",
     "section_id": "s1"
    },
    {
     "term": "solids",
-    "simple_en": "Rigid matter that has a definite shape and volume.",
-    "urdu": "ہم دیکھ سکتے ہیں کہ solids مخصوص شکل اور وزن رکھتے ہیں۔",
-    "example": "Solids are rigid and possess a definite shape.",
+    "simple_en": "Matter with a rigid shape and definite volume.",
+    "urdu": "Solids کا ایک سخت اور واضح شکل ہوتی ہے۔",
+    "pashto": "Solids یو سخت او واضح شکل لري.",
     "section_id": "s1"
    },
    {
     "term": "ultraviolet",
-    "simple_en": "A type of light emitted by plasma in screens.",
-    "urdu": "ٹیلی ویژن میں موجود پلازما ultraviolet روشنی خارج کرتا ہے۔",
-    "example": "The plasma emits ultraviolet light inside television cells.",
+    "simple_en": "Light emitted by plasma that creates color on screens.",
+    "urdu": "Plasma ultraviolet روشنی خارج کرتا ہے جو اسکرین پر رنگ بناتی ہے۔",
+    "pashto": "پلازما ultraviolet رڼا خارجوي چې په سکرین کې رنګ جوړوي.",
     "section_id": "s1"
    },
    {
     "term": "spherical",
-    "simple_en": "Having a round shape like a sphere or ball.",
-    "urdu": "کشش ثقل کے بغیر مائع چیزیں spherical شکل اختیار کر لیتی ہیں۔",
-    "example": "In zero gravity, liquids assume a spherical shape.",
+    "simple_en": "Round shape that liquids take in zero gravity.",
+    "urdu": "صفر کششِ ثقل میں مائع spherical شکل اختیار کرتا ہے۔",
+    "pashto": "په صفر جاذبه کې مایعات spherical شکل اخلي.",
     "section_id": "s1"
    }
   ],
-  "model": "gemini-flash-latest",
-  "created_at": "2026-10-10T00:25:18+00:00"
+  "model": "qwen/qwen3.8-27b",
+  "created_at": "2026-10-10T05:09:15+00:00"
  },
  "quiz": {
   "easier": "06e965f5f877b6024ecf9b81"

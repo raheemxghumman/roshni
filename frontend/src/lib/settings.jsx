@@ -1,4 +1,4 @@
-// Display settings (font, size, spacing, overlay, theme), saved per browser and applied as CSS variables.
+// Display settings (font, size, spacing, overlay, theme, help language), saved per browser and applied as CSS variables.
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 export const FONTS = {
@@ -16,7 +16,13 @@ export const OVERLAYS = {
   grey: { label: 'Grey', color: 'rgba(160, 160, 160, 0.22)' },
 }
 
-export const DEFAULTS = { font: 'atkinson', scale: 1, leading: 1.75, tracking: 0.01, wordSpacing: 0.04, overlay: 'none', theme: 'light', rate: 1 }
+// Language for hard-word explanations and their audio. Terms themselves stay in English.
+export const HELP_LANGS = {
+  ur: { label: 'Urdu', native: 'اردو', field: 'urdu', className: 'urdu' },
+  ps: { label: 'Pashto', native: 'پښتو', field: 'pashto', className: 'pashto' },
+}
+
+export const DEFAULTS = { font: 'atkinson', scale: 1, leading: 1.75, tracking: 0.01, wordSpacing: 0.04, overlay: 'none', theme: 'light', rate: 1, helpLang: 'ur' }
 const KEY = 'roshni-display-v1'
 
 function load() {

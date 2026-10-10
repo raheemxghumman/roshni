@@ -1,4 +1,4 @@
-"""Picks hard words without AI (wordfreq), then gets simple English + Urdu explanations. Terms stay in English."""
+"""Picks hard words without AI (wordfreq), then gets simple English, Urdu and Pashto explanations. Terms stay in English."""
 from __future__ import annotations
 
 import json
@@ -32,7 +32,7 @@ def build(sections: list[dict]) -> tuple[list[dict], str]:
     words = candidates(text)
     if not words:
         return [], ""
-    data, model = text_json(fill(load_prompt("glossary.txt"), words=json.dumps(words), section_text=text[:6000]), "rewrite", max_tokens=3000)
+    data, model = text_json(fill(load_prompt("glossary.txt"), words=json.dumps(words), section_text=text[:6000]), "glossary", max_tokens=3000)
     items = []
     for it in data.get("items") or []:
         if not isinstance(it, dict) or not it.get("term"):
@@ -40,5 +40,5 @@ def build(sections: list[dict]) -> tuple[list[dict], str]:
         term = str(it["term"]).strip()
         section = next((s["id"] for s in sections if term.lower() in s["text"].lower()), sections[0]["id"] if sections else "")
         items.append({"term": term, "simple_en": (it.get("simple_en") or "").strip(), "urdu": (it.get("urdu") or "").strip(),
-                      "example": (it.get("example") or "").strip(), "section_id": section})
+                      "pashto": (it.get("pashto") or "").strip(), "section_id": section})
     return items, model

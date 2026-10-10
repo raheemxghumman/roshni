@@ -207,6 +207,8 @@ def text_json(prompt: str, role: str, *, avoid_family: str | None = None, max_to
         # strongest independent checkers first; the small model is a last resort
         "check": [("groq", s.groq_factguard_model), *[("gemini", m) for m in s.gemini_models], ("groq", s.groq_fallback_model)],
         "structure": [("groq", s.groq_rewrite_model), ("groq", s.groq_fallback_model), *gem],
+        # Gemini writes much better Pashto than Qwen, so it goes first for word explanations
+        "glossary": [*gem, ("groq", s.groq_rewrite_model)],
     }
     errors: list[str] = []
     chain = [(p, m) for p, m in chains[role] if not (avoid_family and family(m) == avoid_family)]

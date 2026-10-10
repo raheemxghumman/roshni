@@ -140,7 +140,7 @@ export default function ReadEasy({ lesson, onLesson }) {
 
         {data && !state.loading && (
           <>
-            <p className="px-1 text-sm text-muted">Tap any sentence to start reading aloud from there. Underlined words have an explanation in English and Urdu.</p>
+            <p className="px-1 text-sm text-muted">Tap any sentence to start reading aloud from there. Underlined words have an explanation in English and Urdu or Pashto.</p>
             {data.sections.map((s, idx) => {
               const facts = fg?.facts?.filter((f) => f.section_id === s.id) || []
               const notKept = facts.filter((f) => f.status !== 'kept').length

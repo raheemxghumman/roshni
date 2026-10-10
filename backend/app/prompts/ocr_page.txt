@@ -1,7 +1,7 @@
 # used by services/ocr.py  (model: GEMINI_MODEL, with the image attached)
 You are reading ONE printed textbook page for students with disabilities.
 Return ONLY JSON matching this schema:
-{"language": "en|ur|mixed", "blocks": [{"id": "b1", "type": "heading|paragraph|list|table|figure|equation|caption", "level": 1-3 (headings only), "text": "...", "rows": [[...]] (tables only), "description": "..." (figures only), "unclear": true|false}], "warnings": ["..."]}
+{"language": "en|ur|ps|mixed", "blocks": [{"id": "b1", "type": "heading|paragraph|list|table|figure|equation|caption", "level": 1-3 (headings only), "text": "...", "rows": [[...]] (tables only), "description": "..." (figures only), "unclear": true|false}], "warnings": ["..."]}
 Rules:
 - Keep the original reading order (columns left to right, top to bottom).
 - Copy text exactly. Do NOT fix, summarise or complete it. If you cannot read something, write [unclear] in its place and set "unclear": true.

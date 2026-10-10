@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     groq_stt_model: str = "whisper-large-v3-turbo"
 
     tts_urdu_voice: str = "ur-PK-UzmaNeural"
+    tts_pashto_voice: str = "ps-AF-LatifaNeural"
     tts_english_voice: str = "en-US-AriaNeural"
 
     demo_mode: bool = False

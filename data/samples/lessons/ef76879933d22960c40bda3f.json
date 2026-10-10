@@ -1640,77 +1640,77 @@
   "items": [
    {
     "term": "autotroph",
-    "simple_en": "An organism that can make its own food.",
-    "urdu": "autotroph ایک ایسا جاندار ہے جو اپنی خوراک خود بنا سکتا ہے۔",
-    "example": "Plants are well-known autotrophs that make their own food.",
+    "simple_en": "An organism that makes its own food.",
+    "urdu": "Autotroph وہ جاندار ہے جو اپنا کھانا خود بناتا ہے۔",
+    "pashto": "Autotroph هغه ژوندی دی چې خپل خواړه خپله جوړوي.",
     "section_id": "s2"
    },
    {
     "term": "photoautotrophs",
-    "simple_en": "Organisms that use sunlight to make their own food.",
-    "urdu": "photoautotrophs ایسے جاندار ہیں جو سورج کی روشنی سے خوراک بناتے ہیں۔",
-    "example": "Plants are photoautotrophs because they use sunlight for energy.",
+    "simple_en": "Autotrophs that use sunlight to make food.",
+    "urdu": "Photoautotrophs وہ خود غذائی جاندار ہیں جو روشنی استعمال کرتے ہیں۔",
+    "pashto": "Photoautotrophs هغه ژوندی دي چې د رڼا په مرسته خواړه جوړوي.",
     "section_id": "s2"
    },
    {
     "term": "heterotroph",
-    "simple_en": "An organism that must eat other living things for food.",
-    "urdu": "heterotroph وہ جاندار ہے جو اپنی خوراک خود نہیں بنا سکتا۔",
-    "example": "A human is a heterotroph because we eat other organisms.",
+    "simple_en": "An organism that eats other organisms for energy.",
+    "urdu": "Heterotroph وہ جاندار ہے جو دوسرو جانداروں کو کھاتا ہے۔",
+    "pashto": "Heterotroph هغه ژوندی دی چې نورو ژوندیو خواړه کوي.",
     "section_id": "s2"
    },
    {
     "term": "heterotrophs",
-    "simple_en": "Organisms that cannot make food and must eat other organisms.",
-    "urdu": "heterotrophs اپنی خوراک کے لیے دوسرے جانداروں کو کھاتے ہیں۔",
-    "example": "Deer and wolves are heterotrophs that depend on other organisms.",
+    "simple_en": "Organisms that must consume others for energy.",
+    "urdu": "Heterotrophs وہ جاندار ہیں جو توانائی کے لیے کھانا کھاتے ہیں۔",
+    "pashto": "Heterotrophs هغه ژوندی دي چې د انرژي لپاره خواړه کوي.",
     "section_id": "s2"
    },
    {
     "term": "autotrophs",
-    "simple_en": "Organisms that produce their own food, like plants and algae.",
-    "urdu": "autotrophs ایسے جاندار ہیں جو اپنی خوراک خود تیار کرتے ہیں۔",
-    "example": "Plants and algae are autotrophs that support global food chains.",
+    "simple_en": "Organisms that produce their own food.",
+    "urdu": "Autotrophs وہ جاندار ہیں جو اپنا کھانا خود تیار کرتے ہیں۔",
+    "pashto": "Autotrophs هغه ژوندی دي چې خپل خواړه خپله جوړوي.",
     "section_id": "s2"
    },
    {
     "term": "hetero",
-    "simple_en": "A Greek word root that means \"other\".",
-    "urdu": "یونانی زبان میں hetero کا مطلب \"دوسرا\" ہوتا ہے۔",
-    "example": "The word hetero in heterotroph means \"other\" feeder.",
+    "simple_en": "A Greek root meaning 'other'.",
+    "urdu": "Hetero یونانی لفظ ہے جس کا مطلب 'دوسرا' ہے۔",
+    "pashto": "Hetero یوناني کلمه دی چې معنی یې «نور» دی.",
     "section_id": "s2"
    },
    {
     "term": "harnessed",
-    "simple_en": "Captured and controlled to be used for a specific purpose.",
-    "urdu": "harnessed کا مطلب ہے کسی توانائی کو قابو میں لا کر استعمال کرنا۔",
-    "example": "Energy harnessed from sunlight enters the ecosystems of our planet.",
+    "simple_en": "Captured and used for a specific purpose.",
+    "urdu": "Harnessed کا مطلب ہے توانائی کو استعمال کے لیے حاصل کرنا۔",
+    "pashto": "Harnessed د کارولو لپاره انرژي ترلاسه کول پېژني.",
     "section_id": "s1"
    },
    {
     "term": "synthesize",
-    "simple_en": "To make or produce something by combining different parts.",
-    "urdu": "synthesize کا مطلب ہے ملا کر کوئی نئی چیز تیار کرنا۔",
-    "example": "Plants use sunlight to synthesize chemical energy in carbohydrates.",
+    "simple_en": "To build complex molecules from simpler ones.",
+    "urdu": "Synthesize کا مطلب ہے کیمیائی اجزاء کو مل کر بنانا۔",
+    "pashto": "Synthesize د کیمیاوي اجزاو څخه نوې مواد جوړول پېژني.",
     "section_id": "s2"
    },
    {
     "term": "photosynthesis",
-    "simple_en": "The process of turning sunlight into chemical energy for food.",
-    "urdu": "photosynthesis وہ عمل ہے جس سے پودے سورج کی روشنی استعمال کرتے ہیں۔",
-    "example": "Plants use photosynthesis to release oxygen into the atmosphere.",
+    "simple_en": "Process of converting sunlight into chemical energy.",
+    "urdu": "Photosynthesis روشنی کو کیمیائی توانائی میں بدلنے کا عمل ہے۔",
+    "pashto": "Photosynthesis د رڼا څخه کیمیاوي انرژي جوړول دي.",
     "section_id": "s1"
    },
    {
     "term": "obtains",
-    "simple_en": "To get, receive, or acquire something.",
-    "urdu": "obtains کا مطلب ہے کوئی چیز حاصل کرنا۔",
-    "example": "A deer obtains energy by eating green plants.",
+    "simple_en": "Gets or receives something needed.",
+    "urdu": "Obtains کا مطلب ہے ضروری چیز حاصل کرنا۔",
+    "pashto": "Obtains د اړتیا وړ شي ترلاسه کول پېژني.",
     "section_id": "s2"
    }
   ],
-  "model": "gemini-3.5-flash",
-  "created_at": "2026-10-10T00:04:51+00:00"
+  "model": "qwen/qwen3.8-27b",
+  "created_at": "2026-10-10T05:05:06+00:00"
  },
  "quiz": {
   "easier": "ad919ab24906054d081e23eb"

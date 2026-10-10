@@ -1105,7 +1105,54 @@
    }
   }
  },
- "glossary": null,
+ "glossary": {
+  "items": [
+   {
+    "term": "elapsed",
+    "simple_en": "The total time that has passed between two specific moments.",
+    "urdu": "Elapsed کا مطلب ہے کسی شروع اور اختتام کے درمیان گزرنے والا کل وقت۔",
+    "pashto": "Elapsed دوه ټکو ترمنځ تېرېدونکې ټولې وخت ته ویل کیږي.",
+    "section_id": "s2"
+   },
+   {
+    "term": "subtract",
+    "simple_en": "To take one number away from another to find the difference.",
+    "urdu": "Subtract کا مطلب ہے ایک عدد کو دوسرے سے منہا کرنا۔",
+    "pashto": "Subtract د یو عدد څخه بله عدد لرې کول ته ویل کیږي.",
+    "section_id": "s2"
+   },
+   {
+    "term": "calibrated",
+    "simple_en": "Adjusted or checked against a standard to ensure accuracy.",
+    "urdu": "Calibrated کا مطلب ہے معیاری پیمانے کے مطابق درست کرنا۔",
+    "pashto": "Calibrated د معیاري معیار سره سمون ورکول ته ویل کیږي.",
+    "section_id": "s2"
+   },
+   {
+    "term": "abbreviated",
+    "simple_en": "Shortened form of a word or symbol, like 's' for second.",
+    "urdu": "Abbreviated کا مطلب ہے الفاظ یا علامات کا مختصر شکل۔",
+    "pashto": "Abbreviated د کلمو یا نښو لنډه بڼه ته ویل کیږي.",
+    "section_id": "s2"
+   },
+   {
+    "term": "pendulum",
+    "simple_en": "A weight that swings back and forth to measure time.",
+    "urdu": "Pendulum ایک وزن ہے جو وقت ناپنے کے لیے آگے پیچھے لہراتا ہے۔",
+    "pashto": "Pendulum هغه وزن دی چې د وخت ناپلو لپاره مخکې او شاته ښکاري.",
+    "section_id": "s2"
+   },
+   {
+    "term": "registers",
+    "simple_en": "Shows or records the time on a clock dial.",
+    "urdu": "Registers کا مطلب ہے گھڑی کے ڈائل پر وقت دکھانا۔",
+    "pashto": "Registers د ساعت د ډائل پر وخت ښودل ته ویل کیږي.",
+    "section_id": "s2"
+   }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "created_at": "2026-10-10T05:11:47+00:00"
+ },
  "quiz": {
   "easier": "59ec087c883d254c540ae0b6"
  },

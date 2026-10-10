@@ -3,8 +3,9 @@ import { motion } from 'motion/react'
 import { Gauge, GraduationCap, Languages, LoaderCircle, Volume2 } from 'lucide-react'
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
+import { HELP_LANGS, useSettings } from '../lib/settings'
 import { playClip } from '../lib/speech'
-import { Button, Card, CardHeader, ErrorNotice, Pill, Skeleton, cx } from './ui'
+import { Button, Card, CardHeader, ErrorNotice, Pill, Segmented, Skeleton, cx } from './ui'
 
 function Meter({ label, before, after, max, unit = '', lowerIsBetter = true, format = (v) => v }) {
   const better = lowerIsBetter ? after < before : after > before
@@ -46,6 +47,9 @@ export function ReadabilityCard({ readability }) {
 
 export function GlossaryCard({ state, onRetry: load, selected, onSelect }) {
   const [playing, setPlaying] = useState(null)
+  const { settings, update } = useSettings()
+  const lang = HELP_LANGS[settings.helpLang] ? settings.helpLang : 'ur'
+  const help = HELP_LANGS[lang]
 
   useEffect(() => {
     if (selected) document.getElementById(`term-${selected}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
@@ -53,17 +57,37 @@ export function GlossaryCard({ state, onRetry: load, selected, onSelect }) {
 
   const speak = (item) => {
     setPlaying(item.term)
-    playClip(api.ttsUrl(item.urdu, 'ur'), () => setPlaying(null)).catch(() => {
+    playClip(api.ttsUrl(item[help.field], lang), () => setPlaying(null)).catch(() => {
       setPlaying(null)
-      announce('Urdu audio is not available right now')
+      announce(`${help.label} audio is not available right now`)
     })
   }
 
   const items = state.data?.items || []
   return (
     <Card>
-      <CardHeader icon={Languages} tone="teal" title="Hard words, explained" subtitle="Simple English and Urdu. Terms stay in English." />
+      <CardHeader icon={Languages} tone="teal" title="Hard words, explained" subtitle={`Simple English and ${help.label}. Terms stay in English.`} />
       <div className="p-3">
+        <div className="flex items-center justify-between gap-3 px-2 pb-2">
+          <span className="text-xs font-semibold text-muted">Explain in</span>
+          <Segmented
+            id="help-lang"
+            label="Language for word explanations"
+            value={lang}
+            onChange={(v) => {
+              update({ helpLang: v })
+              announce(`Word explanations now in ${HELP_LANGS[v].label}`)
+            }}
+            options={Object.entries(HELP_LANGS).map(([value, l]) => ({
+              value,
+              label: (
+                <span lang={value} className={cx(l.className, 'text-[15px] leading-none')} title={l.label}>
+                  {l.native}
+                </span>
+              ),
+            }))}
+          />
+        </div>
         {state.loading && (
           <div className="space-y-3 p-2">
             <Skeleton className="h-14" />
@@ -86,17 +110,20 @@ export function GlossaryCard({ state, onRetry: load, selected, onSelect }) {
                 <button
                   type="button"
                   onClick={() => speak(it)}
-                  className="ml-auto grid size-8 shrink-0 place-items-center rounded-lg text-brand hover:bg-surface"
-                  aria-label={`Listen to the Urdu explanation of ${it.term}`}
+                  disabled={!it[help.field]}
+                  className="ml-auto grid size-8 shrink-0 place-items-center rounded-lg text-brand hover:bg-surface disabled:opacity-40"
+                  aria-label={`Listen to the ${help.label} explanation of ${it.term}`}
                 >
                   {playing === it.term ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Volume2 className="size-4" aria-hidden />}
                 </button>
               </div>
               <p className="mt-0.5 text-sm text-muted">{it.simple_en}</p>
-              {it.urdu && (
-                <p lang="ur" className="urdu mt-1 text-[17px] text-ink">
-                  {it.urdu}
+              {it[help.field] ? (
+                <p lang={lang} className={cx(help.className, 'mt-1 text-[17px] text-ink')}>
+                  {it[help.field]}
                 </p>
+              ) : (
+                <p className="mt-1 text-xs text-muted">{help.label} explanation not ready for this word yet.</p>
               )}
             </li>
           ))}

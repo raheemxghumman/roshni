@@ -1303,77 +1303,63 @@
   "items": [
    {
     "term": "protist",
-    "simple_en": "A type of single-celled eukaryotic organism.",
-    "urdu": "Protist ایک ایسا جاندار ہے جس کے خلیات میں نکیلا ہوتا ہے۔",
-    "example": "Protist cells are eukaryotic.",
+    "simple_en": "A type of eukaryotic cell, like plant or animal cells.",
+    "urdu": "پروٹسٹ ایک ایسا سیل ہے جو یوکاریاٹک گروپ میں شامل ہوتا ہے۔",
+    "pashto": "پروٹسٹ د یوکاریاټیک ګروپ یو ډول حجره دی.",
     "section_id": "s1"
    },
    {
     "term": "millionths",
-    "simple_en": "One part out of one million parts.",
-    "urdu": "Millionths کا مطلب ہے ایک لاکھ میں سے ایک حصہ۔",
-    "example": "Eight millionths of a meter.",
+    "simple_en": "One part out of one million, used for very small measurements.",
+    "urdu": "ملینتھس ایک ملین میں سے ایک حصہ ہے جو بہت چھوٹی پیمائش کے لیے استعمال ہوتا ہے۔",
+    "pashto": "ملینتھس د یو ملین څخه یو برخ دی چې د کوچنیو ابعادو لپاره کارول کیږي.",
     "section_id": "s2"
    },
    {
     "term": "micrographs",
     "simple_en": "Images of cells taken using a microscope.",
-    "urdu": "Micrographs وہ تصاویر ہیں جو مائیکروسکوپ کے ذریعے لی جاتی ہیں۔",
-    "example": "Most cell images are micrographs.",
+    "urdu": "مائیکروگرافس وہ تصاویر ہیں جو مائیکروسکوپ کے ذریعے سیلز کی لی جاتی ہیں۔",
+    "pashto": "مائیکروگرافس هغه انځورونه دي چې د مایکروسکوپ په مرسته د حجرو څخه اخیستل کیږي.",
     "section_id": "s2"
    },
    {
     "term": "thousandths",
-    "simple_en": "One part out of one thousand parts.",
-    "urdu": "Thousandths کا مطلب ہے ایک ہزار میں سے ایک حصہ۔",
-    "example": "Two thousandths of a meter.",
+    "simple_en": "One part out of one thousand, like millimeters.",
+    "urdu": "تھاوزینتھس ایک ہزار میں سے ایک حصہ ہے، جیسے ملی میٹر۔",
+    "pashto": "تاوزینتھس د یو زره څخه یو برخ دی، لکه ملی متر.",
     "section_id": "s2"
    },
    {
     "term": "prokaryotic",
-    "simple_en": "Cells without a distinct nucleus inside.",
-    "urdu": "Prokaryotic خلیات وہ ہیں جن میں الگ نکیلا نہیں ہوتا۔",
-    "example": "Bacteria are prokaryotic cells.",
+    "simple_en": "A cell type found in bacteria and archaea.",
+    "urdu": "پروکاریاٹک وہ سیلز ہیں جو بیکٹیریا اور آرکیا میں پائے جاتے ہیں۔",
+    "pashto": "پروکاریاټیک هغه حجرې دي چې په باکتریا او آرکیا کې موندل کیږي.",
     "section_id": "s1"
    },
    {
     "term": "archaea",
-    "simple_en": "Single-celled prokaryotic organisms similar to bacteria.",
-    "urdu": "Archaea وہ خلیات ہیں جو بیکٹیریا کی طرح پروکاریاٹ ہوتے ہیں۔",
-    "example": "Archaea cells are prokaryotic.",
+    "simple_en": "A type of prokaryotic cell, different from bacteria.",
+    "urdu": "آرکیا پروکاریاٹک سیلز کا ایک قسم ہے جو بیکٹیریا سے مختلف ہے۔",
+    "pashto": "آرکیا د پروکاریاټیک حجرو یو ډول دی چې له باکتریو څخه توپیر لري.",
     "section_id": "s1"
    },
    {
     "term": "magnifies",
-    "simple_en": "Makes an object appear larger than it is.",
-    "urdu": "Magnifies کا مطلب ہے کسی چیز کو بڑا دکھانا۔",
-    "example": "A microscope magnifies an object.",
+    "simple_en": "Makes an object look bigger than it actually is.",
+    "urdu": "میگنیفائی کسی چیز کو اصل سے بڑا دکھاتا ہے۔",
+    "pashto": "میګنیفای یو شی ته له اصلي کچې لوی ښیي.",
     "section_id": "s2"
    },
    {
     "term": "micrometers",
     "simple_en": "A tiny unit of length, one millionth of a meter.",
-    "urdu": "Micrometers لمبائی کا ایک بہت چھوٹا پیمانہ ہے۔",
-    "example": "A red blood cell is eight micrometers.",
-    "section_id": "s2"
-   },
-   {
-    "term": "multicellular",
-    "simple_en": "Organisms made up of many different cells.",
-    "urdu": "Multicellular جاندار وہ ہیں جو بہت سے خلیات سے بنے ہوتے ہیں۔",
-    "example": "Humans are multicellular organisms.",
-    "section_id": "s1"
-   },
-   {
-    "term": "microscopes",
-    "simple_en": "Instruments used to see very small objects clearly.",
-    "urdu": "Microscopes وہ آلات ہیں جن سے چھوٹی چیزیں دیکھی جاتی ہیں۔",
-    "example": "Scientists use microscopes to study cells.",
+    "urdu": "مائیکرومیٹر لمبائی کی ایک بہت چھوٹی اکائی ہے جو میٹر کا ایک ملینواں حصہ ہے۔",
+    "pashto": "مائیکرو متر د اوږدوالي یوه ډیره کوچنۍ واحد ده چې د متر یو ملینمه برخه ده.",
     "section_id": "s2"
    }
   ],
   "model": "qwen/qwen3.8-27b",
-  "created_at": "2026-10-10T00:01:01+00:00"
+  "created_at": "2026-10-10T05:05:46+00:00"
  },
  "quiz": {
   "easier": "40b82e67b1a1ec2a2eee8e54"
