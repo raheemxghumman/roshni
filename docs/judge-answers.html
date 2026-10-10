@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roshni: answers to the rulebook questions</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+  :root { --ink:#0d1b3e; --cobalt:#1c3ea6; --teal:#0b8f8f; --gold:#b97800; --muted:#4a5875; --line:#d3dedc; --soft:#eef3fb; }
+  body { font-family: "Segoe UI", Calibri, Arial, sans-serif; color: var(--ink); font-size: 10.6pt; line-height: 1.45; margin: 0; }
+  h1 { font-size: 22pt; margin: 0 0 2mm; color: var(--cobalt); letter-spacing: -0.3px; }
+  .sub { color: var(--muted); margin: 0 0 6mm; }
+  h2 { font-size: 13.5pt; margin: 7mm 0 2.5mm; padding-bottom: 1.5mm; border-bottom: 2px solid var(--cobalt); color: var(--cobalt); break-after: avoid; }
+  h3 { font-size: 11pt; margin: 4mm 0 1mm; break-after: avoid; }
+  .q { background: var(--soft); border-left: 4px solid var(--cobalt); padding: 2.5mm 3.5mm; margin: 3mm 0 1.5mm; font-weight: 600; break-after: avoid; }
+  .q .n { color: var(--gold); margin-right: 2mm; }
+  .say { border-left: 4px solid var(--teal); padding: 1.5mm 3.5mm; margin: 1.5mm 0; font-style: italic; color: #123; background: #e9f6f5; }
+  p { margin: 1.5mm 0; }
+  ul { margin: 1mm 0 1.5mm 5mm; padding-left: 3mm; }
+  li { margin: 0.6mm 0; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 9.8pt; break-inside: avoid; }
+  th, td { border: 1px solid var(--line); padding: 1.6mm 2.2mm; text-align: left; vertical-align: top; }
+  th { background: var(--soft); }
+  .tag { display: inline-block; font-size: 8.5pt; font-weight: 700; padding: 0.3mm 1.8mm; border-radius: 3mm; background: #fff0cc; color: #7a4f00; }
+  .note { color: var(--muted); font-size: 9.4pt; }
+  .avoid { break-inside: avoid; }
+  .footer { margin-top: 8mm; color: var(--muted); font-size: 8.8pt; border-top: 1px solid var(--line); padding-top: 2mm; }
+</style>
+</head>
+<body>
+<h1>Roshni: answers to the rulebook questions</h1>
+<p class="sub">AICON’26 Build With AI · EdTech &amp; Workforce · 404 Team Not Found · Rulebook pages 12–14 (PDF pages 14–16). Every number below comes from a script in the repo’s <b>eval/</b> folder or from a test we ran; synthetic data is labelled.</p>
+
+<h2>Part 1 · The 7 things every team must explain in the 5-minute demo (rulebook p. 12)</h2>
+
+<div class="q"><span class="n">1</span>What problem did you select?</div>
+<p>One printed textbook page fails three kinds of students in the same class: a <b>blind</b> student can’t read it or see its diagrams, a <b>dyslexic</b> student (and students from Urdu- or Pashto-medium schools learning in English) gets lost in long sentences and hard words, and a <b>deaf</b> student misses the teacher’s spoken explanation. Teachers have no time to adapt every page three ways, so it doesn’t happen.</p>
+<div class="say">“Three students, one class, one printed page. Bilal is blind, Sara is dyslexic, Hamza is deaf. This page works for none of them.”</div>
+
+<div class="q"><span class="n">2</span>Why does the problem matter?</div>
+<ul>
+  <li>About <b>1 in 6 people</b> live with a significant disability (WHO, 2023), so this happens in every school.</li>
+  <li>The textbook page is the basic unit of school learning; if a student can’t use it, they fall behind in every subject.</li>
+  <li>It is <b>SDG 4.5</b>: equal access to education for persons with disabilities (also 4.1 quality education and 10.2 inclusion).</li>
+  <li>Simplifying text with ordinary AI is risky: it can quietly drop a fact or change a number, and a struggling student can’t tell. That is why trust is part of the problem.</li>
+</ul>
+
+<div class="q"><span class="n">3</span>What is your proposed solution?</div>
+<p><b>Roshni</b> (روشنی, “light”): <i>One page. Every learner.</i> A phone photo or PDF of any textbook page becomes one lesson with:</p>
+<table>
+  <tr><th>Mode</th><th>For</th><th>What it does</th></tr>
+  <tr><td><b>Read Easy</b></td><td>Dyslexic and weaker readers, Urdu/Pashto-medium students</td><td>Simpler text beside the original; read-aloud that highlights each sentence; hard words explained in Urdu or Pashto with audio</td></tr>
+  <tr><td><b>Listen</b></td><td>Blind students</td><td>Section-by-section audio, every figure described in words, full keyboard and screen-reader control</td></tr>
+  <tr><td><b>Captions</b></td><td>Deaf students</td><td>Lecture recording becomes a synced transcript plus a summary checked against what was said</td></tr>
+  <tr><td><b>Videos</b></td><td>Everyone revising</td><td>A YouTube link becomes timestamped study notes, each checked against the video’s captions</td></tr>
+  <tr><td><b>Practice</b></td><td>Everyone, incl. blind students (voice)</td><td>Up to 15 questions from verified facts, voice quiz, timer, weak areas and a study plan</td></tr>
+</table>
+<p>Under all of it is <b>Fact Guard</b>: a second AI, from a different model family, that checks every rewrite and every note so no fact is lost, changed or invented.</p>
+
+<div class="q"><span class="n">4</span>Where and how is AI being used?</div>
+<table>
+  <tr><th>Step</th><th>AI model (all free tiers)</th><th>What the AI does</th><th>What plain code checks</th></tr>
+  <tr><td>Read the page</td><td>Gemini 3.5 Flash (vision)</td><td>Reads the photo, keeps headings and tables, describes every diagram for blind students</td><td>File type and size, page limits</td></tr>
+  <tr><td>Rewrite</td><td>Qwen 3.8 27B</td><td>Rewrites at Easier or Simplest level</td><td>Readability grade, words per sentence</td></tr>
+  <tr><td><b>Fact Guard</b></td><td>GPT-OSS-120B (different family)</td><td>Lists every fact, audits the rewrite, quotes its evidence, repairs flagged sentences</td><td>The quote must really exist and state the fact; numbers, units and formulas compared without AI; a same-family checker is refused</td></tr>
+  <tr><td>Hard words</td><td>Gemini (Qwen backup)</td><td>Simple English, Urdu and Pashto explanations</td><td>Word picking by word frequency (no AI)</td></tr>
+  <tr><td>Captions / voice answers</td><td>Whisper large-v3-turbo</td><td>Transcribes lectures and students’ spoken answers</td><td>Which option was said (letters, numbers in English/Urdu/Pashto, answer text)</td></tr>
+  <tr><td>Video notes</td><td>Qwen + GPT-OSS check</td><td>Notes from YouTube captions, each checked against them</td><td>Quote check; timestamps clamped to the video</td></tr>
+  <tr><td>Practice</td><td>Gemini (Qwen backup)</td><td>Writes questions from verified facts only</td><td>4 options, one correct, shuffled; grading, weak areas and study plan are plain code</td></tr>
+</table>
+<p class="note">Reliability: several keys per provider rotate automatically, every model has free backups, results are cached, and a capped paid backup (DeepSeek, under $1) is used only when every free model is busy. Remove the AI and the product does nothing, but the AI never has the last word: code checks it.</p>
+
+<div class="q"><span class="n">5</span>How does your prototype work?</div>
+<ol>
+  <li>Photograph or upload a page (photo or PDF, up to 3 pages, 10 MB). Gemini reads it in about 5 seconds.</li>
+  <li>Choose Easier or Simplest. Qwen rewrites; Fact Guard lists the facts, audits the rewrite and repairs anything missing (up to 2 rounds). The badge shows e.g. “37/37 facts kept”.</li>
+  <li>Use the modes: Read Easy, Listen, Captions (upload a lecture), Videos (paste a YouTube link).</li>
+  <li><b>Plant 3 errors</b> (live trust test): the app sabotages its own rewrite with a changed number, a deleted fact and an invented claim; Fact Guard catches and repairs them on screen.</li>
+  <li>Practice: a voice quiz reads each question, beeps, listens, and gives a study plan that opens the exact section, word or video minute to revise.</li>
+</ol>
+<p>Built with React + FastAPI; runs on a laptop or one Hugging Face Space; works offline in demo mode with prepared sample lessons.</p>
+
+<div class="q"><span class="n">6</span>What is your expected or measured impact?</div>
+<table>
+  <tr><th>Measured</th><th>Result</th><th>Data</th></tr>
+  <tr><td>Planted errors caught by Fact Guard</td><td><b>28/28</b> (10 deleted facts, 10 invented claims, 8 changed numbers)</td><td>Real OpenStax text, errors planted by code <span class="tag">synthetic errors</span></td></tr>
+  <tr><td>False alarms on unchanged text</td><td><b>0 of 142</b> facts</td><td>5 OpenStax pages</td></tr>
+  <tr><td>Facts verifiably kept after Fact Guard</td><td><b>99%</b> (287/291; 9 of 10 rewrites fully green)</td><td>10 rewrites of 5 pages</td></tr>
+  <tr><td>Reading grade</td><td><b>11.0 → 6.3</b> (Easier), 6.2 (Simplest); 19 → 8 words per sentence</td><td>10 rewrites</td></tr>
+  <tr><td>Page reading on a hard phone photo</td><td><b>99.98%</b> of characters correct (tilted, blurred, dim, compressed)</td><td>5 hard images</td></tr>
+  <tr><td>Time to make a lesson</td><td><b>about 26 s</b> per page on free tiers</td><td>Fresh uploads</td></tr>
+  <tr><td>Video notes confirmed by the video</td><td><b>14/14</b> and <b>11/11</b> (one repaired automatically)</td><td>2 YouTube videos</td></tr>
+  <tr><td>Lecture transcription</td><td>100% of words correct</td><td>35 s clip <span class="tag">synthetic voice</span></td></tr>
+</table>
+<p><b>Expected impact:</b> a teacher no longer adapts a page three times by hand (measure it on-site with a stopwatch: hours vs. under a minute); blind, dyslexic, deaf and Urdu/Pashto-medium students get the same page as their classmates, in a form they can use, with proof nothing was lost. <b>Honest limit:</b> not yet tested with blind, dyslexic or deaf students; that pilot is the next step.</p>
+
+<div class="q"><span class="n">7</span>What did you personally develop during AICON’26?</div>
+<p>The whole working product was built during the event; the Git commit history (9–10 October) is the record. That includes the page reader, the rewriter, Fact Guard and its stress test, the five learning modes, the voice quiz, video notes, the evaluation scripts and results, the multi-key fallback system, the UI and the slides.</p>
+<p>Be open about tools, as the rules allow: <b>we used an AI coding assistant (Claude Code)</b> to write much of the code; the idea, design decisions, prompts, testing, evaluation, and the demo are ours. Free model APIs (Gemini, Groq, edge-tts) and OpenStax pages (CC BY 4.0) are disclosed in <b>docs/DISCLOSURES.md</b>.</p>
+<p class="note">Before the demo, each teammate should write one line here about what they personally did (e.g. testing with the stress test, prompts, evaluation, slides, recording). Judges like a clear, honest answer.</p>
+
+<h2>Part 2 · How Roshni meets each judging criterion (rulebook p. 13)</h2>
+<table>
+  <tr><th style="width:22%">Criterion</th><th>What judges look for</th><th>Our evidence (say this)</th></tr>
+  <tr><td><b>AI Integration Depth</b></td><td>How meaningfully AI contributes</td><td>AI is the pipeline, not a chat box: vision reading, rewriting, an independent second AI checking the first, speech-to-text for lectures and voice answers, question generation, video notes. Different model families on purpose, and code verifies the AI (quotes, numbers, options).</td></tr>
+  <tr><td><b>Problem-Solving Quality</b></td><td>Clear, important problem; effective solution</td><td>Three named learners, one page; each gets a mode built for them. Measured: 28/28 errors caught, 0 false alarms, grade 11 → 6. Practice turns reading into checked understanding with weak areas and a study plan.</td></tr>
+  <tr><td><b>Demo &amp; Presentation</b></td><td>Does it work; can the team show it clearly</td><td>Live photo → lesson, then “Plant 3 errors” caught live, then a voice quiz answered by saying “B”. Backup: sample lessons and offline demo mode. 7-slide deck with Morph transitions and a timed script.</td></tr>
+  <tr><td><b>Creativity &amp; SDG Impact</b></td><td>Originality; social and SDG relevance</td><td>Fact Guard (a second AI that must quote its proof) and the on-screen sabotage test are unusual. Urdu and Pashto help, a voice quiz for blind students. SDG 4.5, 4.1, 10.2.</td></tr>
+  <tr><td><b>Industrial Impact</b></td><td>Relevance, adoption, efficiency, cost, value</td><td>Adopters: special-education schools and NGOs, textbook boards and publishers, school chains, employers making training manuals and safety notices accessible. PKR 0 to run on free tiers; a lesson in about 26 s instead of hours. Next: a pilot with a special-education school.</td></tr>
+</table>
+
+<h2>Part 3 · Judging system and likely judge questions (rulebook p. 14)</h2>
+<p>Your <b>EdTech &amp; Workforce judge gives 85%</b> of the score; the other domain judges give 15% together. So lead with learning outcomes (simpler reading, checked understanding, personalised study plan) and workforce use (accessible training material), and keep the explanation simple enough for the cross-domain judges. Judges may ask technical or non-technical questions; every teammate should be able to answer these:</p>
+
+<div class="avoid"><h3>“Why not just use ChatGPT?”</h3>
+<p>A chatbot rewrites text but can’t show it kept every fact, and a struggling student can’t check. Roshni has a different AI check the rewrite and quote its proof, code checks every number, and it caught 28 of 28 planted errors with zero false alarms. It also gives a blind student audio and figure descriptions, a deaf student captions, and a voice quiz.</p></div>
+
+<div class="avoid"><h3>“What if both AIs make the same mistake?”</h3>
+<p>They come from different model families, so they don’t share the same blind spots. The checker must quote the rewrite, and plain code confirms the quote exists and contains the fact’s words and numbers. Anything still uncertain stays amber with the original next to it.</p></div>
+
+<div class="avoid"><h3>“How do you know Fact Guard works?”</h3>
+<p>We sabotage our own rewrites in code (change a number, delete a fact, invent a claim), so the right answer is known in advance: 28/28 caught, and 0 of 142 false alarms when nothing changed. The script is in eval/, and the same test runs live in the app.</p></div>
+
+<div class="avoid"><h3>“Have you tested with real disabled students?”</h3>
+<p>Not yet; that’s our honest limit and our next step: a pilot with a special-education school. We designed for them (keyboard and screen-reader control, figure descriptions, voice answers, adjustable timer), but real users will teach us more.</p></div>
+
+<div class="avoid"><h3>“What does it cost, and does it scale?”</h3>
+<p>Today it runs on free tiers (PKR 0), with several keys rotating automatically and results cached so a page is processed once. A capped paid backup costs well under one US cent per task. A school or publisher would pay for higher limits; students use it free.</p></div>
+
+<div class="avoid"><h3>“What about privacy?”</h3>
+<p>No accounts and no personal data are needed. Uploaded pages and recordings are stored by content only, and a lesson can be deleted. For schools we’d add on-premise or private hosting.</p></div>
+
+<div class="avoid"><h3>“Does it work for Urdu pages or in a noisy classroom?”</h3>
+<p>Hard words are explained in Urdu and Pashto today, and the reader recognises Urdu and Pashto text, but printed Urdu pages are not yet formally evaluated. For voice answers, the app asks again when it’s unsure and never guesses; number keys always work.</p></div>
+
+<div class="avoid"><h3>“How is this different from text-to-speech tools or Immersive Reader?”</h3>
+<p>Those read the same hard text aloud. Roshni changes the page itself (simpler wording, described figures, captions, checked notes, a quiz with a study plan), for three groups at once, and proves the meaning didn’t change.</p></div>
+
+<div class="avoid"><h3>“What did you build yourselves vs. the AI assistant?”</h3>
+<p>Answer honestly and specifically: who chose the idea and design, who wrote and tested prompts, who ran the evaluations, who made the slides. The rules allow AI assistants as long as they’re disclosed, and ours is.</p></div>
+
+<p class="footer">Sources: Roshni repo README evidence table (eval/results/*.json), docs/DISCLOSURES.md, docs/DEMO.md. WHO (2023), Global report on health equity for persons with disabilities: about 1.3 billion people, 1 in 6, experience significant disability.</p>
+</body>
+</html>
