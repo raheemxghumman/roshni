@@ -32,7 +32,7 @@ UNIT_WORDS = [
     (r"hertz", "hz"),
 ]
 
-UNIT_PATTERN = r"(?:%|°c|°f|km/h|km/s|m/s²|m/s2|m/s|km|cm|mm|nm|kg|mg|ml|kj|kw|kpa|mol|hz|g|m|s|l|j|w|v|a|k|n|pa)"
+UNIT_PATTERN = r"(?:%|°c|°f|km/h|km/s|min|hrs|hr|m/s²|m/s2|m/s|km|cm|mm|nm|kg|mg|ml|kj|kw|kpa|mol|hz|g|m|s|l|j|w|v|a|k|n|pa)"
 NUMBER_RE = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s?" + UNIT_PATTERN + r")?(?![\w])", re.IGNORECASE)
 FORMULA_RE = re.compile(r"\b(?:[A-Z][a-z]?\d*){2,}\b")
 EQUATION_RE = re.compile(r"\b[A-Za-z]\w{0,3}\s*=\s*[\w^²³().]+(?:\s*[+\-*/×÷]\s*[\w^²³().]+)*")

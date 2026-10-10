@@ -1,6 +1,7 @@
 """Lesson endpoints: upload a page, read it, simplify with Fact Guard, stress-test Fact Guard, glossary, quiz, audio."""
 from __future__ import annotations
 
+import time
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, File, Query, UploadFile
@@ -42,6 +43,12 @@ def summary_card(lesson: dict) -> dict:
         "sections": len(lesson["sections"]), "levels": sorted(lesson.get("simplified", {}).keys()),
         "factguard": {lvl: {"status": r["factguard"]["status"], "kept": r["factguard"]["kept"], "total": r["factguard"]["total"]}
                       for lvl, r in lesson.get("simplified", {}).items()},
+        "readability": {lvl: {"before": r["readability"]["before"]["grade"], "after": r["readability"]["after"]["grade"],
+                              "sentence_before": r["readability"]["before"]["avg_sentence_words"], "sentence_after": r["readability"]["after"]["avg_sentence_words"]}
+                        for lvl, r in lesson.get("simplified", {}).items()},
+        "seconds": {"read": lesson.get("timing", {}).get("read_seconds"), **{lvl: r.get("seconds") for lvl, r in lesson.get("simplified", {}).items()}},
+        "stress": {lvl: {"caught": r["caught"], "planted": r["total_planted"], "repaired_status": r["repaired_report"]["status"]}
+                   for lvl, r in lesson.get("stress", {}).items()},
         "has_lecture": bool(lesson.get("lecture_id")),
     }
 
@@ -61,6 +68,7 @@ def create_lesson(file: UploadFile = File(...)) -> dict:
         return {**existing, "from_cache": True}
     demo_guard("this page")
 
+    started = time.perf_counter()
     prepared = ingest.prepare(data, file.filename or "")
     read = ocr.read_page(prepared)
     title, sections, warnings = structure.build_sections(read["blocks"])
@@ -91,6 +99,7 @@ def create_lesson(file: UploadFile = File(...)) -> dict:
         "quiz": {},
         "lecture_id": None,
         "prompt_version": s.prompt_version,
+        "timing": {"read_seconds": round(time.perf_counter() - started, 1)},
     }
     cache.put_json("lessons", lesson_id, lesson)
     return lesson
@@ -126,8 +135,10 @@ def simplify_lesson(lesson_id: str, body: LevelRequest) -> dict:
     source = originals(lesson)
     if not source:
         raise AppError("NO_TEXT_FOUND", "This page has no text to simplify, only figures. Try Listen mode for the figure descriptions.", 422)
+    started = time.perf_counter()
     result = simplify.simplify_with_guard(source, body.level)
     result["created_at"] = now()
+    result["seconds"] = round(time.perf_counter() - started, 1)
     lesson = load_lesson(lesson_id)
     lesson.setdefault("simplified", {})[body.level] = result
     cache.put_json("lessons", lesson_id, lesson)

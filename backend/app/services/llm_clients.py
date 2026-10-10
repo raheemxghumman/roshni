@@ -24,6 +24,9 @@ _gemini_client: genai.Client | None = None
 _groq_client: Groq | None = None
 
 MAX_WAIT_SECONDS = 25
+_exhausted: dict[str, float] = {}  # model -> time its quota ran out; skipped for an hour
+EXHAUSTED_SKIP_SECONDS = 3600
+QUICK_SWITCH_SECONDS = 8  # in a fallback chain, move on instead of waiting longer than this
 
 
 def family(model: str) -> str:
@@ -77,7 +80,8 @@ def parse_json(text: str) -> dict:
 def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/jpeg", models: list[str] | None = None) -> tuple[dict, str]:
     s = get_settings()
     last_error: Exception | None = None
-    for model in models or [s.gemini_model, s.gemini_fallback_model]:
+    candidates = [m for m in (models or s.gemini_models) if time.time() - _exhausted.get(m, 0) > EXHAUSTED_SKIP_SECONDS] or (models or s.gemini_models)
+    for model in candidates:
         for attempt in range(3):
             try:
                 contents = [types.Part.from_bytes(data=image, mime_type=mime), prompt] if image else prompt
@@ -91,6 +95,9 @@ def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/j
                 last_error = e
                 if getattr(e, "code", None) == 429:
                     log.warning("Gemini %s rate limited (attempt %s)", model, attempt + 1)
+                    if "per day" in str(e).lower() or "perday" in str(e).lower() or "quota" in str(e).lower():
+                        _exhausted[model] = time.time()  # daily quota gone: don't wait, move on
+                        break
                     if attempt == 0:
                         time.sleep(4)
                         continue
@@ -117,7 +124,7 @@ def _groq_extra(model: str) -> dict:
     return {}
 
 
-def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: float = 0.2) -> dict:
+def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: float = 0.2, max_wait: float = MAX_WAIT_SECONDS) -> dict:
     client = _groq()
     use_json_mode = True
     for attempt in range(4):
@@ -139,7 +146,7 @@ def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: f
         except RateLimitError as e:
             wait = _retry_after(e)
             log.warning("Groq %s rate limited, waiting %ss", model, wait)
-            if wait > MAX_WAIT_SECONDS or attempt == 3:
+            if wait > max_wait or attempt == 3:
                 raise
             time.sleep(wait)
         except BadRequestError as e:
@@ -166,18 +173,21 @@ def _retry_after(e: RateLimitError) -> float:
 def text_json(prompt: str, role: str, *, avoid_family: str | None = None, max_tokens: int = 4096) -> tuple[dict, str]:
     """Runs a text task with the role's fallback chain. Returns (json, model_used)."""
     s = get_settings()
+    gem = [("gemini", m) for m in s.gemini_models[:3]]
     chains = {
-        "rewrite": [("groq", s.groq_rewrite_model), ("gemini", s.gemini_model), ("gemini", s.gemini_fallback_model)],
-        "check": [("groq", s.groq_factguard_model), ("groq", s.groq_fallback_model), ("gemini", s.gemini_model)],
-        "structure": [("groq", s.groq_rewrite_model), ("groq", s.groq_fallback_model), ("gemini", s.gemini_model)],
+        "rewrite": [("groq", s.groq_rewrite_model), *gem],
+        # strongest independent checkers first; the small model is a last resort
+        "check": [("groq", s.groq_factguard_model), *gem, ("groq", s.groq_fallback_model)],
+        "structure": [("groq", s.groq_rewrite_model), ("groq", s.groq_fallback_model), *gem],
     }
     errors: list[str] = []
-    for provider, model in chains[role]:
-        if avoid_family and family(model) == avoid_family:
-            continue
+    chain = [(p, m) for p, m in chains[role] if not (avoid_family and family(m) == avoid_family)]
+    for n, (provider, model) in enumerate(chain):
+        is_last = n == len(chain) - 1
         try:
             if provider == "groq":
-                return groq_json(prompt, model=model, max_tokens=max_tokens), model
+                return groq_json(prompt, model=model, max_tokens=max_tokens,
+                                 max_wait=MAX_WAIT_SECONDS if is_last else QUICK_SWITCH_SECONDS), model
             data, used = gemini_json(prompt, models=[model])
             return data, used
         except AppError as e:

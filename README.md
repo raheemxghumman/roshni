@@ -52,7 +52,7 @@ roshni/
 │   ├── openstax/       CC BY 4.0 excerpts + ATTRIBUTION.md
 │   ├── raw/            page photos (git-ignored)
 │   ├── lectures/       demo audio clips (git-ignored)
-│   └── demo_cache/     pre-computed lesson packs for demo mode (git-ignored)
+│   └── cache/          lessons, audio and pre-computed samples for demo mode (git-ignored)
 ├── eval/               evaluation scripts + results/
 ├── scripts/            warm_cache.py, check_quotas.py
 ├── docs/               plan, APIs and accounts, disclosures

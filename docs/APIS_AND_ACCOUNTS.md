@@ -29,7 +29,7 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 |---|---|
 | **Used for** | Reading the page (OCR + structure) and describing diagrams. **Vision only**, to save quota. Also the second fallback for text tasks |
 | **Get a key** | https://aistudio.google.com → sign in with Google → **Get API key** → Create API key |
-| **Model** | The current **free "Flash"** model listed in AI Studio. Put its ID in `GEMINI_MODEL` (VERIFY the exact ID today) |
+| **Models** | `gemini-3.5-flash` (primary), then `gemini-flash-latest`, `gemini-3-flash-preview`, `gemini-3.1-flash-lite`, `gemini-2.5-flash` (each has its own free daily quota; listed in `GEMINI_FALLBACK_MODEL`) |
 | **Free limits** | Small. Roughly 5–15 requests per minute and a limited number per day per project (VERIFY in AI Studio → Usage/Rate limits) |
 | **SDK** | `pip install google-genai` |
 | **Env vars** | `GEMINI_API_KEY`, `GEMINI_MODEL` |
@@ -39,9 +39,9 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 ### 2.2 Groq API
 | | |
 |---|---|
-| **Used for** | Rewrite, glossary, summary and quiz (Llama 3.3 70B). **Fact Guard** (GPT-OSS 120B, a different model family). Lecture transcripts (Whisper) |
+| **Used for** | Rewrite, glossary, summary and quiz (Qwen 3.8 27B). **Fact Guard** (GPT-OSS 120B, a different model family). Lecture transcripts (Whisper) |
 | **Get a key** | https://console.groq.com → sign up → **API Keys** → Create |
-| **Models** (VERIFY in console → Models) | `llama-3.3-70b-versatile` (rewriter), `openai/gpt-oss-120b` (Fact Guard), `llama-3.1-8b-instant` (cheap fallback), `whisper-large-v3-turbo` and `whisper-large-v3` (speech to text) |
+| **Models** (VERIFY in console → Models) | `qwen/qwen3.8-27b` (rewriter), `openai/gpt-oss-120b` (Fact Guard), `openai/gpt-oss-20b` (last-resort checker). Groq retired its Llama models in 2026, `whisper-large-v3-turbo` and `whisper-large-v3` (speech to text) |
 | **Free limits** (approximate) | About 30 requests/min for chat models. About 1,000 requests/day for 70B. About 14,400/day for 8B. About 2,000 audio requests/day for Whisper. Audio file size limit about 25 MB (VERIFY) |
 | **SDK** | `pip install groq` (OpenAI-compatible) |
 | **Env vars** | `GROQ_API_KEY`, `GROQ_REWRITE_MODEL`, `GROQ_FACTGUARD_MODEL`, `GROQ_FALLBACK_MODEL`, `GROQ_STT_MODEL` |
@@ -113,16 +113,17 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 | Variable | Example | Used by |
 |---|---|---|
 | `GEMINI_API_KEY` | `AIza…` | ocr.py |
-| `GEMINI_MODEL` | *(current free Flash ID)* | ocr.py, fallback text |
+| `GEMINI_MODEL` | `gemini-3.5-flash` | ocr.py, fallback text |
+| `GEMINI_FALLBACK_MODEL` | `gemini-flash-latest,gemini-3-flash-preview,…` | tried in order when quota runs out |
 | `GROQ_API_KEY` | `gsk_…` | simplify, factguard, glossary, summarize, quiz, transcribe |
-| `GROQ_REWRITE_MODEL` | `llama-3.3-70b-versatile` | simplify, glossary, summarize, quiz |
+| `GROQ_REWRITE_MODEL` | `qwen/qwen3.8-27b` | simplify, glossary, summarize, quiz |
 | `GROQ_FACTGUARD_MODEL` | `openai/gpt-oss-120b` | factguard (must be a different model from the rewriter) |
-| `GROQ_FALLBACK_MODEL` | `llama-3.1-8b-instant` | fallbacks |
+| `GROQ_FALLBACK_MODEL` | `openai/gpt-oss-20b` | last-resort checker |
 | `GROQ_STT_MODEL` | `whisper-large-v3-turbo` | transcribe |
 | `TTS_URDU_VOICE` | `ur-PK-UzmaNeural` | tts |
 | `TTS_ENGLISH_VOICE` | `en-US-AriaNeural` | tts |
 | `DEMO_MODE` | `false` | `true` = serve only from cache, no API calls |
-| `CACHE_DIR` | `../data/demo_cache` | cache |
+| `CACHE_DIR` | *(empty = `data/cache`)* | cache |
 | `MAX_UPLOAD_MB` | `10` | ingest |
 | `ALLOWED_ORIGINS` | `http://localhost:5173,https://roshni.vercel.app` | CORS |
 | `PROMPT_VERSION` | `v1` | Cache key; bump it when prompts change |

@@ -56,6 +56,28 @@ def evidence_ok(quote: str, text: str) -> bool:
     return sum(w in pool for w in words) / len(words) >= 0.8
 
 
+STOP = set("""a an and are as at be been by can could does each for from has have how in into is it its may might more most
+of on or our so some such than that the their them then there these they this those through to was we were what when where
+which while who will with would also about after before other only very used uses use called""".split())
+
+
+def _stems(text: str) -> set[str]:
+    return {w[:5] for w in _words(text) if len(w) > 2 and w not in STOP}
+
+
+def supports(evidence: str, fact: str) -> bool:
+    """Plain-code guard against a checker quoting an unrelated sentence: the quote must share
+    most of the fact's content words (5-letter stems, so 'measured'/'measure' match) and every number."""
+    fact_stems = _stems(fact)
+    if not fact_stems:
+        return True
+    ev = _stems(evidence)
+    numbers = set(re.findall(r"\d+(?:\.\d+)?", normalize.for_match(fact)))
+    if numbers and not numbers <= set(re.findall(r"\d+(?:\.\d+)?", normalize.for_match(evidence))):
+        return False
+    return len(fact_stems & ev) / len(fact_stems) >= 0.34
+
+
 def extract_facts(original_sections: list[dict], avoid_family: str | None) -> tuple[list[dict], str]:
     facts: list[dict] = []
     model = ""
@@ -105,9 +127,11 @@ def audit(facts: list[dict], original_sections: list[dict], rewrite_sections: li
         note = (r.get("note") or "").strip()
         if not r:
             note = "The checker gave no verdict for this fact, so it is treated as not verified."
-        elif status == "kept" and not evidence_ok(evidence, rewrite_by_id.get(f["section_id"], "") or all_rewrite):
+        elif status == "kept" and not evidence_ok(evidence, all_rewrite):
             status, note = "missing", "The checker could not quote this fact from the rewrite."
-        results.append({**f, "status": status, "evidence": evidence if status != "missing" else "", "note": note})
+        elif status == "kept" and not supports(evidence, f["text"]):
+            status, note = "missing", "The quoted words don't state this fact, so it was not verified."
+        results.append({**f, "status": status, "evidence": evidence, "note": note})
 
     missing_tokens = []
     for s in original_sections:

@@ -19,7 +19,7 @@ Roshni turns a printed textbook page or a recorded lecture into an accessible le
 | **Problem** | Teachers rarely have time to adapt material for each learner who needs it. A blind student can't read the printed page. A dyslexic student, or one from an Urdu-medium school, can read it but can't follow it. A deaf student misses everything said in the lecture. Adapting one page by hand for all of them takes a teacher a long time, so in practice it is never done. |
 | **Users** | **Primary:** blind and low-vision, dyslexic, and deaf or hard-of-hearing students, plus weaker readers and Urdu-medium students using English textbooks. **Secondary:** teachers and special-education staff. |
 | **Input** | A photo or PDF of a textbook page (English first). Optionally, a short lecture recording. |
-| **AI** | Gemini vision reads the page and describes diagrams. Groq Llama rewrites the text at a simpler level and explains hard words in Urdu. A *different* model (Fact Guard) extracts facts and checks them. Whisper transcribes the lecture. |
+| **AI** | Gemini vision reads the page and describes diagrams. Qwen 3.8 (on Groq) rewrites the text at a simpler level and explains hard words in Urdu. A *different* model (Fact Guard) extracts facts and checks them. Whisper transcribes the lecture. |
 | **Output** | One lesson pack with three modes: **Read Easy** (dyslexic and weaker readers), **Listen** (blind), **Captions** (deaf). Every AI-made text carries a Fact Guard badge such as "12/12 facts kept". |
 | **Impact metrics** | Reading grade lowered (Flesch-Kincaid). Facts kept (%). Planted errors caught by Fact Guard (%). OCR error rate on real pages. Whisper word error rate. Teacher minutes to adapt a page by hand vs seconds in the app. |
 | **SDGs** | 4.5 (equal access for persons with disabilities), 4.1, 10.2 |
@@ -77,8 +77,8 @@ Roshni turns a printed textbook page or a recorded lecture into an accessible le
                        transcribe → summarize ──┘ (Fact Guard on the summary too)
    cache (sha256 → JSON/MP3 on disk)      metrics (eval/results/*.json)
    │
-   ├─ Gemini Flash (free tier)  : page reading + diagram descriptions (vision only, to save quota)
-   ├─ Groq Llama 3.3 70B (free) : rewrite, glossary, summary, quiz
+   ├─ Gemini 3.5 Flash + 4 fallbacks (free) : page reading + diagram descriptions
+   ├─ Groq Qwen 3.8 27B (free)  : rewrite, glossary, summary, quiz
    ├─ Groq GPT-OSS 120B (free)  : Fact Guard (a different model family from the rewriter)
    ├─ Groq Whisper (free)       : lecture transcript
    └─ edge-tts → gTTS → browser : audio
@@ -122,7 +122,7 @@ Model IDs live in `.env`, so changing a model doesn't need a code change (see `d
 - After rewriting, measure readability with textstat. If it misses the target, retry once with "shorter sentences".
 
 ### 5.4 Fact Guard (`factguard.py`), the centrepiece
-**Independence rule:** facts are extracted and checked by **a different model from the one that rewrote the text.** By default the rewriter is Llama 3.3 70B and the checker is GPT-OSS 120B.
+**Independence rule:** facts are extracted and checked by **a different model from the one that rewrote the text.** By default the rewriter is Qwen 3.8 (Groq) and the checker is GPT-OSS 120B. If the rewrite falls back to Gemini, the checker is still GPT-OSS; the code refuses any checker from the rewriter's model family.
 
 1. **Extract facts** from the original section as an atomic list: `{id, text, source_block_id, protected_tokens[]}`.
 2. **Coverage check:** every original sentence that contains a number, term or verb claim must link to at least one fact. If one doesn't, ask the extractor again for just that sentence.
@@ -193,7 +193,7 @@ Model IDs live in `.env`, so changing a model doesn't need a code change (see `d
       "total": 12, "kept": 12, "status": "green|amber",
       "facts": [{"id": "f1", "text": "…", "source_block_id": "b1", "status": "kept|missing|changed", "evidence": "…"}],
       "added_claims": [], "missing_tokens": [], "repair_rounds": 1,
-      "checker_model": "openai/gpt-oss-120b", "rewriter_model": "llama-3.3-70b-versatile"
+      "checker_model": "openai/gpt-oss-120b", "rewriter_model": "qwen/qwen3.8-27b"
     }
   },
   "glossary": [{"term": "chlorophyll", "simple_en": "…", "urdu": "…", "section_id": "s1"}],
@@ -289,7 +289,7 @@ Model IDs live in `.env`, so changing a model doesn't need a code change (see `d
 | Case | Handling |
 |---|---|
 | Gemini 429 or quota used up | Backoff (1 s, 2 s, 4 s), then Tesseract (English print) fallback, then a cached result if available |
-| Groq 429 | Switch models (70B → 8B for non-critical steps), then Gemini text, then Ollama locally. Fact Guard must never run on the same model as the rewriter. If no independent model is available, Fact Guard shows "unavailable", not green. |
+| Groq 429 | If Groq asks to wait more than 8 s, switch to the next model (Gemini list) instead of waiting. Gemini models whose daily quota is spent are skipped for an hour. Fact Guard must never run on the same model as the rewriter. If no independent model is available, Fact Guard shows "unavailable", not green. |
 | edge-tts down | gTTS, then the browser voice |
 | Venue Wi-Fi fails | Phone hotspot. **Demo mode** serves cached lesson packs with no API calls. The backend can also run on the laptop. |
 | Hugging Face Space asleep | Open it 10 minutes before the slot; `/api/health` is used as a keep-alive |
@@ -322,9 +322,9 @@ Model IDs live in `.env`, so changing a model doesn't need a code change (see `d
 
 | Task | 1st | 2nd | 3rd | Last resort |
 |---|---|---|---|---|
-| Read page | Gemini Flash | PDF text layer | Tesseract (English) | Cached result |
-| Rewrite / glossary / summary / quiz | Groq Llama 3.3 70B | Gemini Flash (text) | Groq Llama 3.1 8B | Ollama locally |
-| Fact Guard | Groq GPT-OSS 120B | Gemini Flash | Groq Llama 3.1 8B (only if the rewriter wasn't an 8B model) | Show "unavailable" |
+| Read page | Gemini 3.5 Flash | Gemini Flash latest / 3 Flash preview / 3.1 Flash Lite / 2.5 Flash | PDF text layer (skips OCR) | Cached result |
+| Rewrite / glossary / summary / quiz | Groq Qwen 3.8 27B | Gemini 3.5 Flash | Gemini Flash latest | Gemini 3 Flash preview |
+| Fact Guard | Groq GPT-OSS 120B | Gemini 3.5 Flash (only if the rewriter wasn't Gemini) | Groq GPT-OSS 20B | Show "unavailable" |
 | Speech to text | Groq Whisper large-v3-turbo | Groq Whisper large-v3 | faster-whisper locally | Cached result |
 | Text to speech | edge-tts | gTTS | Browser voice | — |
 

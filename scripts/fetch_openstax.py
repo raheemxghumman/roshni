@@ -70,6 +70,8 @@ class ContentParser(HTMLParser):
             return
         if self._tag == tag:
             text = re.sub(r"\s+", " ", "".join(self._buf)).strip()
+            # OpenStax prints maths twice (MathML + text): ΔtΔt -> Δt. Only tokens with maths/Greek symbols, so "cell" stays "cell".
+            text = re.sub(r"(\S{0,4}[Ͱ-Ͽ∀-⋿]\S{0,4})\1", r"\1", text)
             if text:
                 self.blocks.append((tag, text))
             self._tag = None

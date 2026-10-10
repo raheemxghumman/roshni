@@ -1,5 +1,6 @@
 """FastAPI app: CORS, error handling, routers, /api/health, and (if built) the frontend at '/'."""
 import logging
+import shutil
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
@@ -15,6 +16,21 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name
 log = logging.getLogger("roshni")
 
 settings = get_settings()
+
+
+def seed_samples() -> None:
+    """On a fresh machine or deploy, copy the committed sample lessons into the empty cache."""
+    samples = ROOT_DIR / "data" / "samples"
+    lessons_dir = settings.cache_path / "lessons"
+    if not samples.exists() or (lessons_dir.exists() and any(lessons_dir.glob("*.json"))):
+        return
+    for sub in samples.iterdir():
+        if sub.is_dir():
+            shutil.copytree(sub, settings.cache_path / sub.name, dirs_exist_ok=True)
+    log.info("Seeded the cache with sample lessons from %s", samples)
+
+
+seed_samples()
 app = FastAPI(title="Roshni API", version="1.0.0", description="One page. Every learner.")
 app.add_middleware(CORSMiddleware, allow_origins=settings.origins, allow_origin_regex=r"https://.*\.(vercel\.app|hf\.space)",
                    allow_methods=["*"], allow_headers=["*"])

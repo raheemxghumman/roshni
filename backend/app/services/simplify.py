@@ -37,6 +37,12 @@ def rewrite(original_sections: list[dict], level: str) -> tuple[list[dict], str]
         for s in data.get("sections") or []:
             if isinstance(s, dict) and s.get("id") and (s.get("text") or "").strip():
                 out[str(s["id"])] = _clean(s["text"])
+    missing = [s for s in original_sections if s["id"] not in out]
+    if out and missing:  # the model skipped some sections: ask again for just those
+        data, _ = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(missing), **cfg), "rewrite", max_tokens=6000)
+        for s in data.get("sections") or []:
+            if isinstance(s, dict) and s.get("id") and (s.get("text") or "").strip():
+                out[str(s["id"])] = _clean(s["text"])
     sections = []
     for s in original_sections:
         text = out.get(s["id"])

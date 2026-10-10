@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ROOT_DIR / ".env", env_file_encoding="utf-8", extra="ignore")
 
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
-    gemini_fallback_model: str = "gemini-3.5-flash"
+    gemini_model: str = "gemini-3.5-flash"
+    gemini_fallback_model: str = "gemini-flash-latest,gemini-3-flash-preview,gemini-3.1-flash-lite,gemini-2.5-flash"  # comma list; each has its own free quota
 
     groq_api_key: str = ""
     groq_rewrite_model: str = "qwen/qwen3.8-27b"
@@ -34,9 +34,14 @@ class Settings(BaseSettings):
 
     @property
     def cache_path(self) -> Path:
-        path = Path(self.cache_dir) if self.cache_dir else ROOT_DIR / "data" / "demo_cache"
+        path = Path(self.cache_dir) if self.cache_dir else ROOT_DIR / "data" / "cache"
         path.mkdir(parents=True, exist_ok=True)
         return path
+
+    @property
+    def gemini_models(self) -> list[str]:
+        models = [self.gemini_model] + [m.strip() for m in self.gemini_fallback_model.split(",") if m.strip()]
+        return list(dict.fromkeys(models))
 
     @property
     def origins(self) -> list[str]:

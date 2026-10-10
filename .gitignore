@@ -18,10 +18,13 @@ frontend/dist/
 data/raw/*
 data/lectures/*
 data/demo_cache/*
+data/cache/*
 journey/*
 !data/raw/.gitkeep
 !data/lectures/.gitkeep
+!data/lectures/sample-lecture-synthetic.mp3
 !data/demo_cache/.gitkeep
+!data/cache/.gitkeep
 !journey/.gitkeep
 
 # OS / editor
