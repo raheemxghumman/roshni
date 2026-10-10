@@ -53,7 +53,7 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 | **Used for** | Urdu audio (glossary, summary) and English audio when the browser has no voice |
 | **Account / key** | **None.** It's an unofficial open-source client that needs internet. It could stop working without notice, which is why it has fallbacks |
 | **Install** | `pip install edge-tts` · list voices: `edge-tts --list-voices` |
-| **Voices** | `ur-PK-UzmaNeural`, `ur-PK-AsadNeural`, `en-US-AriaNeural`, `en-GB-SoniaNeural` (VERIFY with `--list-voices`) |
+| **Voices** | `ur-PK-UzmaNeural`, `ur-PK-AsadNeural`, `ps-AF-LatifaNeural`, `ps-AF-GulNawazNeural` (Pashto; gTTS has no Pashto fallback), `en-US-AriaNeural`, `en-GB-SoniaNeural` (VERIFY with `--list-voices`) |
 | **Env vars** | `TTS_URDU_VOICE`, `TTS_ENGLISH_VOICE` |
 | **Fallbacks** | `gTTS` (no key; `pip install gTTS`) → the browser's own speech synthesis |
 
@@ -121,6 +121,7 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 | `GROQ_FALLBACK_MODEL` | `openai/gpt-oss-20b` | last-resort checker |
 | `GROQ_STT_MODEL` | `whisper-large-v3-turbo` | transcribe |
 | `TTS_URDU_VOICE` | `ur-PK-UzmaNeural` | tts |
+| `TTS_PASHTO_VOICE` | `ps-AF-LatifaNeural` | tts |
 | `TTS_ENGLISH_VOICE` | `en-US-AriaNeural` | tts |
 | `DEMO_MODE` | `false` | `true` = serve only from cache, no API calls |
 | `CACHE_DIR` | *(empty = `data/cache`)* | cache |
