@@ -84,6 +84,7 @@ Keyboard control everywhere (Alt+K play/pause, Alt+N/P sections, Alt+R repeat, A
 | Problem → Data/Input → AI → Solution → Impact | Table above; `docs/PLAN.md` |
 | Meaningful AI, not a chatbot | Five AI steps in the pipeline, plus an independent checker |
 | Working MVP + deployed link | This repo; root `Dockerfile` |
+| Demo PPTX (5 minutes) | `slides/Roshni-AICON26-Demo.pptx`, script in `docs/DEMO.md` |
 | Measurable impact | `eval/`, Evidence page |
 | Public, synthetic or authorised data only | OpenStax CC BY 4.0; synthetic items labelled |
 | Disclosures | `docs/DISCLOSURES.md` |

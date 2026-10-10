@@ -13,15 +13,17 @@
 6. Be at CR-01 by 09:35. They wait only 2 minutes.
 
 ## The 5 minutes
-| Time | Who | What to do and say |
-|---|---|---|
-| 0:00–0:30 | Presenter | **Problem.** Hold up the printed page: "Three students in one class. Sara is dyslexic, Bilal is blind, Hamza is deaf. This page works for none of them, and their teacher has no time to adapt it three ways." |
-| 0:30–1:20 | Driver | **Live upload.** Home → *Make a lesson* → photograph or upload the page. Point at the progress steps: "Gemini reads the page and describes the diagrams." The lesson opens. |
-| 1:20–2:30 | Driver | **Read Easy.** Show original vs Easier side by side. Click **Read aloud**: sentences highlight as they're read. Click an underlined word, then the Urdu explanation and the 🔊 button. Point at **Fact Guard 17/17 facts kept**. |
-| 2:30–3:10 | Driver | **The trust moment.** In the Fact Guard card, click **Plant 3 errors**. The cards flip: changed number caught, deleted fact caught, invented claim caught, then repaired back to green. "A second AI from a different family checks the first, and plain code checks every number." |
-| 3:10–3:40 | Driver | **Listen** tab: press Alt+N to jump sections, show the figure description. **Captions** tab: click a caption line to jump the audio, show the summary checked against the lecture. |
-| 3:40–4:20 | Presenter | **Evidence** page: facts kept %, reading grade drop, planted-error catch rate, false alarms, OCR accuracy on phone-style photos, time per page. "Every number comes from a script in the repo." |
-| 4:20–5:00 | Presenter | **Impact and adoption:** special-education schools, inclusive-education NGOs, textbook boards, school chains, Urdu-medium students learning in English, and workplace training for employees with disabilities. Runs on free tiers, PKR 0. "We built all of this during AICON'26." |
+Deck: `slides/Roshni-AICON26-Demo.pptx` (7 slides, Morph transitions, script in the speaker notes). Open it in **Presenter View** (Slide Show → Use Presenter View) so the notes and timer show on the laptop only. On slide 4, press **Alt+Tab** to the app, then come back to the deck for slide 5.
+
+| Time | Slide | Who | What to do and say |
+|---|---|---|---|
+| 0:00–0:20 | 1 Title | Presenter | "We are 404 Team Not Found. This is Roshni, which means light: one photo of a textbook page becomes a lesson blind, dyslexic and deaf students can use, and a second AI proves no fact was lost." |
+| 0:20–0:50 | 2 Problem | Presenter | Hold up the printed page: "Three students, one class. Bilal is blind, Sara is dyslexic, Hamza is deaf. This page works for none of them, and their teacher has no time to adapt it three ways." |
+| 0:50–1:30 | 3 Solution | Presenter | "AI is the pipeline, not a chat box: Gemini reads the page, Qwen rewrites it, Fact Guard checks it, Whisper captions the lecture." The student cards morph into their modes. |
+| 1:30–3:30 | 4 Live demo | Driver | **Alt+Tab to the app.** (1) Upload the photo of the printed page. (2) Read Easy: **Read aloud**, tap an underlined word for Urdu, point at the Fact Guard badge. (3) **Plant 3 errors**: the cards flip to Caught, then the rewrite is repaired. (4) Listen: Alt+N, a figure description. Captions: click a line to jump the audio. Slow upload? Open the cached physics sample. |
+| 3:30–4:00 | 5 Fact Guard | Presenter | "You just saw it live. A different AI family checks, every kept fact must be quoted, numbers are checked by plain code, and gaps are repaired." |
+| 4:00–4:35 | 6 Evidence | Presenter | "Every number comes from a script in our repo, on real textbook pages: 28 of 28 planted errors caught, zero false alarms, grade 11 down to about 6." |
+| 4:35–5:00 | 7 Impact | Presenter | Adopters, PKR 0 to run, SDG 4.5, built during AICON'26. "Next is a pilot with a special-education school. Thank you." |
 
 ## If something goes wrong
 - **Upload is slow (more than 20 s):** say "free tiers are queueing us" and open a sample lesson instead. It's the same pipeline, already cached.
