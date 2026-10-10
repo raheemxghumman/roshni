@@ -63,7 +63,10 @@ def _get_pool():
         try:
             from psycopg_pool import ConnectionPool
 
-            pool = ConnectionPool(url, min_size=0, max_size=4, timeout=8, kwargs={"connect_timeout": 8, "autocommit": True}, open=True)
+            # Neon suspends an idle database and closes its connections, so test each connection before use
+            # and drop idle ones after a minute instead of handing out a dead one.
+            pool = ConnectionPool(url, min_size=0, max_size=4, timeout=10, check=ConnectionPool.check_connection,
+                                  max_idle=60, max_lifetime=600, kwargs={"connect_timeout": 10, "autocommit": True}, open=True)
             with pool.connection() as conn:
                 conn.execute(SCHEMA)
             _pool = pool
@@ -80,24 +83,34 @@ def available() -> bool:
 
 
 def _run(sql: str, params: tuple = (), fetch: str | None = None):
+    """Runs one query. A broken connection (for example after Neon woke from sleep) is retried once on a fresh one;
+    only a second connection failure turns the store off for a minute."""
     global _failed_at
+    import psycopg
+    from psycopg_pool import PoolTimeout
+
     pool = _get_pool()
     if pool is None:
         raise AppError("PROFILE_STORE_OFF", "Your progress is saved in this browser only right now.", 503, True)
-    try:
-        with pool.connection() as conn:
-            cur = conn.execute(sql, params)
-            if fetch == "one":
-                return cur.fetchone()
-            if fetch == "all":
-                return cur.fetchall()
-            return None
-    except AppError:
-        raise
-    except Exception as e:  # noqa: BLE001
-        _failed_at = time.time()
-        log.warning("Profile store error: %s", str(e)[:200])
-        raise AppError("PROFILE_STORE_OFF", "Your progress is saved in this browser only right now.", 503, True) from e
+    for attempt in range(2):
+        try:
+            with pool.connection() as conn:
+                cur = conn.execute(sql, params)
+                if fetch == "one":
+                    return cur.fetchone()
+                if fetch == "all":
+                    return cur.fetchall()
+                return None
+        except (psycopg.OperationalError, psycopg.InterfaceError, PoolTimeout) as e:
+            log.warning("Profile store connection problem (attempt %s): %s", attempt + 1, str(e)[:200])
+            if attempt == 0:
+                continue  # the pool discards the broken connection; try once more on a fresh one
+            _failed_at = time.time()
+            raise AppError("PROFILE_STORE_OFF", "Your progress is saved in this browser only right now.", 503, True) from e
+        except psycopg.Error as e:  # a bad query or data, not an outage: don't switch the store off
+            log.warning("Profile store query error: %s", str(e)[:200])
+            raise AppError("PROFILE_STORE_OFF", "Your progress couldn't be saved on the server just now.", 503, True) from e
+    return None
 
 
 def check_id(learner_id: str | None) -> str:
