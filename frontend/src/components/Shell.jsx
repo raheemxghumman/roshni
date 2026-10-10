@@ -34,7 +34,7 @@ export function SkipLink() {
 export function Footer() {
   return (
     <footer className="mt-20 border-t border-line bg-surface/60 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 md:grid-cols-[1fr_auto] md:items-end">
+      <div className="mx-auto grid max-w-[1680px] gap-6 px-4 py-10 sm:px-6 lg:px-10 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <Logo />
           <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">

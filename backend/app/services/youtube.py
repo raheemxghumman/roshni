@@ -17,7 +17,7 @@ from youtube_transcript_api import _errors as yt_errors
 from ..config import fill, load_prompt
 from ..errors import AppError
 from . import factguard
-from .llm_clients import family, text_json
+from .llm_clients import family, gemini_json, text_json
 
 ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 YT_HOSTS = {"youtube.com", "www.youtube.com", "m.youtube.com", "music.youtube.com", "youtu.be", "www.youtu.be",
@@ -112,6 +112,51 @@ def captions(vid: str, language: str = "auto") -> dict:
         raise AppError("NO_TEXT_FOUND", "This video has too little speech in its captions to make notes from.", 422)
     return {"segments": segments, "language": fetched.language_code, "language_name": fetched.language,
             "generated": bool(fetched.is_generated), "duration": segments[-1]["end"] if segments else 0, "words": words}
+
+
+GEMINI_SECONDS = 20 * 60  # when Gemini transcribes, it covers the first 20 minutes (keeps the free quota safe)
+
+
+def gemini_transcript(vid: str) -> dict:
+    """Fallback when YouTube blocks this server or the video has no captions: Gemini opens the public video
+    itself (Google's servers are not blocked) and writes a timestamped transcript of what is said."""
+    try:
+        data, model = gemini_json(load_prompt("video_transcribe.txt"), video_url=f"https://www.youtube.com/watch?v={vid}",
+                                  video_seconds=GEMINI_SECONDS)
+    except AppError as e:
+        if e.code == "RATE_LIMITED":
+            raise AppError("RATE_LIMITED", "The free AI quota for transcribing videos is busy. Please try again in a minute.", 429, True) from e
+        raise AppError("NO_CAPTIONS", "This video couldn't be transcribed. It may be private, too long, or have no speech.", 422) from e
+    segments, last = [], -1.0
+    for seg in data.get("segments") or []:
+        if not isinstance(seg, dict):
+            continue
+        text = re.sub(r"\s+", " ", NOISE_RE.sub(" ", html.unescape(str(seg.get("text") or "")))).strip()
+        start = parse_time(seg.get("start"), 0, GEMINI_SECONDS)
+        if text and start >= last:  # keep time order; drop anything that jumps backwards
+            segments.append({"start": round(start, 2), "end": round(start, 2), "text": text})
+            last = start
+    for a, b in zip(segments, segments[1:]):
+        a["end"] = b["start"]
+    if segments:
+        segments[-1]["end"] = segments[-1]["start"] + 10
+    words = sum(len(s["text"].split()) for s in segments)
+    if words < MIN_WORDS:
+        raise AppError("NO_TEXT_FOUND", "This video has too little speech to make notes from.", 422)
+    lang = str(data.get("language") or "en")[:8]
+    return {"segments": segments, "language": lang, "language_name": f"{lang.upper()} transcript by {model}",
+            "generated": True, "duration": segments[-1]["end"], "words": words, "source": "gemini",
+            "truncated_at": GEMINI_SECONDS if segments[-1]["start"] >= GEMINI_SECONDS - 60 else None}
+
+
+def captions_or_transcript(vid: str, language: str = "auto") -> dict:
+    """YouTube's own captions first (exact and free); Gemini's transcript when YouTube refuses or has none."""
+    try:
+        return {**captions(vid, language), "source": "youtube"}
+    except AppError as e:
+        if e.code not in ("YOUTUBE_BLOCKED", "NO_CAPTIONS"):
+            raise
+        return gemini_transcript(vid)
 
 
 def fmt(seconds: float) -> str:

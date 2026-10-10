@@ -140,7 +140,7 @@ export default function Home() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <div className="mx-auto max-w-[1680px] px-4 sm:px-6 lg:px-10">
       {/* ------------------------------------------------------------ for you: only for returning learners */}
       <ForYou lessonIds={lessons ? new Set(lessons.map((l) => l.id)) : null} />
       <div className="pt-4">

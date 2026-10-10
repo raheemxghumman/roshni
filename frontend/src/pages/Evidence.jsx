@@ -52,7 +52,7 @@ export default function Evidence() {
   const planted = stress.reduce((n, s) => n + s.planted, 0)
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6">
+    <div className="mx-auto max-w-[1680px] px-4 pb-10 pt-8 sm:px-6 lg:px-10">
       <Pill tone="accent" icon={FlaskConical}>
         Evidence
       </Pill>

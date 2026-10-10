@@ -26,11 +26,14 @@ def create_video(body: VideoRequest) -> dict:
     if not video:
         demo_guard("notes for this video")
         meta = youtube.metadata(vid)
-        caps = youtube.captions(vid, body.language)
+        caps = youtube.captions_or_transcript(vid, body.language)  # YouTube captions, or Gemini's transcript if blocked
         notes = youtube.make_notes(caps["segments"])
         video = {"id": key, "video_id": vid, "url": f"https://www.youtube.com/watch?v={vid}", "created_at": now(), **meta,
                  "language": caps["language"], "language_name": caps["language_name"], "generated_captions": caps["generated"],
+                 "caption_source": caps.get("source", "youtube"),
                  "duration": caps["duration"], "words": caps["words"], "segments": caps["segments"], **notes}
+        if caps.get("truncated_at"):
+            video["truncated"], video["covered_until"] = True, caps["truncated_at"]
         cache.put_json("videos", key, video)
     result = dict(video)
     if body.lesson_id:

@@ -18,7 +18,7 @@ export default function VideoPage({ id }) {
   useEffect(load, [id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6">
+    <div className="mx-auto max-w-[1680px] px-4 pb-10 pt-6 sm:px-6 lg:px-10">
       <a href="#/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-ink">
         <ArrowLeft className="size-4" aria-hidden /> Lessons
       </a>

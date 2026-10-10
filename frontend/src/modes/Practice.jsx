@@ -309,7 +309,7 @@ function Setup({ config, update, info, error, notice, onStart, onReview, onRetry
           </div>
         </Card>
       </div>
-      <aside className="space-y-5">
+      <aside className="space-y-5 lg:sticky lg:top-[7.6rem] lg:max-h-[calc(100vh-8.6rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:pb-2 lg:pr-1">
         <Card>
           <CardHeader icon={Trophy} title="Your progress" subtitle={history.length ? `${history.length} quiz${history.length > 1 ? 'zes' : ''} on this page` : 'Your scores will appear here'} />
           <div className="p-5">
@@ -984,7 +984,7 @@ function QuizResults({ report, quizId, quizLevel, spoken, onNavigate, onRetryWea
         )}
       </div>
 
-      <aside className="space-y-5">
+      <aside className="space-y-5 lg:sticky lg:top-[7.6rem] lg:max-h-[calc(100vh-8.6rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:pb-2 lg:pr-1">
         {weak.some((s) => s.missed_facts.length) && (
           <Card>
             <CardHeader icon={GraduationCap} tone="teal" title="What to remember" subtitle="The verified facts behind the questions you missed" />

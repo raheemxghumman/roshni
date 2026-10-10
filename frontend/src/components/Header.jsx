@@ -76,7 +76,7 @@ export default function Header({ route }) {
   const dark = settings.theme === 'dark'
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/75 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-[1680px] items-center gap-3 px-4 sm:px-6 lg:px-10">
         <Logo />
         <nav aria-label="Main" className="ml-6 hidden items-center gap-1 sm:flex">
           {links.map((l) => (

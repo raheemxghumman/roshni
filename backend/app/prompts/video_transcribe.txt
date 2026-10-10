@@ -1,0 +1,6 @@
+# used by services/youtube.py when YouTube's own captions are blocked or missing (Gemini watches the video)
+Transcribe everything that is said in this video, in the language it is spoken, word for word. Do not summarise, translate or add anything.
+Return ONLY JSON: {"language": "en|ur|hi|ps|...", "segments": [{"start": "m:ss", "text": "what is said from this time, about 10-20 seconds of speech"}]}
+Rules:
+- Timestamps must match when the words are spoken, in time order.
+- Leave out music, sound effects and silence. If nobody speaks, return {"language": "", "segments": []}.

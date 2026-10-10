@@ -206,7 +206,7 @@ export default function Listen({ lesson, focus }) {
         </ol>
       </div>
 
-      <aside className="space-y-4" aria-label="Listening options">
+      <aside className="space-y-4 lg:sticky lg:top-[7.6rem] lg:max-h-[calc(100vh-8.6rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:pb-2 lg:pr-1" aria-label="Listening options">
         <Card className="p-5">
           <div className="flex items-center gap-2">
             <Headphones className="size-5 text-brand" aria-hidden />

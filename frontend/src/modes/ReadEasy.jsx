@@ -306,6 +306,7 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
             })}
           </>
         )}
+        {data && fg?.status !== 'unavailable' && onNavigate && <PracticeTeaser onOpen={() => onNavigate({ tab: 'practice' })} />}
         <AskSentence
           lessonId={lesson.id}
           sentence={ask?.sentence || ''}
@@ -315,11 +316,10 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
         />
       </div>
 
-      <aside className="space-y-4" aria-label="Lesson tools">
+      <aside className="space-y-4 lg:sticky lg:top-[7.6rem] lg:max-h-[calc(100vh-8.6rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:pb-2 lg:pr-1" aria-label="Lesson tools">
         {data && <FactGuardCard fg={fg} sections={lesson.sections} lessonId={lesson.id} level={level} />}
         {data && <ReadabilityCard readability={data.readability} />}
         <GlossaryCard state={glossary} onRetry={loadGlossary} selected={selectedTerm} onSelect={setSelectedTerm} />
-        {data && fg?.status !== 'unavailable' && onNavigate && <PracticeTeaser onOpen={() => onNavigate({ tab: 'practice' })} />}
       </aside>
     </div>
   )

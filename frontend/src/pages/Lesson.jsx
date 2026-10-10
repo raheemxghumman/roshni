@@ -134,7 +134,7 @@ export default function Lesson({ id, tab: initialTab, params = {} }) {
   }
   if (!lesson) {
     return (
-      <div className="mx-auto max-w-7xl space-y-4 px-4 py-8 sm:px-6">
+      <div className="mx-auto max-w-[1680px] space-y-4 px-4 py-8 sm:px-6 lg:px-10">
         <Skeleton className="h-10 w-2/3" />
         <Skeleton className="h-12 w-full" />
         <Skeleton className="h-96 w-full" />
@@ -145,7 +145,7 @@ export default function Lesson({ id, tab: initialTab, params = {} }) {
   const words = lesson.sections.reduce((n, s) => n + (s.text?.split(/\s+/).filter(Boolean).length || 0), 0)
   const figures = lesson.sections.flatMap((s) => s.blocks).filter((b) => b.type === 'figure').length
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-6">
+    <div className="mx-auto max-w-[1680px] px-4 pb-10 sm:px-6 lg:px-10">
       <div className="pt-6">
         <a href="#/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-ink">
           <ArrowLeft className="size-4" aria-hidden /> Lessons

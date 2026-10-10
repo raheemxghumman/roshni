@@ -151,7 +151,11 @@ export function VideoView({ video, relevance, jump }) {
           <div className="mt-2 flex flex-wrap gap-2">
             {video.author && <Pill>{video.author}</Pill>}
             <Pill>{formatTime(video.duration)}</Pill>
-            <Pill tone={video.generated_captions ? 'warn' : 'teal'}>{video.language_name || video.language} captions{video.generated_captions ? ' · auto-generated' : ' · made by people'}</Pill>
+            {video.caption_source === 'gemini' ? (
+              <Pill tone="info">Transcript written by Gemini (YouTube captions were unavailable)</Pill>
+            ) : (
+              <Pill tone={video.generated_captions ? 'warn' : 'teal'}>{video.language_name || video.language} captions{video.generated_captions ? ' · auto-generated' : ' · made by people'}</Pill>
+            )}
             <Pill tone={fg.status === 'green' ? 'ok' : fg.status === 'unavailable' ? 'info' : 'warn'} icon={ShieldCheck}>
               {fg.status === 'unavailable' ? 'Fact Guard was busy' : `${fg.kept}/${fg.total} notes confirmed by the video`}
             </Pill>
@@ -164,7 +168,8 @@ export function VideoView({ video, relevance, jump }) {
           </p>
         )}
         {video.truncated && <p className="rounded-2xl bg-surface-2 px-4 py-3 text-sm">This is a long video. The notes cover the first {formatTime(video.covered_until)}.</p>}
-        {video.generated_captions && <p className="text-sm text-muted">Auto-generated captions can mishear words. Fact Guard checks the notes against them, so a mistake in the captions can still reach the notes: rewatch anything that looks wrong.</p>}
+        {video.caption_source === 'gemini' && <p className="text-sm text-muted">YouTube didn't give this server the captions, so Gemini watched the video and wrote the transcript. Fact Guard checks every note against that transcript; rewatch anything that looks wrong.</p>}
+        {video.generated_captions && video.caption_source !== 'gemini' && <p className="text-sm text-muted">Auto-generated captions can mishear words. Fact Guard checks the notes against them, so a mistake in the captions can still reach the notes: rewatch anything that looks wrong.</p>}
 
         <Card>
           <CardHeader
@@ -224,7 +229,7 @@ export function VideoView({ video, relevance, jump }) {
         </Card>
       </div>
 
-      <aside className="space-y-5">
+      <aside className="space-y-5 lg:sticky lg:top-[7.6rem] lg:max-h-[calc(100vh-8.6rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:pb-2 lg:pr-1">
         {video.key_terms?.length > 0 && (
           <Card>
             <CardHeader icon={ShieldCheck} tone="accent" title="Key terms" subtitle="As used in the video" />

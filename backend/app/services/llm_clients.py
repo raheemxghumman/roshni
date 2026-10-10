@@ -156,13 +156,20 @@ def parse_json(text: str) -> dict:
 
 # ---------------------------------------------------------------- Gemini (vision + fallback text)
 
-def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/jpeg", models: list[str] | None = None) -> tuple[dict, str]:
-    """Tries each model in turn; within a model, every Gemini key (each has its own free quota)."""
+def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/jpeg", models: list[str] | None = None,
+                video_url: str | None = None, video_seconds: int | None = None) -> tuple[dict, str]:
+    """Tries each model in turn; within a model, every Gemini key (each has its own free quota).
+    video_url: a public YouTube link Gemini watches itself (first video_seconds only, low resolution to save quota)."""
     s = get_settings()
     last_error: Exception | None = None
     all_models = models or s.gemini_models
     candidates = [m for m in all_models if not cooling(m)] or all_models
     contents = [types.Part.from_bytes(data=image, mime_type=mime), prompt] if image else prompt
+    extra = {}
+    if video_url:
+        meta = types.VideoMetadata(end_offset=f"{video_seconds}s") if video_seconds else None
+        contents = [types.Part(file_data=types.FileData(file_uri=video_url), video_metadata=meta), prompt]
+        extra["media_resolution"] = types.MediaResolution.MEDIA_RESOLUTION_LOW
     for model in candidates:
         for _ in range(max(1, len(_usable_keys(model)))):
             try:
@@ -175,7 +182,7 @@ def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/j
                     resp = _gemini(key).models.generate_content(
                         model=model,
                         contents=contents,
-                        config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1),
+                        config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1, **extra),
                     )
                     return parse_json(resp.text), model
                 except genai_errors.ClientError as e:

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { AlertTriangle, LoaderCircle, RotateCcw, X } from 'lucide-react'
 import { EASE } from './motion'
@@ -162,7 +163,8 @@ export function Drawer({ open, onClose, title, children, width = 'max-w-xl' }) {
       lastFocus.current?.focus?.()
     }
   }, [open, onClose])
-  return (
+  // drawn on <body>: an ancestor with a blur or transform (like the sticky header) traps position:fixed inside it
+  return createPortal(
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-50 flex justify-end" style={{ perspective: 1600 }}>
@@ -191,7 +193,8 @@ export function Drawer({ open, onClose, title, children, width = 'max-w-xl' }) {
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   )
 }
 
