@@ -693,7 +693,8 @@
      "section_id": "s1",
      "before": "Solids and liquids are more obviously matter.",
      "after": "",
-     "caught": false
+     "caught": false,
+     "fact_id": "f2"
     },
     {
      "type": "added_claim",
@@ -716,7 +717,7 @@
    "sabotaged_report": {
     "status": "amber",
     "total": 26,
-    "kept": 25,
+    "kept": 26,
     "facts": [
      {
       "id": "f1",
@@ -741,9 +742,9 @@
       "section_id": "s1",
       "text": "Solids take up space",
       "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "A solid is rigid and has a definite shape",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f4",

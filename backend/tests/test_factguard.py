@@ -66,3 +66,9 @@ def test_evidence_must_state_the_fact():
     assert not factguard.supports("About 500 red blood cells could fit on a pin head.", "About 250 red blood cells could fit on the head of a pin.")
     assert factguard.supports("Most living things get their energy from photosynthesis.", "Photosynthesis provides most of the energy required by living things.")
     assert factguard.supports("a pendulum might swing once every 0.75 s.", "A pendulum may make one full swing every 0.75 s.")
+
+
+def test_deleted_fact_has_no_supporting_sentence():
+    sections = [{"id": "s1", "text": "Time is change. A lecture lasted 50 min."}]
+    assert factguard.best_sentence_overlap("Photosynthesis releases oxygen into the atmosphere.", sections) < 0.25
+    assert factguard.best_sentence_overlap("A lecture lasted 50 minutes.", sections) >= 0.25

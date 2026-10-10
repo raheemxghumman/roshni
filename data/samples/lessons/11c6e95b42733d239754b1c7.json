@@ -792,7 +792,8 @@
      "section_id": "s1",
      "before": "Weathering and erosion play a role.",
      "after": "",
-     "caught": false
+     "caught": true,
+     "fact_id": "f8"
     },
     {
      "type": "added_claim",
@@ -802,7 +803,7 @@
      "caught": true
     }
    ],
-   "caught": 1,
+   "caught": 2,
    "total_planted": 2,
    "sabotaged_sections": [
     {
@@ -815,7 +816,7 @@
    "sabotaged_report": {
     "status": "amber",
     "total": 31,
-    "kept": 25,
+    "kept": 29,
     "facts": [
      {
       "id": "f1",
@@ -851,7 +852,7 @@
       "source_sentence": "Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled.",
       "status": "missing",
       "evidence": "Matter does not flow like energy. It is conserved and recycled.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": "No sentence of the rewrite carries this fact's key words."
      },
      {
       "id": "f5",
@@ -867,18 +868,18 @@
       "section_id": "s1",
       "text": "The six most common elements associated with organic molecules take a variety of chemical forms.",
       "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "These elements take many chemical forms.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f7",
       "section_id": "s1",
       "text": "The six most common elements associated with organic molecules may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
       "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "They can stay in the atmosphere for a long time. They can also be on land or in water. They may be beneath Earth’s surface.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f8",
@@ -1020,9 +1021,9 @@
       "section_id": "s1",
       "text": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers used in agriculture.",
       "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "It is a main ingredient in artificial fertilizers. Nitrogen is also in these fertilizers.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f24",
@@ -1056,9 +1057,9 @@
       "section_id": "s1",
       "text": "The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected.",
       "source_sentence": "The cycling of these elements is interconnected.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "The cycling of these elements is interconnected.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f28",

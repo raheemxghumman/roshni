@@ -66,10 +66,9 @@ def create_lesson(file: UploadFile = File(...)) -> dict:
     existing = cache.get_json("lessons", lesson_id)
     if existing:
         return {**existing, "from_cache": True}
-    demo_guard("this page")
-
     started = time.perf_counter()
-    prepared = ingest.prepare(data, file.filename or "")
+    prepared = ingest.prepare(data, file.filename or "")  # validates the file first, so errors are specific even in demo mode
+    demo_guard("this page")
     read = ocr.read_page(prepared)
     title, sections, warnings = structure.build_sections(read["blocks"])
     for sec in sections:

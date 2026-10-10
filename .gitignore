@@ -36,3 +36,6 @@ Thumbs.db
 # Logs
 *.log
 backend/run_dev.sh.bak
+
+# Internal eval progress
+eval/results/_*

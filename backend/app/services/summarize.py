@@ -20,20 +20,23 @@ def summarize(transcript: str) -> tuple[dict, str]:
 
 
 def summarize_checked(transcript: str) -> tuple[dict, dict, str]:
-    """Summary + support check, with one repair round when Fact Guard flags claims."""
+    """Summary + support check, with up to two repair rounds when Fact Guard flags claims."""
     summary, model = summarize(transcript)
     check = check_support(transcript, summary["summary"], model)
     rounds = [{"round": 1, "action": "Checked the first summary", "status": check["status"], "kept": check["kept"], "total": check["total"]}]
-    if check["status"] == "amber":
+    for round_no in (2, 3):
+        if check["status"] != "amber":
+            break
         flagged = [{"claim": c["claim"], "problem": c["status"], "note": c["note"]} for c in check["claims"] if c["status"] != "supported"]
         data, _ = text_json(fill(load_prompt("summary_repair.txt"), flagged_json=json.dumps(flagged, ensure_ascii=False),
                                  summary_json=json.dumps(summary["summary"], ensure_ascii=False), transcript=transcript[:14000]),
                             "rewrite", max_tokens=2000)
         fixed = [str(b).strip() for b in data.get("summary") or [] if str(b).strip()][:6]
-        if fixed:
-            summary["summary"] = fixed
-            check = check_support(transcript, fixed, model)
-            rounds.append({"round": 2, "action": "Fixed the flagged bullets and checked again", "status": check["status"], "kept": check["kept"], "total": check["total"]})
+        if not fixed:
+            break
+        summary["summary"] = fixed
+        check = check_support(transcript, fixed, model)
+        rounds.append({"round": round_no, "action": "Fixed the flagged bullets and checked again", "status": check["status"], "kept": check["kept"], "total": check["total"]})
     check["rounds"] = rounds
     return summary, check, model
 

@@ -264,4 +264,6 @@ h1 { font-weight: 700; }
     scroll-behavior: auto !important;
   }
   .book-leaf { animation: none; }
+  /* never leave content waiting on a fade: show anything parked at opacity 0 immediately */
+  [style*="opacity: 0"], [style*="opacity:0"] { opacity: 1 !important; }
 }

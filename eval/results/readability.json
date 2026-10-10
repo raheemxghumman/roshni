@@ -8,6 +8,6 @@
   "dataset": "OpenStax textbook pages (CC BY 4.0)",
   "n": "10 rewrites of 5 pages",
   "method": "Flesch-Kincaid grade (textstat), original vs Fact-Guarded rewrite",
-  "models": "qwen3.8-27b / gemini-2.5-flash",
+  "models": "rewriter: gemini-3-flash-preview, gemini-flash-latest, qwen/qwen3.8-27b",
   "data_type": "real"
 }

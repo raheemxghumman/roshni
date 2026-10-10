@@ -8,6 +8,6 @@
   "dataset": "OpenStax textbook pages (CC BY 4.0)",
   "n": "291 facts, 10 rewrites",
   "method": "Independent checker extracts facts, audits rewrite, repairs up to 2 rounds",
-  "models": "checker: gpt-oss-120b",
+  "models": "checker: gemini-3-flash-preview, gemini-3.5-flash, gemini-flash-latest, openai/gpt-oss-120b, openai/gpt-oss-20b",
   "data_type": "real"
 }

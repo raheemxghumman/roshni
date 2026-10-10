@@ -155,8 +155,13 @@ export function LectureView({ lecture }) {
             </ul>
             {fg.rounds?.length > 1 && (
               <p className="mt-4 rounded-lg bg-surface-2 px-3 py-2 text-sm text-muted">
-                The first summary had {fg.rounds[0].total - fg.rounds[0].kept} point(s) the teacher didn&apos;t say. Fact Guard flagged them and they were fixed.
+                {fg.status === 'green'
+                  ? `The first summary had ${fg.rounds[0].total - fg.rounds[0].kept} point(s) the teacher didn't say exactly. Fact Guard flagged them and they were fixed.`
+                  : `Fact Guard still flags ${fg.total - fg.kept} point(s) after ${fg.rounds.length - 1} repair round(s). Check them against the transcript.`}
               </p>
+            )}
+            {fg.rounds?.length <= 1 && fg.status === 'amber' && (
+              <p className="mt-4 rounded-lg bg-surface-2 px-3 py-2 text-sm text-muted">Fact Guard flags {fg.total - fg.kept} point(s). Check them against the transcript.</p>
             )}
             {fg.claims?.length > 0 && (
               <Button className="mt-4 w-full" icon={ListChecks} onClick={() => setOpen(true)}>

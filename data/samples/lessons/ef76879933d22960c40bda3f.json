@@ -891,7 +891,8 @@
      "section_id": "s1",
      "before": "All living organisms on earth consist of one or more cells.",
      "after": "",
-     "caught": true
+     "caught": true,
+     "fact_id": "f1"
     },
     {
      "type": "added_claim",

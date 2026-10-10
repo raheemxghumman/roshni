@@ -1,0 +1,13 @@
+{
+  "metric": "factguard_planted_errors",
+  "date": "2026-10-10",
+  "title": "Planted errors caught by Fact Guard",
+  "display": "28/28",
+  "value": 1.0,
+  "detail": "deleted facts: 10/10; invented claims: 10/10; changed numbers: 8/8. Errors are planted by code, so the right answer is known in advance.",
+  "dataset": "Sabotaged rewrites of OpenStax pages (synthetic errors, real text)",
+  "n": "28 planted errors on 5 pages × 2 seeds",
+  "method": "Plant changed number + deleted fact + invented claim, run the audit, check each was flagged",
+  "models": "checker: gemini-3.1-flash-lite, gemini-3.5-flash, openai/gpt-oss-120b, openai/gpt-oss-20b",
+  "data_type": "synthetic"
+}

@@ -33,8 +33,8 @@
  ],
  "text": "Good morning class. Today we continue with motion. Remember, time is change. The SI unit of time is the second. Now, velocity is not the same as speed. Average velocity is displacement divided by the time of travel. So if a car moves 100 meters east in 20 seconds, its average velocity is 5 meters per second east. Speed has no direction. For homework, please solve questions 3 to 6 from section 2.3 and bring your notebooks on Monday.",
  "summary": [
-  "Time is change; the SI unit of time is the second.",
-  "Velocity differs from speed because velocity includes direction.",
+  "Time is defined as change, with the SI unit being the second.",
+  "Velocity is not the same as speed.",
   "Average velocity equals displacement divided by the time of travel.",
   "A car moving 100 meters east in 20 seconds has 5 meters per second east velocity.",
   "Speed has no direction."
@@ -42,15 +42,15 @@
  "key_terms": [
   {
    "term": "time",
-   "meaning": "Change; SI unit is the second."
+   "meaning": "Change, measured in seconds."
   },
   {
    "term": "velocity",
-   "meaning": "Displacement divided by time; includes direction."
+   "meaning": "Displacement divided by time, includes direction."
   },
   {
    "term": "speed",
-   "meaning": "Rate of travel without direction."
+   "meaning": "Rate of motion without direction."
   }
  ],
  "actions": [
@@ -58,23 +58,23 @@
   "Bring your notebooks on Monday."
  ],
  "factguard": {
-  "status": "amber",
-  "kept": 3,
+  "status": "green",
+  "kept": 5,
   "total": 5,
   "claims": [
    {
     "id": "c1",
-    "claim": "Time is change; the SI unit of time is the second.",
+    "claim": "Time is defined as change, with the SI unit being the second.",
     "status": "supported",
     "evidence": "Remember, time is change. The SI unit of time is the second.",
     "note": ""
    },
    {
     "id": "c2",
-    "claim": "Velocity differs from speed because velocity includes direction.",
-    "status": "changed",
-    "evidence": "Now, velocity is not the same as speed. Speed has no direction.",
-    "note": "adds reason \"because velocity includes direction\" which is not explicitly stated"
+    "claim": "Velocity is not the same as speed.",
+    "status": "supported",
+    "evidence": "velocity is not the same as speed.",
+    "note": ""
    },
    {
     "id": "c3",
@@ -86,9 +86,9 @@
    {
     "id": "c4",
     "claim": "A car moving 100 meters east in 20 seconds has 5 meters per second east velocity.",
-    "status": "changed",
-    "evidence": "So if a car moves 100 meters east in 20 seconds, its average velocity is 5 meters per second east.",
-    "note": "omits the word \"average\""
+    "status": "supported",
+    "evidence": "if a car moves 100 meters east in 20 seconds, its average velocity is 5 meters per second east.",
+    "note": ""
    },
    {
     "id": "c5",
@@ -98,21 +98,21 @@
     "note": ""
    }
   ],
-  "checker_model": "openai/gpt-oss-120b",
+  "checker_model": "gemini-3.1-flash-lite",
   "rewriter_model": "qwen/qwen3.8-27b",
   "rounds": [
    {
     "round": 1,
     "action": "Checked the first summary",
     "status": "amber",
-    "kept": 4,
+    "kept": 3,
     "total": 5
    },
    {
     "round": 2,
     "action": "Fixed the flagged bullets and checked again",
-    "status": "amber",
-    "kept": 3,
+    "status": "green",
+    "kept": 5,
     "total": 5
    }
   ]
@@ -122,6 +122,6 @@
  "models": {
   "speech_to_text": "whisper-large-v3-turbo",
   "summary": "qwen/qwen3.8-27b",
-  "checker": "openai/gpt-oss-120b"
+  "checker": "gemini-3.1-flash-lite"
  }
 }

@@ -31,7 +31,7 @@ write(
     dataset="OpenStax textbook pages (CC BY 4.0)",
     n=f"{len(rows)} rewrites of {len(lessons())} pages",
     method="Flesch-Kincaid grade (textstat), original vs Fact-Guarded rewrite",
-    models="qwen3.8-27b / gemini-2.5-flash",
+    models="rewriter: " + ", ".join(sorted({fg.get("rewriter_model", "") for *_, fg in rows if fg.get("rewriter_model")})),
     data_type="real",
 )
 
@@ -46,6 +46,6 @@ write(
     dataset="OpenStax textbook pages (CC BY 4.0)",
     n=f"{total} facts, {len(rows)} rewrites",
     method="Independent checker extracts facts, audits rewrite, repairs up to 2 rounds",
-    models="checker: gpt-oss-120b",
+    models="checker: " + ", ".join(sorted({fg["checker_model"] for *_, fg in rows if fg.get("checker_model")})),
     data_type="real",
 )

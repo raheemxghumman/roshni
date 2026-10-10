@@ -1,0 +1,13 @@
+{
+  "metric": "processing_time",
+  "date": "2026-10-10",
+  "title": "Time to make a lesson",
+  "display": "26 s per page",
+  "value": 26.1,
+  "detail": "Reading a phone-style photo took 5 s on average (5 pages); simplifying with Fact Guard took 22 s (2 pages), including waits for free-tier rate limits. Adapting one page by hand for three kinds of learner takes a teacher far longer (measure it on-site with a stopwatch).",
+  "dataset": "Fresh uploads of phone-photo-degraded OpenStax pages (no cache)",
+  "n": "5 reads, 2 simplifications",
+  "method": "Wall-clock time of the API calls on the free tiers",
+  "models": "gemini (read), qwen + gpt-oss (simplify + Fact Guard)",
+  "data_type": "real"
+}

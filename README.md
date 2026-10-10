@@ -37,6 +37,16 @@ Reading a printed page, describing a diagram for a blind student, rewriting whil
 All numbers come from scripts in `eval/` and are shown live on the app's **Evidence** page with their dataset and sample size. Synthetic test data is labelled.
 
 <!-- EVIDENCE-TABLE -->
+| Metric | Result | What it means | Data | Sample |
+|---|---|---|---|---|
+| Facts kept after Fact Guard | **99%** | 287 of 291 extracted facts verified with a quote from the final rewrite; 9 of 10 rewrites fully green. | OpenStax textbook pages (CC BY 4.0) (real) | 291 facts, 10 rewrites |
+| Planted errors caught by Fact Guard | **28/28** | deleted facts: 10/10; invented claims: 10/10; changed numbers: 8/8. Errors are planted by code, so the right answer is known in advance. | Sabotaged rewrites of OpenStax pages (synthetic errors, real text) (**synthetic**) | 28 planted errors on 5 pages × 2 seeds |
+| False alarms on unchanged text | **0.0%** | Each original page was audited against itself. 0 flag(s) were raised across 142 facts where nothing had changed. | OpenStax textbook pages (CC BY 4.0) (real) | 142 facts on 5 pages |
+| Reading level lowered | **Grade 11.0 → 6.3** | Easier: grade 11.0 → 6.3, 19 → 8 words per sentence (5 pages); Simplest: grade 11.0 → 6.2, 19 → 7 words per sentence (5 pages) | OpenStax textbook pages (CC BY 4.0) (real) | 10 rewrites of 5 pages |
+| Page-reading accuracy | **99.98% correct on hard photos** | Character error rate 0.00% on clean pages and 0.00% on pages degraded like phone photos (tilt, blur, dim light, noise). On deliberately hard photos (6-8° tilt, heavy blur, dim and uneven light, strong JPEG compression) it was 0.02%. Lower is better. Ground truth is the OpenStax source text. | OpenStax pages rendered as images, clean and phone-photo-degraded (real) | 10 page images + 5 hard images |
+| Time to make a lesson | **26 s per page** | Reading a phone-style photo took 5 s on average (5 pages); simplifying with Fact Guard took 22 s (2 pages), including waits for free-tier rate limits. Adapting one page by hand for three kinds of learner takes a teacher far longer (measure it on-site with a stopwatch). | Fresh uploads of phone-photo-degraded OpenStax pages (no cache) (real) | 5 reads, 2 simplifications |
+| Lecture transcription accuracy | **100.0% of words correct** | Word error rate 0.00% on a 35-second lecture clip with a known script. | Synthetic lecture clip (text-to-speech voice, known script) (**synthetic**) | 1 clip, 79 words |
+<!-- /EVIDENCE-TABLE -->
 
 ## Run it
 ```bash

@@ -739,7 +739,8 @@
      "section_id": "s1",
      "before": "A cell is the smallest unit of a living thing.",
      "after": "",
-     "caught": true
+     "caught": true,
+     "fact_id": "f1"
     },
     {
      "type": "added_claim",

@@ -649,7 +649,8 @@
      "section_id": "s2",
      "before": "The elapsed time is 50 min.",
      "after": "",
-     "caught": false
+     "caught": true,
+     "fact_id": "f20"
     },
     {
      "type": "added_claim",
@@ -659,7 +660,7 @@
      "caught": true
     }
    ],
-   "caught": 2,
+   "caught": 3,
    "total_planted": 3,
    "sabotaged_sections": [
     {
@@ -678,7 +679,7 @@
    "sabotaged_report": {
     "status": "amber",
     "total": 21,
-    "kept": 16,
+    "kept": 20,
     "facts": [
      {
       "id": "f1",
@@ -712,9 +713,9 @@
       "section_id": "s2",
       "text": "Time is defined by how it is measured.",
       "source_sentence": "This is the case with time.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "Time works this way too.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f5",
@@ -739,9 +740,9 @@
       "section_id": "s2",
       "text": "In physics, time is defined as change, or the interval over which change occurs.",
       "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "time is change.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f8",
@@ -802,9 +803,9 @@
       "section_id": "s2",
       "text": "A pendulum can be used to measure time by connecting it to a clock mechanism that registers time on a dial.",
       "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "We can also connect it to a clock.",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f15",
@@ -829,9 +830,9 @@
       "section_id": "s2",
       "text": "An example of elapsed time is how long it takes an airplane passenger to get from his seat to the back of the plane.",
       "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
-      "status": "missing",
+      "status": "kept",
       "evidence": "how long does a passenger to walk to the back of a plane?",
-      "note": "The quoted words don't state this fact, so it was not verified."
+      "note": ""
      },
      {
       "id": "f18",

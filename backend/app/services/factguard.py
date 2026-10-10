@@ -78,6 +78,14 @@ def supports(evidence: str, fact: str) -> bool:
     return len(fact_stems & _stems(evidence)) / len(fact_stems) >= 0.25
 
 
+def best_sentence_overlap(fact: str, sections: list[dict]) -> float:
+    """Share of the fact's key words found in the single best-matching sentence of the rewrite."""
+    stems = _stems(fact)
+    if not stems:
+        return 1.0
+    return max((len(stems & _stems(sent)) / len(stems) for s in sections for sent in split_sentences(s.get("text", ""))), default=0.0)
+
+
 def extract_facts(original_sections: list[dict], avoid_family: str | None) -> tuple[list[dict], str]:
     facts: list[dict] = []
     model = ""
@@ -131,6 +139,8 @@ def audit(facts: list[dict], original_sections: list[dict], rewrite_sections: li
             status, note = "missing", "The checker could not quote this fact from the rewrite."
         elif status == "kept" and not supports(evidence, f["text"]):
             status, note = "missing", "The quoted words don't state this fact, so it was not verified."
+        elif status == "kept" and best_sentence_overlap(f["text"], rewrite_sections) < 0.25:
+            status, note = "missing", "No sentence of the rewrite carries this fact's key words."
         results.append({**f, "status": status, "evidence": evidence, "note": note})
 
     missing_tokens = []
@@ -222,16 +232,25 @@ def sabotage(rewrite_sections: list[dict], seed: str, facts: list[dict] | None =
 
     candidates = [x for x in sentences if len(x[2].split()) >= 6 and not any(p.get("before") == x[2] for p in planted)]
     if candidates:
-        if facts:  # delete the sentence that carries the most fact content, so the test is fair
-            candidates.sort(key=lambda x: _fact_overlap(x[2], facts), reverse=True)
-            i, j, sent = rng.choice(candidates[:3])
+        if facts:
+            # Fair test: delete a sentence that carries a fact which no OTHER sentence of the rewrite states,
+            # so removing it really does remove the fact.
+            def unique_fact(x):
+                best = max(facts, key=lambda f: len(_stems(f["text"]) & _stems(x[2])) / max(1, len(_stems(f["text"]))))
+                others = [y for y in sentences if y is not x and supports(y[2], best["text"])]
+                return supports(x[2], best["text"]) and not others
+            fair = [x for x in candidates if unique_fact(x)]
+            pool = fair or sorted(candidates, key=lambda x: _fact_overlap(x[2], facts), reverse=True)[:3]
+            i, j, sent = rng.choice(pool)
         else:
             i, j, sent = rng.choice(candidates)
         parts = split_sentences(sections[i]["text"])
         if sent in parts and len(parts) > 1:
             parts.remove(sent)
             sections[i]["text"] = " ".join(parts)
-            planted.append({"type": "deleted_fact", "section_id": sections[i]["id"], "before": sent, "after": ""})
+            target = max(facts, key=lambda f: len(_stems(f["text"]) & _stems(sent)) / max(1, len(_stems(f["text"])))) if facts else None
+            planted.append({"type": "deleted_fact", "section_id": sections[i]["id"], "before": sent, "after": "",
+                            "fact_id": target["id"] if target else None})
 
     target = rng.randrange(len(sections))
     claim = rng.choice(FAKE_CLAIMS)
@@ -252,6 +271,10 @@ def caught(planted: list[dict], report: dict) -> list[dict]:
             hit = any(f["status"] != "kept" and f["section_id"] == p["section_id"] and
                       any(n in normalize.for_match(f["text"]) for n in original_numbers) for f in report["facts"]) \
                 or any(t["section_id"] == p["section_id"] for t in report["missing_tokens"])
+        elif p["type"] == "deleted_fact" and p.get("fact_id"):
+            # the fact the deleted sentence carried must now be flagged, or a number it contained reported missing
+            hit = any(f["id"] == p["fact_id"] and f["status"] != "kept" for f in report["facts"])                 or any(t["section_id"] == p["section_id"] and normalize.for_match(t["token"]) in normalize.for_match(p["before"])
+                       for t in report["missing_tokens"])
         elif p["type"] == "deleted_fact":
             before = _words(p["before"])
             for f in report["facts"]:

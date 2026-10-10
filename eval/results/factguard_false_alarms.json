@@ -1,0 +1,13 @@
+{
+  "metric": "factguard_false_alarms",
+  "date": "2026-10-10",
+  "title": "False alarms on unchanged text",
+  "display": "0.0%",
+  "value": 0.0,
+  "detail": "Each original page was audited against itself. 0 flag(s) were raised across 142 facts where nothing had changed.",
+  "dataset": "OpenStax textbook pages (CC BY 4.0)",
+  "n": "142 facts on 5 pages",
+  "method": "Audit the original text against itself; every flag is a false alarm",
+  "models": "checker: gemini-3.1-flash-lite, gemini-3.5-flash, openai/gpt-oss-120b, openai/gpt-oss-20b",
+  "data_type": "real"
+}

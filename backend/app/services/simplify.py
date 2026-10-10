@@ -15,6 +15,7 @@ LEVELS = {
     "simplest": {"level_name": "Simplest", "target_grade": "4 to 5", "max_words": 10},
 }
 MAX_REPAIR_ROUNDS = 2
+REWRITE_CHUNK_WORDS = 450  # keeps each rewrite's output under the free output-token limit
 
 
 def _clean(text: str) -> str:
@@ -32,7 +33,7 @@ def rewrite(original_sections: list[dict], level: str) -> tuple[list[dict], str]
     cfg = LEVELS[level]
     out: dict[str, str] = {}
     model = ""
-    for chunk in factguard.chunk_sections(original_sections):
+    for chunk in factguard.chunk_sections(original_sections, REWRITE_CHUNK_WORDS):
         data, model = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(chunk), **cfg), "rewrite", max_tokens=3500)
         for s in data.get("sections") or []:
             if isinstance(s, dict) and s.get("id") and (s.get("text") or "").strip():

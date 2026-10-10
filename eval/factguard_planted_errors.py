@@ -8,11 +8,35 @@
 Usage: python eval/factguard_planted_errors.py [--seeds 2]   (run scripts/warm_cache.py first)
 """
 import argparse
+import json
 import time
 
 from common import lessons, original_sections, write
 from app.services import factguard
+from app.errors import AppError
 from app.services.llm_clients import family
+
+PROGRESS = __import__("common").RESULTS / "_planted_progress.json"
+
+
+def audit_patiently(*args):
+    """Free tiers can all be busy at once; wait and retry rather than crash."""
+    for attempt in range(8):
+        try:
+            return factguard.audit(*args)
+        except AppError as e:
+            if e.code not in ("FACTGUARD_UNAVAILABLE", "RATE_LIMITED"):
+                raise
+            print(f"   all checkers busy, waiting 60 s (attempt {attempt + 1})", flush=True)
+            time.sleep(60)
+    raise SystemExit("Checkers stayed unavailable; re-run later to resume.")
+
+
+progress = json.loads(PROGRESS.read_text(encoding="utf-8")) if PROGRESS.exists() else {}
+
+
+def save():
+    PROGRESS.write_text(json.dumps(progress, indent=1), encoding="utf-8")
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--seeds", type=int, default=2)
@@ -32,25 +56,33 @@ for lesson in lessons():
     facts = [{k: f[k] for k in ("id", "section_id", "text", "source_sentence")} for f in simplified["factguard"]["facts"]]
     avoid = family(simplified["factguard"]["rewriter_model"])
     for seed in range(args.seeds):
-        sabotaged, planted = factguard.sabotage(simplified["sections"], seed=f"{lesson['id']}-{seed}", facts=facts)
-        report = factguard.audit(facts, source, sabotaged, avoid)
-        checkers.add(report['checker_model'])
-        for p in factguard.caught(planted, report):
+        key = f"{lesson['id']}-{seed}"
+        if key not in progress:
+            sabotaged, planted = factguard.sabotage(simplified["sections"], seed=key, facts=facts)
+            report = audit_patiently(facts, source, sabotaged, avoid)
+            progress[key] = {"caught": factguard.caught(planted, report), "checker": report["checker_model"]}
+            save()
+            time.sleep(3)
+        checkers.add(progress[key]["checker"])
+        for p in progress[key]["caught"]:
             planted_total += 1
             caught_total += p["caught"]
             by_type.setdefault(p["type"], [0, 0])
             by_type[p["type"]][0] += p["caught"]
             by_type[p["type"]][1] += 1
-        print(f"{lesson['title'][:40]:40} seed {seed}: caught {sum(p['caught'] for p in factguard.caught(planted, report))}/{len(planted)}")
-        time.sleep(3)
+        print(f"{lesson['title'][:40]:40} seed {seed}: caught {sum(p['caught'] for p in progress[key]['caught'])}/{len(progress[key]['caught'])}", flush=True)
     # false alarms: original vs itself
-    identity = factguard.audit(facts, source, [{"id": s["id"], "text": s["text"]} for s in source], avoid)
-    checkers.add(identity["checker_model"])
-    flags = (identity["total"] - identity["kept"]) + len(identity["added_claims"]) + len(identity["missing_tokens"])
-    fa_flags += flags
-    fa_facts += identity["total"]
-    print(f"{lesson['title'][:40]:40} identity check: {flags} false flag(s) over {identity['total']} facts")
-    time.sleep(3)
+    key = f"{lesson['id']}-identity"
+    if key not in progress:
+        identity = audit_patiently(facts, source, [{"id": s["id"], "text": s["text"]} for s in source], avoid)
+        progress[key] = {"flags": (identity["total"] - identity["kept"]) + len(identity["added_claims"]) + len(identity["missing_tokens"]),
+                         "facts": identity["total"], "checker": identity["checker_model"]}
+        save()
+        time.sleep(3)
+    checkers.add(progress[key]["checker"])
+    fa_flags += progress[key]["flags"]
+    fa_facts += progress[key]["facts"]
+    print(f"{lesson['title'][:40]:40} identity check: {progress[key]['flags']} false flag(s) over {progress[key]['facts']} facts", flush=True)
 
 if not planted_total:
     raise SystemExit("No sample rewrites found. Run scripts/warm_cache.py first.")
