@@ -14,7 +14,7 @@ OPTIONS = ["Evaporation", "Condensation", "Precipitation", "Transpiration"]
     ("two", 1), ("Number three", 2), ("4", 3), ("the first one", 0), ("fourth", 3),
     ("دو", 1), ("جواب بی", 1), ("تین", 2), ("چار", 3), ("ایک", 0),  # Urdu
     ("دوه", 1), ("درې", 2), ("څلور", 3),  # Pashto
-    ("do", 1), ("teen", 2),  # Roman Urdu
+    ("do", 1), ("Do.", 1), ("number do", 1), ("option do", 1), ("teen", 2),  # Roman Urdu
     ("Condensation", 1), ("I think it's precipitation", 2), ("transpiration.", 3),
 ])
 def test_choices(heard, expected):
@@ -28,7 +28,7 @@ def test_commands(heard, command):
     assert m["command"] == command and m["choice"] is None
 
 
-@pytest.mark.parametrize("heard", ["", "   ", "Thank you.", "B or C", "a plant makes food from light and water", "hmm"])
+@pytest.mark.parametrize("heard", ["", "   ", "Thank you.", "B or C", "a plant makes food from light and water", "hmm", "I do think so", "do it again later"])
 def test_unclear_replies_choose_nothing(heard):
     """Silence, Whisper's 'Thank you.' hallucination, two answers, or a sentence with the article 'a' must not pick an option."""
     assert voice.match(heard, OPTIONS)["choice"] is None

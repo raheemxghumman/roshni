@@ -19,7 +19,8 @@ NUMBERS = {
     2: {"3", "three", "third", "teen", "tin", "تین", "تیسرا", "تیسری", "درې", "دری", "دریم", "तीन"},
     3: {"4", "four", "fourth", "char", "chaar", "چار", "چوتھا", "چوتھی", "څلور", "څلورم", "चार"},
 }
-# English "do" only counts as "two" when clearly led by option/answer/number (not "I do not know")
+# Roman-Urdu "do" (two) counts when it is the whole reply ("do") or led by option/answer/number ("number do"),
+# never inside an English sentence ("I do not know", "I do think so")
 NUMBER_DO = {"do"}
 # words that may be spoken before a choice: "option B", "answer number two", "jawab B", "جواب بی"
 LEAD = {"option", "options", "answer", "letter", "number", "choice", "its", "it's", "is", "the", "my", "i", "say", "choose", "pick",
@@ -57,7 +58,7 @@ def _choices_in(words: list[str], n: int) -> set[int]:
         explicit = i > 0 and words[i - 1] in EXPLICIT_LEAD
         for idx in range(n):
             if w in NUMBER_DO and idx == 1:
-                if explicit or w.isdigit():
+                if explicit or len(words) == 1:
                     found.add(idx)
                 continue
             if w in NUMBERS.get(idx, set()) and (short or led or w.isdigit()):
