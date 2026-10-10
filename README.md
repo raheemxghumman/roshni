@@ -8,7 +8,7 @@ Roshni turns a photo of any printed page, a lecture recording or a YouTube video
 
 | | |
 |---|---|
-| **Live app** | _Render link added after deployment_ |
+| **Live app** | **[roshni-z36n.onrender.com](https://roshni-z36n.onrender.com)** (free plan: the first visit after a quiet spell can take up to a minute to wake) |
 | **Demo deck** | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx): 8 slides, about 5 minutes, two speakers; script, timings and click cues in the speaker notes and [`docs/DEMO.md`](docs/DEMO.md) |
 | **Evidence** | [Measured results](#5-evidence), all reproducible from [`eval/`](eval) |
 

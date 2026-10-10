@@ -175,8 +175,8 @@ export default function Home() {
           </motion.div>
           <motion.dl variants={item} className="mt-10 grid max-w-lg grid-cols-3 gap-3 border-t border-line pt-6 sm:gap-4">
             <div>
-              <dt className="eyebrow text-muted">Learners</dt>
-              <dd className="mt-1 font-display text-lg font-bold sm:text-2xl">3 modes</dd>
+              <dt className="eyebrow text-muted">Ways to learn</dt>
+              <dd className="mt-1 font-display text-lg font-bold sm:text-2xl">5 modes</dd>
             </div>
             <div>
               <dt className="eyebrow text-muted">Facts kept</dt>
