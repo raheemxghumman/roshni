@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { ArrowRight, BookOpen, Captions, FileAudio, FlaskConical, Headphones, MousePointerClick, ScanText, ShieldCheck, Sparkles, Trash2 } from 'lucide-react'
+import { ArrowRight, BookOpen, Captions, FileAudio, FlaskConical, GraduationCap, Headphones, MonitorPlay, MousePointerClick, ScanText, ShieldCheck, Sparkles, Trash2 } from 'lucide-react'
 import { api, apiUrl } from '../lib/api'
 import UploadPanel from '../components/UploadPanel'
 import Hero3D from '../components/Hero3D'
@@ -81,6 +81,8 @@ function LessonCard({ lesson, onDelete }) {
           <div className="flex flex-wrap items-center gap-2">
             {fg ? <FactGuardBadge fg={fg} /> : <Pill>Not simplified yet</Pill>}
             {lesson.has_lecture && <Pill tone="teal" icon={Captions}>Lecture</Pill>}
+            {lesson.videos > 0 && <Pill tone="teal" icon={MonitorPlay}>{lesson.videos} video{lesson.videos > 1 ? 's' : ''}</Pill>}
+            {lesson.practice?.length > 0 && <Pill tone="accent" icon={GraduationCap}>Best quiz {Math.round(Math.max(...lesson.practice) * 100)}%</Pill>}
             {lesson.sample && <Pill tone="accent">Sample</Pill>}
           </div>
         </div>
@@ -201,6 +203,16 @@ export default function Home() {
               <span className="relative mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal">
                 Make captions <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
               </span>
+            </a>
+            <a href="#/video/new" className="group flex items-center gap-4 rounded-3xl border border-line bg-surface p-5 transition hover:-translate-y-1">
+              <span className="grid size-12 place-items-center rounded-2xl bg-teal-soft text-teal">
+                <MonitorPlay className="size-6" aria-hidden />
+              </span>
+              <span className="flex-1">
+                <span className="block font-semibold">Learning from a YouTube video?</span>
+                <span className="block text-sm text-muted">Paste a link for checked study notes.</span>
+              </span>
+              <ArrowRight className="size-5 text-muted transition group-hover:translate-x-1" aria-hidden />
             </a>
             <a href="#/evidence" className="group flex items-center gap-4 rounded-3xl border border-line bg-surface-2 p-5 transition hover:-translate-y-1">
               <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent-ink">

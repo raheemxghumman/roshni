@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import ROOT_DIR, get_settings
 from .errors import AppError
-from .routers import lectures, lessons, metrics
+from .routers import lectures, lessons, metrics, practice, videos
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("roshni")
@@ -67,6 +67,8 @@ def health() -> dict:
 app.include_router(lessons.router)
 app.include_router(lectures.router)
 app.include_router(metrics.router)
+app.include_router(practice.router)
+app.include_router(videos.router)
 
 _dist = ROOT_DIR / "frontend" / "dist"
 if _dist.exists():

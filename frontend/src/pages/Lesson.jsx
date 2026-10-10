@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, BookOpen, Captions as CaptionsIcon, Headphones, Image as ImageIcon, TriangleAlert } from 'lucide-react'
+import { ArrowLeft, BookOpen, Captions as CaptionsIcon, GraduationCap, Headphones, Image as ImageIcon, MonitorPlay, TriangleAlert } from 'lucide-react'
 import { api } from '../lib/api'
 import { setParam } from '../lib/router'
 import { shortModel } from '../lib/announce'
@@ -10,11 +10,15 @@ import ReadEasy from '../modes/ReadEasy'
 import Listen from '../modes/Listen'
 import Captions from '../modes/Captions'
 import Original from '../modes/Original'
+import Practice from '../modes/Practice'
+import Videos from '../modes/Videos'
 
 const TABS = [
   { id: 'read', label: 'Read Easy', icon: BookOpen, hint: 'Simpler text' },
   { id: 'listen', label: 'Listen', icon: Headphones, hint: 'Audio + figures' },
   { id: 'captions', label: 'Captions', icon: CaptionsIcon, hint: 'Lecture transcript' },
+  { id: 'videos', label: 'Videos', icon: MonitorPlay, hint: 'YouTube to notes' },
+  { id: 'practice', label: 'Practice', icon: GraduationCap, hint: 'Quiz + study plan' },
   { id: 'original', label: 'Original page', icon: ImageIcon, hint: 'As printed' },
 ]
 
@@ -23,6 +27,8 @@ export default function Lesson({ id, tab: initialTab }) {
   const [error, setError] = useState(null)
   const [tab, setTab] = useState(TABS.some((t) => t.id === initialTab) ? initialTab : 'read')
   const tabRefs = useRef({})
+  // where a study-plan step (or another tab) asked to go: {tab, level, section, term, video, t, nonce}
+  const [focus, setFocus] = useState(null)
 
   const load = () =>
     api
@@ -40,6 +46,12 @@ export default function Lesson({ id, tab: initialTab }) {
   const choose = (t) => {
     setTab(t)
     setParam('tab', t)
+  }
+  const goTo = (target = {}) => {
+    if (!target.tab) return
+    setFocus({ ...target, nonce: Date.now() })
+    choose(target.tab)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
   const onTabKey = (e, i) => {
     const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
@@ -135,9 +147,11 @@ export default function Lesson({ id, tab: initialTab }) {
             transition={{ duration: 0.4, ease: EASE }}
             style={{ transformOrigin: '50% 30%' }}
           >
-            {tab === 'read' && <ReadEasy lesson={lesson} onLesson={setLesson} />}
-            {tab === 'listen' && <Listen lesson={lesson} />}
+            {tab === 'read' && <ReadEasy lesson={lesson} onLesson={setLesson} focus={focus?.tab === 'read' ? focus : null} onNavigate={goTo} />}
+            {tab === 'listen' && <Listen lesson={lesson} focus={focus?.tab === 'listen' ? focus : null} />}
             {tab === 'captions' && <Captions lesson={lesson} onLesson={setLesson} />}
+            {tab === 'videos' && <Videos lesson={lesson} onLesson={setLesson} focus={focus?.tab === 'videos' ? focus : null} />}
+            {tab === 'practice' && <Practice lesson={lesson} onLesson={setLesson} onNavigate={goTo} />}
             {tab === 'original' && <Original lesson={lesson} />}
           </motion.div>
         </AnimatePresence>

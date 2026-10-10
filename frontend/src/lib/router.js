@@ -1,4 +1,4 @@
-// Tiny hash router: #/  #/lesson/<id>?tab=listen  #/lecture/<id|new>  #/evidence
+// Tiny hash router: #/  #/lesson/<id>?tab=listen  #/lecture/<id|new>  #/video/<id|new>  #/evidence
 import { useEffect, useState } from 'react'
 
 export function parseHash(hash) {
@@ -8,6 +8,7 @@ export function parseHash(hash) {
   if (parts.length === 0) return { name: 'home', params }
   if (parts[0] === 'lesson' && parts[1]) return { name: 'lesson', id: parts[1], params }
   if (parts[0] === 'lecture' && parts[1]) return { name: 'lecture', id: parts[1], params }
+  if (parts[0] === 'video' && parts[1]) return { name: 'video', id: parts[1], params }
   if (parts[0] === 'evidence') return { name: 'evidence', params }
   return { name: 'notfound', params }
 }

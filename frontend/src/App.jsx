@@ -7,6 +7,7 @@ import { PageTransition } from './components/motion'
 import Home from './pages/Home'
 import Lesson from './pages/Lesson'
 import LecturePage from './pages/LecturePage'
+import VideoPage from './pages/VideoPage'
 import Evidence from './pages/Evidence'
 
 function NotFound() {
@@ -37,6 +38,7 @@ export default function App() {
                 {route.name === 'home' && <Home />}
                 {route.name === 'lesson' && <Lesson id={route.id} tab={route.params.tab} />}
                 {route.name === 'lecture' && <LecturePage id={route.id} />}
+                {route.name === 'video' && <VideoPage id={route.id} />}
                 {route.name === 'evidence' && <Evidence />}
                 {route.name === 'notfound' && <NotFound />}
               </PageTransition>

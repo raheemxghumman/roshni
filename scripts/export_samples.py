@@ -1,4 +1,4 @@
-"""Copies the warmed sample lessons (and their images, quizzes, lecture and audio) from the cache into
+"""Copies the warmed sample lessons (and their images, practice quizzes, videos, lecture and audio) from the cache into
 data/samples/, which is committed to git. The server copies them back into an empty cache on start,
 so a fresh deploy or a teammate's laptop has working samples and demo mode immediately.
 
@@ -15,7 +15,7 @@ from app.config import get_settings  # noqa: E402
 
 cache = get_settings().cache_path
 out = ROOT / "data" / "samples"
-for sub in ("lessons", "uploads", "quizzes", "lectures"):
+for sub in ("lessons", "uploads", "quizzes", "lectures", "videos"):
     (out / sub).mkdir(parents=True, exist_ok=True)
 
 count = 0
@@ -24,13 +24,19 @@ for p in (cache / "lessons").glob("*.json"):
     if not lesson.get("sample"):
         continue
     count += 1
-    shutil.copy2(p, out / "lessons" / p.name)
+    clean = dict(lesson, practice=[])  # samples start with no quiz history
+    (out / "lessons" / p.name).write_text(json.dumps(clean, ensure_ascii=False, indent=1), encoding="utf-8")
     for img in (cache / "uploads").glob(f"{lesson['id']}_p*.jpg"):
         shutil.copy2(img, out / "uploads" / img.name)
-    for quiz_id in (lesson.get("quiz") or {}).values():
+    quiz_ids = [*(lesson.get("quiz") or {}).values(), *(qid for ids in (lesson.get("quizzes") or {}).values() for qid in ids)]
+    for quiz_id in quiz_ids:
         q = cache / "quizzes" / f"{quiz_id}.json"
         if q.exists():
             shutil.copy2(q, out / "quizzes" / q.name)
+    for v in lesson.get("videos") or []:
+        f = cache / "videos" / f"{v['id']}.json"
+        if f.exists():
+            shutil.copy2(f, out / "videos" / f.name)
     if lesson.get("lecture_id"):
         for f in (cache / "lectures").glob(f"{lesson['lecture_id']}.*"):
             shutil.copy2(f, out / "lectures" / f.name)

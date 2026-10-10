@@ -1490,5 +1490,15 @@
  "prompt_version": "v1",
  "timing": {
   "read_seconds": 101.2
- }
+ },
+ "quizzes": {
+  "267159f7b28ef4366fab0286": [
+   "b20f800fc99103e8a023ea68"
+  ],
+  "ada7302b7ef9c0cf35b86f1a": [
+   "78b0d92feaac4685a0a3551b"
+  ]
+ },
+ "practice": [],
+ "videos": []
 }

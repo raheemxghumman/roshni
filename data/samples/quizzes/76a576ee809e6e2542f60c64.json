@@ -1,0 +1,92 @@
+{
+ "id": "76a576ee809e6e2542f60c64",
+ "version": 2,
+ "lesson_id": "ef76879933d22960c40bda3f",
+ "level": "easier",
+ "count": 5,
+ "section_ids": [],
+ "questions": [
+  {
+   "question": "What is released into the atmosphere during photosynthesis?",
+   "options": [
+    "Oxygen",
+    "Carbon",
+    "Dust",
+    "Nitrogen"
+   ],
+   "answer": "Oxygen",
+   "answer_index": 0,
+   "fact_id": "f11",
+   "section_id": "s1",
+   "fact": "Photosynthesis results in the release of oxygen into the atmosphere.",
+   "explanation": "Photosynthesis results in the release of oxygen into the atmosphere.",
+   "id": "q1"
+  },
+  {
+   "question": "What do the Greek roots of the word heterotroph mean?",
+   "options": [
+    "\"self\" \"feeder\"",
+    "\"water\" \"feeder\"",
+    "\"light\" \"feeder\"",
+    "\"other\" \"feeder\""
+   ],
+   "answer": "\"other\" \"feeder\"",
+   "answer_index": 3,
+   "fact_id": "f24",
+   "section_id": "s2",
+   "fact": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+   "explanation": "The Greek roots of heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+   "id": "q2"
+  },
+  {
+   "question": "What provides most of the energy required by living things on earth?",
+   "options": [
+    "Magnetism",
+    "Gravity",
+    "Photosynthesis",
+    "Electricity"
+   ],
+   "answer": "Photosynthesis",
+   "answer_index": 2,
+   "fact_id": "f10",
+   "section_id": "s1",
+   "fact": "Photosynthesis provides most of the energy required by living things on earth, directly or indirectly.",
+   "explanation": "Photosynthesis provides most of the energy required by living things on earth.",
+   "id": "q3"
+  },
+  {
+   "question": "In that example, what is the plant?",
+   "options": [
+    "The only heterotroph",
+    "The only animal",
+    "The only solar energy",
+    "The only autotroph"
+   ],
+   "answer": "The only autotroph",
+   "answer_index": 3,
+   "fact_id": "f36",
+   "section_id": "s2",
+   "fact": "In that example the plant is the only autotroph.",
+   "explanation": "In that example the plant is the only autotroph.",
+   "id": "q4"
+  },
+  {
+   "question": "What do certain organisms convert solar energy (sunlight) into through photosynthesis?",
+   "options": [
+    "Nuclear energy",
+    "Mechanical energy",
+    "Chemical energy",
+    "Thermal energy"
+   ],
+   "answer": "Chemical energy",
+   "answer_index": 2,
+   "fact_id": "f4",
+   "section_id": "s1",
+   "fact": "Through photosynthesis certain organisms convert solar energy (sunlight) into chemical energy.",
+   "explanation": "Through photosynthesis certain organisms convert solar energy into chemical energy.",
+   "id": "q5"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "created_at": "2026-10-10T06:21:13+00:00"
+}

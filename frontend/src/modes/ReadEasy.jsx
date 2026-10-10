@@ -7,7 +7,8 @@ import { escapeRegExp, splitSentences } from '../lib/sentences'
 import { useSettings } from '../lib/settings'
 import { useSpeech } from '../lib/speech'
 import { FactGuardBadge, FactGuardCard } from '../components/FactGuard'
-import { GlossaryCard, QuizCard, ReadabilityCard } from '../components/Sidebar'
+import { GlossaryCard, ReadabilityCard } from '../components/Sidebar'
+import { PracticeTeaser } from './Practice'
 import { ProgressSteps } from '../components/Progress'
 import { Button, Card, ErrorNotice, Pill, Segmented, cx } from '../components/ui'
 
@@ -47,10 +48,10 @@ function withTerms(text, regex, onTerm) {
   )
 }
 
-export default function ReadEasy({ lesson, onLesson }) {
+export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
   const { settings } = useSettings()
   const speech = useSpeech()
-  const [level, setLevel] = useState('easier')
+  const [level, setLevel] = useState(focus?.level === 'simplest' ? 'simplest' : 'easier')
   const [state, setState] = useState({ loading: false, error: null })
   const [showOriginal, setShowOriginal] = useState(() => window.innerWidth >= 1024)
   const [glossary, setGlossary] = useState({ loading: true, data: null, error: null })
@@ -76,6 +77,27 @@ export default function ReadEasy({ lesson, onLesson }) {
     if (!lesson.simplified?.[level]) simplify(level)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, lesson.id])
+
+  // a study-plan step can ask for a level, a section and a word
+  useEffect(() => {
+    if (!focus) return
+    if (focus.level && focus.level !== level && (focus.level === 'easier' || focus.level === 'simplest')) setLevel(focus.level)
+    if (focus.term) setSelectedTerm(focus.term)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus?.nonce])
+  useEffect(() => {
+    if (!focus?.section || !data) return undefined
+    const id = setTimeout(() => {
+      const el = document.getElementById(`h-${focus.section}`)
+      if (!el) return
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      el.setAttribute('tabindex', '-1')
+      el.focus({ preventScroll: true })
+      el.closest('article')?.classList.add('ring-4', 'ring-accent')
+      setTimeout(() => el.closest('article')?.classList.remove('ring-4', 'ring-accent'), 2600)
+    }, 450)
+    return () => clearTimeout(id)
+  }, [focus?.nonce, focus?.section, data])
 
   const loadGlossary = () => {
     setGlossary({ loading: true, data: null, error: null })
@@ -215,7 +237,7 @@ export default function ReadEasy({ lesson, onLesson }) {
         {data && <FactGuardCard fg={fg} sections={lesson.sections} lessonId={lesson.id} level={level} />}
         {data && <ReadabilityCard readability={data.readability} />}
         <GlossaryCard state={glossary} onRetry={loadGlossary} selected={selectedTerm} onSelect={setSelectedTerm} />
-        {data && fg?.status !== 'unavailable' && <QuizCard lessonId={lesson.id} level={level} onLevelChange={(l) => (l === 'original' ? setShowOriginal(true) : setLevel(l))} />}
+        {data && fg?.status !== 'unavailable' && onNavigate && <PracticeTeaser onOpen={() => onNavigate({ tab: 'practice' })} />}
       </aside>
     </div>
   )

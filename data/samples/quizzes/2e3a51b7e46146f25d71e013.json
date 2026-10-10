@@ -1,0 +1,252 @@
+{
+ "id": "2e3a51b7e46146f25d71e013",
+ "version": 2,
+ "lesson_id": "ef76879933d22960c40bda3f",
+ "level": "easier",
+ "count": 15,
+ "section_ids": [],
+ "questions": [
+  {
+   "question": "What is transferred from one organism to another?",
+   "options": [
+    "Soil",
+    "Air",
+    "Energy",
+    "Water"
+   ],
+   "answer": "Energy",
+   "answer_index": 2,
+   "fact_id": "f9",
+   "section_id": "s1",
+   "fact": "That energy is transferred from one organism to another.",
+   "explanation": "The fact states that energy is transferred from one organism to another.",
+   "id": "q1"
+  },
+  {
+   "question": "What do the Greek roots of the word autotroph mean?",
+   "options": [
+    "\"self\" (auto) \"feeder\" (troph)",
+    "\"sun\" (auto) \"feeder\" (troph)",
+    "\"other\" (auto) \"feeder\" (troph)",
+    "\"self\" (auto) \"eater\" (troph)"
+   ],
+   "answer": "\"self\" (auto) \"feeder\" (troph)",
+   "answer_index": 0,
+   "fact_id": "f15",
+   "section_id": "s2",
+   "fact": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+   "explanation": "The Greek roots mean \"self\" (auto) \"feeder\" (troph).",
+   "id": "q2"
+  },
+  {
+   "question": "Where is the chemical energy that runs each cell mainly found?",
+   "options": [
+    "In carbohydrate molecules (food)",
+    "In air molecules",
+    "In sunlight",
+    "In water molecules"
+   ],
+   "answer": "In carbohydrate molecules (food)",
+   "answer_index": 0,
+   "fact_id": "f2",
+   "section_id": "s1",
+   "fact": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food).",
+   "explanation": "Chemical energy is found mainly in carbohydrate molecules (food).",
+   "id": "q3"
+  },
+  {
+   "question": "What are deer?",
+   "options": [
+    "Carbohydrates",
+    "Molecules",
+    "Autotrophs",
+    "Heterotrophs"
+   ],
+   "answer": "Heterotrophs",
+   "answer_index": 3,
+   "fact_id": "f30",
+   "section_id": "s2",
+   "fact": "Deer are heterotrophs.",
+   "explanation": "The fact states that deer are heterotrophs.",
+   "id": "q4"
+  },
+  {
+   "question": "What do certain organisms convert solar energy (sunlight) into through photosynthesis?",
+   "options": [
+    "Heat energy",
+    "Nuclear energy",
+    "Chemical energy",
+    "Carbohydrate energy"
+   ],
+   "answer": "Chemical energy",
+   "answer_index": 2,
+   "fact_id": "f4",
+   "section_id": "s1",
+   "fact": "Through photosynthesis certain organisms convert solar energy (sunlight) into chemical energy.",
+   "explanation": "Photosynthesis converts solar energy (sunlight) into chemical energy.",
+   "id": "q5"
+  },
+  {
+   "question": "What are humans?",
+   "options": [
+    "Energy sources",
+    "Carbohydrates",
+    "Heterotrophs",
+    "Plants"
+   ],
+   "answer": "Heterotrophs",
+   "answer_index": 2,
+   "fact_id": "f27",
+   "section_id": "s2",
+   "fact": "Humans are heterotrophs.",
+   "explanation": "Humans are heterotrophs.",
+   "id": "q6"
+  },
+  {
+   "question": "What do cells use released energy for?",
+   "options": [
+    "To make carbohydrate molecules",
+    "To stop cellular respiration",
+    "To perform work such as cellular respiration",
+    "To destroy energy"
+   ],
+   "answer": "To perform work such as cellular respiration",
+   "answer_index": 2,
+   "fact_id": "f7",
+   "section_id": "s1",
+   "fact": "Cells use the released energy to perform work such as cellular respiration.",
+   "explanation": "Cells use released energy to perform work such as cellular respiration.",
+   "id": "q7"
+  },
+  {
+   "question": "Which statement about photosynthesis is true?",
+   "options": [
+    "Some organisms can carry out photosynthesis, whereas others cannot",
+    "Every organism must carry out photosynthesis",
+    "All organisms can carry out photosynthesis",
+    "No organisms can carry out photosynthesis"
+   ],
+   "answer": "Some organisms can carry out photosynthesis, whereas others cannot",
+   "answer_index": 0,
+   "fact_id": "f13",
+   "section_id": "s2",
+   "fact": "Some organisms can carry out photosynthesis, whereas others cannot.",
+   "explanation": "Some organisms can carry out photosynthesis, whereas others cannot.",
+   "id": "q8"
+  },
+  {
+   "question": "What is the chemical energy from photosynthesis used to build?",
+   "options": [
+    "Cellular work",
+    "Carbohydrate molecules",
+    "Released energy",
+    "Human cells"
+   ],
+   "answer": "Carbohydrate molecules",
+   "answer_index": 1,
+   "fact_id": "f5",
+   "section_id": "s1",
+   "fact": "The chemical energy from photosynthesis is used to build carbohydrate molecules.",
+   "explanation": "Chemical energy from photosynthesis is used to build carbohydrate molecules.",
+   "id": "q9"
+  },
+  {
+   "question": "What are wolves?",
+   "options": [
+    "Plants",
+    "Carbohydrates",
+    "Photosynthesis cells",
+    "Heterotrophs"
+   ],
+   "answer": "Heterotrophs",
+   "answer_index": 3,
+   "fact_id": "f31",
+   "section_id": "s2",
+   "fact": "Wolves are heterotrophs.",
+   "explanation": "Wolves are heterotrophs.",
+   "id": "q10"
+  },
+  {
+   "question": "What provides most of the energy needed by living things on Earth?",
+   "options": [
+    "Photosynthesis",
+    "Wind",
+    "Ocean algae",
+    "Soil"
+   ],
+   "answer": "Photosynthesis",
+   "answer_index": 0,
+   "fact_id": "f10",
+   "section_id": "s1",
+   "fact": "Photosynthesis provides most of the energy required by living things on earth, directly or indirectly.",
+   "explanation": "Photosynthesis provides most of the energy required by living things on earth.",
+   "id": "q11"
+  },
+  {
+   "question": "Which organisms are the best-known autotrophs?",
+   "options": [
+    "Insects",
+    "Animals",
+    "Fungi",
+    "Plants"
+   ],
+   "answer": "Plants",
+   "answer_index": 3,
+   "fact_id": "f16",
+   "section_id": "s2",
+   "fact": "Plants are the best‑known autotrophs.",
+   "explanation": "Plants are the best‑known autotrophs.",
+   "id": "q12"
+  },
+  {
+   "question": "What continuously enters Earth’s ecosystems?",
+   "options": [
+    "Energy harnessed from photosynthesis",
+    "Dust from volcanoes",
+    "Cold water from rain",
+    "Heat from rocks"
+   ],
+   "answer": "Energy harnessed from photosynthesis",
+   "answer_index": 0,
+   "fact_id": "f8",
+   "section_id": "s1",
+   "fact": "Energy harnessed from photosynthesis continuously enters Earth’s ecosystems.",
+   "explanation": "Energy harnessed from photosynthesis continuously enters Earth’s ecosystems.",
+   "id": "q13"
+  },
+  {
+   "question": "What do oceanic algae contribute in enormous quantities to global food chains?",
+   "options": [
+    "Sunlight",
+    "Oxygen",
+    "Salt water",
+    "Sand"
+   ],
+   "answer": "Oxygen",
+   "answer_index": 1,
+   "fact_id": "f19",
+   "section_id": "s2",
+   "fact": "Oceanic algae contribute enormous quantities of oxygen to global food chains.",
+   "explanation": "Oceanic algae contribute enormous quantities of oxygen to global food chains.",
+   "id": "q14"
+  },
+  {
+   "question": "What do all living organisms on earth consist of?",
+   "options": [
+    "Leaves and stems",
+    "Only four cells",
+    "One or more cells",
+    "No cells"
+   ],
+   "answer": "One or more cells",
+   "answer_index": 2,
+   "fact_id": "f1",
+   "section_id": "s1",
+   "fact": "All living organisms on earth consist of one or more cells.",
+   "explanation": "All living organisms on earth consist of one or more cells.",
+   "id": "q15"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "created_at": "2026-10-10T06:27:19+00:00"
+}

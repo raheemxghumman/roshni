@@ -53,8 +53,24 @@ export const api = {
   simplify: (id, level) => request(`/api/lessons/${id}/simplify`, { method: 'POST', body: { level } }),
   stress: (id, level) => request(`/api/lessons/${id}/factguard/stress`, { method: 'POST', body: { level } }),
   glossary: (id) => request(`/api/lessons/${id}/glossary`, { method: 'POST' }),
-  quiz: (id, level) => request(`/api/lessons/${id}/quiz`, { method: 'POST', body: { level } }),
-  answer: (quizId, answers) => request(`/api/quiz/${quizId}/answers`, { method: 'POST', body: { answers } }),
+  quiz: (id, { level = 'easier', count = 15, sectionIds = [], fresh = false } = {}) =>
+    request(`/api/lessons/${id}/quiz`, { method: 'POST', body: { level, count, section_ids: sectionIds, fresh } }),
+  checkAnswer: (quizId, questionId, answer) => request(`/api/quiz/${quizId}/check`, { method: 'POST', body: { question_id: questionId, answer } }),
+  finishQuiz: (quizId, answers, timedOut, mode) =>
+    request(`/api/quiz/${quizId}/answers`, { method: 'POST', body: { answers, timed_out: timedOut, mode } }),
+  practice: (id) => request(`/api/lessons/${id}/practice`),
+  voiceAnswer: (blob, options, language) => {
+    const ext = /mp4/.test(blob.type) ? 'm4a' : /ogg/.test(blob.type) ? 'ogg' : 'webm'
+    const f = new FormData()
+    f.append('file', blob, `answer.${ext}`)
+    f.append('options', JSON.stringify(options))
+    f.append('language', language)
+    return request('/api/voice/answer', { method: 'POST', form: f })
+  },
+  video: (key) => request(`/api/videos/${key}`),
+  makeVideo: (url, { language = 'auto', lessonId } = {}) =>
+    request('/api/videos', { method: 'POST', body: { url, language, lesson_id: lessonId || null } }),
+  detachVideo: (lessonId, key) => request(`/api/lessons/${lessonId}/videos/${key}`, { method: 'DELETE' }),
   uploadLecture: (file, language, lessonId) =>
     request('/api/lectures', { method: 'POST', form: form({ file, language, lesson_id: lessonId }) }),
   lecture: (id) => request(`/api/lectures/${id}`),

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { Gauge, GraduationCap, Languages, LoaderCircle, Volume2 } from 'lucide-react'
+import { Gauge, Languages, LoaderCircle, Volume2 } from 'lucide-react'
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
 import { HELP_LANGS, useSettings } from '../lib/settings'
 import { playClip } from '../lib/speech'
-import { Button, Card, CardHeader, ErrorNotice, Pill, Segmented, Skeleton, cx } from './ui'
+import { Card, CardHeader, ErrorNotice, Segmented, Skeleton, cx } from './ui'
 
 function Meter({ label, before, after, max, unit = '', lowerIsBetter = true, format = (v) => v }) {
   const better = lowerIsBetter ? after < before : after > before
@@ -128,123 +128,6 @@ export function GlossaryCard({ state, onRetry: load, selected, onSelect }) {
             </li>
           ))}
         </ul>
-      </div>
-    </Card>
-  )
-}
-
-export function QuizCard({ lessonId, level, onLevelChange }) {
-  const [quiz, setQuiz] = useState(null)
-  const [answers, setAnswers] = useState({})
-  const [result, setResult] = useState(null)
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    setQuiz(null)
-    setResult(null)
-    setAnswers({})
-  }, [lessonId, level])
-
-  const start = async () => {
-    setBusy(true)
-    setError(null)
-    try {
-      setQuiz(await api.quiz(lessonId, level))
-    } catch (e) {
-      setError(e)
-    }
-    setBusy(false)
-  }
-  const submit = async () => {
-    setBusy(true)
-    setError(null)
-    try {
-      const r = await api.answer(quiz.id, answers)
-      setResult(r)
-      announce(`You got ${Math.round(r.score * 100)} percent. ${r.advice}`)
-    } catch (e) {
-      setError(e)
-    }
-    setBusy(false)
-  }
-
-  const byId = Object.fromEntries((result?.results || []).map((r) => [r.id, r]))
-  const levelName = { original: 'the original text', easier: 'Easier', simplest: 'Simplest' }
-  return (
-    <Card>
-      <CardHeader icon={GraduationCap} tone="accent" title="Check your understanding" subtitle="Questions come only from facts Fact Guard verified" />
-      <div className="p-5">
-        <ErrorNotice error={error} onRetry={quiz ? submit : start} className="mb-4" />
-        {!quiz && (
-          <Button variant="primary" className="w-full" onClick={start} loading={busy}>
-            Start a short quiz
-          </Button>
-        )}
-        {quiz && (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              submit()
-            }}
-            className="space-y-5"
-          >
-            {quiz.questions.map((q, n) => {
-              const r = byId[q.id]
-              return (
-                <fieldset key={q.id} className="space-y-2">
-                  <legend className="font-semibold leading-snug">
-                    {n + 1}. {q.question}
-                  </legend>
-                  {q.options.map((o) => {
-                    const isAnswer = r && o === r.answer
-                    const isWrongPick = r && o === r.given && !r.correct
-                    return (
-                      <label
-                        key={o}
-                        className={cx(
-                          'flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2.5 text-[15px]',
-                          isAnswer ? 'border-ok bg-ok-soft' : isWrongPick ? 'border-bad bg-bad-soft' : answers[q.id] === o ? 'border-brand bg-surface-2' : 'border-line',
-                        )}
-                      >
-                        <input
-                          type="radio"
-                          name={q.id}
-                          value={o}
-                          checked={answers[q.id] === o}
-                          disabled={!!result}
-                          onChange={() => setAnswers((a) => ({ ...a, [q.id]: o }))}
-                          className="accent-[var(--brand)]"
-                        />
-                        {o}
-                      </label>
-                    )
-                  })}
-                </fieldset>
-              )
-            })}
-            {!result ? (
-              <Button type="submit" variant="primary" className="w-full" loading={busy} disabled={Object.keys(answers).length < quiz.questions.length}>
-                Check my answers
-              </Button>
-            ) : (
-              <div className="space-y-3 rounded-xl bg-surface-2 p-4">
-                <p className="font-display text-2xl font-bold">{Math.round(result.score * 100)}%</p>
-                <p>{result.advice}</p>
-                {result.new_level !== level && (
-                  <Button variant="accent" onClick={() => onLevelChange?.(result.new_level)}>
-                    Switch to {levelName[result.new_level]}
-                  </Button>
-                )}
-              </div>
-            )}
-          </form>
-        )}
-        {!quiz && !error && (
-          <p className="mt-3 text-center text-xs text-muted">
-            <Pill tone="info">4 questions</Pill>
-          </p>
-        )}
       </div>
     </Card>
   )

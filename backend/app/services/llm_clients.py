@@ -386,6 +386,8 @@ def text_json(prompt: str, role: str, *, avoid_family: str | None = None, max_to
         "structure": [("groq", s.groq_rewrite_model), ("groq", s.groq_fallback_model), *gem, *paid],
         # Gemini, then DeepSeek, write much better Pashto than Qwen, so they go first for word explanations
         "glossary": [*gem, *paid, ("groq", s.groq_rewrite_model)],
+        # quiz questions are validated in code; Gemini writes better distractors, Qwen is the free backup
+        "quiz": [*gem, ("groq", s.groq_rewrite_model), *paid],
     }
     errors: list[str] = []
     chain = [(p, m) for p, m in chains[role] if not (avoid_family and family(m) == avoid_family)]
@@ -411,7 +413,7 @@ def text_json(prompt: str, role: str, *, avoid_family: str | None = None, max_to
     raise AppError("RATE_LIMITED", "The free AI quota is busy right now. Please try again in a minute.", 429, True)
 
 
-def transcribe(audio: bytes, filename: str, language: str | None = None) -> dict:
+def transcribe(audio: bytes, filename: str, language: str | None = None, prompt: str | None = None) -> dict:
     s = get_settings()
     last: Exception | None = None
     for model in [s.groq_stt_model, "whisper-large-v3"]:
@@ -425,6 +427,8 @@ def transcribe(audio: bytes, filename: str, language: str | None = None) -> dict
                 kwargs = dict(file=(filename, audio), model=model, response_format="verbose_json", temperature=0.0)
                 if language and language != "auto":
                     kwargs["language"] = language
+                if prompt:
+                    kwargs["prompt"] = prompt[:800]  # spelling hints, e.g. the answer options
                 resp = _groq(key).audio.transcriptions.create(**kwargs)
                 data = resp.model_dump() if hasattr(resp, "model_dump") else dict(resp)
                 data["model"] = model

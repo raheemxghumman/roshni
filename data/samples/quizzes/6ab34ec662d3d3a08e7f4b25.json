@@ -1,0 +1,252 @@
+{
+ "id": "6ab34ec662d3d3a08e7f4b25",
+ "version": 2,
+ "lesson_id": "533847976cef3b2ebe01f169",
+ "level": "easier",
+ "count": 15,
+ "section_ids": [],
+ "questions": [
+  {
+   "question": "When can this occur?",
+   "options": [
+    "When the sample is heated very quickly",
+    "When the sample is completely empty",
+    "When the sample is composed of many small pieces",
+    "When the sample is made of one large block"
+   ],
+   "answer": "When the sample is composed of many small pieces",
+   "answer_index": 2,
+   "fact_id": "f22",
+   "section_id": "s1",
+   "fact": "This can occur when the sample is composed of many small pieces",
+   "explanation": "The fact states that this can occur when the sample is composed of many small pieces.",
+   "id": "q1"
+  },
+  {
+   "question": "What is true about solids?",
+   "options": [
+    "Solids take up no room",
+    "Solids take up space",
+    "Solids do not exist",
+    "Solids turn into gases instantly"
+   ],
+   "answer": "Solids take up space",
+   "answer_index": 1,
+   "fact_id": "f3",
+   "section_id": "s1",
+   "fact": "Solids take up space",
+   "explanation": "The fact directly states that solids take up space.",
+   "id": "q2"
+  },
+  {
+   "question": "What would happen if gases did not take up space?",
+   "options": [
+    "A balloon would fill up with water",
+    "A balloon would explode right away",
+    "A balloon would not inflate when filled with gas",
+    "A balloon would turn into a solid object"
+   ],
+   "answer": "A balloon would not inflate when filled with gas",
+   "answer_index": 2,
+   "fact_id": "f6",
+   "section_id": "s1",
+   "fact": "If gases did not take up space, a balloon would not inflate when filled with gas",
+   "explanation": "The fact states a balloon would not inflate when filled with gas if gases did not take up space.",
+   "id": "q3"
+  },
+  {
+   "question": "Which statement about gases is true?",
+   "options": [
+    "Gases are the same as solids",
+    "Gases are also matter",
+    "Gases are only made of water",
+    "Gases are never matter"
+   ],
+   "answer": "Gases are also matter",
+   "answer_index": 1,
+   "fact_id": "f5",
+   "section_id": "s1",
+   "fact": "Gases are also matter",
+   "explanation": "The fact explicitly states that gases are also matter.",
+   "id": "q4"
+  },
+  {
+   "question": "What gives plasmas unique properties distinct from gases?",
+   "options": [
+    "The absence of any particles",
+    "The presence of cold air",
+    "The presence of charged particles",
+    "The absence of heat"
+   ],
+   "answer": "The presence of charged particles",
+   "answer_index": 2,
+   "fact_id": "f16",
+   "section_id": "s1",
+   "fact": "The presence of charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases",
+   "explanation": "The presence of charged particles gives plasmas unique properties, according to the fact.",
+   "id": "q5"
+  },
+  {
+   "question": "What do clouds appear to behave somewhat like?",
+   "options": [
+    "plasmas",
+    "solids",
+    "liquids",
+    "gases"
+   ],
+   "answer": "gases",
+   "answer_index": 3,
+   "fact_id": "f25",
+   "section_id": "s1",
+   "fact": "Clouds appear to behave somewhat like gases",
+   "explanation": "The fact states that clouds appear to behave somewhat like gases.",
+   "id": "q6"
+  },
+  {
+   "question": "Which high-temperature environment is a place where plasmas are found?",
+   "options": [
+    "cold lakes",
+    "deep caves",
+    "ice cubes",
+    "lightning strikes"
+   ],
+   "answer": "lightning strikes",
+   "answer_index": 3,
+   "fact_id": "f17",
+   "section_id": "s1",
+   "fact": "Plasmas are found in some other high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+   "explanation": "The fact lists lightning strikes as a high-temperature environment where plasmas are found.",
+   "id": "q7"
+  },
+  {
+   "question": "What does a liquid do?",
+   "options": [
+    "stays rigid and keeps a single shape",
+    "disappears instantly into the air",
+    "breaks apart into grains of sand",
+    "flows and takes the shape of its container"
+   ],
+   "answer": "flows and takes the shape of its container",
+   "answer_index": 3,
+   "fact_id": "f9",
+   "section_id": "s1",
+   "fact": "A liquid flows and takes the shape of its container",
+   "explanation": "A liquid flows and takes the shape of its container.",
+   "id": "q8"
+  },
+  {
+   "question": "Why can we pour sand as if it were a liquid?",
+   "options": [
+    "it has no definite shape",
+    "it is composed of many small grains of solid sand",
+    "it is a hot gas",
+    "it turns into water when moved"
+   ],
+   "answer": "it is composed of many small grains of solid sand",
+   "answer_index": 1,
+   "fact_id": "f23",
+   "section_id": "s1",
+   "fact": "We can pour sand as if it were a liquid because it is composed of many small grains of solid sand",
+   "explanation": "We can pour sand because it is composed of many small grains of solid sand.",
+   "id": "q9"
+  },
+  {
+   "question": "What is true about a solid?",
+   "options": [
+    "It is rigid and possesses a definite shape",
+    "It flows to fill any container",
+    "It acts like a gas in the sky",
+    "It only exists in lightning strikes"
+   ],
+   "answer": "It is rigid and possesses a definite shape",
+   "answer_index": 0,
+   "fact_id": "f8",
+   "section_id": "s1",
+   "fact": "A solid is rigid and possesses a definite shape",
+   "explanation": "A solid is rigid and possesses a definite shape.",
+   "id": "q10"
+  },
+  {
+   "question": "What is a plasma?",
+   "options": [
+    "A liquid state of matter that forms a flat surface",
+    "A type of matter that has no mass or space",
+    "A gaseous state of matter that contains electrically charged particles",
+    "A solid state of matter with no charged particles"
+   ],
+   "answer": "A gaseous state of matter that contains electrically charged particles",
+   "answer_index": 2,
+   "fact_id": "f15",
+   "section_id": "s1",
+   "fact": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+   "explanation": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles.",
+   "id": "q11"
+  },
+  {
+   "question": "What does a liquid form at its top when gravity acts on it?",
+   "options": [
+    "A square box shape",
+    "A hard outer shell",
+    "A sharp pointed peak",
+    "A flat or slightly curved upper surface"
+   ],
+   "answer": "A flat or slightly curved upper surface",
+   "answer_index": 3,
+   "fact_id": "f10",
+   "section_id": "s1",
+   "fact": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+   "explanation": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity.",
+   "id": "q12"
+  },
+  {
+   "question": "What can some samples of matter appear to have at the same time?",
+   "options": [
+    "Only the properties of a gas",
+    "Properties of solids, liquids, and/or gases",
+    "No properties at all",
+    "Only the properties of a solid"
+   ],
+   "answer": "Properties of solids, liquids, and/or gases",
+   "answer_index": 1,
+   "fact_id": "f21",
+   "section_id": "s1",
+   "fact": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time",
+   "explanation": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time.",
+   "id": "q13"
+  },
+  {
+   "question": "When can matter have properties of more than one state?",
+   "options": [
+    "When it loses its mass",
+    "When it is very cold",
+    "When it is a mixture",
+    "When it has no space"
+   ],
+   "answer": "When it is a mixture",
+   "answer_index": 2,
+   "fact_id": "f24",
+   "section_id": "s1",
+   "fact": "Matter can also have properties of more than one state when it is a mixture",
+   "explanation": "Matter can have properties of more than one state when it is a mixture.",
+   "id": "q14"
+  },
+  {
+   "question": "What is the definition of matter?",
+   "options": [
+    "Anything that occupies space and has mass",
+    "Anything that is bright and hot",
+    "Anything that has no weight or shape",
+    "Anything that moves very quickly"
+   ],
+   "answer": "Anything that occupies space and has mass",
+   "answer_index": 0,
+   "fact_id": "f1",
+   "section_id": "s1",
+   "fact": "Matter is defined as anything that occupies space and has mass",
+   "explanation": "Matter is defined as anything that occupies space and has mass.",
+   "id": "q15"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "created_at": "2026-10-10T06:27:56+00:00"
+}

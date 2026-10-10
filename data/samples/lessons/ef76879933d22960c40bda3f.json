@@ -1716,5 +1716,50 @@
   "easier": "ad919ab24906054d081e23eb"
  },
  "lecture_id": null,
- "prompt_version": "v1"
+ "prompt_version": "v1",
+ "quizzes": {
+  "40238c9d0297d776ab0807c5": [
+   "76a576ee809e6e2542f60c64"
+  ],
+  "7bbe16779f4cce4da4bcc0f4": [
+   "242416d323730a0eb019167b"
+  ],
+  "5721a728d1e71ef3c64bf8e1": [
+   "2e3a51b7e46146f25d71e013"
+  ]
+ },
+ "practice": [],
+ "videos": [
+  {
+   "id": "eccb1bf22c055d7c998d2a07",
+   "video_id": "f8G7IulYxiA",
+   "title": "Autotrophs and Heterotrophs",
+   "author": "Amoeba Sisters",
+   "duration": 363.92,
+   "factguard": {
+    "status": "green",
+    "kept": 11,
+    "total": 11
+   },
+   "relevance": {
+    "share": 0.4,
+    "matched": [
+     "heterotrophs",
+     "autotrophs",
+     "organisms",
+     "bacteria",
+     "photosynthesis",
+     "heterotroph",
+     "dioxide",
+     "organism",
+     "cellular",
+     "respiration",
+     "autotroph",
+     "photoautotroph"
+    ],
+    "related": true
+   },
+   "added_at": "2026-10-10T06:25:42+00:00"
+  }
+ ]
 }

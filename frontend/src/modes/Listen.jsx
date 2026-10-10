@@ -34,7 +34,7 @@ function buildUnits(lesson, useSimple) {
   return units
 }
 
-export default function Listen({ lesson }) {
+export default function Listen({ lesson, focus }) {
   const { settings, update } = useSettings()
   const speech = useSpeech()
   const hasSimple = !!lesson.simplified?.easier
@@ -68,6 +68,18 @@ export default function Listen({ lesson }) {
   useEffect(() => {
     if (currentSection >= 0) announce(`Section ${currentSection + 1}: ${lesson.sections[currentSection]?.heading}`)
   }, [currentSection, lesson.sections])
+
+  // a study-plan step can open a section: scroll to it and put focus on its Play button
+  useEffect(() => {
+    if (!focus?.section) return undefined
+    const id = setTimeout(() => {
+      const card = document.getElementById(`lh-${focus.section}`)?.closest('article')
+      if (!card) return
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      card.querySelector('button')?.focus({ preventScroll: true })
+    }, 450)
+    return () => clearTimeout(id)
+  }, [focus?.nonce, focus?.section])
 
   useEffect(() => {
     if (current >= 0) document.getElementById(`unit-${current}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' })

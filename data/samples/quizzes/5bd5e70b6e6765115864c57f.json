@@ -1,0 +1,252 @@
+{
+ "id": "5bd5e70b6e6765115864c57f",
+ "version": 2,
+ "lesson_id": "6d74124955abe118e4976774",
+ "level": "easier",
+ "count": 15,
+ "section_ids": [],
+ "questions": [
+  {
+   "question": "What is formed when several systems function together?",
+   "options": [
+    "An organism",
+    "A cell type",
+    "A single tissue",
+    "A microscope"
+   ],
+   "answer": "An organism",
+   "answer_index": 0,
+   "fact_id": "f10",
+   "section_id": "s1",
+   "fact": "Several systems functioning together form an organism.",
+   "explanation": "Several systems functioning together form an organism.",
+   "id": "q1"
+  },
+  {
+   "question": "Why can people usually not see individual cells with the naked eye?",
+   "options": [
+    "They are invisible",
+    "They are too bright",
+    "They move too fast",
+    "They are too small"
+   ],
+   "answer": "They are too small",
+   "answer_index": 3,
+   "fact_id": "f16",
+   "section_id": "s2",
+   "fact": "Individual cells are too small to be seen with the naked eye (with few exceptions).",
+   "explanation": "Individual cells are too small to be seen with the naked eye.",
+   "id": "q2"
+  },
+  {
+   "question": "What are the two broad categories that all cell types are grouped into?",
+   "options": [
+    "Prokaryotic and eukaryotic",
+    "Small and large",
+    "Plant and animal",
+    "Hard and soft"
+   ],
+   "answer": "Prokaryotic and eukaryotic",
+   "answer_index": 0,
+   "fact_id": "f12",
+   "section_id": "s1",
+   "fact": "All cell types are grouped into two broad categories: prokaryotic and eukaryotic.",
+   "explanation": "All cell types are grouped into prokaryotic and eukaryotic categories.",
+   "id": "q3"
+  },
+  {
+   "question": "What do scientists use to study cells?",
+   "options": [
+    "Cameras",
+    "Magnifying glasses",
+    "Microscopes",
+    "Telescopes"
+   ],
+   "answer": "Microscopes",
+   "answer_index": 2,
+   "fact_id": "f17",
+   "section_id": "s2",
+   "fact": "Scientists use microscopes to study cells.",
+   "explanation": "Scientists use microscopes to study cells.",
+   "id": "q4"
+  },
+  {
+   "question": "Which of the following is an example of a tissue?",
+   "options": [
+    "Brain tissue",
+    "Muscle tissue",
+    "Skin tissue",
+    "Eye tissue"
+   ],
+   "answer": "Muscle tissue",
+   "answer_index": 1,
+   "fact_id": "f5",
+   "section_id": "s1",
+   "fact": "Examples of tissues are muscle tissue, connective tissue, and nervous tissue.",
+   "explanation": "Muscle tissue is an example of a tissue.",
+   "id": "q5"
+  },
+  {
+   "question": "How does a right-side up specimen facing right look through a microscope?",
+   "options": [
+    "upside-down and facing left",
+    "upside-down and facing right",
+    "right-side up and facing right",
+    "right-side up and facing left"
+   ],
+   "answer": "upside-down and facing left",
+   "answer_index": 0,
+   "fact_id": "f24",
+   "section_id": "s2",
+   "fact": "A specimen that is right-side up and facing right on the slide appears upside-down and facing left when viewed through a microscope, and vice versa.",
+   "explanation": "The fact states it appears upside-down and facing left when viewed through a microscope.",
+   "id": "q6"
+  },
+  {
+   "question": "What combines to form an organ?",
+   "options": [
+    "Several tissues",
+    "Tiny organs",
+    "Simple bones",
+    "Single cells"
+   ],
+   "answer": "Several tissues",
+   "answer_index": 0,
+   "fact_id": "f6",
+   "section_id": "s1",
+   "fact": "Several tissues combine to form an organ.",
+   "explanation": "The fact states that several tissues combine to form an organ.",
+   "id": "q7"
+  },
+  {
+   "question": "What happens if a slide is moved left while looking through a microscope?",
+   "options": [
+    "It appears to move right",
+    "It appears to move left",
+    "It appears to move up",
+    "It appears to move down"
+   ],
+   "answer": "It appears to move right",
+   "answer_index": 0,
+   "fact_id": "f25",
+   "section_id": "s2",
+   "fact": "If the slide is moved left while looking through the microscope, it appears to move right; if moved down, it appears to move up.",
+   "explanation": "Moving the slide left makes it appear to move right when viewed through the microscope.",
+   "id": "q8"
+  },
+  {
+   "question": "How are animal, plant, fungal, and protist cells classified?",
+   "options": [
+    "As prokaryotic",
+    "As eukaryotic",
+    "As viral",
+    "As simple"
+   ],
+   "answer": "As eukaryotic",
+   "answer_index": 1,
+   "fact_id": "f13",
+   "section_id": "s1",
+   "fact": "Animal, plant, fungal, and protist cells are classified as eukaryotic.",
+   "explanation": "The fact states that these cells are classified as eukaryotic.",
+   "id": "q9"
+  },
+  {
+   "question": "What is the diameter of the head of a pin?",
+   "options": [
+    "About two hundredths of a meter (mm)",
+    "About two thousandths of a meter (mm)",
+    "About two millionths of a meter (mm)",
+    "About two tenths of a meter (mm)"
+   ],
+   "answer": "About two thousandths of a meter (mm)",
+   "answer_index": 1,
+   "fact_id": "f21",
+   "section_id": "s2",
+   "fact": "The head of a pin is about two thousandths of a meter (mm) in diameter.",
+   "explanation": "The fact states the head of a pin is about two thousandths of a meter (mm) in diameter.",
+   "id": "q10"
+  },
+  {
+   "question": "Which of these is an example of an organ system?",
+   "options": [
+    "A micrograph",
+    "A single cell",
+    "A single tissue",
+    "The digestive system"
+   ],
+   "answer": "The digestive system",
+   "answer_index": 3,
+   "fact_id": "f9",
+   "section_id": "s1",
+   "fact": "Examples of organ systems are the digestive system, circulatory system, or nervous system.",
+   "explanation": "The fact states that the digestive system is an example of an organ system.",
+   "id": "q11"
+  },
+  {
+   "question": "What are most cell images taken with a microscope called?",
+   "options": [
+    "Organ systems",
+    "Tissues",
+    "Living things",
+    "Micrographs"
+   ],
+   "answer": "Micrographs",
+   "answer_index": 3,
+   "fact_id": "f19",
+   "section_id": "s2",
+   "fact": "Most images of cells taken with a microscope are called micrographs.",
+   "explanation": "Most cell images taken with a microscope are called micrographs.",
+   "id": "q12"
+  },
+  {
+   "question": "What do several cells of one kind form when they interconnect and work together?",
+   "options": [
+    "Nervous systems",
+    "Meters",
+    "Tissues",
+    "Micrographs"
+   ],
+   "answer": "Tissues",
+   "answer_index": 2,
+   "fact_id": "f4",
+   "section_id": "s1",
+   "fact": "In multicellular organisms, several cells of one particular kind interconnect and perform shared functions to form tissues.",
+   "explanation": "Cells of one kind interconnect and perform shared functions to form tissues.",
+   "id": "q13"
+  },
+  {
+   "question": "What is the diameter of a typical human red blood cell?",
+   "options": [
+    "About eight millimeters",
+    "About eight centimeters",
+    "About eight meters",
+    "About eight millionths of a meter (8 µm)"
+   ],
+   "answer": "About eight millionths of a meter (8 µm)",
+   "answer_index": 3,
+   "fact_id": "f20",
+   "section_id": "s2",
+   "fact": "A typical human red blood cell is about eight millionths of a meter (8 µm) in diameter.",
+   "explanation": "A typical human red blood cell is about eight millionths of a meter (8 µm) in diameter.",
+   "id": "q14"
+  },
+  {
+   "question": "What is the smallest unit of a living thing?",
+   "options": [
+    "A microscope",
+    "An organ system",
+    "A cell",
+    "A micrograph"
+   ],
+   "answer": "A cell",
+   "answer_index": 2,
+   "fact_id": "f1",
+   "section_id": "s1",
+   "fact": "A cell is the smallest unit of a living thing.",
+   "explanation": "The fact states that a cell is the smallest unit of a living thing.",
+   "id": "q15"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "created_at": "2026-10-10T06:28:24+00:00"
+}

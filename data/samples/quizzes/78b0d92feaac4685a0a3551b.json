@@ -1,0 +1,92 @@
+{
+ "id": "78b0d92feaac4685a0a3551b",
+ "version": 2,
+ "lesson_id": "11c6e95b42733d239754b1c7",
+ "level": "easier",
+ "count": 5,
+ "section_ids": [],
+ "questions": [
+  {
+   "question": "What is the area of Earth where water movement and storage occurs?",
+   "options": [
+    "The atmosphere",
+    "The lithosphere",
+    "The hydrosphere",
+    "The biosphere"
+   ],
+   "answer": "The hydrosphere",
+   "answer_index": 2,
+   "fact_id": "f13",
+   "section_id": "s1",
+   "fact": "The hydrosphere is the area of Earth where water movement and storage occurs.",
+   "explanation": "The hydrosphere is the area of Earth where water movement and storage occurs.",
+   "id": "q1"
+  },
+  {
+   "question": "What is phosphorus a major component of?",
+   "options": [
+    "Nucleic acids",
+    "Simple sugars",
+    "Pure water",
+    "Table salt"
+   ],
+   "answer": "Nucleic acids",
+   "answer_index": 0,
+   "fact_id": "f22",
+   "section_id": "s1",
+   "fact": "Phosphorus is a major component of nucleic acids.",
+   "explanation": "Phosphorus is a major component of nucleic acids.",
+   "id": "q2"
+  },
+  {
+   "question": "What do artificial fertilizers used in agriculture have environmental impacts on?",
+   "options": [
+    "Deep rocks",
+    "Outer space",
+    "Dry sand",
+    "Surface water"
+   ],
+   "answer": "Surface water",
+   "answer_index": 3,
+   "fact_id": "f24",
+   "section_id": "s1",
+   "fact": "Artificial fertilizers used in agriculture have environmental impacts on surface water.",
+   "explanation": "Artificial fertilizers used in agriculture have environmental impacts on surface water.",
+   "id": "q3"
+  },
+  {
+   "question": "Where is carbon found?",
+   "options": [
+    "In all organic macromolecules",
+    "Only in deep rocks",
+    "Only in surface water",
+    "In no organic macromolecules"
+   ],
+   "answer": "In all organic macromolecules",
+   "answer_index": 0,
+   "fact_id": "f18",
+   "section_id": "s1",
+   "fact": "Carbon is found in all organic macromolecules.",
+   "explanation": "Carbon is found in all organic macromolecules.",
+   "id": "q4"
+  },
+  {
+   "question": "Along with nitrogen, what is one of the main ingredients in artificial fertilizers used in agriculture?",
+   "options": [
+    "Phosphorus",
+    "Carbon",
+    "Hydrogen",
+    "Oxygen"
+   ],
+   "answer": "Phosphorus",
+   "answer_index": 0,
+   "fact_id": "f23",
+   "section_id": "s1",
+   "fact": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers used in agriculture.",
+   "explanation": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers.",
+   "id": "q5"
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "created_at": "2026-10-10T06:24:24+00:00"
+}

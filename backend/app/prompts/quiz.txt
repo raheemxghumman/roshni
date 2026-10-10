@@ -1,7 +1,11 @@
-# used by services/quiz.py  (model: GROQ_REWRITE_MODEL)
-Write {n} questions for a student at reading level {level_name}, using ONLY these verified facts.
-Return ONLY JSON: {"questions": [{"id": "q1", "type": "mcq|true_false", "question": "...", "options": ["..."], "answer": "...", "fact_id": "f1"}]}
-Rules: one fact per question; short, clear wording; no trick questions; for multiple choice, 3 options with exactly one correct.
+# used by services/quiz.py  (role: quiz; Gemini first). Every question is validated in code afterwards.
+Write {n} multiple-choice questions for a student at reading level "{level_name}", one question per fact below, using ONLY these verified facts.
+Return ONLY JSON: {"questions": [{"fact_id": "f1", "question": "...", "options": ["...", "...", "...", "..."], "answer": "the correct option, copied exactly", "explanation": "<= 20 words: why it is right, using only the fact"}]}
+Rules:
+- Exactly 4 short options with exactly one correct answer. The other 3 must be clearly wrong according to the fact, but sound reasonable.
+- Never use "all of the above", "none of the above", "both" or trick wording. No letters or numbers in front of options.
+- The question must be answerable from its fact alone. Short, clear sentences; easy words for the "simplest" level.
+- Keep numbers, units and technical terms exactly as in the fact.
 <facts>
 {facts_json}
 </facts>

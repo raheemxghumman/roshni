@@ -1,0 +1,13 @@
+# used by services/youtube.py  (role: rewrite). Repaired notes are checked by Fact Guard again.
+Fact Guard flagged these study notes because they don't match what the video's captions say.
+Return ONLY JSON: {"fixed": [{"n": 1, "text": "the corrected note, <= 22 words", "drop": false}]}
+Rules:
+- One entry for every flagged note, using its number.
+- Rewrite the note so it says only what the captions say, keeping numbers and terms exactly as spoken.
+- If the captions don't say anything like it, set "drop": true and leave "text" empty.
+<captions>
+{transcript}
+</captions>
+<flagged>
+{flagged_json}
+</flagged>

@@ -19,11 +19,20 @@ Built at **AICON'26 Build With AI** (domain: **EdTech & Workforce**) by **404 Te
 | **Problem** | One printed page works for almost nobody who needs help. Blind students can't read it, dyslexic students and students from Urdu-medium schools struggle to follow it, and deaf students miss the lecture that explains it. Teachers have no time to adapt every page three ways, so it doesn't happen. |
 | **Data in** | A phone photo, scan or PDF of a textbook page; optionally a lecture recording. |
 | **AI** | Gemini reads the page and describes every diagram. Qwen rewrites it at an easier level, and hard words are explained in Urdu or Pashto (Gemini first, it writes better Pashto). **Fact Guard**, GPT-OSS from a different model family, extracts every fact and audits the rewrite. Whisper transcribes the lecture. |
-| **Solution** | One lesson in three modes: **Read Easy** (simpler text, Urdu or Pashto help, read-aloud with highlighting, adaptive quiz), **Listen** (section-by-section audio with figure descriptions, full keyboard and screen-reader control), **Captions** (transcript synced to audio plus a summary checked against the lecture). |
+| **Solution** | One lesson in three modes: **Read Easy** (simpler text, Urdu or Pashto help, read-aloud with highlighting, adaptive quiz), **Listen** (section-by-section audio with figure descriptions, full keyboard and screen-reader control), **Captions** (transcript synced to audio plus a summary checked against the lecture). Plus **Videos** (a YouTube link becomes timestamped study notes, each checked against the video's captions) and **Practice** (up to 15 questions from verified facts, a voice quiz for blind learners, a per-question timer, weak areas and a study plan). |
 | **Impact** | Reading level drops by several grades, nearly every fact is verifiably kept, planted errors are caught, and a page is ready in about a minute instead of hours of manual adaptation. See **Evidence** below. SDG 4.5 (equal access for persons with disabilities), 4.1, 10.2. |
 
 ## Why the AI is essential
 Reading a printed page, describing a diagram for a blind student, rewriting while keeping meaning, explaining in Urdu and Pashto, transcribing speech and checking facts are all AI tasks. Remove the AI and the product does nothing.
+
+## Practice: quiz, weak areas and a study plan
+- **Questions only from verified facts.** Every multiple-choice question is written from a fact Fact Guard verified, then checked in code: 4 distinct options, exactly one correct, tied to a real fact and section, shuffled so the answer isn't always A. Bad questions are dropped, never guessed.
+- **Voice quiz for blind learners.** The question and options are read aloud; after a beep the student says "B", "option two", the answer itself, or a number in Urdu or Pashto. Whisper writes it down and plain code decides which option it was; unclear replies are asked again, never guessed. "Repeat", "skip" and "stop" work too, and keys 1 to 4 always work.
+- **Timer that respects access needs.** Off / 15 / 30 / 60 seconds per question, +15 s at any time, starts after the question is read aloud, pauses when the tab is hidden, off by default in voice mode.
+- **Weak areas and a study plan, made in plain code.** Results show each section's score, the verified facts you missed, and steps that open the right place: re-read the section at the Simplest level, listen to it, learn its hard words, or watch the exact minute of an attached video that explains it. Progress is kept per lesson.
+
+## Video notes from YouTube
+Paste a YouTube link: Roshni reads the video's own captions (no audio download), writes short notes with timestamps, and **Fact Guard checks every note against the captions** (flagged notes are repaired once or dropped). Tap a time to jump the video; captions are searchable; notes download as text. Attached to a lesson, a plain-code check warns when the video doesn't match the page. No captions, private videos, playlists, long videos (notes cover the first hour) and YouTube blocking all give clear messages.
 
 ## Fact Guard: why you can trust a rewrite
 1. **Independent checker.** Facts are extracted and audited by a model from a *different family* than the rewriter. The code refuses a same-family checker.
@@ -95,12 +104,13 @@ Keyboard control everywhere (Alt+K play/pause, Alt+N/P sections, Alt+R repeat, A
 ## Project layout
 ```
 roshni/
-├── backend/app/          FastAPI: routers/ (lessons, lectures, metrics), services/ (ingest, ocr, structure,
-│                         simplify, factguard, normalize, glossary, readability, tts, transcribe, summarize,
-│                         quiz, cache, llm_clients), prompts/ (versioned templates)
+├── backend/app/          FastAPI: routers/ (lessons, lectures, practice, videos, metrics), services/ (ingest, ocr,
+│                         structure, simplify, factguard, normalize, glossary, readability, tts, transcribe,
+│                         summarize, quiz, voice, youtube, cache, llm_clients), prompts/ (versioned templates)
 ├── backend/tests/        unit tests (normalisation, Fact Guard, upload edge cases)
-├── frontend/src/         pages/ (Home, Lesson, Lecture, Evidence), modes/ (ReadEasy, Listen, Captions,
-│                         Original), components/ (Fact Guard, 3D hero, motion, UI kit), lib/ (api, speech, settings)
+├── frontend/src/         pages/ (Home, Lesson, Lecture, Video, Evidence), modes/ (ReadEasy, Listen, Captions, Videos,
+│                         Practice, Original), components/ (Fact Guard, video notes, 3D hero, motion, UI kit),
+│                         lib/ (api, speech, voice, settings)
 ├── data/openstax/        CC BY 4.0 source excerpts and rendered page images (ground truth for eval)
 ├── data/samples/         ready-made sample lessons (copied into the cache on first start)
 ├── data/lectures/        synthetic sample lecture clip
@@ -116,5 +126,7 @@ roshni/
 - Pashto word explanations are AI-written and haven't been reviewed by a Pashto teacher yet.
 - Free-tier limits mean a fresh page can take a minute when the services are busy; samples and demo mode avoid that on stage.
 - Readability formulas are a proxy for difficulty, not a measure of comprehension.
+- Video notes need the video's captions; YouTube sometimes blocks requests from cloud servers, so the hosted demo uses a prepared sample video.
+- Voice answers need a microphone, a secure page (https or localhost) and internet; keys 1 to 4 always work as the fallback.
 
 Sample content: OpenStax, *Concepts of Biology*, *College Physics 2e*, *Chemistry 2e*, https://openstax.org, licensed under CC BY 4.0. Simplified versions were generated by Roshni.

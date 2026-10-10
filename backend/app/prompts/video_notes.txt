@@ -1,0 +1,11 @@
+# used by services/youtube.py  (role: rewrite). Fact Guard then checks every note against the captions.
+Make study notes from this part of a video's captions for a student revising for an exam. The student may be deaf, dyslexic or learning in a second language.
+Return ONLY JSON: {"sections": [{"heading": "<= 6 words", "start": "m:ss from the nearest [m:ss] marker", "notes": [{"text": "<= 22 words, one idea", "start": "m:ss"}]}], "key_terms": [{"term": "...", "meaning": "<= 12 words"}]}
+Rules:
+- Use ONLY what is said in the captions. No outside knowledge, no examples the speaker didn't give.
+- 2 to 5 sections in time order, 2 to 5 notes each. Simple English sentences; keep every number, unit and technical term exactly as said.
+- Skip greetings, adverts, "like and subscribe" and other talk that isn't about the topic.
+- Times must come from the [m:ss] markers in the captions.
+<captions>
+{transcript}
+</captions>

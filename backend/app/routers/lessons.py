@@ -1,4 +1,5 @@
-"""Lesson endpoints: upload a page, read it, simplify with Fact Guard, stress-test Fact Guard, glossary, quiz, audio."""
+"""Lesson endpoints: upload a page, read it, simplify with Fact Guard, stress-test Fact Guard, glossary, audio.
+Practice quizzes live in routers/practice.py, video notes in routers/videos.py."""
 from __future__ import annotations
 
 import time
@@ -9,8 +10,8 @@ from fastapi.responses import FileResponse
 
 from ..config import get_settings
 from ..errors import AppError
-from ..schemas import LevelRequest, QuizAnswers, QuizRequest
-from ..services import cache, factguard, glossary, ingest, ocr, quiz, simplify, structure, tts
+from ..schemas import LevelRequest
+from ..services import cache, factguard, glossary, ingest, ocr, simplify, structure, tts
 from ..services.llm_clients import family
 
 router = APIRouter(prefix="/api", tags=["lessons"])
@@ -50,6 +51,8 @@ def summary_card(lesson: dict) -> dict:
         "stress": {lvl: {"caught": r["caught"], "planted": r["total_planted"], "repaired_status": r["repaired_report"]["status"]}
                    for lvl, r in lesson.get("stress", {}).items()},
         "has_lecture": bool(lesson.get("lecture_id")),
+        "videos": len(lesson.get("videos") or []),
+        "practice": [a["score"] for a in (lesson.get("practice") or [])][-5:],
     }
 
 
@@ -192,38 +195,6 @@ def lesson_glossary(lesson_id: str) -> dict:
     lesson["glossary"] = result
     cache.put_json("lessons", lesson_id, lesson)
     return result
-
-
-def _public(q: dict) -> dict:
-    return {"id": q["id"], "level": q["level"], "questions": [{k: v for k, v in item.items() if k != "answer"} for item in q["questions"]]}
-
-
-@router.post("/lessons/{lesson_id}/quiz")
-def make_quiz(lesson_id: str, body: QuizRequest) -> dict:
-    lesson = load_lesson(lesson_id)
-    existing = lesson.get("quiz", {}).get(body.level)
-    if existing and (stored := cache.get_json("quizzes", existing)):
-        return _public(stored)
-    simplified = lesson.get("simplified", {}).get(body.level)
-    if not simplified:
-        raise AppError("BAD_REQUEST", "Simplify the page first, then take the quiz.")
-    demo_guard("this quiz")
-    questions, model = quiz.generate(simplified["factguard"]["facts"], body.level)
-    quiz_id = cache.make_key(lesson_id, body.level, now())
-    stored = {"id": quiz_id, "lesson_id": lesson_id, "level": body.level, "questions": questions, "model": model}
-    cache.put_json("quizzes", quiz_id, stored)
-    lesson = load_lesson(lesson_id)
-    lesson.setdefault("quiz", {})[body.level] = quiz_id
-    cache.put_json("lessons", lesson_id, lesson)
-    return _public(stored)
-
-
-@router.post("/quiz/{quiz_id}/answers")
-def answer_quiz(quiz_id: str, body: QuizAnswers) -> dict:
-    stored = cache.get_json("quizzes", quiz_id)
-    if not stored:
-        raise AppError("NOT_FOUND", "This quiz has expired. Please start a new one.", 404)
-    return quiz.grade(stored["questions"], body.answers, stored["level"])
 
 
 @router.get("/tts")

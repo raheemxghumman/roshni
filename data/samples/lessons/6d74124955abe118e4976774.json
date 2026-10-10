@@ -1379,5 +1379,11 @@
   "easier": "40b82e67b1a1ec2a2eee8e54"
  },
  "lecture_id": null,
- "prompt_version": "v1"
+ "prompt_version": "v1",
+ "quizzes": {
+  "8d44ed49427e7c9a5d31d17c": [
+   "5bd5e70b6e6765115864c57f"
+  ]
+ },
+ "practice": []
 }

@@ -8,6 +8,7 @@ httpx
 tenacity
 google-genai
 groq
+youtube-transcript-api
 edge-tts
 gTTS
 textstat
