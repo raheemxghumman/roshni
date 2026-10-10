@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { Fragment, useEffect, useMemo, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { CircleCheck, Eye, EyeOff, Pause, Play, ShieldAlert, Sparkles, Square, X } from 'lucide-react'
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
@@ -7,6 +7,7 @@ import { escapeRegExp, splitSentences } from '../lib/sentences'
 import { useSettings } from '../lib/settings'
 import { useProfile } from '../lib/profile'
 import { useSpeech } from '../lib/speech'
+import AskSentence, { AskTrigger } from '../components/AskSentence'
 import { FactGuardBadge, FactGuardCard } from '../components/FactGuard'
 import { GlossaryCard, ReadabilityCard } from '../components/Sidebar'
 import { PracticeTeaser } from './Practice'
@@ -47,18 +48,26 @@ function withTerms(text, regex, onTerm) {
   const parts = text.split(regex)
   return parts.map((part, i) =>
     i % 2 === 1 ? (
-      <button
+      <span
         key={i}
-        type="button"
+        role="link"
+        tabIndex={0}
         className="term"
         onClick={(e) => {
           e.stopPropagation()
           onTerm(part.toLowerCase())
         }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            e.stopPropagation()
+            onTerm(part.toLowerCase())
+          }
+        }}
         aria-label={`${part}: show explanation`}
       >
         {part}
-      </button>
+      </span>
     ) : (
       <Fragment key={i}>{part}</Fragment>
     ),
@@ -79,29 +88,42 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
     setOffer(null)
     rememberLevel(lesson.id, l, 'manual')
   }
-  const [state, setState] = useState({ loading: false, error: null })
+  const [byLevel, setByLevel] = useState({ easier: { loading: false, error: null }, simplest: { loading: false, error: null } })
   const [showOriginal, setShowOriginal] = useState(() => window.innerWidth >= 1024)
   const [glossary, setGlossary] = useState({ loading: true, data: null, error: null })
   const [selectedTerm, setSelectedTerm] = useState(null)
+  const [ask, setAsk] = useState(null) // { sentence, heading }
+  const reqId = useRef(0)
   const data = lesson.simplified?.[level]
+  const state = byLevel[level] || { loading: false, error: null }
 
   const simplify = async (lvl = level) => {
-    setState({ loading: true, error: null })
+    const token = ++reqId.current
+    setByLevel((s) => ({ ...s, [lvl]: { loading: true, error: null } }))
     announce(`Making the ${LEVEL_NAME[lvl]} version. This takes about 10 seconds.`)
     try {
       const result = await api.simplify(lesson.id, lvl)
+      if (token !== reqId.current && lvl !== level) {
+        // Still apply the result to the lesson cache, but don't announce for a stale level
+      }
       onLesson((l) => ({ ...l, simplified: { ...(l.simplified || {}), [lvl]: result } }))
-      setState({ loading: false, error: null })
-      const fg = result.factguard
-      announce(fg.status === 'green' ? `Ready. Fact Guard: all ${fg.total} facts kept.` : `Ready. Fact Guard: ${fg.kept} of ${fg.total} facts kept.`)
+      setByLevel((s) => ({ ...s, [lvl]: { loading: false, error: null } }))
+      if (lvl === level || token === reqId.current) {
+        const fg = result.factguard
+        announce(fg.status === 'green' ? `Ready. Fact Guard: all ${fg.total} facts kept.` : `Ready. Fact Guard: ${fg.kept} of ${fg.total} facts kept.`)
+      }
     } catch (error) {
-      setState({ loading: false, error })
+      setByLevel((s) => ({ ...s, [lvl]: { loading: false, error } }))
     }
   }
 
   useEffect(() => {
     speech.stop()
-    if (!lesson.simplified?.[level]) simplify(level)
+    if (lesson.simplified?.[level]) {
+      setByLevel((s) => ({ ...s, [level]: { loading: false, error: s[level]?.error || null } }))
+    } else {
+      simplify(level)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, lesson.id])
 
@@ -214,7 +236,7 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
 
         {data && !state.loading && (
           <>
-            <p className="px-1 text-sm text-muted">Tap any sentence to start reading aloud from there. Underlined words have an explanation in English and Urdu or Pashto.</p>
+            <p className="px-1 text-sm text-muted">Tap any sentence to start reading aloud from there. Use the ask icon to ask a question about that sentence. Underlined words have an explanation in English and Urdu or Pashto.</p>
             {data.sections.map((s, idx) => {
               const facts = fg?.facts?.filter((f) => f.section_id === s.id) || []
               const notKept = facts.filter((f) => f.status !== 'kept').length
@@ -260,7 +282,7 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
                           counter += 1
                           const i = counter
                           return (
-                            <span key={i}>
+                            <span key={i} className="inline">
                               <span
                                 id={`sent-${i}`}
                                 role="button"
@@ -271,7 +293,8 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
                                 className={cx('sentence', current === i && 'is-current')}
                               >
                                 {withTerms(t, termRegex, setSelectedTerm)}
-                              </span>{' '}
+                              </span>
+                              <AskTrigger onAsk={() => setAsk({ sentence: t, heading: s.heading })} />{' '}
                             </span>
                           )
                         })}
@@ -283,6 +306,13 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
             })}
           </>
         )}
+        <AskSentence
+          lessonId={lesson.id}
+          sentence={ask?.sentence || ''}
+          sectionHeading={ask?.heading}
+          open={!!ask}
+          onClose={() => setAsk(null)}
+        />
       </div>
 
       <aside className="space-y-4" aria-label="Lesson tools">

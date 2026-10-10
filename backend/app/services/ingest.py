@@ -82,18 +82,21 @@ def _prepare_pdf(data: bytes, warnings: list[str]) -> Prepared:
         doc = pymupdf.open(stream=data, filetype="pdf")
     except Exception as e:  # noqa: BLE001
         raise AppError("UNSUPPORTED_FILE", "This PDF couldn't be opened. It may be damaged or password-protected.") from e
-    if doc.needs_pass:
-        raise AppError("UNSUPPORTED_FILE", "This PDF is password-protected. Please upload an unlocked copy.")
-    if doc.page_count > MAX_PDF_PAGES:
-        raise AppError("FILE_TOO_LARGE", f"This PDF has {doc.page_count} pages. Please upload at most {MAX_PDF_PAGES} pages at a time.", 413)
+    try:
+        if doc.needs_pass:
+            raise AppError("UNSUPPORTED_FILE", "This PDF is password-protected. Please upload an unlocked copy.")
+        if doc.page_count > MAX_PDF_PAGES:
+            raise AppError("FILE_TOO_LARGE", f"This PDF has {doc.page_count} pages. Please upload at most {MAX_PDF_PAGES} pages at a time.", 413)
 
-    text = "\n\n".join(page.get_text("text") for page in doc).strip()
-    images = []
-    for page in doc:
-        pix = page.get_pixmap(dpi=150)
-        img = Image.open(io.BytesIO(pix.tobytes("png")))
-        images.append(_to_jpeg(img, []))
-    has_text = len(text) >= MIN_TEXT_LAYER_CHARS
-    if not has_text:
-        warnings.append("This PDF is a scan, so the page was read from its image.")
-    return Prepared(kind="pdf", images=images, text_layer=text if has_text else None, pages=doc.page_count, warnings=warnings)
+        text = "\n\n".join(page.get_text("text") for page in doc).strip()
+        images = []
+        for page in doc:
+            pix = page.get_pixmap(dpi=150)
+            img = Image.open(io.BytesIO(pix.tobytes("png")))
+            images.append(_to_jpeg(img, []))
+        has_text = len(text) >= MIN_TEXT_LAYER_CHARS
+        if not has_text:
+            warnings.append("This PDF is a scan, so the page was read from its image.")
+        return Prepared(kind="pdf", images=images, text_layer=text if has_text else None, pages=doc.page_count, warnings=warnings)
+    finally:
+        doc.close()

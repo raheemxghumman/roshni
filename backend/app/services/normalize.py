@@ -30,6 +30,10 @@ UNIT_WORDS = [
     (r"joules?", "j"),
     (r"watts?", "w"),
     (r"hertz", "hz"),
+    (r"minutes?", "min"),
+    (r"hours?", "hr"),
+    (r"\bhrs?\b", "hr"),
+    (r"\bmins?\b", "min"),
 ]
 
 UNIT_PATTERN = r"(?:%|°c|°f|km/h|km/s|min|hrs|hr|m/s²|m/s2|m/s|km|cm|mm|nm|kg|mg|ml|kj|kw|kpa|mol|hz|g|m|s|l|j|w|v|a|k|n|pa)"

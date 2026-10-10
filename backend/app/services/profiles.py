@@ -108,7 +108,8 @@ def check_id(learner_id: str | None) -> str:
 
 def clean_profile(profile: dict) -> dict:
     """Keeps the profile small and free of anything personal: only the known keys are stored."""
-    allowed = {"onboarded", "needs", "preferredTab", "defaultLevel", "levels", "recent", "last", "lastReport", "best", "dismissed", "updatedAt"}
+    allowed = {"onboarded", "needs", "preferredTab", "defaultLevel", "levels", "recent", "last", "lastReport",
+               "best", "dismissed", "review", "addressForm", "updatedAt"}
     data = {k: v for k, v in (profile or {}).items() if k in allowed}
     if len(json.dumps(data, ensure_ascii=False).encode("utf-8")) > MAX_PROFILE_BYTES:
         raise AppError("BAD_REQUEST", "This profile is too large to save.", 413)

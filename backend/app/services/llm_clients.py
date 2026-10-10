@@ -241,13 +241,20 @@ def _deepseek_allowed() -> None:
     s = get_settings()
     if not s.deepseek_api_key:
         raise AppError("MODEL_UNAVAILABLE", "DeepSeek is not configured.", 503)
-    spend = deepseek_spend()
-    if spend["usd"] >= s.deepseek_budget_usd:
-        _cool(s.deepseek_model, 0, 10**9)
-        raise AppError("RATE_LIMITED", "The paid backup budget is used up.", 429, True)
-    if _balance_checked_at_call < 0 or spend["calls"] - _balance_checked_at_call >= 20:
+    with _spend_lock:
+        spend = deepseek_spend()
+        if spend["usd"] >= s.deepseek_budget_usd:
+            _cool(s.deepseek_model, 0, 10**9)
+            raise AppError("RATE_LIMITED", "The paid backup budget is used up.", 429, True)
+        # Reserve a small amount so concurrent threads cannot all pass the check
+        spend["usd"] = round(spend["usd"] + 0.001, 6)
+        spend["calls"] = int(spend.get("calls") or 0)
+        _spend_file().write_text(json.dumps(spend), encoding="utf-8")
+        check_balance = _balance_checked_at_call < 0 or spend["calls"] - _balance_checked_at_call >= 20
+    if check_balance:
         balance = deepseek_balance()
-        _balance_checked_at_call = spend["calls"]
+        with _spend_lock:
+            _balance_checked_at_call = deepseek_spend()["calls"]
         if balance is not None and balance < s.deepseek_min_balance_usd:
             _cool(s.deepseek_model, 0, 10**9)
             raise AppError("RATE_LIMITED", "The paid backup has too little credit left.", 429, True)
@@ -388,6 +395,9 @@ def text_json(prompt: str, role: str, *, avoid_family: str | None = None, max_to
         "glossary": [*gem, *paid, ("groq", s.groq_rewrite_model)],
         # quiz questions are validated in code; Gemini writes better distractors, Qwen is the free backup
         "quiz": [*gem, ("groq", s.groq_rewrite_model), *paid],
+        # grounded ask + coach: free-tier text models; every answer is checked in plain code afterwards
+        "ask": [*gem, ("groq", s.groq_rewrite_model), *paid],
+        "coach": [*gem, ("groq", s.groq_rewrite_model), *paid],
     }
     errors: list[str] = []
     chain = [(p, m) for p, m in chains[role] if not (avoid_family and family(m) == avoid_family)]

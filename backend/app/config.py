@@ -41,7 +41,9 @@ class Settings(BaseSettings):
     cache_dir: str = ""
     max_upload_mb: int = 10
     max_audio_mb: int = 24
-    allowed_origins: str = "http://localhost:5173"
+    allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    # Optional shared secret. When set, mutating / LLM routes require Authorization: Bearer <secret>
+    api_secret: str = ""
     prompt_version: str = "v1"
 
     @property

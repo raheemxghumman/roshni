@@ -79,7 +79,7 @@ def clean_question(q: dict, facts_by_id: dict[str, dict], seen: set[str]) -> dic
         text = re.sub(r"^\s*(?:[A-Da-d]|[1-4])[.)]\s+", "", re.sub(r"\s+", " ", str(o))).strip()  # drop "A) " prefixes
         if text and _norm(text) not in {_norm(x) for x in options} and len(text) <= 160:
             options.append(text)
-    if len(options) < 3 or any(BANNED_OPTIONS.search(o) for o in options):
+    if len(options) != 4 or any(BANNED_OPTIONS.search(o) for o in options):
         return None  # "all of the above" breaks once options are shuffled
     raw_answer = str(q.get("answer") or "").strip()
     answer = next((o for o in options if _norm(o) == _norm(raw_answer)), None)
@@ -96,9 +96,11 @@ def clean_question(q: dict, facts_by_id: dict[str, dict], seen: set[str]) -> dic
             "fact_id": fid, "section_id": fact.get("section_id", ""), "fact": fact["text"], "explanation": explanation}
 
 
-def generate(facts: list[dict], level: str, n: int, section_ids: list[str] | None = None, seed: str = "") -> tuple[list[dict], str]:
+def generate(facts: list[dict], level: str, n: int, section_ids: list[str] | None = None, seed: str = "",
+             min_facts: int | None = None) -> tuple[list[dict], str]:
+    need = MIN_FACTS if min_facts is None else max(1, min_facts)
     pool = [f for f in facts if not section_ids or f.get("section_id") in section_ids]
-    if len(pool) < MIN_FACTS:
+    if len(pool) < need:
         raise AppError("NOT_ENOUGH_FACTS", "There aren't enough checked facts in this part of the page for a quiz. Try the whole page.", 422)
     chosen = pick_facts(facts, min(n, len(pool)), section_ids, seed)
     facts_by_id = {f["id"]: f for f in chosen}
@@ -130,7 +132,7 @@ def generate(facts: list[dict], level: str, n: int, section_ids: list[str] | Non
         todo = [f for f in chosen if f["id"] not in done]
         if not todo or round_no == 1:
             break
-    if len(questions) < min(MIN_FACTS, len(chosen)):
+    if len(questions) < min(need, len(chosen)):
         raise AppError("MODEL_UNAVAILABLE", "The quiz couldn't be made right now. Please try again.", 503, True)
     order = {f["id"]: i for i, f in enumerate(chosen)}
     questions.sort(key=lambda q: order[q["fact_id"]])
@@ -151,7 +153,8 @@ def check_one(quiz: dict, question_id: str, answer: str) -> dict:
     if not q:
         raise AppError("NOT_FOUND", "This question isn't part of the quiz.", 404)
     return {"id": q["id"], "correct": bool(answer) and _norm(answer) == _norm(q["answer"]), "answer": q["answer"],
-            "answer_index": q["answer_index"], "explanation": q["explanation"], "fact": q["fact"]}
+            "answer_index": q["answer_index"], "explanation": q["explanation"], "fact": q["fact"],
+            "fact_id": q.get("fact_id", ""), "section_id": q.get("section_id", "")}
 
 
 # ---------------------------------------------------------------- grading, weak areas, study plan
@@ -209,8 +212,10 @@ def study_plan(weak: list[dict], lesson: dict, videos: list[dict], timeout_share
         sid, heading = s["id"], s["heading"]
         plan.append({"kind": "read", "section_id": sid, "title": f"Re-read “{heading}” at the Simplest level",
                      "detail": "Shorter sentences, same facts. Tap a sentence to hear it.", "action": {"tab": "read", "level": "simplest", "section": sid}})
+        listen_level = "simplest" if (lesson.get("simplified") or {}).get("simplest") else "easier"
         plan.append({"kind": "listen", "section_id": sid, "title": f"Listen to “{heading}”",
-                     "detail": "Hearing it once more helps it stick. Slow the voice down if you need to.", "action": {"tab": "listen", "section": sid}})
+                     "detail": "Hearing it once more helps it stick. Slow the voice down if you need to.",
+                     "action": {"tab": "listen", "section": sid, "level": listen_level, "simple": True}})
         words = [g["term"] for g in glossary if g.get("section_id") == sid][:4]
         if words:
             plan.append({"kind": "words", "section_id": sid, "title": "Learn the hard words: " + ", ".join(words),

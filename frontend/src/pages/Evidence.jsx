@@ -31,12 +31,14 @@ export default function Evidence() {
   const [error, setError] = useState(null)
   const load = () => {
     setError(null)
-    Promise.all([api.metrics(), api.lessons()])
-      .then(([m, l]) => {
-        setMetrics(m)
-        setLessons(l)
-      })
-      .catch(setError)
+    Promise.allSettled([api.metrics(), api.lessons()]).then(([m, l]) => {
+      if (m.status === 'fulfilled') setMetrics(m.value)
+      else setMetrics(null)
+      if (l.status === 'fulfilled') setLessons(l.value)
+      else setLessons(null)
+      const fail = [m, l].find((r) => r.status === 'rejected')
+      setError(fail && m.status === 'rejected' && l.status === 'rejected' ? fail.reason : null)
+    })
   }
   useEffect(load, [])
 

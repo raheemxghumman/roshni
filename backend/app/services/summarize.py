@@ -35,7 +35,11 @@ def summarize_checked(transcript: str) -> tuple[dict, dict, str]:
         if not fixed:
             break
         summary["summary"] = fixed
+        previous = check
         check = check_support(transcript, fixed, model)
+        if check.get("status") == "unavailable" and previous.get("claims"):
+            # Keep the last successful check instead of wiping claims on a transient checker failure
+            check = {**previous, "note": check.get("note") or previous.get("note", "")}
         rounds.append({"round": round_no, "action": "Fixed the flagged bullets and checked again", "status": check["status"], "kept": check["kept"], "total": check["total"]})
     check["rounds"] = rounds
     return summary, check, model
@@ -47,7 +51,9 @@ def check_support(transcript: str, summary: list[str], summarizer_model: str) ->
                                 "check", avoid_family=family(summarizer_model), max_tokens=5000)
     except AppError as e:
         if e.code == "FACTGUARD_UNAVAILABLE":
-            return factguard.unavailable_report(e.message)
+            report = factguard.unavailable_report(e.message)
+            report.setdefault("claims", [])
+            return report
         raise
     claims = []
     for n, c in enumerate(data.get("claims") or [], start=1):

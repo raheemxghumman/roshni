@@ -38,7 +38,8 @@ def build(sections: list[dict]) -> tuple[list[dict], str]:
         if not isinstance(it, dict) or not it.get("term"):
             continue
         term = str(it["term"]).strip()
-        section = next((s["id"] for s in sections if term.lower() in s["text"].lower()), sections[0]["id"] if sections else "")
+        term_re = re.compile(rf"(?<!\w){re.escape(term)}(?!\w)", re.IGNORECASE)
+        section = next((s["id"] for s in sections if term_re.search(s["text"])), sections[0]["id"] if sections else "")
         items.append({"term": term, "simple_en": (it.get("simple_en") or "").strip(), "urdu": (it.get("urdu") or "").strip(),
                       "pashto": (it.get("pashto") or "").strip(), "section_id": section})
     return items, model

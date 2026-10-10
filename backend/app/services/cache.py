@@ -9,11 +9,14 @@ from __future__ import annotations
 import hashlib
 import json
 import threading
+from collections.abc import Callable
 from pathlib import Path
 
 from ..config import get_settings
 
 _lock = threading.Lock()
+_key_locks: dict[str, threading.Lock] = {}
+_key_locks_guard = threading.Lock()
 
 
 def make_key(*parts: bytes | str) -> str:
@@ -24,6 +27,10 @@ def make_key(*parts: bytes | str) -> str:
     return h.hexdigest()[:24]
 
 
+def _safe(name: str) -> str:
+    return "".join(c for c in name if c.isalnum() or c in "._-")
+
+
 def _dir(namespace: str) -> Path:
     path = get_settings().cache_path / namespace
     path.mkdir(parents=True, exist_ok=True)
@@ -31,8 +38,17 @@ def _dir(namespace: str) -> Path:
 
 
 def path_for(namespace: str, name: str) -> Path:
-    safe = "".join(c for c in name if c.isalnum() or c in "._-")
-    return _dir(namespace) / safe
+    return _dir(namespace) / _safe(name)
+
+
+def _lock_for(namespace: str, key: str) -> threading.Lock:
+    token = f"{namespace}:{_safe(key)}"
+    with _key_locks_guard:
+        lock = _key_locks.get(token)
+        if lock is None:
+            lock = threading.Lock()
+            _key_locks[token] = lock
+        return lock
 
 
 def get_json(namespace: str, key: str) -> dict | None:
@@ -50,11 +66,38 @@ def put_json(namespace: str, key: str, data: dict) -> None:
         tmp.replace(p)
 
 
+def update_json(namespace: str, key: str, mutator: Callable[[dict], None]) -> dict:
+    """Load → mutate → save under a per-key lock so concurrent field updates don't clobber each other."""
+    with _lock_for(namespace, key):
+        data = get_json(namespace, key)
+        if data is None:
+            raise KeyError(key)
+        mutator(data)
+        put_json(namespace, key, data)
+        return data
+
+
 def delete(namespace: str, key: str) -> bool:
+    safe = _safe(key)
+    if not safe:
+        return False
     removed = False
-    for p in _dir(namespace).glob(f"{key}*"):
+    # Prefer exact known suffixes over an open-ended glob of raw user input
+    exact = [
+        path_for(namespace, f"{safe}.json"),
+        path_for(namespace, safe),
+    ]
+    for p in exact:
+        if p.exists():
+            p.unlink(missing_ok=True)
+            removed = True
+    for p in _dir(namespace).glob(f"{safe}_*"):
         p.unlink(missing_ok=True)
         removed = True
+    for p in _dir(namespace).glob(f"{safe}.*"):
+        if p not in exact:
+            p.unlink(missing_ok=True)
+            removed = True
     return removed
 
 

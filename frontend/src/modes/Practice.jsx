@@ -8,6 +8,8 @@ import {
 } from 'lucide-react'
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
+import { learnerId } from '../lib/learner'
+import { msg } from '../lib/messages'
 import { useSettings } from '../lib/settings'
 import { useProfile } from '../lib/profile'
 import { coachNote } from '../lib/coach'
@@ -36,8 +38,8 @@ const when = (iso) => {
 
 // ---------------------------------------------------------------- the tab
 
-export default function Practice({ lesson, onLesson, onNavigate }) {
-  const { profile, saveResult } = useProfile()
+export default function Practice({ lesson, onLesson, onNavigate, focus }) {
+  const { profile, saveResult, clearReviewed } = useProfile()
   const [config, setConfig] = useState(loadPracticeConfig)
   const [phase, setPhase] = useState('setup') // setup | preparing | loading | playing | results
   const [quiz, setQuiz] = useState(null)
@@ -48,6 +50,7 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
   const [stream, setStream] = useState(null)
   const [voiceOn, setVoiceOn] = useState(false)
   const lastRequest = useRef(null)
+  const reviewStarted = useRef(null)
 
   const update = (patch) => savePracticeConfig({ ...config, ...patch })
   useEffect(() => onPracticeConfig(setConfig), []) // a setup preset can change these while the tab is open
@@ -60,8 +63,8 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
   // release the microphone whenever the quiz ends or the tab closes
   useEffect(() => () => closeMic(stream), [stream])
 
-  const start = async ({ sectionIds = [], fresh = false } = {}) => {
-    lastRequest.current = { sectionIds, fresh }
+  const start = async ({ sectionIds = [], factIds = [], fresh = false } = {}) => {
+    lastRequest.current = { sectionIds, factIds, fresh }
     setError(null)
     setNotice(null)
     setReport(null)
@@ -78,8 +81,9 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
     setVoiceOn(useVoice)
     setStream(mic)
     setPhase('loading')
-    announce('Making your quiz')
-    const request = () => api.quiz(lesson.id, { level: config.level, count: config.count, sectionIds, fresh })
+    announce(factIds.length ? 'Making your review quiz' : 'Making your quiz')
+    const count = factIds.length ? Math.min(15, Math.max(5, factIds.length)) : config.count
+    const request = () => api.quiz(lesson.id, { level: config.level, count, sectionIds, factIds, fresh })
     try {
       let q
       try {
@@ -103,11 +107,24 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
     }
   }
 
+  // Home "N facts to review" opens Practice with ?review=1
+  useEffect(() => {
+    if (!focus?.review) return
+    const key = `${focus.nonce || 1}-${lesson.id}`
+    if (reviewStarted.current === key) return
+    const ids = (profile.review || []).filter((r) => r.lessonId === lesson.id).map((r) => r.factId)
+    if (!ids.length) return
+    reviewStarted.current = key
+    start({ factIds: ids, fresh: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus?.review, focus?.nonce, lesson.id])
+
   const finish = async (answers, timedOut) => {
     setPhase('loading')
     closeMic(stream)
     setStream(null)
     try {
+      learnerId({ create: true }) // so the first attempt can be stored per learner when Postgres is on
       const r = await api.finishQuiz(quiz.id, answers, timedOut, voiceOn ? 'voice' : 'tap')
       r.coach = coachNote(r, profile.last?.[lesson.id]) // compared with this learner's previous attempt, before saving this one
       saveResult(lesson, quiz.level, r)
@@ -145,6 +162,7 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
         stream={stream}
         voiceLang={config.voiceLang}
         notice={notice}
+        onReviewed={(factId) => factId && clearReviewed(lesson.id, factId)}
         onFinish={finish}
         onQuit={quit}
       />
@@ -153,6 +171,7 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
     return (
       <QuizResults
         report={report}
+        quizId={quiz?.id}
         quizLevel={quiz?.level || config.level}
         spoken={config.mode === 'voice'}
         onNavigate={onNavigate}
@@ -164,7 +183,20 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
         }}
       />
     )
-  return <Setup config={config} update={update} info={info} error={error} notice={notice} onStart={() => start({ fresh: false })} onRetry={() => start(lastRequest.current || {})} />
+  const reviewIds = (profile.review || []).filter((r) => r.lessonId === lesson.id).map((r) => r.factId)
+  return (
+    <Setup
+      config={config}
+      update={update}
+      info={info}
+      error={error}
+      notice={notice}
+      reviewCount={reviewIds.length}
+      onStart={() => start({ fresh: false })}
+      onReview={() => start({ factIds: reviewIds, fresh: true })}
+      onRetry={() => start(lastRequest.current || {})}
+    />
+  )
 }
 
 // ---------------------------------------------------------------- setup
@@ -193,7 +225,7 @@ function ModeCard({ selected, onSelect, icon: Icon, title, text, disabled, note 
   )
 }
 
-function Setup({ config, update, info, error, notice, onStart, onRetry }) {
+function Setup({ config, update, info, error, notice, onStart, onReview, onRetry, reviewCount = 0 }) {
   const voiceMode = config.mode === 'voice'
   const timer = voiceMode ? config.timerVoice : config.timerTap
   const canVoice = micSupported()
@@ -264,9 +296,16 @@ function Setup({ config, update, info, error, notice, onStart, onRetry }) {
             </p>
             {notice && <p className="rounded-xl bg-warn-soft px-4 py-3 text-sm">{notice}</p>}
             <ErrorNotice error={error} onRetry={onRetry} />
-            <Button variant="primary" size="lg" icon={voiceMode ? Mic : Play} className="w-full sm:w-auto" onClick={onStart}>
-              Start {willAsk}-question {voiceMode ? 'voice quiz' : 'quiz'}
-            </Button>
+            <div className="flex flex-wrap gap-2">
+              <Button variant="primary" size="lg" icon={voiceMode ? Mic : Play} className="w-full sm:w-auto" onClick={onStart}>
+                Start {willAsk}-question {voiceMode ? 'voice quiz' : 'quiz'}
+              </Button>
+              {reviewCount > 0 && (
+                <Button size="lg" icon={RotateCcw} className="w-full sm:w-auto" onClick={onReview}>
+                  Review {reviewCount} missed fact{reviewCount > 1 ? 's' : ''}
+                </Button>
+              )}
+            </div>
           </div>
         </Card>
       </div>
@@ -350,7 +389,7 @@ function questionScript(q, i, n) {
   return `Question ${i + 1} of ${n}. ${q.question} ${opts}`
 }
 
-function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, onFinish, onQuit }) {
+function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, onReviewed, onFinish, onQuit }) {
   const { settings } = useSettings()
   const n = quiz.questions.length
   const [index, setIndex] = useState(0)
@@ -420,7 +459,10 @@ function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, 
           answersRef.current = { ...answersRef.current, [q.id]: given }
           setAnswers(answersRef.current)
         }
-        if (r.correct) setScore((s) => s + 1)
+        if (r.correct) {
+          setScore((s) => s + 1)
+          if (r.fact_id) onReviewed?.(r.fact_id)
+        }
         beep(r.correct ? 'ok' : 'no')
         const right = `${LETTERS[r.answer_index]}: ${r.answer}`
         const line =
@@ -564,9 +606,9 @@ function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, 
     [],
   )
 
-  // ---- timer: counts only while running, not paused, and the tab is visible
+  // ---- timer: counts only while running, not paused / reading / thinking, and the tab is visible
   useEffect(() => {
-    if (!running || paused || !timer) return undefined
+    if (!running || paused || !timer || status === 'thinking' || status === 'listening' || status === 'reading') return undefined
     let last = performance.now()
     const id = setInterval(() => {
       const now = performance.now()
@@ -576,7 +618,7 @@ function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, 
       setLeft((l) => l - dt)
     }, 250)
     return () => clearInterval(id)
-  }, [running, paused, timer])
+  }, [running, paused, timer, status])
 
   useEffect(() => {
     if (!running || !timer || feedback) return
@@ -662,8 +704,8 @@ function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, 
             </Button>
           </div>
         )}
-        <Button size="sm" variant="ghost" icon={Square} onClick={() => (Object.keys(answers).length || timedOut.length ? finishNow() : onQuit())}>
-          {Object.keys(answers).length || timedOut.length ? 'Finish now' : 'Quit'}
+        <Button size="sm" variant="ghost" icon={Square} onClick={() => (Object.keys(answers).length || timedOut.length || index > 0 || feedback ? finishNow() : onQuit())}>
+          {Object.keys(answers).length || timedOut.length || index > 0 || feedback ? 'Finish now' : 'Quit'}
         </Button>
       </Card>
 
@@ -800,16 +842,22 @@ function QuizPlayer({ quiz, timer, readAloud, voice, stream, voiceLang, notice, 
 
 const PLAN_ICONS = { read: BookOpen, listen: Headphones, words: Languages, video: MonitorPlay, lecture: CaptionsIcon, timer: Timer, retry: Target }
 
-function QuizResults({ report, quizLevel, spoken, onNavigate, onRetryWeak, onNew, onSetup }) {
+function QuizResults({ report, quizId, quizLevel, spoken, onNavigate, onRetryWeak, onNew, onSetup }) {
   const { settings } = useSettings()
+  const { profile } = useProfile()
+  const [coachText, setCoachText] = useState(report.coach || '')
+  const [coachChecked, setCoachChecked] = useState(false)
   const weak = report.sections.filter((s) => s.weak)
   const levelName = { original: 'the original page', easier: 'Easier', simplest: 'Simplest' }
+  const scoreLine =
+    msg('score', { helpLang: settings.helpLang, addressForm: profile.addressForm, correct: report.correct, total: report.total }) ||
+    `You got ${report.correct} out of ${report.total}.`
   const summary = useMemo(() => {
-    const parts = [`You got ${report.correct} out of ${report.total}.`, report.coach || '']
+    const parts = [scoreLine, coachText || '']
     if (weak.length) parts.push(`Practise ${weak.map((s) => s.heading).join(' and ')}.`, report.plan[0] ? `First step: ${report.plan[0].title}.` : '')
     else parts.push('No weak areas. Well done!')
     return parts.join(' ')
-  }, [report, weak])
+  }, [report, weak, coachText, scoreLine])
 
   useEffect(() => {
     announce(summary)
@@ -818,6 +866,23 @@ function QuizResults({ report, quizLevel, spoken, onNavigate, onRetryWeak, onNew
     return () => s.cancel()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (!quizId || !weak.length) return undefined
+    let alive = true
+    api
+      .coach(quizId, report)
+      .then((r) => {
+        if (!alive || !r?.text) return
+        setCoachText(r.text)
+        setCoachChecked(!!r.checked)
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quizId])
 
   const act = (step) => {
     const a = step.action || {}
@@ -841,9 +906,14 @@ function QuizResults({ report, quizLevel, spoken, onNavigate, onRetryWeak, onNew
                 {report.timed_out > 0 && <Pill tone="warn" icon={Clock}>{report.timed_out} ran out of time</Pill>}
                 {report.skipped > 0 && <Pill tone="info" icon={SkipForward}>{report.skipped} skipped</Pill>}
                 <Pill tone={weak.length ? 'warn' : 'ok'} icon={weak.length ? Target : CircleCheck}>{weak.length ? `${weak.length} weak area${weak.length > 1 ? 's' : ''}` : 'No weak areas'}</Pill>
+                {coachChecked && (
+                  <Pill tone="ok" icon={CircleCheck}>
+                    Checked
+                  </Pill>
+                )}
               </div>
-              <p className="mt-3">{report.coach || report.advice}</p>
-              {report.coach && <p className="mt-1 text-sm text-muted">{report.advice}</p>}
+              <p className="mt-3">{coachText || report.advice}</p>
+              {coachText && <p className="mt-1 text-sm text-muted">{report.advice}</p>}
             </div>
           </div>
           <div className="flex flex-wrap gap-2 border-t border-line bg-surface-2/50 px-6 py-4">

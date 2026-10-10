@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { Camera, FileText, Upload } from 'lucide-react'
 import { api } from '../lib/api'
@@ -22,8 +22,19 @@ export default function UploadPanel() {
   const [drag, setDrag] = useState(false)
   const [file, setFile] = useState(null)
   const [preview, setPreview] = useState(null)
+  const previewRef = useRef(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState(null)
+
+  useEffect(() => () => {
+    if (previewRef.current) URL.revokeObjectURL(previewRef.current)
+  }, [])
+
+  const setPreviewUrl = (url) => {
+    if (previewRef.current) URL.revokeObjectURL(previewRef.current)
+    previewRef.current = url
+    setPreview(url)
+  }
 
   const start = async (f) => {
     if (!f) return
@@ -33,7 +44,7 @@ export default function UploadPanel() {
       return
     }
     setFile(f)
-    setPreview(f.type.startsWith('image/') && !/heic|heif/i.test(f.type) ? URL.createObjectURL(f) : null)
+    setPreviewUrl(f.type.startsWith('image/') && !/heic|heif/i.test(f.type) ? URL.createObjectURL(f) : null)
     setBusy(true)
     announce('Reading the page. This takes about 15 seconds.')
     try {

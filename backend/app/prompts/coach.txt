@@ -1,0 +1,11 @@
+# used by services/coach.py  (role: coach). Plain code inserts all numbers and the missed fact; the model must write no digits.
+Write one short coaching note for a learner. Return ONLY JSON: {"lines": ["...", "..."]}
+Rules:
+- At most 2 lines. Each line is one short sentence in English.
+- Do NOT write any digits (0-9) or percentages. Code will add the score and the missed fact.
+- Connect the miss to the page using only the fact text and section heading given below.
+- The last line MUST be exactly: Next: {plan_title}
+- No greetings, names, or invented facts.
+<section>{section_heading}</section>
+<fact>{missed_fact}</fact>
+<plan>{plan_title}</plan>

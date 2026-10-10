@@ -46,6 +46,23 @@ def read_page(prepared: Prepared) -> dict:
         language = data.get("language") or language
         models.append(model)
         warnings.append("Used the PDF's own text, so no words had to be guessed.")
+        # Still vision-scan page images for figures/diagrams the text layer does not describe
+        if prepared.images:
+            figure_prompt = (
+                load_prompt("ocr_page.txt")
+                + "\n\nOnly extract figures, diagrams and their captions. Skip all body text paragraphs."
+            )
+            for i, img in enumerate(prepared.images, start=1):
+                try:
+                    fdata, fmodel = gemini_json(figure_prompt, image=img)
+                except AppError as e:
+                    if e.code != "RATE_LIMITED" or not get_settings().deepseek_api_key:
+                        warnings.append("Figure descriptions were skipped because the vision model was busy.")
+                        break
+                    fdata, fmodel = deepseek_json(figure_prompt, image=img, max_tokens=2000)
+                figs = [b for b in _clean_blocks(fdata.get("blocks"), page=i) if b["type"] == "figure"]
+                blocks.extend(figs)
+                models.append(fmodel)
     else:
         prompt = load_prompt("ocr_page.txt")
         for i, img in enumerate(prepared.images, start=1):

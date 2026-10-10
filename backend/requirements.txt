@@ -16,10 +16,7 @@ textstat
 wordfreq
 pillow
 pillow-heif
-pypdf
 pymupdf
-# optional fallbacks
-pytesseract
 # evaluation + tests
 jiwer
 pytest

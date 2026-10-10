@@ -5,8 +5,9 @@ export function splitSentences(text) {
   const clean = (text || '').replace(/\s+/g, ' ').trim()
   if (!clean) return []
   const protectedText = clean.replace(ABBREV, (m) => m.replace(/\./g, '§'))
+  // Keep quote outside the lookbehind so this matches backend readability.split_sentences
   return protectedText
-    .split(/(?<=[.!?]["')\]]?)\s+(?=[A-Z0-9"'(\[])/)
+    .split(/(?<=[.!?])["')\]]?\s+(?=[A-Z0-9"'(\[])/)
     .map((s) => s.replace(/§/g, '.').trim())
     .filter(Boolean)
 }

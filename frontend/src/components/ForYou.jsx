@@ -1,6 +1,8 @@
 // Home "For you": where you left off and your next step, built only from this learner's own profile.
-import { ArrowRight, BookOpen, GraduationCap, Headphones, Captions as CaptionsIcon, MonitorPlay, Play } from 'lucide-react'
+import { ArrowRight, BookOpen, GraduationCap, Headphones, Captions as CaptionsIcon, MonitorPlay, Play, RotateCcw } from 'lucide-react'
+import { msg } from '../lib/messages'
 import { useProfile } from '../lib/profile'
+import { useSettings } from '../lib/settings'
 import { cx } from './ui'
 
 const TAB_NAME = { read: 'Read Easy', listen: 'Listen', captions: 'Captions', videos: 'Videos', practice: 'Practice', original: 'Original page' }
@@ -26,17 +28,25 @@ export function stepHref(lessonId, action = {}) {
 
 export default function ForYou({ lessonIds }) {
   const { profile, clearAll } = useProfile()
+  const { settings } = useSettings()
   const exists = (id) => !lessonIds || lessonIds.has(id)
   const recent = profile.recent.find((r) => exists(r.id))
   const report = profile.lastReport && exists(profile.lastReport.lessonId) ? profile.lastReport : null
-  if (!recent && !report) return null
+  const reviewItems = (profile.review || []).filter((r) => exists(r.lessonId))
+  const reviewLessonId = reviewItems[0]?.lessonId
+  // Count only facts for the lesson the CTA opens (matches Practice's per-lesson filter)
+  const reviewCount = reviewLessonId ? reviewItems.filter((r) => r.lessonId === reviewLessonId).length : 0
+  if (!recent && !report && !reviewCount) return null
   const RecentIcon = TAB_ICON[recent?.tab] || BookOpen
+  const nextLabel = report?.step
+    ? msg('next', { helpLang: settings.helpLang, addressForm: profile.addressForm, title: report.step.title }) || report.step.title
+    : null
   return (
     <section aria-labelledby="for-you-h" className="pt-6">
       <h2 id="for-you-h" className="eyebrow text-accent-ink">
         For you
       </h2>
-      <div className={cx('mt-3 grid gap-4', recent && report && 'md:grid-cols-2')}>
+      <div className={cx('mt-3 grid gap-4', (recent ? 1 : 0) + (report?.step ? 1 : 0) + (reviewCount ? 1 : 0) > 1 && 'md:grid-cols-2')}>
         {recent && (
           <a href={`#/lesson/${recent.id}?tab=${recent.tab || 'read'}`} className="group flex items-center gap-4 rounded-3xl border border-line bg-surface p-5 shadow-[var(--shadow)] transition hover:-translate-y-1 hover:border-brand/40">
             <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-brand/10 text-brand">
@@ -61,10 +71,27 @@ export default function ForYou({ lessonIds }) {
               <span className="block text-sm opacity-75">
                 Your next step · from your last quiz ({report.correct} of {report.total})
               </span>
-              <span className="block font-display text-lg font-bold leading-snug">{report.step.title}</span>
+              <span className="block font-display text-lg font-bold leading-snug" lang={settings.helpLang === 'ur' || settings.helpLang === 'ps' ? settings.helpLang : undefined} dir={settings.helpLang === 'ur' || settings.helpLang === 'ps' ? 'rtl' : undefined}>
+                {nextLabel}
+              </span>
               <span className="block truncate text-sm opacity-75">{report.title}</span>
             </span>
             <ArrowRight className="size-5 shrink-0 transition group-hover:translate-x-1" aria-hidden />
+          </a>
+        )}
+        {reviewCount > 0 && reviewLessonId && (
+          <a href={`#/lesson/${reviewLessonId}?tab=practice&review=1`} className="group flex items-center gap-4 rounded-3xl border border-line bg-surface p-5 shadow-[var(--shadow)] transition hover:-translate-y-1 hover:border-brand/40 md:col-span-2">
+            <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-warn-soft text-warn">
+              <RotateCcw className="size-6" aria-hidden />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm text-muted">Review what you missed</span>
+              <span className="block font-display text-lg font-bold" lang={settings.helpLang === 'ur' || settings.helpLang === 'ps' ? settings.helpLang : undefined} dir={settings.helpLang === 'ur' || settings.helpLang === 'ps' ? 'rtl' : undefined}>
+                {msg('review', { helpLang: settings.helpLang, addressForm: profile.addressForm, count: reviewCount })}
+              </span>
+              <span className="block truncate text-sm text-muted">{reviewItems[0].title}</span>
+            </span>
+            <ArrowRight className="size-5 shrink-0 text-brand transition group-hover:translate-x-1" aria-hidden />
           </a>
         )}
       </div>

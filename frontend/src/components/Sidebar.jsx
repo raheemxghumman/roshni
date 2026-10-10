@@ -57,7 +57,8 @@ export function GlossaryCard({ state, onRetry: load, selected, onSelect }) {
 
   const speak = (item) => {
     setPlaying(item.term)
-    playClip(api.ttsUrl(item[help.field], lang), () => setPlaying(null)).catch(() => {
+    const voice = lang === 'ur' ? settings.urduVoice : lang === 'ps' ? settings.pashtoVoice : undefined
+    playClip(api.ttsUrl(item[help.field], lang, voice), () => setPlaying(null)).catch(() => {
       setPlaying(null)
       announce(`${help.label} audio is not available right now`)
     })

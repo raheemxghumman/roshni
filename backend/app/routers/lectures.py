@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from ..config import get_settings
 from ..errors import AppError
 from ..services import cache, summarize, transcribe
-from .lessons import demo_guard, now
+from .lessons import demo_guard, now, read_upload
 
 router = APIRouter(prefix="/api", tags=["lectures"])
 
@@ -17,7 +17,7 @@ MEDIA = {"mp3": "audio/mpeg", "wav": "audio/wav", "ogg": "audio/ogg", "flac": "a
 @router.post("/lectures")
 def create_lecture(file: UploadFile = File(...), language: str = Form("auto"), lesson_id: str | None = Form(None)) -> dict:
     s = get_settings()
-    data = file.file.read()
+    data = read_upload(file, s.max_audio_mb)
     lecture_id = cache.make_key(data, language, s.prompt_version)
     lecture = cache.get_json("lectures", lecture_id)
     if not lecture:
@@ -33,10 +33,18 @@ def create_lecture(file: UploadFile = File(...), language: str = Form("auto"), l
             "models": {"speech_to_text": tr["model"], "summary": summarizer, "checker": check.get("checker_model", "")},
         }
         cache.put_json("lectures", lecture_id, lecture)
-    if lesson_id and (lesson := cache.get_json("lessons", lesson_id)):
-        lesson["lecture_id"] = lecture_id
-        cache.put_json("lessons", lesson_id, lesson)
-    return lecture
+    attached = False
+    if lesson_id:
+        lesson = cache.get_json("lessons", lesson_id)
+        if not lesson:
+            raise AppError("NOT_FOUND", "That lesson doesn't exist, so the lecture couldn't be attached.", 404)
+
+        def _attach(lesson: dict) -> None:
+            lesson["lecture_id"] = lecture_id
+
+        cache.update_json("lessons", lesson_id, _attach)
+        attached = True
+    return {**lecture, "attached": attached}
 
 
 @router.get("/lectures/{lecture_id}")

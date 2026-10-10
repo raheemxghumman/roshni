@@ -394,9 +394,9 @@ Roles (rename these to people):
 
 ## 15. Deployment
 
-- **Backend:** a Hugging Face Space (Docker SDK) built from `backend/Dockerfile`, port 7860. Put the keys in **Space settings → Secrets**, not in the repo.
-- **Frontend:** Vercel, importing the GitHub repo with root `frontend/`. Set `VITE_API_BASE_URL` to the Space URL.
-- **Local fallback for the demo:** `uvicorn app.main:app --port 8000` + `npm run dev`, with `DEMO_MODE=true`.
+- **Deploy:** a Hugging Face Space (Docker SDK) built from the **repo-root** `Dockerfile`, port 7860. Put the keys in **Space settings → Secrets**, not in the repo. See `docs/DEPLOY.md`. (`backend/Dockerfile` is obsolete.)
+- **Optional split:** Vercel for `frontend/` with `VITE_API_BASE_URL` pointing at the Space.
+- **Local fallback for the demo:** build the frontend (`cd frontend && npm run build`), then `cd backend && bash run_dev.sh` and open http://127.0.0.1:8000 — or use `npm run dev` on :5173. If quotas are exhausted, set `DEMO_MODE=true` and open **sample** lessons only (live upload is blocked in demo mode).
 
 ---
 

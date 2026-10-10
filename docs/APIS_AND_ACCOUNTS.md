@@ -74,16 +74,18 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 - Add all members as collaborators. Protect `main` (optional).
 - Every commit must come from a registered team member, since the rulebook allows only registered members to contribute.
 
-### 3.2 Hugging Face (backend hosting)
+### 3.2 Hugging Face (full app — recommended)
 
 - https://huggingface.co → sign up → **New Space** → SDK: **Docker** → hardware: **CPU basic (free)**.
-- **Settings → Variables and secrets:** add every key from `.env.example` as a **Secret**.
-- Push the backend folder to the Space's git remote using an access token (Settings → Access Tokens → *write*).
+- **Settings → Variables and secrets:** add every key from `.env.example` as a **Secret**. Optional: `API_SECRET` to lock mutating routes.
+- Push the **repository root** (not `backend/` alone) to the Space's git remote. The root `Dockerfile` builds the React UI and FastAPI together. See `docs/DEPLOY.md`.
 - The app listens on **port 7860**. Free Spaces sleep when idle, so open the URL 10 minutes before the demo.
+- Do **not** use `backend/Dockerfile` — it is obsolete and will fail the build on purpose.
 - Backup host if the build fails: Render (free web service; VERIFY that no card is needed) or run locally.
 
-### 3.3 Vercel (frontend hosting)
+### 3.3 Vercel (optional frontend-only hosting)
 
+- Only needed if you split FE/BE. Prefer the single Space above.
 - https://vercel.com → sign in with GitHub → **Import** the repo → Root directory: `frontend` → framework: Vite.
 - Environment variable: `VITE_API_BASE_URL` = the Space URL (e.g. `https://<user>-roshni.hf.space`).
 - The free Hobby plan is enough.
@@ -93,7 +95,6 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 ## 4. Optional local tools (no accounts)
 | Tool | Used for | Install |
 |---|---|---|
-| **Tesseract OCR** | English print OCR fallback | Windows installer from the UB-Mannheim build; `pip install pytesseract` |
 | **Ollama** | Last-resort local text model | https://ollama.com → `ollama pull llama3.2:3b` |
 | **faster-whisper** | Local speech-to-text fallback | `pip install faster-whisper` (the small model runs on CPU) |
 | **ffmpeg** | Splitting long lecture audio (P1) | `winget install ffmpeg` |
@@ -123,7 +124,8 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 | `TTS_URDU_VOICE` | `ur-PK-UzmaNeural` | tts |
 | `TTS_PASHTO_VOICE` | `ps-AF-LatifaNeural` | tts |
 | `TTS_ENGLISH_VOICE` | `en-US-AriaNeural` | tts |
-| `DEMO_MODE` | `false` | `true` = serve only from cache, no API calls |
+| `DEMO_MODE` | `false` | `true` = serve only from cache / samples (no live upload, no new TTS, no Whisper). Open sample lessons. |
+| `API_SECRET` | _(empty)_ | When set, mutating/LLM routes need `Authorization: Bearer <secret>` or `X-API-Key` |
 | `CACHE_DIR` | *(empty = `data/cache`)* | cache |
 | `MAX_UPLOAD_MB` | `10` | ingest |
 | `ALLOWED_ORIGINS` | `http://localhost:5173,https://roshni.vercel.app` | CORS |

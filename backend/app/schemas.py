@@ -14,6 +14,7 @@ class QuizRequest(BaseModel):
     level: Level = "easier"
     count: Literal[5, 10, 15] = 15
     section_ids: list[str] = Field(default_factory=list, max_length=50)  # empty = the whole page
+    fact_ids: list[str] = Field(default_factory=list, max_length=15)  # review quiz: only these verified facts
     fresh: bool = False  # True = new questions instead of the last quiz with the same settings
 
 
@@ -26,6 +27,18 @@ class QuizAnswers(BaseModel):
     answers: dict[str, str] = Field(default_factory=dict)
     timed_out: list[str] = Field(default_factory=list, max_length=50)
     mode: Literal["tap", "voice"] = "tap"
+
+
+class AskRequest(BaseModel):
+    sentence: str = Field(min_length=1, max_length=500)
+    question: str = Field(min_length=1, max_length=400)
+
+
+class CoachRequest(BaseModel):
+    correct: int = Field(ge=0, le=50)
+    total: int = Field(ge=1, le=50)
+    sections: list[dict] = Field(default_factory=list, max_length=40)
+    plan: list[dict] = Field(default_factory=list, max_length=20)
 
 
 class VideoRequest(BaseModel):

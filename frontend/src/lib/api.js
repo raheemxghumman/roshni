@@ -21,6 +21,8 @@ async function request(path, { method = 'GET', body, form, signal } = {}) {
     if (body) headers['Content-Type'] = 'application/json'
     const id = learnerId()
     if (id) headers['X-Learner-Id'] = id
+    const secret = (import.meta.env.VITE_API_SECRET || '').trim()
+    if (secret) headers.Authorization = `Bearer ${secret}`
     res = await fetch(apiUrl(path), {
       method,
       signal,
@@ -53,17 +55,37 @@ const form = (fields) => {
 export const api = {
   health: () => request('/api/health'),
   lessons: () => request('/api/lessons'),
-  lesson: (id) => request(`/api/lessons/${id}`),
+  lesson: (id, opts) => request(`/api/lessons/${id}`, opts),
   upload: (file, signal) => request('/api/lessons', { method: 'POST', form: form({ file }), signal }),
   deleteLesson: (id) => request(`/api/lessons/${id}`, { method: 'DELETE' }),
   simplify: (id, level) => request(`/api/lessons/${id}/simplify`, { method: 'POST', body: { level } }),
   stress: (id, level) => request(`/api/lessons/${id}/factguard/stress`, { method: 'POST', body: { level } }),
   glossary: (id) => request(`/api/lessons/${id}/glossary`, { method: 'POST' }),
-  quiz: (id, { level = 'easier', count = 15, sectionIds = [], fresh = false } = {}) =>
-    request(`/api/lessons/${id}/quiz`, { method: 'POST', body: { level, count, section_ids: sectionIds, fresh } }),
+  quiz: (id, { level = 'easier', count = 15, sectionIds = [], factIds = [], fresh = false } = {}) =>
+    request(`/api/lessons/${id}/quiz`, {
+      method: 'POST',
+      body: { level, count, section_ids: sectionIds, fact_ids: factIds, fresh },
+    }),
   checkAnswer: (quizId, questionId, answer) => request(`/api/quiz/${quizId}/check`, { method: 'POST', body: { question_id: questionId, answer } }),
   finishQuiz: (quizId, answers, timedOut, mode) =>
     request(`/api/quiz/${quizId}/answers`, { method: 'POST', body: { answers, timed_out: timedOut, mode } }),
+  coach: (quizId, report) =>
+    request(`/api/quiz/${quizId}/coach`, {
+      method: 'POST',
+      body: {
+        correct: report.correct,
+        total: report.total,
+        sections: (report.sections || []).map((s) => ({
+          id: s.id,
+          heading: s.heading,
+          weak: s.weak,
+          missed_facts: s.missed_facts || [],
+        })),
+        plan: (report.plan || []).map((p) => ({ title: p.title, kind: p.kind })),
+      },
+    }),
+  ask: (lessonId, sentence, question) =>
+    request(`/api/lessons/${lessonId}/ask`, { method: 'POST', body: { sentence, question } }),
   practice: (id) => request(`/api/lessons/${id}/practice`),
   voiceAnswer: (blob, options, language) => {
     const ext = /mp4/.test(blob.type) ? 'm4a' : /ogg/.test(blob.type) ? 'ogg' : 'webm'
@@ -84,5 +106,9 @@ export const api = {
   me: () => request('/api/me'),
   saveMe: (profile) => request('/api/me', { method: 'PUT', body: { profile } }),
   deleteMe: () => request('/api/me', { method: 'DELETE' }),
-  ttsUrl: (text, lang = 'ur') => apiUrl(`/api/tts?${new URLSearchParams({ text, lang })}`),
+  ttsUrl: (text, lang = 'ur', voice) => {
+    const params = new URLSearchParams({ text, lang })
+    if (voice) params.set('voice', voice)
+    return apiUrl(`/api/tts?${params}`)
+  },
 }

@@ -12,6 +12,8 @@
 | `lecture_summary.txt` | summarize.py | Rewriter: lecture summary |
 | `support_check.txt` | summarize.py | Checker: every summary claim supported by the transcript |
 | `quiz.txt` | quiz.py | Rewriter: questions from verified facts only |
+| `ask.txt` | ask.py | Grounded tutor: answer from one section only |
+| `coach.txt` | coach.py | Coach v2 phrasing (no digits; code inserts facts) |
 
 Rules:
 - `{placeholders}` are filled by `config.fill()`. Lines starting with `# ` are comments and are stripped.

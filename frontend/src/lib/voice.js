@@ -16,14 +16,32 @@ function englishVoice() {
 export function speak(text, { rate = 1 } = {}) {
   let cancelled = false
   let audio = null
+  let resolveServer = null
   const cancel = () => {
     cancelled = true
     synth?.cancel()
-    audio?.pause()
+    if (audio) {
+      audio.pause()
+      audio.removeAttribute('src')
+      audio.load()
+    }
+    resolveServer?.()
+    resolveServer = null
   }
   const done = (async () => {
     const parts = splitSentences(text).filter(Boolean)
     if (!parts.length) return
+    // Wait briefly for Chrome to populate voices before falling back to server TTS
+    if (synth && !synth.getVoices().length && 'onvoiceschanged' in synth) {
+      await new Promise((resolve) => {
+        const doneVoices = () => {
+          synth.removeEventListener('voiceschanged', doneVoices)
+          resolve()
+        }
+        synth.addEventListener('voiceschanged', doneVoices)
+        setTimeout(doneVoices, 400)
+      })
+    }
     if (synth && (synth.getVoices().length || !('onvoiceschanged' in synth))) {
       synth.cancel()
       const voice = englishVoice()
@@ -49,11 +67,17 @@ export function speak(text, { rate = 1 } = {}) {
     }
     // no browser voice: the server reads it (edge-tts)
     await new Promise((resolve) => {
+      if (cancelled) return resolve()
+      resolveServer = resolve
       audio = new Audio(api.ttsUrl(text.slice(0, 1400), 'en'))
       audio.playbackRate = rate
-      audio.onended = resolve
-      audio.onerror = resolve
-      audio.play().catch(resolve)
+      const finish = () => {
+        resolveServer = null
+        resolve()
+      }
+      audio.onended = finish
+      audio.onerror = finish
+      audio.play().catch(finish)
     })
   })()
   return { done, cancel }

@@ -37,19 +37,29 @@ export default function Lesson({ id, tab: initialTab, params = {} }) {
     const f = {}
     for (const k of ['level', 'section', 'term', 'video']) if (params[k]) f[k] = params[k]
     if (params.t != null && !Number.isNaN(Number(params.t))) f.t = Number(params.t)
-    return Object.keys(f).length ? { ...f, tab: linkTab || 'read', nonce: 1 } : null
+    if (params.review) f.review = true
+    return Object.keys(f).length || params.review ? { ...f, tab: linkTab || 'read', nonce: 1 } : null
   })
 
-  const load = () =>
+  const load = (signal) =>
     api
-      .lesson(id)
+      .lesson(id, { signal })
       .then((l) => {
+        if (signal?.aborted) return
         setLesson(l)
         setError(null)
       })
-      .catch(setError)
+      .catch((e) => {
+        if (signal?.aborted || e?.name === 'AbortError') return
+        setError(e)
+      })
   useEffect(() => {
-    load()
+    const ac = new AbortController()
+    setLesson(null)
+    setError(null)
+    opened.current = false
+    load(ac.signal)
+    return () => ac.abort()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
@@ -82,6 +92,7 @@ export default function Lesson({ id, tab: initialTab, params = {} }) {
     const f = {}
     for (const k of ['level', 'section', 'term', 'video']) if (params[k]) f[k] = params[k]
     if (params.t != null && !Number.isNaN(Number(params.t))) f.t = Number(params.t)
+    if (params.review) f.review = true
     const next = linkTab || tab
     if (next !== tab) setTab(next)
     if (Object.keys(f).length) {
@@ -212,7 +223,7 @@ export default function Lesson({ id, tab: initialTab, params = {} }) {
             {tab === 'listen' && <Listen lesson={lesson} focus={focus?.tab === 'listen' ? focus : null} />}
             {tab === 'captions' && <Captions lesson={lesson} onLesson={setLesson} />}
             {tab === 'videos' && <Videos lesson={lesson} onLesson={setLesson} focus={focus?.tab === 'videos' ? focus : null} />}
-            {tab === 'practice' && <Practice lesson={lesson} onLesson={setLesson} onNavigate={goTo} />}
+            {tab === 'practice' && <Practice lesson={lesson} onLesson={setLesson} onNavigate={goTo} focus={focus?.tab === 'practice' || focus?.review ? focus : null} />}
             {tab === 'original' && <Original lesson={lesson} />}
           </motion.div>
         </AnimatePresence>

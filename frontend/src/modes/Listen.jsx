@@ -5,15 +5,19 @@ import { announce } from '../lib/announce'
 import { splitSentences } from '../lib/sentences'
 import { useSettings } from '../lib/settings'
 import { useSpeech } from '../lib/speech'
+import AskSentence, { AskTrigger } from '../components/AskSentence'
 import { Button, Card, Pill, cx } from '../components/ui'
 
 function buildUnits(lesson, useSimple) {
-  const simple = Object.fromEntries((lesson.simplified?.easier?.sections || []).map((s) => [s.id, s.text]))
+  const level = useSimple === 'simplest' ? 'simplest' : useSimple ? 'easier' : null
+  const simple = level
+    ? Object.fromEntries((lesson.simplified?.[level]?.sections || []).map((s) => [s.id, s.text]))
+    : {}
   const n = lesson.sections.length
   const units = []
   lesson.sections.forEach((s, si) => {
     units.push({ text: `Section ${si + 1} of ${n}: ${s.heading}.`, si, kind: 'heading' })
-    if (useSimple && simple[s.id]) {
+    if (level && simple[s.id]) {
       splitSentences(simple[s.id]).forEach((t) => units.push({ text: t, si, kind: 'text' }))
       s.blocks.filter((b) => b.type === 'figure').forEach((b) => units.push({ text: `Figure. ${b.description}`, si, kind: 'figure', bid: b.id }))
       return
@@ -37,11 +41,12 @@ function buildUnits(lesson, useSimple) {
 export default function Listen({ lesson, focus }) {
   const { settings, update } = useSettings()
   const speech = useSpeech()
-  const hasSimple = !!lesson.simplified?.easier
-  const [useSimple, setUseSimple] = useState(false)
+  const hasSimple = !!lesson.simplified?.easier || !!lesson.simplified?.simplest
+  const [useSimple, setUseSimple] = useState(false) // false | true/'easier' | 'simplest'
   const [shortcutMode, setShortcutMode] = useState(false)
+  const [ask, setAsk] = useState(null)
   const units = useMemo(() => buildUnits(lesson, useSimple), [lesson, useSimple])
-  const key = `listen-${lesson.id}-${useSimple}`
+  const key = `listen-${lesson.id}-${useSimple || 'original'}`
   const isMine = speech.key === key
   const current = isMine && speech.status !== 'idle' ? speech.index : -1
   const currentSection = current >= 0 ? units[current]?.si : -1
@@ -69,9 +74,13 @@ export default function Listen({ lesson, focus }) {
     if (currentSection >= 0) announce(`Section ${currentSection + 1}: ${lesson.sections[currentSection]?.heading}`)
   }, [currentSection, lesson.sections])
 
-  // a study-plan step can open a section: scroll to it and put focus on its Play button
+  // a study-plan step can open a section (and optionally a simpler level)
   useEffect(() => {
-    if (!focus?.section) return undefined
+    if (!focus) return undefined
+    if (focus.level === 'simplest' && lesson.simplified?.simplest) setUseSimple('simplest')
+    else if (focus.level === 'easier' && lesson.simplified?.easier) setUseSimple(true)
+    else if (focus.simple && lesson.simplified?.easier) setUseSimple(true)
+    if (!focus.section) return undefined
     const id = setTimeout(() => {
       const card = document.getElementById(`lh-${focus.section}`)?.closest('article')
       if (!card) return
@@ -79,7 +88,7 @@ export default function Listen({ lesson, focus }) {
       card.querySelector('button')?.focus({ preventScroll: true })
     }, 450)
     return () => clearTimeout(id)
-  }, [focus?.nonce, focus?.section])
+  }, [focus?.nonce, focus?.section, focus?.level, focus?.simple, lesson.simplified])
 
   useEffect(() => {
     if (current >= 0) document.getElementById(`unit-${current}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' })
@@ -174,16 +183,18 @@ export default function Listen({ lesson, focus }) {
                           {u.text.replace(/^Figure:?\s*/, '')}
                         </figure>
                       ) : (
-                        <span
-                          key={u.i}
-                          id={`unit-${u.i}`}
-                          role="button"
-                          tabIndex={0}
-                          onClick={() => playFrom(u.i)}
-                          onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), playFrom(u.i))}
-                          className={cx('sentence', current === u.i && 'is-current')}
-                        >
-                          {u.text}{' '}
+                        <span key={u.i} className="inline">
+                          <span
+                            id={`unit-${u.i}`}
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => playFrom(u.i)}
+                            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), playFrom(u.i))}
+                            className={cx('sentence', current === u.i && 'is-current')}
+                          >
+                            {u.text}
+                          </span>
+                          {u.kind === 'text' && <AskTrigger onAsk={() => setAsk({ sentence: u.text, heading: s.heading })} />}{' '}
                         </span>
                       ),
                     )}
@@ -205,9 +216,15 @@ export default function Listen({ lesson, focus }) {
           <div className="mt-4 space-y-3">
             <label className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-line px-3 py-2.5">
               <span className="text-sm font-semibold">Read the easier version</span>
-              <input type="checkbox" checked={useSimple} disabled={!hasSimple} onChange={(e) => (speech.stop(), setUseSimple(e.target.checked))} className="size-5 accent-[var(--brand)]" />
+              <input type="checkbox" checked={!!useSimple} disabled={!hasSimple} onChange={(e) => {
+                speech.stop()
+                if (!e.target.checked) setUseSimple(false)
+                else if (lesson.simplified?.simplest) setUseSimple('simplest')
+                else setUseSimple(true)
+              }} className="size-5 accent-[var(--brand)]" />
             </label>
             {!hasSimple && <p className="text-xs text-muted">Open Read Easy once to make the easier version.</p>}
+            {useSimple === 'simplest' && <p className="text-xs text-muted">Using the Simplest rewrite.</p>}
             <label className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-line px-3 py-2.5">
               <span className="text-sm font-semibold">Single-key shortcuts</span>
               <input type="checkbox" checked={shortcutMode} onChange={(e) => setShortcutMode(e.target.checked)} className="size-5 accent-[var(--brand)]" />
@@ -241,6 +258,13 @@ export default function Listen({ lesson, focus }) {
           </p>
         </Card>
       </aside>
+      <AskSentence
+        lessonId={lesson.id}
+        sentence={ask?.sentence || ''}
+        sectionHeading={ask?.heading}
+        open={!!ask}
+        onClose={() => setAsk(null)}
+      />
     </div>
   )
 }

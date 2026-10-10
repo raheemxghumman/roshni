@@ -18,6 +18,8 @@ export const PROFILE_DEFAULTS = {
   lastReport: null, // {lessonId, title, correct, total, score, level, weak, step: {title, action}, at}
   best: {}, // lessonId -> best score
   dismissed: {}, // lessonId -> true when the "opened because" line was dismissed
+  review: [], // [{lessonId, title, factId, fact, at}] missed facts waiting for a correct answer
+  addressForm: 'neutral', // how Roshni addresses you in Urdu/Pashto templates
   updatedAt: 0,
 }
 
@@ -58,7 +60,17 @@ export function ProfileProvider({ children }) {
         const remote = await api.me()
         if (!alive || !remote?.profile) return
         loadedFromServer.current = true
-        setProfile((local) => ((remote.profile.updatedAt || 0) > (local.updatedAt || 0) ? { ...PROFILE_DEFAULTS, ...remote.profile } : local))
+        setProfile((local) => {
+          if ((remote.profile.updatedAt || 0) > (local.updatedAt || 0)) {
+            return { ...PROFILE_DEFAULTS, ...remote.profile }
+          }
+          // Local is newer: keep it and push so the server catches up
+          if ((local.updatedAt || 0) > (remote.profile.updatedAt || 0)) {
+            learnerId({ create: true })
+            api.saveMe(local).catch(() => {})
+          }
+          return local
+        })
         setSync('synced')
       })
       .catch(() => alive && setSync(learnerId() ? 'offline' : 'local'))
@@ -110,16 +122,31 @@ export function ProfileProvider({ children }) {
         const weak = report.sections.filter((s) => s.weak).map((s) => s.heading)
         const step = report.plan.find((s) => s.action?.tab) || report.plan[0] || null
         const entry = { correct: report.correct, total: report.total, score: report.score, weak, at: Date.now() }
+        // Missed facts join the review list; facts answered correctly this attempt leave it.
+        const gotRight = new Set((report.results || []).filter((r) => r.correct && r.fact_id).map((r) => r.fact_id))
+        const missed = (report.results || [])
+          .filter((r) => !r.correct && r.fact_id)
+          .map((r) => ({ lessonId: lesson.id, title: lesson.title, factId: r.fact_id, fact: r.fact, at: Date.now() }))
+        const kept = (p.review || []).filter((item) => !(item.lessonId === lesson.id && gotRight.has(item.factId)))
+        const seen = new Set(kept.map((item) => `${item.lessonId}:${item.factId}`))
+        const review = [...missed.filter((m) => !seen.has(`${m.lessonId}:${m.factId}`)), ...kept].slice(0, 40)
         const next = {
           last: { ...p.last, [lesson.id]: entry },
           best: { ...p.best, [lesson.id]: Math.max(p.best[lesson.id] || 0, report.score) },
           lastReport: { lessonId: lesson.id, title: lesson.title, level: quizLevel, ...entry, step: step && { title: step.title, action: step.action } },
+          review,
         }
         if (report.new_level === 'easier' || report.new_level === 'simplest') {
           next.levels = { ...p.levels, [lesson.id]: { level: report.new_level, from: 'quiz', score: report.score, correct: report.correct, total: report.total, at: Date.now() } }
         }
         return next
       }),
+    [update],
+  )
+
+  const clearReviewed = useCallback(
+    (lessonId, factId) =>
+      update((p) => ({ review: (p.review || []).filter((item) => !(item.lessonId === lessonId && item.factId === factId)) })),
     [update],
   )
 
@@ -135,7 +162,10 @@ export function ProfileProvider({ children }) {
     window.location.reload()
   }, [])
 
-  const value = useMemo(() => ({ profile, update, recordOpen, rememberLevel, saveResult, clearAll, sync }), [profile, update, recordOpen, rememberLevel, saveResult, clearAll, sync])
+  const value = useMemo(
+    () => ({ profile, update, recordOpen, rememberLevel, saveResult, clearReviewed, clearAll, sync }),
+    [profile, update, recordOpen, rememberLevel, saveResult, clearReviewed, clearAll, sync],
+  )
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>
 }
 

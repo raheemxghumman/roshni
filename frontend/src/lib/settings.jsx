@@ -22,7 +22,29 @@ export const HELP_LANGS = {
   ps: { label: 'Pashto', native: 'پښتو', field: 'pashto', className: 'pashto' },
 }
 
-export const DEFAULTS = { font: 'atkinson', scale: 1, leading: 1.75, tracking: 0.01, wordSpacing: 0.04, overlay: 'none', theme: 'light', rate: 1, helpLang: 'ur' }
+// Voices labelled by name (preference only — never framed as male/female).
+export const URDU_VOICES = [
+  { value: 'uzma', label: 'Uzma', sample: 'یہ ایک نمونہ آواز ہے۔' },
+  { value: 'asad', label: 'Asad', sample: 'یہ ایک نمونہ آواز ہے۔' },
+]
+export const PASHTO_VOICES = [
+  { value: 'latifa', label: 'Latifa', sample: 'دا د نمونې غږ دی.' },
+  { value: 'gulnawaz', label: 'Gul Nawaz', sample: 'دا د نمونې غږ دی.' },
+]
+
+export const DEFAULTS = {
+  font: 'atkinson',
+  scale: 1,
+  leading: 1.75,
+  tracking: 0.01,
+  wordSpacing: 0.04,
+  overlay: 'none',
+  theme: 'light',
+  rate: 1,
+  helpLang: 'ur',
+  urduVoice: 'uzma',
+  pashtoVoice: 'latifa',
+}
 const KEY = 'roshni-display-v1'
 
 function load() {

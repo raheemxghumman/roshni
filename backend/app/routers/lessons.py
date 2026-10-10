@@ -10,11 +10,13 @@ from fastapi.responses import FileResponse
 
 from ..config import get_settings
 from ..errors import AppError
-from ..schemas import LevelRequest
-from ..services import cache, factguard, glossary, ingest, ocr, simplify, structure, tts
+from ..schemas import AskRequest, LevelRequest
+from ..services import ask, cache, factguard, glossary, ingest, ocr, simplify, structure, tts
 from ..services.llm_clients import family
 
 router = APIRouter(prefix="/api", tags=["lessons"])
+
+_READ_CHUNK = 1024 * 256
 
 
 def now() -> str:
@@ -31,6 +33,22 @@ def load_lesson(lesson_id: str) -> dict:
 def demo_guard(what: str) -> None:
     if get_settings().demo_mode:
         raise AppError("DEMO_CACHE_MISS", f"Demo mode is on and {what} wasn't prepared in advance. Open a sample lesson instead.", 404)
+
+
+def read_upload(file: UploadFile, max_mb: int) -> bytes:
+    """Stream the upload and reject as soon as it exceeds max_mb (avoids loading multi-GB into memory)."""
+    limit = max_mb * 1024 * 1024
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        piece = file.file.read(_READ_CHUNK)
+        if not piece:
+            break
+        total += len(piece)
+        if total > limit:
+            raise AppError("FILE_TOO_LARGE", f"This file is over {max_mb} MB. Please use a smaller file.", 413)
+        chunks.append(piece)
+    return b"".join(chunks)
 
 
 def originals(lesson: dict) -> list[dict]:
@@ -63,7 +81,7 @@ def list_lessons() -> list[dict]:
 @router.post("/lessons")
 def create_lesson(file: UploadFile = File(...)) -> dict:
     s = get_settings()
-    data = file.file.read()
+    data = read_upload(file, s.max_upload_mb)
     lesson_id = cache.make_key(data, s.prompt_version)
     existing = cache.get_json("lessons", lesson_id)
     if existing:
@@ -113,7 +131,16 @@ def get_lesson(lesson_id: str) -> dict:
 
 @router.delete("/lessons/{lesson_id}")
 def delete_lesson(lesson_id: str) -> dict:
-    load_lesson(lesson_id)
+    lesson = load_lesson(lesson_id)
+    for qid in (lesson.get("quiz") or {}).values():
+        if isinstance(qid, str):
+            cache.delete("quizzes", qid)
+    for ids in (lesson.get("quizzes") or {}).values():
+        for qid in ids if isinstance(ids, list) else [ids]:
+            if isinstance(qid, str):
+                cache.delete("quizzes", qid)
+    if lecture_id := lesson.get("lecture_id"):
+        cache.delete("lectures", lecture_id)
     cache.delete("lessons", lesson_id)
     cache.delete("uploads", lesson_id)
     return {"deleted": True}
@@ -140,9 +167,11 @@ def simplify_lesson(lesson_id: str, body: LevelRequest) -> dict:
     result = simplify.simplify_with_guard(source, body.level)
     result["created_at"] = now()
     result["seconds"] = round(time.perf_counter() - started, 1)
-    lesson = load_lesson(lesson_id)
-    lesson.setdefault("simplified", {})[body.level] = result
-    cache.put_json("lessons", lesson_id, lesson)
+
+    def _save(lesson: dict) -> None:
+        lesson.setdefault("simplified", {})[body.level] = result
+
+    cache.update_json("lessons", lesson_id, _save)
     return result
 
 
@@ -174,9 +203,10 @@ def stress_test(lesson_id: str, body: LevelRequest) -> dict:
         "sabotaged_sections": sabotaged, "sabotaged_report": report,
         "repaired_sections": repaired, "repaired_report": repaired_report,
     }
-    lesson = load_lesson(lesson_id)
-    lesson.setdefault("stress", {})[body.level] = result
-    cache.put_json("lessons", lesson_id, lesson)
+    def _save_stress(lesson: dict) -> None:
+        lesson.setdefault("stress", {})[body.level] = result
+
+    cache.update_json("lessons", lesson_id, _save_stress)
     return result
 
 
@@ -184,19 +214,35 @@ def stress_test(lesson_id: str, body: LevelRequest) -> dict:
 def lesson_glossary(lesson_id: str) -> dict:
     lesson = load_lesson(lesson_id)
     existing = lesson.get("glossary")
-    # glossaries made before Pashto was added are rebuilt once (kept as they are in demo mode)
-    if existing and (not existing["items"] or all("pashto" in it for it in existing["items"]) or get_settings().demo_mode):
+    # Keep a good glossary (with items). Rebuild empty caches and pre-Pashto glossaries (unless demo mode).
+    if existing and existing.get("items") and (all("pashto" in it for it in existing["items"]) or get_settings().demo_mode):
+        return existing
+    if existing and not existing.get("items") and get_settings().demo_mode:
         return existing
     demo_guard("the glossary")
     items, model = glossary.build(originals(lesson))
     result = {"items": items, "model": model, "created_at": now()}
-    lesson = load_lesson(lesson_id)
-    lesson["glossary"] = result
-    cache.put_json("lessons", lesson_id, lesson)
+
+    def _save(lesson: dict) -> None:
+        lesson["glossary"] = result
+
+    cache.update_json("lessons", lesson_id, _save)
     return result
 
 
+@router.post("/lessons/{lesson_id}/ask")
+def ask_sentence(lesson_id: str, body: AskRequest) -> dict:
+    """Answer a question about one sentence, grounded in that section only and quote-checked."""
+    lesson = load_lesson(lesson_id)
+    demo_guard("an answer about this sentence")
+    return ask.answer(lesson, body.sentence, body.question)
+
+
 @router.get("/tts")
-async def text_to_speech(text: str = Query(..., max_length=1500), lang: str = Query("ur", pattern="^(ur|ps|en)$")) -> FileResponse:
-    path = await tts.speak(text, lang)
+async def text_to_speech(
+    text: str = Query(..., max_length=1500),
+    lang: str = Query("ur", pattern="^(ur|ps|en)$"),
+    voice: str | None = Query(default=None, max_length=40),
+) -> FileResponse:
+    path = await tts.speak(text, lang, voice=voice)
     return FileResponse(path, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})

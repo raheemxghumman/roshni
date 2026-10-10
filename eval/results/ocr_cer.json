@@ -3,7 +3,7 @@
   "date": "2026-10-10",
   "title": "Page-reading accuracy",
   "display": "99.98% correct on hard photos",
-  "value": 0.0,
+  "value": 0.0002,
   "detail": "Character error rate 0.00% on clean pages and 0.00% on pages degraded like phone photos (tilt, blur, dim light, noise). On deliberately hard photos (6-8° tilt, heavy blur, dim and uneven light, strong JPEG compression) it was 0.02%. Lower is better. Ground truth is the OpenStax source text.",
   "dataset": "OpenStax pages rendered as images, clean and phone-photo-degraded",
   "n": "10 page images + 5 hard images",

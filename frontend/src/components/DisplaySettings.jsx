@@ -1,8 +1,41 @@
-import { Contrast, Moon, Sun, Trash2 } from 'lucide-react'
-import { FONTS, OVERLAYS, useSettings } from '../lib/settings'
+import { Contrast, Moon, Sun, Trash2, Volume2 } from 'lucide-react'
+import { ADDRESS_FORMS, addressSample } from '../lib/messages'
+import { FONTS, OVERLAYS, PASHTO_VOICES, URDU_VOICES, useSettings } from '../lib/settings'
 import { useProfile } from '../lib/profile'
+import { api } from '../lib/api'
 import { SetupQuestions } from './Setup'
 import { Button, Drawer, Segmented, cx } from './ui'
+
+function VoicePicker({ label, lang, options, value, onChange }) {
+  const play = (voice, sample) => {
+    const audio = new Audio(api.ttsUrl(sample, lang, voice))
+    audio.play().catch(() => {})
+  }
+  return (
+    <fieldset>
+      <legend className="mb-2 text-sm font-semibold">{label}</legend>
+      <p className="mb-3 text-sm text-muted">Pick the voice you understand best. Names only — not labelled by gender.</p>
+      <div className="grid gap-2">
+        {options.map((o) => (
+          <label key={o.value} className={cx('flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2.5', value === o.value ? 'border-brand bg-surface-2' : 'border-line')}>
+            <input type="radio" name={`voice-${lang}`} value={o.value} checked={value === o.value} onChange={() => onChange(o.value)} className="accent-[var(--brand)]" />
+            <span className="flex-1 font-semibold">{o.label}</span>
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold text-brand hover:bg-brand/10"
+              onClick={(e) => {
+                e.preventDefault()
+                play(o.value, o.sample)
+              }}
+            >
+              <Volume2 className="size-3.5" aria-hidden /> Sample
+            </button>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  )
+}
 
 function Slider({ id, label, value, min, max, step, format, onChange }) {
   return (
@@ -20,7 +53,7 @@ function Slider({ id, label, value, min, max, step, format, onChange }) {
 
 export default function DisplaySettings({ open, onClose }) {
   const { settings, update, reset } = useSettings()
-  const { clearAll, sync } = useProfile()
+  const { profile, update: updateProfile, clearAll, sync } = useProfile()
   return (
     <Drawer open={open} onClose={onClose} title="Display settings" width="max-w-md">
       <div className="space-y-7">
@@ -91,6 +124,49 @@ export default function DisplaySettings({ open, onClose }) {
           <p className="mb-4 mt-1 text-sm text-muted">Choose what helps you. Lessons, levels and quizzes will start that way, and Roshni will say why.</p>
           <SetupQuestions compact onDone={onClose} />
         </section>
+
+        <fieldset>
+          <legend className="mb-2 text-sm font-semibold">How should Roshni address you in Urdu or Pashto?</legend>
+          <p className="mb-3 text-sm text-muted">Neutral by default. Only reviewed templates are used; other forms stay in English until signed off.</p>
+          <div className="grid gap-2">
+            {Object.values(ADDRESS_FORMS).map((form) => (
+              <label key={form.id} className={cx('flex cursor-pointer flex-col gap-1 rounded-xl border px-3 py-2.5', (profile.addressForm || 'neutral') === form.id ? 'border-brand bg-surface-2' : 'border-line')}>
+                <span className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="address"
+                    value={form.id}
+                    checked={(profile.addressForm || 'neutral') === form.id}
+                    onChange={() => updateProfile({ addressForm: form.id })}
+                    className="accent-[var(--brand)]"
+                  />
+                  <span className="font-semibold">{form.label}</span>
+                </span>
+                <span className="ps-7 text-sm text-muted" lang="ur" dir="rtl">
+                  {addressSample(form.id, 'ur')}
+                </span>
+                <span className="ps-7 text-sm text-muted" lang="ps" dir="rtl">
+                  {addressSample(form.id, 'ps')}
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <VoicePicker
+          label="Urdu voice"
+          lang="ur"
+          options={URDU_VOICES}
+          value={settings.urduVoice || 'uzma'}
+          onChange={(urduVoice) => update({ urduVoice })}
+        />
+        <VoicePicker
+          label="Pashto voice"
+          lang="ps"
+          options={PASHTO_VOICES}
+          value={settings.pashtoVoice || 'latifa'}
+          onChange={(pashtoVoice) => update({ pashtoVoice })}
+        />
 
         <div className="grid gap-2">
           <Button onClick={reset} className="w-full">

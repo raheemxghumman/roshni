@@ -1,0 +1,17 @@
+# used by services/ask.py  (role: ask). Every answer sentence is checked against the section with evidence_ok.
+Answer the learner's question using ONLY the section text below. Return ONLY JSON:
+{"answerable": true|false, "sentences": [{"text": "...", "quote": "exact words copied from the section"}]}
+Rules:
+- If the section does not say the answer, return {"answerable": false, "sentences": []} and nothing else.
+- When answerable, write 1 or 2 short sentences in the same language as the question (English, Urdu, or Pashto). Prefer third person; never invent names.
+- Every sentence MUST include a "quote" copied from the section (a real contiguous phrase). Numbers in the sentence must appear in that quote.
+- Do not use facts from outside the section. Do not add advice, greetings, or extra claims.
+<section>
+{section_text}
+</section>
+<sentence>
+{sentence}
+</sentence>
+<question>
+{question}
+</question>

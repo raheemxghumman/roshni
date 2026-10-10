@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from .auth import require_api_secret
 from .config import ROOT_DIR, get_settings
 from .errors import AppError
 from .routers import lectures, lessons, me, metrics, practice, videos
@@ -33,8 +34,20 @@ def seed_samples() -> None:
 
 seed_samples()
 app = FastAPI(title="Roshni API", version="1.0.0", description="One page. Every learner.")
-app.add_middleware(CORSMiddleware, allow_origins=settings.origins, allow_origin_regex=r"https://.*\.(vercel\.app|hf\.space)",
+# Prefer exact origins from ALLOWED_ORIGINS. Only add the HF Spaces / Vercel preview regex when no secret is set,
+# so a locked-down deploy with API_SECRET is not wide open to every *.vercel.app site.
+_cors_regex = None if settings.api_secret.strip() else r"https://.*\.(vercel\.app|hf\.space)"
+app.add_middleware(CORSMiddleware, allow_origins=settings.origins, allow_origin_regex=_cors_regex,
                    allow_methods=["*"], allow_headers=["*"])
+
+
+@app.middleware("http")
+async def api_secret_middleware(request: Request, call_next):
+    try:
+        require_api_secret(request)
+    except AppError as exc:
+        return JSONResponse(status_code=exc.status, content=exc.to_dict())
+    return await call_next(request)
 
 
 @app.exception_handler(AppError)
@@ -61,7 +74,8 @@ def health() -> dict:
         "demo_mode": s.demo_mode,
         "models": {"reader": s.gemini_model, "rewriter": s.groq_rewrite_model, "fact_guard": s.groq_factguard_model,
                    "speech_to_text": s.groq_stt_model, "urdu_voice": s.tts_urdu_voice, "pashto_voice": s.tts_pashto_voice},
-        "keys": {"gemini": bool(s.gemini_api_key), "groq": bool(s.groq_api_key)},
+        "keys": {"gemini": bool(s.gemini_keys), "groq": bool(s.groq_keys)},
+        "auth_required": bool(s.api_secret.strip()),
         "profile_store": profiles.available(),
     }
 

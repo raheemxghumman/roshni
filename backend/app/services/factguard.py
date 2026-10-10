@@ -24,15 +24,49 @@ def fmt_sections(sections: list[dict]) -> str:
     return "\n\n".join(f"[{s['id']}] {s['text']}" for s in sections if s.get("text", "").strip())
 
 
+def _split_long_section(section: dict, max_words: int) -> list[dict]:
+    """Break one oversized section into sentence-sized pieces so a single chunk stays under the token budget."""
+    text = section.get("text", "").strip()
+    words = text.split()
+    if len(words) <= max_words:
+        return [section]
+    # Prefer sentence boundaries; fall back to hard word windows
+    parts = re.split(r"(?<=[.!?])\s+", text)
+    pieces, buf = [], []
+    count = 0
+    for part in parts:
+        w = len(part.split())
+        if buf and count + w > max_words:
+            pieces.append(" ".join(buf))
+            buf, count = [], 0
+        if w > max_words:
+            if buf:
+                pieces.append(" ".join(buf))
+                buf, count = [], 0
+            tokens = part.split()
+            for i in range(0, len(tokens), max_words):
+                pieces.append(" ".join(tokens[i : i + max_words]))
+            continue
+        buf.append(part)
+        count += w
+    if buf:
+        pieces.append(" ".join(buf))
+    out = []
+    for i, piece in enumerate(pieces):
+        out.append({**section, "id": f"{section.get('id', 's')}_p{i + 1}", "text": piece})
+    return out
+
+
 def chunk_sections(sections: list[dict], max_words: int = CHUNK_WORDS) -> list[list[dict]]:
     chunks, current, count = [], [], 0
     for s in sections:
-        words = len(s.get("text", "").split())
-        if current and count + words > max_words:
-            chunks.append(current)
-            current, count = [], 0
-        current.append(s)
-        count += words
+        for piece in _split_long_section(s, max_words):
+            words = len(piece.get("text", "").split())
+            if current and count + words > max_words:
+                chunks.append(current)
+                current, count = [], 0
+            current.append(piece)
+            count += words
     if current:
         chunks.append(current)
     return chunks
