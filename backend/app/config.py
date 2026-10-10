@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     tts_english_voice: str = "en-US-AriaNeural"
 
     demo_mode: bool = False
+    database_url: str = ""  # Neon Postgres for learner profiles; empty = profiles stay in the browser
     cache_dir: str = ""
     max_upload_mb: int = 10
     max_audio_mb: int = 24

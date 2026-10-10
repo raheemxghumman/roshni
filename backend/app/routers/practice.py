@@ -4,19 +4,18 @@ from __future__ import annotations
 
 import json
 
-from fastapi import APIRouter, File, Form, UploadFile
+from fastapi import APIRouter, File, Form, Header, UploadFile
 
 from ..config import get_settings
 from ..errors import AppError
 from ..schemas import QuizAnswers, QuizCheck, QuizRequest
-from ..services import cache, quiz, transcribe, voice
+from ..services import cache, profiles, quiz, transcribe, voice
 from ..services.llm_clients import transcribe as whisper
 from .lessons import load_lesson, now
 
 router = APIRouter(prefix="/api", tags=["practice"])
 
 MAX_VOICE_BYTES = 3 * 1024 * 1024  # a spoken answer is a few seconds; this is generous
-HISTORY = 20
 
 
 def load_quiz(quiz_id: str) -> dict:
@@ -71,8 +70,21 @@ def check_answer(quiz_id: str, body: QuizCheck) -> dict:
     return quiz.check_one(load_quiz(quiz_id), body.question_id, body.answer)
 
 
+def own_history(learner: str | None, lesson: dict, attempt: dict | None = None) -> list[dict]:
+    """This learner's attempts on this lesson. With no id or no database, history is kept only for this answer
+    (the browser keeps its own copy), so one visitor never sees another visitor's scores."""
+    if learner and profiles.ID_RE.fullmatch(learner):
+        try:
+            if attempt:
+                profiles.add_attempt(learner, {**attempt, "lesson_id": lesson["id"]})
+            return profiles.attempts(learner, lesson["id"])
+        except AppError:
+            pass
+    return [attempt] if attempt else []
+
+
 @router.post("/quiz/{quiz_id}/answers")
-def finish_quiz(quiz_id: str, body: QuizAnswers) -> dict:
+def finish_quiz(quiz_id: str, body: QuizAnswers, x_learner_id: str | None = Header(default=None)) -> dict:
     stored = load_quiz(quiz_id)
     lesson = load_lesson(stored["lesson_id"])
     ids = {q["id"] for q in stored["questions"]}
@@ -81,17 +93,15 @@ def finish_quiz(quiz_id: str, body: QuizAnswers) -> dict:
     attempt = {"quiz_id": quiz_id, "at": now(), "score": report["score"], "correct": report["correct"], "total": report["total"],
                "level": stored["level"], "mode": body.mode, "weak": [s["heading"] for s in report["sections"] if s["weak"]],
                "focus": bool(stored.get("section_ids"))}
-    lesson = load_lesson(stored["lesson_id"])
-    lesson["practice"] = (lesson.get("practice") or [])[-(HISTORY - 1):] + [attempt]
-    cache.put_json("lessons", lesson["id"], lesson)
-    report["history"] = lesson["practice"]
+    report["history"] = own_history(x_learner_id, lesson, attempt)
     return report
 
 
 @router.get("/lessons/{lesson_id}/practice")
-def practice_history(lesson_id: str) -> dict:
+def practice_history(lesson_id: str, x_learner_id: str | None = Header(default=None)) -> dict:
     lesson = load_lesson(lesson_id)
-    return {"history": lesson.get("practice") or [], "facts": len(quiz.verified_facts(lesson, "easier"))}
+    return {"history": own_history(x_learner_id, lesson), "facts": len(quiz.verified_facts(lesson, "easier")),
+            "saved_on_server": bool(x_learner_id) and profiles.available()}
 
 
 @router.post("/voice/answer")

@@ -3,17 +3,20 @@ import { motion } from 'motion/react'
 import { ArrowRight, BookOpen, Captions, FileAudio, FlaskConical, GraduationCap, Headphones, MonitorPlay, MousePointerClick, ScanText, ShieldCheck, Sparkles, Trash2 } from 'lucide-react'
 import { api, apiUrl } from '../lib/api'
 import UploadPanel from '../components/UploadPanel'
+import ForYou from '../components/ForYou'
+import { SetupCard } from '../components/Setup'
+import { useProfile } from '../lib/profile'
 import Hero3D from '../components/Hero3D'
 import { FactGuardBadge } from '../components/FactGuard'
 import { CountUp, EASE, Reveal, TiltCard, item, stagger } from '../components/motion'
 import { ErrorNotice, Pill, Skeleton, cx } from '../components/ui'
 
 const MODES = [
-  { icon: BookOpen, name: 'Read Easy', who: 'Dyslexic learners, weaker readers, Urdu- and Pashto-medium students', tone: 'text-brand bg-brand/10',
+  { icon: BookOpen, name: 'Read Easy', who: 'If reading is slow or tiring, or English is your second language', tone: 'text-brand bg-brand/10',
     text: 'The page rewritten at an easier level, hard words explained in Urdu or Pashto, and read-aloud that highlights each sentence as it goes.' },
-  { icon: Headphones, name: 'Listen', who: 'Blind and low-vision learners', tone: 'text-teal bg-teal-soft',
+  { icon: Headphones, name: 'Listen', who: 'If you learn by listening, or are blind or have low vision', tone: 'text-teal bg-teal-soft',
     text: 'The page read aloud section by section, every figure described in words, and full keyboard and screen-reader control.' },
-  { icon: Captions, name: 'Captions', who: 'Deaf and hard-of-hearing learners', tone: 'text-accent-ink bg-accent-soft',
+  { icon: Captions, name: 'Captions', who: 'If you are deaf or hard of hearing, or prefer reading what was said', tone: 'text-accent-ink bg-accent-soft',
     text: 'The lecture as a timestamped transcript, plus a summary that Fact Guard checks against what the teacher actually said.' },
 ]
 
@@ -58,6 +61,7 @@ function ModeCard({ m, i }) {
 }
 
 function LessonCard({ lesson, onDelete }) {
+  const best = useProfile().profile.best?.[lesson.id] ?? null
   const fg = lesson.factguard?.easier || Object.values(lesson.factguard || {})[0]
   const rd = lesson.readability?.easier
   return (
@@ -82,7 +86,7 @@ function LessonCard({ lesson, onDelete }) {
             {fg ? <FactGuardBadge fg={fg} /> : <Pill>Not simplified yet</Pill>}
             {lesson.has_lecture && <Pill tone="teal" icon={Captions}>Lecture</Pill>}
             {lesson.videos > 0 && <Pill tone="teal" icon={MonitorPlay}>{lesson.videos} video{lesson.videos > 1 ? 's' : ''}</Pill>}
-            {lesson.practice?.length > 0 && <Pill tone="accent" icon={GraduationCap}>Best quiz {Math.round(Math.max(...lesson.practice) * 100)}%</Pill>}
+            {best != null && <Pill tone="accent" icon={GraduationCap}>Your best quiz {Math.round(best * 100)}%</Pill>}
             {lesson.sample && <Pill tone="accent">Sample</Pill>}
           </div>
         </div>
@@ -137,6 +141,11 @@ export default function Home() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      {/* ------------------------------------------------------------ for you: only for returning learners */}
+      <ForYou lessonIds={lessons ? new Set(lessons.map((l) => l.id)) : null} />
+      <div className="pt-4">
+        <SetupCard />
+      </div>
       {/* ------------------------------------------------------------ hero */}
       <section className="grid items-center gap-8 pb-6 pt-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:pt-14">
         <motion.div initial="hidden" animate="show" variants={stagger(0.09)} className="min-w-0">
@@ -154,8 +163,7 @@ export default function Home() {
             </span>
           </motion.h1>
           <motion.p variants={item} className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
-            Photograph a textbook page. Roshni turns it into a lesson that blind, dyslexic and deaf students can actually use, and <b className="text-ink">Fact Guard</b>, a
-            second AI, makes sure no fact was lost on the way.
+            Photograph any page you need to learn from: a textbook, a training manual, a safety notice, a worksheet. Roshni turns it into a lesson set up the way you learn, for blind, dyslexic and deaf learners too, and <b className="text-ink">Fact Guard</b>, a second AI, makes sure no fact was lost on the way.
           </motion.p>
           <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
             <button type="button" onClick={() => scrollTo('start')} className="inline-flex h-13 items-center gap-2 rounded-2xl bg-brand px-6 font-semibold text-on-brand shadow-[0_10px_30px_-12px_var(--brand)] transition hover:-translate-y-0.5 hover:bg-brand-2">
@@ -236,7 +244,7 @@ export default function Home() {
             <h2 id="lessons-h" className="mt-2 text-3xl">
               Lessons
             </h2>
-            <p className="mt-2 text-muted">Your pages and the ready-made samples. Each one opens in all three modes.</p>
+            <p className="mt-2 text-muted">Your pages and the ready-made samples, from school, work or everyday life. Each one opens the way you learn.</p>
           </div>
         </Reveal>
         <ErrorNotice error={error} onRetry={load} className="mb-4" />

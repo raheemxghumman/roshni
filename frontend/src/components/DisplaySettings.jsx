@@ -1,5 +1,7 @@
-import { Contrast, Moon, Sun } from 'lucide-react'
+import { Contrast, Moon, Sun, Trash2 } from 'lucide-react'
 import { FONTS, OVERLAYS, useSettings } from '../lib/settings'
+import { useProfile } from '../lib/profile'
+import { SetupQuestions } from './Setup'
 import { Button, Drawer, Segmented, cx } from './ui'
 
 function Slider({ id, label, value, min, max, step, format, onChange }) {
@@ -18,6 +20,7 @@ function Slider({ id, label, value, min, max, step, format, onChange }) {
 
 export default function DisplaySettings({ open, onClose }) {
   const { settings, update, reset } = useSettings()
+  const { clearAll, sync } = useProfile()
   return (
     <Drawer open={open} onClose={onClose} title="Display settings" width="max-w-md">
       <div className="space-y-7">
@@ -81,9 +84,25 @@ export default function DisplaySettings({ open, onClose }) {
           </div>
         </fieldset>
 
-        <Button onClick={reset} className="w-full">
-          Reset to defaults
-        </Button>
+        <section aria-labelledby="ds-setup" className="rounded-2xl border border-line p-4">
+          <h3 id="ds-setup" className="font-display text-base font-bold">
+            Set up for me
+          </h3>
+          <p className="mb-4 mt-1 text-sm text-muted">Choose what helps you. Lessons, levels and quizzes will start that way, and Roshni will say why.</p>
+          <SetupQuestions compact onDone={onClose} />
+        </section>
+
+        <div className="grid gap-2">
+          <Button onClick={reset} className="w-full">
+            Reset display to defaults
+          </Button>
+          <Button variant="ghost" icon={Trash2} className="w-full" onClick={() => window.confirm('Clear this browser’s setup and progress? This also deletes the copy saved on the server.') && clearAll()}>
+            Clear my data
+          </Button>
+          <p className="text-xs text-muted">
+            Your setup and progress are kept in this browser{sync === 'synced' ? ' and saved on the server under a random code, without your name' : ''}. Pages you upload are processed on the server.
+          </p>
+        </div>
       </div>
     </Drawer>
   )

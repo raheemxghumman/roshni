@@ -1,4 +1,6 @@
 // Fetch wrapper. Every backend error has the shape {error: {code, message_for_user, retryable}}.
+// The anonymous learner id (if this browser has one) goes with every request, so quiz history stays per learner.
+import { learnerId } from './learner'
 const BASE = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
 
 export const apiUrl = (path) => (!path || path.startsWith('http') ? path : BASE + path)
@@ -15,11 +17,15 @@ export class ApiError extends Error {
 async function request(path, { method = 'GET', body, form, signal } = {}) {
   let res
   try {
+    const headers = {}
+    if (body) headers['Content-Type'] = 'application/json'
+    const id = learnerId()
+    if (id) headers['X-Learner-Id'] = id
     res = await fetch(apiUrl(path), {
       method,
       signal,
       body: form ?? (body ? JSON.stringify(body) : undefined),
-      headers: body ? { 'Content-Type': 'application/json' } : undefined,
+      headers,
     })
   } catch (e) {
     if (e.name === 'AbortError') throw e
@@ -75,5 +81,8 @@ export const api = {
     request('/api/lectures', { method: 'POST', form: form({ file, language, lesson_id: lessonId }) }),
   lecture: (id) => request(`/api/lectures/${id}`),
   metrics: () => request('/api/metrics'),
+  me: () => request('/api/me'),
+  saveMe: (profile) => request('/api/me', { method: 'PUT', body: { profile } }),
+  deleteMe: () => request('/api/me', { method: 'DELETE' }),
   ttsUrl: (text, lang = 'ur') => apiUrl(`/api/tts?${new URLSearchParams({ text, lang })}`),
 }

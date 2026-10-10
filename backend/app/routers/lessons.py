@@ -52,7 +52,6 @@ def summary_card(lesson: dict) -> dict:
                    for lvl, r in lesson.get("stress", {}).items()},
         "has_lecture": bool(lesson.get("lecture_id")),
         "videos": len(lesson.get("videos") or []),
-        "practice": [a["score"] for a in (lesson.get("practice") or [])][-5:],
     }
 
 

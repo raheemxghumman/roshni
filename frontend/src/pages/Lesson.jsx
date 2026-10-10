@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, BookOpen, Captions as CaptionsIcon, GraduationCap, Headphones, Image as ImageIcon, MonitorPlay, TriangleAlert } from 'lucide-react'
+import { ArrowLeft, BookOpen, Captions as CaptionsIcon, GraduationCap, Headphones, Image as ImageIcon, MonitorPlay, Sparkles, TriangleAlert, X } from 'lucide-react'
 import { api } from '../lib/api'
-import { setParam } from '../lib/router'
-import { shortModel } from '../lib/announce'
+import { openDisplay, setParam } from '../lib/router'
+import { tabFor, tabReason, useProfile } from '../lib/profile'
+import { announce, shortModel } from '../lib/announce'
 import { ErrorNotice, Pill, Skeleton, cx } from '../components/ui'
 import { EASE } from '../components/motion'
 import ReadEasy from '../modes/ReadEasy'
@@ -22,13 +23,22 @@ const TABS = [
   { id: 'original', label: 'Original page', icon: ImageIcon, hint: 'As printed' },
 ]
 
-export default function Lesson({ id, tab: initialTab }) {
+export default function Lesson({ id, tab: initialTab, params = {} }) {
+  const { profile, recordOpen, update: updateProfile } = useProfile()
   const [lesson, setLesson] = useState(null)
   const [error, setError] = useState(null)
-  const [tab, setTab] = useState(TABS.some((t) => t.id === initialTab) ? initialTab : 'read')
+  const linkTab = TABS.some((t) => t.id === initialTab) ? initialTab : null
+  const [tab, setTab] = useState(linkTab || 'read')
+  const [because, setBecause] = useState(null) // why the lesson opened this way, in one plain sentence
+  const opened = useRef(false)
   const tabRefs = useRef({})
-  // where a study-plan step (or another tab) asked to go: {tab, level, section, term, video, t, nonce}
-  const [focus, setFocus] = useState(null)
+  // where a study-plan step (or a "next step" link) asked to go: {tab, level, section, term, video, t, nonce}
+  const [focus, setFocus] = useState(() => {
+    const f = {}
+    for (const k of ['level', 'section', 'term', 'video']) if (params[k]) f[k] = params[k]
+    if (params.t != null && !Number.isNaN(Number(params.t))) f.t = Number(params.t)
+    return Object.keys(f).length ? { ...f, tab: linkTab || 'read', nonce: 1 } : null
+  })
 
   const load = () =>
     api
@@ -43,9 +53,48 @@ export default function Lesson({ id, tab: initialTab }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
+  // first load: open on the learner's tab (unless the link chose one), remember the visit, and drop one-time link params
+  useEffect(() => {
+    if (!lesson || opened.current) return
+    opened.current = true
+    let first = linkTab
+    if (!first) {
+      first = tabFor(profile, lesson)
+      const reason = tabReason(profile, first)
+      if (reason && !profile.dismissed?.[lesson.id]) setBecause(`Opened in ${TABS.find((t) => t.id === first)?.label} because ${reason}.`)
+      if (first !== 'read') setTab(first)
+    }
+    recordOpen(lesson, first)
+    if (focus) setParam('tab', first, { only: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson])
+
+  useEffect(() => {
+    if (because) announce(because)
+  }, [because])
+
+  // a link to this same lesson (e.g. "Your next step") changes the tab or target without remounting the page
+  const linkKey = JSON.stringify(params)
+  const firstLink = useRef(linkKey)
+  useEffect(() => {
+    if (linkKey === firstLink.current) return
+    firstLink.current = linkKey
+    const f = {}
+    for (const k of ['level', 'section', 'term', 'video']) if (params[k]) f[k] = params[k]
+    if (params.t != null && !Number.isNaN(Number(params.t))) f.t = Number(params.t)
+    const next = linkTab || tab
+    if (next !== tab) setTab(next)
+    if (Object.keys(f).length) {
+      setFocus({ ...f, tab: next, nonce: Date.now() })
+      setParam('tab', next, { only: true })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [linkKey])
+
   const choose = (t) => {
     setTab(t)
     setParam('tab', t)
+    if (lesson) recordOpen(lesson, t)
   }
   const goTo = (target = {}) => {
     if (!target.tab) return
@@ -100,6 +149,18 @@ export default function Lesson({ id, tab: initialTab }) {
           <Pill>Read by {lesson.models?.reader?.map(shortModel).join(', ') || 'text layer'}</Pill>
           {lesson.sample && <Pill tone="accent">Sample · OpenStax CC BY 4.0</Pill>}
         </div>
+        {because && (
+          <p className="mt-4 inline-flex max-w-full items-center gap-2 rounded-xl bg-accent-soft px-3 py-2 text-sm text-ink">
+            <Sparkles className="size-4 shrink-0 text-accent-ink" aria-hidden />
+            <span className="min-w-0">{because}</span>
+            <button type="button" onClick={openDisplay} className="shrink-0 font-semibold underline underline-offset-2">
+              Change
+            </button>
+            <button type="button" onClick={() => { setBecause(null); updateProfile((p) => ({ dismissed: { ...p.dismissed, [lesson.id]: true } })) }} className="grid size-6 shrink-0 place-items-center rounded-lg hover:bg-surface" aria-label="Hide this note">
+              <X className="size-3.5" aria-hidden />
+            </button>
+          </p>
+        )}
         {lesson.warnings?.length > 0 && (
           <ul className="mt-4 space-y-2">
             {lesson.warnings.map((w) => (

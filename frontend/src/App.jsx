@@ -1,5 +1,6 @@
 import { AnimatePresence, MotionConfig } from 'motion/react'
 import { SettingsProvider } from './lib/settings'
+import { ProfileProvider } from './lib/profile'
 import { useRoute } from './lib/router'
 import Header from './components/Header'
 import { Footer, LiveRegion, SkipLink } from './components/Shell'
@@ -29,6 +30,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <SettingsProvider>
+        <ProfileProvider>
         <div className="tile-bg flex min-h-screen flex-col overflow-x-clip text-ink">
           <SkipLink />
           <Header route={route} />
@@ -36,7 +38,7 @@ export default function App() {
             <AnimatePresence mode="wait">
               <PageTransition key={key}>
                 {route.name === 'home' && <Home />}
-                {route.name === 'lesson' && <Lesson id={route.id} tab={route.params.tab} />}
+                {route.name === 'lesson' && <Lesson id={route.id} tab={route.params.tab} params={route.params} />}
                 {route.name === 'lecture' && <LecturePage id={route.id} />}
                 {route.name === 'video' && <VideoPage id={route.id} />}
                 {route.name === 'evidence' && <Evidence />}
@@ -47,6 +49,7 @@ export default function App() {
           <Footer />
           <LiveRegion />
         </div>
+        </ProfileProvider>
       </SettingsProvider>
     </MotionConfig>
   )

@@ -39,3 +39,9 @@ backend/run_dev.sh.bak
 
 # Internal eval progress
 eval/results/_*
+.neon
+.env.neon
+
+# Coding-agent tooling installed on this machine (Neon skills for Claude Code)
+.claude/
+skills-lock.json

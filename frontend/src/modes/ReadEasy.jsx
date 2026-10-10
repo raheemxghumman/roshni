@@ -1,10 +1,11 @@
 import { motion } from 'motion/react'
 import { Fragment, useEffect, useMemo, useState } from 'react'
-import { CircleCheck, Eye, EyeOff, Pause, Play, ShieldAlert, Square } from 'lucide-react'
+import { CircleCheck, Eye, EyeOff, Pause, Play, ShieldAlert, Sparkles, Square, X } from 'lucide-react'
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
 import { escapeRegExp, splitSentences } from '../lib/sentences'
 import { useSettings } from '../lib/settings'
+import { useProfile } from '../lib/profile'
 import { useSpeech } from '../lib/speech'
 import { FactGuardBadge, FactGuardCard } from '../components/FactGuard'
 import { GlossaryCard, ReadabilityCard } from '../components/Sidebar'
@@ -17,6 +18,22 @@ const LEVELS = [
   { value: 'simplest', label: 'Simplest' },
 ]
 const LEVEL_NAME = { easier: 'Easier', simplest: 'Simplest' }
+
+// Which level to open at, and why, from this learner's profile. Only versions that already exist are opened,
+// so a page never starts an AI rewrite by itself; otherwise the learner is offered a button to make it.
+function startLevel(lesson, profile, focus) {
+  if (focus?.level === 'easier' || focus?.level === 'simplest') return { level: focus.level }
+  const saved = profile.levels?.[lesson.id]
+  const want = saved?.level || profile.defaultLevel
+  if (want !== 'easier' && want !== 'simplest') return { level: 'easier' }
+  const why = saved?.from === 'quiz'
+    ? `your last quiz here was ${saved.correct != null ? `${saved.correct} of ${saved.total}` : `${Math.round((saved.score || 0) * 100)}%`}`
+    : saved?.from === 'manual'
+      ? 'you chose it last time'
+      : 'you asked for simpler text in your setup'
+  if (lesson.simplified?.[want]) return { level: want, why: want !== 'easier' || saved?.from === 'quiz' ? why : null }
+  return { level: 'easier', offer: { level: want, why } }
+}
 
 const STEPS = [
   { label: 'Rewriting at the chosen level', detail: 'Shorter sentences, everyday words, same facts' },
@@ -51,7 +68,17 @@ function withTerms(text, regex, onTerm) {
 export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
   const { settings } = useSettings()
   const speech = useSpeech()
-  const [level, setLevel] = useState(focus?.level === 'simplest' ? 'simplest' : 'easier')
+  const { profile, rememberLevel } = useProfile()
+  const [start] = useState(() => startLevel(lesson, profile, focus))
+  const [level, setLevel] = useState(start.level)
+  const [notice, setNotice] = useState(start.why ? `Opened at ${LEVEL_NAME[start.level]} because ${start.why}.` : null)
+  const [offer, setOffer] = useState(start.offer || null)
+  const chooseLevel = (l) => {
+    setLevel(l)
+    setNotice(null)
+    setOffer(null)
+    rememberLevel(lesson.id, l, 'manual')
+  }
   const [state, setState] = useState({ loading: false, error: null })
   const [showOriginal, setShowOriginal] = useState(() => window.innerWidth >= 1024)
   const [glossary, setGlossary] = useState({ loading: true, data: null, error: null })
@@ -132,7 +159,7 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
       <div className="min-w-0 space-y-4">
         <Card className="sticky top-[7.6rem] z-20 flex flex-wrap items-center gap-3 px-4 py-3">
-          <Segmented id="level" label="Reading level" options={LEVELS} value={level} onChange={setLevel} />
+          <Segmented id="level" label="Reading level" options={LEVELS} value={level} onChange={chooseLevel} />
           {speech.supported && data && (
             <div className="flex items-center gap-2">
               {isMine && speech.status === 'playing' ? (
@@ -157,6 +184,31 @@ export default function ReadEasy({ lesson, onLesson, focus, onNavigate }) {
           {fg && <FactGuardBadge fg={fg} className="ml-auto" />}
         </Card>
 
+        {(notice || offer) && !state.loading && (
+          <p className="flex flex-wrap items-center gap-2 rounded-2xl bg-accent-soft px-4 py-2.5 text-sm" role="status">
+            <Sparkles className="size-4 shrink-0 text-accent-ink" aria-hidden />
+            {notice ? (
+              <>
+                <span className="min-w-0 flex-1">{notice}</span>
+                <button type="button" className="font-semibold underline underline-offset-2" onClick={() => chooseLevel(level === 'simplest' ? 'easier' : 'simplest')}>
+                  Switch to {level === 'simplest' ? 'Easier' : 'Simplest'}
+                </button>
+              </>
+            ) : (
+              <>
+                <span className="min-w-0 flex-1">
+                  The {LEVEL_NAME[offer.level]} version may suit you better, because {offer.why}.
+                </span>
+                <Button size="sm" variant="primary" onClick={() => chooseLevel(offer.level)}>
+                  Make it for me
+                </Button>
+              </>
+            )}
+            <button type="button" onClick={() => { setNotice(null); setOffer(null) }} className="grid size-6 place-items-center rounded-lg hover:bg-surface" aria-label="Hide this note">
+              <X className="size-3.5" aria-hidden />
+            </button>
+          </p>
+        )}
         {state.loading && <ProgressSteps steps={STEPS} stepMs={3000} title={`Making the ${LEVEL_NAME[level]} version`} />}
         <ErrorNotice error={state.error} onRetry={() => simplify(level)} />
 

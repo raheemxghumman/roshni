@@ -26,14 +26,18 @@ export function useRoute() {
   return route
 }
 
+// Opens the Display drawer (and its 'Set up for me' section) from anywhere.
+export const openDisplay = () => window.dispatchEvent(new CustomEvent('roshni:open-display'))
+
 export const navigate = (path) => {
   window.location.hash = path
 }
 
-// Updates a query param without adding a history entry or scrolling.
-export const setParam = (key, value) => {
+// Updates a query param without adding a history entry or scrolling. {only: true} drops every other param
+// (used after a "next step" link has been followed, so a reload doesn't force it again).
+export const setParam = (key, value, { only = false } = {}) => {
   const [path, query = ''] = window.location.hash.replace(/^#/, '').split('?')
-  const params = new URLSearchParams(query)
+  const params = only ? new URLSearchParams() : new URLSearchParams(query)
   params.set(key, value)
   window.history.replaceState(null, '', `#${path}?${params}`)
 }

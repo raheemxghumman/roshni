@@ -10,7 +10,8 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import ROOT_DIR, get_settings
 from .errors import AppError
-from .routers import lectures, lessons, metrics, practice, videos
+from .routers import lectures, lessons, me, metrics, practice, videos
+from .services import profiles
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("roshni")
@@ -61,6 +62,7 @@ def health() -> dict:
         "models": {"reader": s.gemini_model, "rewriter": s.groq_rewrite_model, "fact_guard": s.groq_factguard_model,
                    "speech_to_text": s.groq_stt_model, "urdu_voice": s.tts_urdu_voice, "pashto_voice": s.tts_pashto_voice},
         "keys": {"gemini": bool(s.gemini_api_key), "groq": bool(s.groq_api_key)},
+        "profile_store": profiles.available(),
     }
 
 
@@ -69,6 +71,7 @@ app.include_router(lectures.router)
 app.include_router(metrics.router)
 app.include_router(practice.router)
 app.include_router(videos.router)
+app.include_router(me.router)
 
 _dist = ROOT_DIR / "frontend" / "dist"
 if _dist.exists():

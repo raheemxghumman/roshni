@@ -9,6 +9,7 @@ One Hugging Face Space runs everything: the root `Dockerfile` builds the React a
    - `GROQ_API_KEY`
    - `GEMINI_API_KEYS` and `GROQ_API_KEYS`: the extra keys, comma separated (copy the lines from your local `.env`). They are rotated when one is rate-limited.
    - `DEEPSEEK_API_KEY` (optional paid backup, capped)
+   - `DATABASE_URL`: the pooled Neon Postgres connection string (project `roshni`, branch `production`; `neon env pull --file .env.neon` prints it). Without it, learner profiles stay in each browser only.
    - optional: `DEMO_MODE` = `false`
 3. Push this repo to the Space (an HF access token with *write* permission is the password):
    ```bash

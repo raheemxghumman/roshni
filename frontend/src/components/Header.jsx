@@ -63,6 +63,11 @@ function Status() {
 
 export default function Header({ route }) {
   const [open, setOpen] = useState(false)
+  useEffect(() => {
+    const show = () => setOpen(true)
+    window.addEventListener('roshni:open-display', show)
+    return () => window.removeEventListener('roshni:open-display', show)
+  }, [])
   const { settings, update } = useSettings()
   const links = [
     { href: '#/', active: route.name === 'home' || route.name === 'lesson', label: 'Lessons', icon: Library },

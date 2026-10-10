@@ -9,28 +9,21 @@ import {
 import { api } from '../lib/api'
 import { announce } from '../lib/announce'
 import { useSettings } from '../lib/settings'
+import { useProfile } from '../lib/profile'
+import { coachNote } from '../lib/coach'
+import { loadPracticeConfig, onPracticeConfig, savePracticeConfig } from '../lib/practiceConfig'
 import { beep, closeMic, micSupported, openMic, recordAnswer, speak } from '../lib/voice'
 import { Button, Card, CardHeader, ErrorNotice, Pill, Segmented, cx } from '../components/ui'
 import { CountUp, EASE } from '../components/motion'
 import { ProgressSteps } from '../components/Progress'
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E']
-const KEY = 'roshni-practice-v1'
-const DEFAULTS = { count: 15, level: 'easier', mode: 'tap', timerTap: 15, timerVoice: 0, readAloud: false, voiceLang: 'en' }
 const PREP_STEPS = [
   { label: 'Fact Guard is checking this page', detail: 'Questions are only made from verified facts' },
   { label: 'Listing every fact on the page' },
   { label: 'Writing your questions', detail: 'Four options each, one correct' },
 ]
 const QUIZ_STEPS = [{ label: 'Picking facts from every part of the page' }, { label: 'Writing your questions', detail: 'Four options each, checked in code' }]
-
-function loadConfig() {
-  try {
-    return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY) || '{}') }
-  } catch {
-    return DEFAULTS
-  }
-}
 
 const pct = (x) => Math.round(x * 100)
 const when = (iso) => {
@@ -44,7 +37,8 @@ const when = (iso) => {
 // ---------------------------------------------------------------- the tab
 
 export default function Practice({ lesson, onLesson, onNavigate }) {
-  const [config, setConfig] = useState(loadConfig)
+  const { profile, saveResult } = useProfile()
+  const [config, setConfig] = useState(loadPracticeConfig)
   const [phase, setPhase] = useState('setup') // setup | preparing | loading | playing | results
   const [quiz, setQuiz] = useState(null)
   const [report, setReport] = useState(null)
@@ -55,16 +49,8 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
   const [voiceOn, setVoiceOn] = useState(false)
   const lastRequest = useRef(null)
 
-  const update = (patch) =>
-    setConfig((c) => {
-      const next = { ...c, ...patch }
-      try {
-        localStorage.setItem(KEY, JSON.stringify(next))
-      } catch {
-        /* private mode */
-      }
-      return next
-    })
+  const update = (patch) => savePracticeConfig({ ...config, ...patch })
+  useEffect(() => onPracticeConfig(setConfig), []) // a setup preset can change these while the tab is open
 
   const loadInfo = useCallback(() => {
     api.practice(lesson.id).then(setInfo).catch(() => {})
@@ -123,6 +109,8 @@ export default function Practice({ lesson, onLesson, onNavigate }) {
     setStream(null)
     try {
       const r = await api.finishQuiz(quiz.id, answers, timedOut, voiceOn ? 'voice' : 'tap')
+      r.coach = coachNote(r, profile.last?.[lesson.id]) // compared with this learner's previous attempt, before saving this one
+      saveResult(lesson, quiz.level, r)
       setReport(r)
       setInfo((i) => ({ ...i, history: r.history }))
       setPhase('results')
@@ -817,7 +805,7 @@ function QuizResults({ report, quizLevel, spoken, onNavigate, onRetryWeak, onNew
   const weak = report.sections.filter((s) => s.weak)
   const levelName = { original: 'the original page', easier: 'Easier', simplest: 'Simplest' }
   const summary = useMemo(() => {
-    const parts = [`You got ${report.correct} out of ${report.total}.`]
+    const parts = [`You got ${report.correct} out of ${report.total}.`, report.coach || '']
     if (weak.length) parts.push(`Practise ${weak.map((s) => s.heading).join(' and ')}.`, report.plan[0] ? `First step: ${report.plan[0].title}.` : '')
     else parts.push('No weak areas. Well done!')
     return parts.join(' ')
@@ -854,7 +842,8 @@ function QuizResults({ report, quizLevel, spoken, onNavigate, onRetryWeak, onNew
                 {report.skipped > 0 && <Pill tone="info" icon={SkipForward}>{report.skipped} skipped</Pill>}
                 <Pill tone={weak.length ? 'warn' : 'ok'} icon={weak.length ? Target : CircleCheck}>{weak.length ? `${weak.length} weak area${weak.length > 1 ? 's' : ''}` : 'No weak areas'}</Pill>
               </div>
-              <p className="mt-3">{report.advice}</p>
+              <p className="mt-3">{report.coach || report.advice}</p>
+              {report.coach && <p className="mt-1 text-sm text-muted">{report.advice}</p>}
             </div>
           </div>
           <div className="flex flex-wrap gap-2 border-t border-line bg-surface-2/50 px-6 py-4">

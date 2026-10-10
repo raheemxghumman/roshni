@@ -91,7 +91,8 @@ export default function UploadPanel() {
         >
           <Upload className="size-7" aria-hidden />
         </motion.span>
-        <p className="relative mt-5 font-display text-lg font-semibold">Drop a photo or PDF of a textbook page</p>
+        <p className="relative mt-5 font-display text-lg font-semibold">Drop a photo or PDF of any page</p>
+        <p className="mt-1 text-sm text-muted">A textbook, a training manual, a safety notice, a worksheet, a medicine leaflet, an Islamiat or Urdu reader page, a form.</p>
         <p className="mt-1 text-sm text-muted">JPG, PNG, HEIC or PDF · up to {MAX_MB} MB · PDFs up to 3 pages</p>
         <div className="mt-5 flex flex-wrap justify-center gap-2">
           <Button variant="primary" icon={Upload} onClick={() => inputRef.current?.click()}>

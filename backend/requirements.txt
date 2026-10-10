@@ -9,6 +9,7 @@ tenacity
 google-genai
 groq
 youtube-transcript-api
+psycopg[binary,pool]
 edge-tts
 gTTS
 textstat
