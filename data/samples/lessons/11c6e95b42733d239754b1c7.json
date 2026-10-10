@@ -1411,70 +1411,77 @@
   "items": [
    {
     "term": "chemoautotrophs",
-    "simple_en": "Organisms that make food using inorganic molecules instead of sunlight.",
-    "urdu": "chemoautotrophs وہ جاندار ہیں جو سورج کی روشنی کے بجائے غیر جاندار مالیکیولز سے غذا بناتے ہیں۔",
-    "pashto": "chemoautotrophs هغه ژوندي موجودات دي چې د خاورې د غیر جانوري مالیکولونو څخه خواړه جوړوي.",
+    "simple_en": "Organisms that make food using chemicals, not sunlight.",
+    "urdu": "chemoautotrophs ایسے جاندار ہیں جو سورج کی روشنی کے بجائے کیمیائی مادوں سے اپنی خوراک بناتے ہیں۔",
+    "pashto": "chemoautotrophs هغه موجودات دي چې د لمر د رڼا پر ځای د کيمياوي موادو په مرسته خواړه جوړوي.",
     "section_id": "s1"
    },
    {
     "term": "hydrosphere",
-    "simple_en": "The part of Earth where water moves and is stored.",
-    "urdu": "hydrosphere زمین کا وہ حصہ ہے جہاں پانی کی حرکت اور ذخیرہ ہوتا ہے۔",
-    "pashto": "hydrosphere د ځمکې هغه برخه ده چیرې چې اوبه حرکت کوي او ذخیره کیږي.",
+    "simple_en": "All water on Earth: oceans, rivers, ice, vapor.",
+    "urdu": "hydrosphere زمین کے تمام پانی کو کہتے ہیں، جیسے سمندر، دریا، برف اور بھاپ۔",
+    "pashto": "hydrosphere د ځمکې ټول اوبه دي، لکه سمندرونه، سیندونه، واوره او بخار.",
     "section_id": "s1"
    },
    {
     "term": "nonliving",
-    "simple_en": "Things in the environment that are not alive.",
-    "urdu": "nonliving ان ماحول کی چیزیں ہیں جو زندہ نہیں ہوتیں۔",
-    "pashto": "nonliving هغه توکي دي چې په چاپیریال کې ژوندي نه وي.",
+    "simple_en": "Not alive; having no life, like rocks or water.",
+    "urdu": "nonliving کا مطلب ہے بے جان، جیسے پتھر یا پانی۔",
+    "pashto": "nonliving بې ژوند معنا لري، لکه ډبرې یا اوبه.",
     "section_id": "s1"
    },
    {
     "term": "directionally",
-    "simple_en": "Moving in one specific way or path.",
-    "urdu": "directionally اس کا مطلب ہے کسی ایک خاص سمت یا راستے میں حرکت کرنا۔",
-    "pashto": "directionally د یوې ځانګړې لور یا لار په لور حرکت کول پېژني.",
+    "simple_en": "In one particular way or path, not back again.",
+    "urdu": "directionally کا مطلب ہے ایک خاص سمت میں، واپس نہ آنے والے انداز میں۔",
+    "pashto": "directionally یو ټاکلي لوري ته معنا لري، بېرته نه راګرځېدونکي ډول.",
     "section_id": "s1"
    },
    {
     "term": "biogeochemical",
-    "simple_en": "Related to the cycling of matter between living and nonliving things.",
-    "urdu": "biogeochemical زندہ اور غیر جاندار چیزوں کے درمیان مادے کے چکر سے متعلق ہے۔",
-    "pashto": "biogeochemical د ژوندي او غیر ژوندي توکو ترمنځ د مادې د چکر سره تړاو لري.",
+    "simple_en": "Relating to living things, rocks, and chemicals together.",
+    "urdu": "biogeochemical کا تعلق جانداروں، زمین اور کیمیائی مادوں کے ملاپ سے ہے۔",
+    "pashto": "biogeochemical د ژوندی موجوداتو، ځمکې او کيمياوي موادو له یوځای والي سره تړاو لري.",
     "section_id": "s1"
    },
    {
     "term": "macromolecules",
-    "simple_en": "Very large molecules found in living organisms.",
-    "urdu": "macromolecules زندہ اجسام میں پائے جانے والے بہت بڑے مالیکیولز ہیں۔",
-    "pashto": "macromolecules هغه ډیر لوی مالیکولونه دي چې په ژوندي موجوداتو کې موندل کیږي.",
+    "simple_en": "Very large molecules, like proteins and nucleic acids.",
+    "urdu": "macromolecules بہت بڑے مالیکیول ہوتے ہیں، جیسے پروٹین اور نیوکلیک ایسڈ۔",
+    "pashto": "macromolecules ډېر لوی مالیکولونه دي، لکه پروټین او نیوکلیک اسید.",
     "section_id": "s1"
    },
    {
     "term": "abiotic",
-    "simple_en": "Non-living parts of the environment.",
-    "urdu": "abiotic ماحول کے وہ غیر جاندار حصے ہیں۔",
-    "pashto": "abiotic د چاپیریال غیر ژوندي برخې دي.",
+    "simple_en": "Not living; the nonliving parts of the environment.",
+    "urdu": "abiotic کا مطلب ہے بے جان، یعنی ماحول کے غیر زندہ حصے۔",
+    "pashto": "abiotic بې ژوند معنا لري، یعنې د چاپېریال غیر ژوندي برخې.",
     "section_id": "s1"
    },
    {
     "term": "trophic",
-    "simple_en": "Related to the levels of feeding in an ecosystem.",
-    "urdu": "trophic ایکسوسسٹم میں کھانے کے درجوں سے متعلق ہے۔",
-    "pashto": "trophic د ایکوسیستم د خواړو د درجو سره تړاو لري.",
+    "simple_en": "Relating to feeding levels in a food chain.",
+    "urdu": "trophic کا تعلق خوراک کی زنجیر میں خوراک کے درجوں سے ہے۔",
+    "pashto": "trophic د خوړو په زنځیر کې د خوړو د کچو سره تړاو لري.",
     "section_id": "s1"
    },
    {
     "term": "disulfide",
-    "simple_en": "A bond that helps proteins fold into 3D shapes.",
-    "urdu": "disulfide پروٹینز کو تین جہتی شکل دینے میں مدد دینے والا بانڈ ہے۔",
-    "pashto": "disulfide هغه بانډ دی چې پروټینونو ته درې اړخیز شکل ورکوي.",
+    "simple_en": "A chemical bond with sulfur that holds protein shape.",
+    "urdu": "disulfide ایک کیمیائی بندھن ہے جو سلفر سے بنتا ہے اور پروٹین کی شکل کو تھامتا ہے۔",
+    "pashto": "disulfide یو کيمياوي بند دی چې د سلفر سره جوړېږي او د پروټین بڼه ساتي.",
+    "section_id": "s1"
+   },
+   {
+    "term": "biotic",
+    "simple_en": "Living; the living parts of the environment.",
+    "urdu": "biotic کا مطلب ہے زندہ، یعنی ماحول کے جاندار حصے۔",
+    "pashto": "biotic ژوندی معنا لري، یعنې د چاپېریال ژوندي برخې.",
     "section_id": "s1"
    }
   ],
-  "model": "qwen/qwen3.8-27b",
-  "created_at": "2026-10-10T05:10:31+00:00"
+  "model": "deepseek-flash",
+  "created_at": "2026-10-10T05:26:13+00:00"
  },
  "quiz": {
   "easier": "4a981119da07dbd4379c6582"

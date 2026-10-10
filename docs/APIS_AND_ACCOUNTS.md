@@ -140,4 +140,4 @@ Every service is **free** and needs **no credit card**. Free-tier limits change 
 4. Before the demo, run `python scripts/check_quotas.py` to confirm every key works.
 
 ## 8. Not needed (don't sign up)
-OpenAI, Anthropic, Azure, AWS, Google Cloud billing, Twilio, or any paid OCR or TTS service. Nothing in this project needs a credit card.
+OpenAI, Anthropic, Azure, AWS, Google Cloud billing, Twilio, or any paid OCR or TTS service. Nothing in this project needs a credit card. The one exception is optional: a prepaid DeepSeek key (under $1 of credit) used only as a capped backup when the free tiers are busy; see `DEEPSEEK_*` in `.env.example`.

@@ -1227,77 +1227,77 @@
   "items": [
    {
     "term": "plasmas",
-    "simple_en": "A gaseous state with charged particles found in stars.",
-    "urdu": "Plasmas ستاروں کے اندر پائے جانے والے ایک ایسا گیس کا حالت ہے جس میں چارج شدہ ذرات ہوتے ہیں۔",
-    "pashto": "Plasmas ستوريو د منځني برخو کې موندل کیدونکې یوې ګازي حالت څخه عبارت دي چې چارج شوي ذرات لري.",
+    "simple_en": "A hot gas with charged particles; fourth state of matter.",
+    "urdu": "plasmas مادے کی ایک حالت ہے جو ستاروں کے اندر پائی جاتی ہے۔",
+    "pashto": "plasmas د مادې یوه حالت ده چې د ستورو په داخل کې پیدا کیږي.",
     "section_id": "s1"
    },
    {
     "term": "imparts",
-    "simple_en": "Gives unique properties to plasmas due to charged particles.",
-    "urdu": "چارج شدہ ذرات plasmas کو ان کی خاص خصوصیات عطا کرتے ہیں۔",
-    "pashto": "چارج شوي ذرات plasmas ته خپل ځانګړي ځانګړنې ورکوي.",
+    "simple_en": "Gives or passes on a quality to something.",
+    "urdu": "imparts کا مطلب ہے کوئی خاصیت دینا۔",
+    "pashto": "imparts معنا ځانګړتیا ورکول دي.",
     "section_id": "s1"
    },
    {
     "term": "appreciable",
-    "simple_en": "A noticeable or significant amount of charged particles.",
-    "urdu": "Plasma میں چارج شدہ ذرات کی قابلِ ذکر تعداد ہوتی ہے۔",
-    "pashto": "پلازما کې د چارج شویو ذراتو شمیر د پام وړ وي.",
+    "simple_en": "Large enough to be noticed or measured.",
+    "urdu": "appreciable یعنی اتنی مقدار جو واضح طور پر محسوس ہو۔",
+    "pashto": "appreciable یعنې دومره اندازه چې ښه محسوس شي.",
     "section_id": "s1"
    },
    {
     "term": "gaseous",
-    "simple_en": "Describes plasma as being in a gas-like state.",
-    "urdu": "Plasma کو مادے کی ایک گیس جیسی حالت کہا جاتا ہے۔",
-    "pashto": "پلازما د مادې د یوې ګازي حالت په توګه پیژندل کیږي.",
+    "simple_en": "In the form of a gas, not solid or liquid.",
+    "urdu": "gaseous کا مطلب ہے گیس کی شکل میں ہونا۔",
+    "pashto": "gaseous معنا په ګازي بڼه کې اوسېدل دي.",
     "section_id": "s1"
    },
    {
     "term": "inflate",
-    "simple_en": "To increase volume, like a balloon filling with gas.",
-    "urdu": "جب گیس سے بھرا جاتا ہے تو بالون inflate ہو جاتا ہے۔",
-    "pashto": "کله چې بالون د ګاز سره ډک شي، inflate کیږي.",
+    "simple_en": "To fill with air or gas and become bigger.",
+    "urdu": "inflate کا مطلب ہے ہوا یا گیس سے پھول جانا۔",
+    "pashto": "inflate معنا په هوا یا ګاز پړسېدل دي.",
     "section_id": "s1"
    },
    {
     "term": "mixtures",
-    "simple_en": "Combinations of different substances, like air and water in clouds.",
-    "urdu": "بادل ہوا اور پانی کے ذرات کے mixtures کی مثال ہیں۔",
-    "pashto": "برېښنا د هوا او د اوبو د ذراتو د mixtures یو مثال دی.",
+    "simple_en": "Things mixed together but not chemically joined.",
+    "urdu": "mixtures کئی چیزوں کے ملے جلے مجموعے کو کہتے ہیں۔",
+    "pashto": "mixtures څو شیانې چې یوځای ګډې شوې وي.",
     "section_id": "s1"
    },
    {
     "term": "electrically",
-    "simple_en": "Refers to particles that carry an electric charge.",
-    "urdu": "Plasma میں electrically charged ذرات موجود ہوتے ہیں۔",
-    "pashto": "پلازما کې electrically چارج شوي ذرات شتون لري.",
+    "simple_en": "Related to electricity or electric charge.",
+    "urdu": "electrically کا تعلق بجلی یا برقی چارج سے ہے۔",
+    "pashto": "electrically د بریښنا یا بریښنایي چارج پورې اړه لري.",
     "section_id": "s1"
    },
    {
     "term": "solids",
-    "simple_en": "Matter with a rigid shape and definite volume.",
-    "urdu": "Solids کا ایک سخت اور واضح شکل ہوتی ہے۔",
-    "pashto": "Solids یو سخت او واضح شکل لري.",
+    "simple_en": "Matter with fixed shape and volume; not flowing.",
+    "urdu": "solids وہ مادے ہیں جن کی شکل اور حجم مقرر ہوتا ہے۔",
+    "pashto": "solids هغه مادې دي چې ټاکلې بڼه او حجم لري.",
     "section_id": "s1"
    },
    {
     "term": "ultraviolet",
-    "simple_en": "Light emitted by plasma that creates color on screens.",
-    "urdu": "Plasma ultraviolet روشنی خارج کرتا ہے جو اسکرین پر رنگ بناتی ہے۔",
-    "pashto": "پلازما ultraviolet رڼا خارجوي چې په سکرین کې رنګ جوړوي.",
+    "simple_en": "A kind of light we cannot see, beyond violet.",
+    "urdu": "ultraviolet ایک ایسی روشنی ہے جو آنکھ سے نظر نہیں آتی۔",
+    "pashto": "ultraviolet هغه رڼا ده چې سترګې یې نه شي لیدلی.",
     "section_id": "s1"
    },
    {
     "term": "spherical",
-    "simple_en": "Round shape that liquids take in zero gravity.",
-    "urdu": "صفر کششِ ثقل میں مائع spherical شکل اختیار کرتا ہے۔",
-    "pashto": "په صفر جاذبه کې مایعات spherical شکل اخلي.",
+    "simple_en": "Shaped like a ball or round sphere.",
+    "urdu": "spherical کا مطلب ہے گیند کی طرح گول شکل۔",
+    "pashto": "spherical معنا د بال په څېر ګرد بڼه.",
     "section_id": "s1"
    }
   ],
-  "model": "qwen/qwen3.8-27b",
-  "created_at": "2026-10-10T05:09:15+00:00"
+  "model": "deepseek-flash",
+  "created_at": "2026-10-10T05:26:02+00:00"
  },
  "quiz": {
   "easier": "06e965f5f877b6024ecf9b81"

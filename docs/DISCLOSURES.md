@@ -32,3 +32,6 @@ The team used an AI coding assistant (Claude Code), which the rulebook explicitl
 
 ## Not used
 No private, confidential or personal data. No copyrighted textbooks are stored in this repository. No results were edited by hand: every number on the Evidence page comes from the scripts in `eval/`.
+
+## Paid backup model
+The team added an optional prepaid DeepSeek key (under $1 of credit) as a backup for when the free Gemini and Groq tiers are rate-limited. It is capped in code and used only after the free models; all evaluation results in the README were produced before it was added.

@@ -1109,49 +1109,49 @@
   "items": [
    {
     "term": "elapsed",
-    "simple_en": "The total time that has passed between two specific moments.",
-    "urdu": "Elapsed کا مطلب ہے کسی شروع اور اختتام کے درمیان گزرنے والا کل وقت۔",
-    "pashto": "Elapsed دوه ټکو ترمنځ تېرېدونکې ټولې وخت ته ویل کیږي.",
+    "simple_en": "time that has passed from start to end",
+    "urdu": "Elapsed time کا مطلب ہے شروع سے آخر تک گزرا ہوا وقت۔",
+    "pashto": "Elapsed time مانا له پیل څخه تر پایه تېر شوی وخت.",
     "section_id": "s2"
    },
    {
     "term": "subtract",
-    "simple_en": "To take one number away from another to find the difference.",
-    "urdu": "Subtract کا مطلب ہے ایک عدد کو دوسرے سے منہا کرنا۔",
-    "pashto": "Subtract د یو عدد څخه بله عدد لرې کول ته ویل کیږي.",
+    "simple_en": "take one number away from another",
+    "urdu": "Subtract کرنے کا مطلب ہے ایک عدد کو دوسرے سے گھٹانا۔",
+    "pashto": "Subtract کول یعنې یو عدد له بل څخه کمول.",
     "section_id": "s2"
    },
    {
     "term": "calibrated",
-    "simple_en": "Adjusted or checked against a standard to ensure accuracy.",
-    "urdu": "Calibrated کا مطلب ہے معیاری پیمانے کے مطابق درست کرنا۔",
-    "pashto": "Calibrated د معیاري معیار سره سمون ورکول ته ویل کیږي.",
+    "simple_en": "measured or adjusted by comparing with a standard",
+    "urdu": "Calibrated کا مطلب ہے کسی معیار سے موازنہ کر کے ناپنا یا درست کرنا۔",
+    "pashto": "Calibrated مانا د یو معیار سره پرتله کول او اندازه کول.",
     "section_id": "s2"
    },
    {
     "term": "abbreviated",
-    "simple_en": "Shortened form of a word or symbol, like 's' for second.",
-    "urdu": "Abbreviated کا مطلب ہے الفاظ یا علامات کا مختصر شکل۔",
-    "pashto": "Abbreviated د کلمو یا نښو لنډه بڼه ته ویل کیږي.",
+    "simple_en": "written in a shorter form",
+    "urdu": "Abbreviated کا مطلب ہے کسی لفظ یا اصطلاح کو مختصر شکل میں لکھنا۔",
+    "pashto": "Abbreviated مانا یو کلمه یا اصطلاح په لنډه بڼه لیکل.",
     "section_id": "s2"
    },
    {
     "term": "pendulum",
-    "simple_en": "A weight that swings back and forth to measure time.",
-    "urdu": "Pendulum ایک وزن ہے جو وقت ناپنے کے لیے آگے پیچھے لہراتا ہے۔",
-    "pashto": "Pendulum هغه وزن دی چې د وخت ناپلو لپاره مخکې او شاته ښکاري.",
+    "simple_en": "a hanging weight that swings back and forth",
+    "urdu": "Pendulum ایک لٹکتا وزن ہے جو آگے پیچھے جھولتا ہے۔",
+    "pashto": "Pendulum یو ځوړند وزن دی چې دواړو خواوو ته خوځي.",
     "section_id": "s2"
    },
    {
     "term": "registers",
-    "simple_en": "Shows or records the time on a clock dial.",
-    "urdu": "Registers کا مطلب ہے گھڑی کے ڈائل پر وقت دکھانا۔",
-    "pashto": "Registers د ساعت د ډائل پر وخت ښودل ته ویل کیږي.",
+    "simple_en": "records or shows time",
+    "urdu": "Registers کا مطلب ہے وقت کو ریکارڈ کرنا یا ظاہر کرنا۔",
+    "pashto": "Registers مانا وخت ثبتول یا ښودل.",
     "section_id": "s2"
    }
   ],
-  "model": "qwen/qwen3.8-27b",
-  "created_at": "2026-10-10T05:11:47+00:00"
+  "model": "deepseek-flash",
+  "created_at": "2026-10-10T05:23:30+00:00"
  },
  "quiz": {
   "easier": "59ec087c883d254c540ae0b6"

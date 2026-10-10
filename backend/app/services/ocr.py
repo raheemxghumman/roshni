@@ -1,9 +1,10 @@
-"""Page photo/PDF -> raw blocks via Gemini vision (or the PDF text layer). Unreadable text is marked [unclear]."""
+"""Page photo/PDF -> raw blocks via Gemini vision, DeepSeek vision when Gemini is busy (or the PDF text layer). Unreadable text is marked [unclear]."""
 from __future__ import annotations
 
-from ..config import fill, load_prompt
+from ..config import fill, get_settings, load_prompt
+from ..errors import AppError
 from .ingest import Prepared
-from .llm_clients import gemini_json, text_json
+from .llm_clients import deepseek_json, gemini_json, text_json
 
 VALID_TYPES = {"heading", "paragraph", "list", "table", "figure", "equation", "caption"}
 
@@ -48,7 +49,12 @@ def read_page(prepared: Prepared) -> dict:
     else:
         prompt = load_prompt("ocr_page.txt")
         for i, img in enumerate(prepared.images, start=1):
-            data, model = gemini_json(prompt, image=img)
+            try:
+                data, model = gemini_json(prompt, image=img)
+            except AppError as e:
+                if e.code != "RATE_LIMITED" or not get_settings().deepseek_api_key:
+                    raise
+                data, model = deepseek_json(prompt, image=img, max_tokens=4000)  # paid backup when free Gemini is busy
             blocks.extend(_clean_blocks(data.get("blocks"), page=i))
             language = data.get("language") or language
             warnings.extend(w for w in (data.get("warnings") or []) if isinstance(w, str))

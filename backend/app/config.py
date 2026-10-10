@@ -22,6 +22,14 @@ class Settings(BaseSettings):
     groq_fallback_model: str = "openai/gpt-oss-20b"
     groq_stt_model: str = "whisper-large-v3-turbo"
 
+    # Paid backup (prepaid credit): only used when the free models are busy, with a hard spending cap
+    deepseek_api_key: str = ""
+    deepseek_model: str = "deepseek-flash"
+    deepseek_budget_usd: float = 0.80  # stop once Roshni's estimated DeepSeek spend reaches this
+    deepseek_min_balance_usd: float = 0.10  # stop once the real account balance drops below this
+    deepseek_price_in: float = 0.50  # USD per million input tokens, set high on purpose so the cap trips early
+    deepseek_price_out: float = 1.50  # USD per million output tokens
+
     tts_urdu_voice: str = "ur-PK-UzmaNeural"
     tts_pashto_voice: str = "ps-AF-LatifaNeural"
     tts_english_voice: str = "en-US-AriaNeural"

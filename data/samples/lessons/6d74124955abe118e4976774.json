@@ -1303,63 +1303,77 @@
   "items": [
    {
     "term": "protist",
-    "simple_en": "A type of eukaryotic cell, like plant or animal cells.",
-    "urdu": "پروٹسٹ ایک ایسا سیل ہے جو یوکاریاٹک گروپ میں شامل ہوتا ہے۔",
-    "pashto": "پروٹسٹ د یوکاریاټیک ګروپ یو ډول حجره دی.",
+    "simple_en": "A eukaryotic organism, not animal, plant, or fungus.",
+    "urdu": "protist ایک eukaryotic organism ہے جو animal، plant یا fungus نہیں ہے۔",
+    "pashto": "protist یو eukaryotic organism دی چې animal، plant یا fungus نه دی۔",
     "section_id": "s1"
    },
    {
     "term": "millionths",
-    "simple_en": "One part out of one million, used for very small measurements.",
-    "urdu": "ملینتھس ایک ملین میں سے ایک حصہ ہے جو بہت چھوٹی پیمائش کے لیے استعمال ہوتا ہے۔",
-    "pashto": "ملینتھس د یو ملین څخه یو برخ دی چې د کوچنیو ابعادو لپاره کارول کیږي.",
+    "simple_en": "One part out of a million equal parts.",
+    "urdu": "millionths کا مطلب ہے کسی چیز کے دس لاکھ برابر حصوں میں سے ایک حصہ۔",
+    "pashto": "millionths معنا د یو شی د یو میلیون مساوي برخو څخه یوه برخه ده۔",
     "section_id": "s2"
    },
    {
     "term": "micrographs",
-    "simple_en": "Images of cells taken using a microscope.",
-    "urdu": "مائیکروگرافس وہ تصاویر ہیں جو مائیکروسکوپ کے ذریعے سیلز کی لی جاتی ہیں۔",
-    "pashto": "مائیکروگرافس هغه انځورونه دي چې د مایکروسکوپ په مرسته د حجرو څخه اخیستل کیږي.",
+    "simple_en": "Photos of tiny things taken with a microscope.",
+    "urdu": "micrographs وہ تصاویر ہیں جو microscope سے لی جاتی ہیں۔",
+    "pashto": "micrographs هغه انځورونه دي چې د microscope په مرسته اخیستل کیږي۔",
     "section_id": "s2"
    },
    {
     "term": "thousandths",
-    "simple_en": "One part out of one thousand, like millimeters.",
-    "urdu": "تھاوزینتھس ایک ہزار میں سے ایک حصہ ہے، جیسے ملی میٹر۔",
-    "pashto": "تاوزینتھس د یو زره څخه یو برخ دی، لکه ملی متر.",
+    "simple_en": "One part out of a thousand equal parts.",
+    "urdu": "thousandths کا مطلب ہے کسی چیز کے ہزار برابر حصوں میں سے ایک حصہ۔",
+    "pashto": "thousandths معنا د یو شی د زرو مساوي برخو څخه یوه برخه ده۔",
     "section_id": "s2"
    },
    {
     "term": "prokaryotic",
-    "simple_en": "A cell type found in bacteria and archaea.",
-    "urdu": "پروکاریاٹک وہ سیلز ہیں جو بیکٹیریا اور آرکیا میں پائے جاتے ہیں۔",
-    "pashto": "پروکاریاټیک هغه حجرې دي چې په باکتریا او آرکیا کې موندل کیږي.",
+    "simple_en": "A cell type without a true nucleus, like bacteria.",
+    "urdu": "prokaryotic ایسا cell ہے جس میں اصلی nucleus نہیں ہوتا، جیسے bacteria۔",
+    "pashto": "prokaryotic هغه cell دی چې ریښتینی nucleus نه لري، لکه bacteria۔",
     "section_id": "s1"
    },
    {
     "term": "archaea",
-    "simple_en": "A type of prokaryotic cell, different from bacteria.",
-    "urdu": "آرکیا پروکاریاٹک سیلز کا ایک قسم ہے جو بیکٹیریا سے مختلف ہے۔",
-    "pashto": "آرکیا د پروکاریاټیک حجرو یو ډول دی چې له باکتریو څخه توپیر لري.",
+    "simple_en": "A group of prokaryotic cells, different from bacteria.",
+    "urdu": "archaea prokaryotic cells کا ایک گروہ ہے جو bacteria سے مختلف ہے۔",
+    "pashto": "archaea د prokaryotic cells یوه ډله ده چې له bacteria څخه توپیر لري۔",
     "section_id": "s1"
    },
    {
     "term": "magnifies",
-    "simple_en": "Makes an object look bigger than it actually is.",
-    "urdu": "میگنیفائی کسی چیز کو اصل سے بڑا دکھاتا ہے۔",
-    "pashto": "میګنیفای یو شی ته له اصلي کچې لوی ښیي.",
+    "simple_en": "Makes something look bigger than it really is.",
+    "urdu": "magnifies کا مطلب ہے کسی چیز کو اصل سے بڑا دکھانا۔",
+    "pashto": "magnifies معنا د یو شی له اصلي اندازې څخه لوی ښودل۔",
     "section_id": "s2"
    },
    {
     "term": "micrometers",
     "simple_en": "A tiny unit of length, one millionth of a meter.",
-    "urdu": "مائیکرومیٹر لمبائی کی ایک بہت چھوٹی اکائی ہے جو میٹر کا ایک ملینواں حصہ ہے۔",
-    "pashto": "مائیکرو متر د اوږدوالي یوه ډیره کوچنۍ واحد ده چې د متر یو ملینمه برخه ده.",
+    "urdu": "micrometers لمبائی کی بہت چھوٹی اکائی ہے، ایک میٹر کا دس لاکھواں حصہ۔",
+    "pashto": "micrometers د اوږدوالي ډېره کوچنۍ واحد دی، د یو متر میلیونیم برخه۔",
+    "section_id": "s2"
+   },
+   {
+    "term": "multicellular",
+    "simple_en": "Made of many cells, not just one.",
+    "urdu": "multicellular کا مطلب ہے بہت سے cells سے بنا ہوا، صرف ایک سے نہیں۔",
+    "pashto": "multicellular معنا د ډېرو cells څخه جوړ شوی، نه یوازې یو۔",
+    "section_id": "s1"
+   },
+   {
+    "term": "microscopes",
+    "simple_en": "Instruments used to see very small things.",
+    "urdu": "microscopes ایسے آلات ہیں جن سے بہت چھوٹی چیزیں دیکھی جاتی ہیں۔",
+    "pashto": "microscopes هغه وسایل دي چې ډېرې کوچنۍ شیان پرې لیدل کیږي۔",
     "section_id": "s2"
    }
   ],
-  "model": "qwen/qwen3.8-27b",
-  "created_at": "2026-10-10T05:05:46+00:00"
+  "model": "deepseek-flash",
+  "created_at": "2026-10-10T05:25:52+00:00"
  },
  "quiz": {
   "easier": "40b82e67b1a1ec2a2eee8e54"
