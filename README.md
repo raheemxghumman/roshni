@@ -6,8 +6,13 @@ Roshni turns a photo of any printed page, a lecture recording or a YouTube video
 
 **AICON'26 Build With AI** · Domain: **EdTech & Workforce** · Team: **404 Team Not Found**
 
+<p align="center">
+  <a href="https://drive.google.com/file/d/12yDeoVbNHAz2_OSzwhSmSxYBattbraNm/view?usp=sharing"><img src="docs/media/demo-video-thumb.jpg" alt="Watch the Roshni demo video (5 minutes, opens on Google Drive)" width="760"></a>
+</p>
+
 | | |
 |---|---|
+| **Demo video** | **[Watch on Google Drive](https://drive.google.com/file/d/12yDeoVbNHAz2_OSzwhSmSxYBattbraNm/view?usp=sharing)** (5 minutes) |
 | **Live app** | **[roshni-z36n.onrender.com](https://roshni-z36n.onrender.com)** (free plan: the first visit after a quiet spell can take up to a minute to wake) |
 | **Demo deck** | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx): 8 slides, about 5 minutes, two speakers; script, timings and click cues in the speaker notes and [`docs/DEMO.md`](docs/DEMO.md) |
 | **Evidence** | [Measured results](#5-evidence), all reproducible from [`eval/`](eval) |
