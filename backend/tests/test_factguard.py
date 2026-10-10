@@ -65,3 +65,4 @@ def test_evidence_must_state_the_fact():
     assert not factguard.supports("For example, a pendulum might make one full swing every 0.75 s.", "The SI unit for time is the second, abbreviated s.")
     assert not factguard.supports("About 500 red blood cells could fit on a pin head.", "About 250 red blood cells could fit on the head of a pin.")
     assert factguard.supports("Most living things get their energy from photosynthesis.", "Photosynthesis provides most of the energy required by living things.")
+    assert factguard.supports("a pendulum might swing once every 0.75 s.", "A pendulum may make one full swing every 0.75 s.")

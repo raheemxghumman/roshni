@@ -1,0 +1,55 @@
+{
+ "id": "4a981119da07dbd4379c6582",
+ "lesson_id": "11c6e95b42733d239754b1c7",
+ "level": "easier",
+ "questions": [
+  {
+   "id": "q1",
+   "type": "mcq",
+   "question": "How does most energy first enter an ecosystem?",
+   "options": [
+    "As sunlight",
+    "As heat",
+    "As rain"
+   ],
+   "answer": "As sunlight",
+   "fact_id": "f2"
+  },
+  {
+   "id": "q2",
+   "type": "true_false",
+   "question": "Water is needed for all living processes.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": "True",
+   "fact_id": "f12"
+  },
+  {
+   "id": "q3",
+   "type": "mcq",
+   "question": "Which two elements are found in water?",
+   "options": [
+    "Carbon and nitrogen",
+    "Hydrogen and oxygen",
+    "Iron and gold"
+   ],
+   "answer": "Hydrogen and oxygen",
+   "fact_id": "f11"
+  },
+  {
+   "id": "q4",
+   "type": "mcq",
+   "question": "Which element is found in all organic macromolecules?",
+   "options": [
+    "Carbon",
+    "Gold",
+    "Silver"
+   ],
+   "answer": "Carbon",
+   "fact_id": "f18"
+  }
+ ],
+ "model": "gemini-3-flash-preview"
+}

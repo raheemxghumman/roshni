@@ -1,0 +1,1116 @@
+{
+ "id": "d52f30071edf19661036f98f",
+ "title": "2.3 Time, Velocity, and Speed",
+ "created_at": "2026-10-10T00:57:19+00:00",
+ "sample": true,
+ "source": {
+  "type": "image",
+  "filename": "physics-speed.png",
+  "pages": 1,
+  "text_layer": false,
+  "images": [
+   "/api/lessons/d52f30071edf19661036f98f/image/1"
+  ]
+ },
+ "language": "en",
+ "sections": [
+  {
+   "heading": "2.3 Time, Velocity, and Speed",
+   "level": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "There is more to motion than distance and displacement. Questions such as, “How long does a foot race take?” and “What was the runner’s speed?” cannot be answered without an understanding of other concepts. In this section we add definitions of time, velocity, and speed to expand our description of motion.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b2"
+    }
+   ],
+   "id": "s1",
+   "text": "There is more to motion than distance and displacement. Questions such as, “How long does a foot race take?” and “What was the runner’s speed?” cannot be answered without an understanding of other concepts. In this section we add definitions of time, velocity, and speed to expand our description of motion."
+  },
+  {
+   "heading": "Time",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured. This is the case with time. Every measurement of time involves measuring a change in some physical quantity. It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky. In physics, the definition of time is simple—time is change, or the interval over which change occurs. It is impossible to know that time has passed unless something changes.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b4"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "The amount of time or change is calibrated by comparison with a standard. The SI unit for time is the second, abbreviated s. We might, for example, observe that a certain pendulum makes one full swing every 0.75 s. We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial. This allows us to not only measure the amount of time, but also to determine a sequence of events.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b5"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "How does time relate to motion? We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane. To find elapsed time, we note the time at the beginning and end of the motion and subtract the two. For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min. Elapsed time Δt is the difference between the ending time and beginning time,",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b6"
+    }
+   ],
+   "id": "s2",
+   "text": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured. This is the case with time. Every measurement of time involves measuring a change in some physical quantity. It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky. In physics, the definition of time is simple—time is change, or the interval over which change occurs. It is impossible to know that time has passed unless something changes.\nThe amount of time or change is calibrated by comparison with a standard. The SI unit for time is the second, abbreviated s. We might, for example, observe that a certain pendulum makes one full swing every 0.75 s. We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial. This allows us to not only measure the amount of time, but also to determine a sequence of events.\nHow does time relate to motion? We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane. To find elapsed time, we note the time at the beginning and end of the motion and subtract the two. For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min. Elapsed time Δt is the difference between the ending time and beginning time,"
+  }
+ ],
+ "warnings": [],
+ "models": {
+  "reader": [
+   "gemini-3-flash-preview"
+  ]
+ },
+ "simplified": {
+  "easier": {
+   "level": "easier",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "2.3 Time, Velocity, and Speed",
+     "text": "Motion has more parts than just distance and displacement. You need other ideas to answer questions. For example, how long does a foot race take? What was the runner’s speed? We need new words to describe motion better. This section defines time, velocity, and speed.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Time",
+     "text": "We define basic physical quantities by how we measure them. Time works this way too. Measuring time means measuring a change in something. This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky. In physics, time is change. It is the interval over which change occurs. You cannot know time passed if nothing changes. We measure time by comparing it to a standard. The SI unit for time is the second, abbreviated s. For example, a pendulum might swing once every 0.75 s. We can use this pendulum to measure time. We can count its swings. We can also connect it to a clock. This helps us measure time and order events. How does time relate to motion? We often care about elapsed time. This is the time for a specific motion. For example, how long does it take a passenger to walk to the back of a plane? To find elapsed time, note the start and end times. Then subtract the start time from the end time. A lecture may start at 11:00 A.M. and end at 11:50 A.M. The elapsed time is 50 min. Elapsed time Δt is the difference between the ending time and beginning time.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 7.2,
+     "avg_sentence_words": 16.7,
+     "hard_word_share": 0.186,
+     "words": 318
+    },
+    "after": {
+     "grade": 3.6,
+     "avg_sentence_words": 8.3,
+     "hard_word_share": 0.14,
+     "words": 257
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 21,
+    "kept": 21,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Motion involves more than just distance and displacement.",
+      "source_sentence": "There is more to motion than distance and displacement.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Motion has more parts than just distance and displacement.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Definitions of time, velocity, and speed are used to expand the description of motion.",
+      "source_sentence": "In this section we add definitions of time, velocity, and speed to expand our description of motion.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "This section defines time, velocity, and speed.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The most fundamental physical quantities are defined by how they are measured.",
+      "source_sentence": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "We define basic physical quantities by how we measure them.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Time is defined by how it is measured.",
+      "source_sentence": "This is the case with time.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Time works this way too.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Every measurement of time involves measuring a change in some physical quantity.",
+      "source_sentence": "Every measurement of time involves measuring a change in some physical quantity.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Measuring time means measuring a change in something.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Examples of time measurement include a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "source_sentence": "It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "In physics, time is defined as change, or the interval over which change occurs.",
+      "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "In physics, time is change. It is the interval over which change occurs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "It is impossible to know that time has passed unless something changes.",
+      "source_sentence": "It is impossible to know that time has passed unless something changes.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "You cannot know time passed if nothing changes.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The amount of time or change is calibrated by comparison with a standard.",
+      "source_sentence": "The amount of time or change is calibrated by comparison with a standard.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "We measure time by comparing it to a standard.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The SI unit for time is the second.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "The SI unit for time is the second",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The abbreviation for the second is s.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "abbreviated s.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A pendulum may make one full swing every 0.75 s.",
+      "source_sentence": "We might, for example, observe that a certain pendulum makes one full swing every 0.75 s.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "a pendulum might swing once every 0.75 s.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by counting its swings.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "We can use this pendulum to measure time. We can count its swings.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by connecting it to a clock mechanism that registers time on a dial.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "We can also connect it to a clock.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Measuring time allows for the determination of a sequence of events.",
+      "source_sentence": "This allows us to not only measure the amount of time, but also to determine a sequence of events.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "This helps us measure time and order events.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Elapsed time is the duration of a particular motion.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "This is the time for a specific motion.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "An example of elapsed time is how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "how long does it take a passenger to walk to the back of a plane?",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "To find elapsed time, the time at the beginning and end of the motion are noted and subtracted.",
+      "source_sentence": "To find elapsed time, we note the time at the beginning and end of the motion and subtract the two.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "To find elapsed time, note the start and end times. Then subtract the start time from the end time.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A lecture starting at 11:00 A.M. and ending at 11:50 A.M. results in an elapsed time of 50 min.",
+      "source_sentence": "For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "A lecture may start at 11:00 A.M. and end at 11:50 A.M. The elapsed time is 50 min.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Elapsed time is represented by the symbol Δt.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Elapsed time Δt",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Elapsed time is the difference between the ending time and beginning time.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the difference between the ending time and beginning time.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "gemini-3-flash-preview",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 16,
+      "total": 21,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 16,
+      "total": 21,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 21,
+      "total": 21,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "gemini-3-flash-preview"
+   },
+   "created_at": "2026-10-10T01:06:31+00:00",
+   "seconds": 552.1
+  },
+  "simplest": {
+   "level": "simplest",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "2.3 Time, Velocity, and Speed",
+     "text": "Motion has more parts than distance. It also has displacement. We need more ideas to answer some questions. For example, how long does a foot race take? What was the runner's speed? We need new words to describe motion. These words are time, velocity, and speed. They help us explain motion better. Understanding these concepts is necessary. It helps answer questions about duration. It also helps answer questions about speed.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Time",
+     "text": "We define basic things by how we measure them. Time is one of these things. Measuring time means seeing a change. This change can be a number on a clock. It can be a heartbeat. It can be the Sun's position in the sky. In physics, time is change. It is the interval over which change occurs. You cannot know time passed if nothing changes. We measure time by comparing it to a standard. The SI unit for time is the second. We write this as s. A pendulum may swing once every 0.75 s. We can count these swings to measure time. We can also link it to a clock. This helps us measure time amounts. It also helps us see the order of events. How does time link to motion? We often care about elapsed time. This is the time for a specific motion. For example, how long does it take to walk to the back of a plane? To find elapsed time, we note the start time. We also note the end time. Then we subtract the start from the end. A lecture may start at 11:00 A.M. It may end at 11:50 A.M. The elapsed time is 50 min. Elapsed time Δt is the end time minus the start time.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 7.2,
+     "avg_sentence_words": 16.7,
+     "hard_word_share": 0.186,
+     "words": 318
+    },
+    "after": {
+     "grade": 2.7,
+     "avg_sentence_words": 7.3,
+     "hard_word_share": 0.12,
+     "words": 284
+    }
+   },
+   "factguard": {
+    "status": "amber",
+    "total": 24,
+    "kept": 20,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Motion involves more than just distance and displacement.",
+      "source_sentence": "There is more to motion than distance and displacement.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Motion has more parts than distance.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Understanding concepts beyond distance and displacement is necessary to answer questions about duration and speed.",
+      "source_sentence": "Questions such as, “How long does a foot race take?” and “What was the runner’s speed?” cannot be answered without an understanding of other concepts.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "Understanding these concepts is necessary. It helps answer questions about duration.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Definitions of time, velocity, and speed expand the description of motion.",
+      "source_sentence": "In this section we add definitions of time, velocity, and speed to expand our description of motion.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "These words are time, velocity, and speed.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The most fundamental physical quantities are defined by how they are measured.",
+      "source_sentence": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "We define basic things by how we measure them.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Time is defined by how it is measured.",
+      "source_sentence": "This is the case with time.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Time is one of these things.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Every measurement of time involves measuring a change in some physical quantity.",
+      "source_sentence": "Every measurement of time involves measuring a change in some physical quantity.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "Measuring time means seeing a change.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Examples of physical quantity changes used to measure time include a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "source_sentence": "It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "This change can be a number on a clock. It can be a heartbeat. It can be the Sun's position in the sky.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "In physics, time is defined as change.",
+      "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "In physics, time is change.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "In physics, time is defined as the interval over which change occurs.",
+      "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "It is the interval over which change occurs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "It is impossible to know that time has passed unless something changes.",
+      "source_sentence": "It is impossible to know that time has passed unless something changes.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "You cannot know time passed if nothing changes.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The amount of time or change is calibrated by comparison with a standard.",
+      "source_sentence": "The amount of time or change is calibrated by comparison with a standard.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "We measure time by comparing it to a standard.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The SI unit for time is the second.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "The SI unit for time is the second.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The abbreviation for the second is s.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "id": "f13",
+      "status": "missing",
+      "evidence": "We write this as s.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "section_id": "s2",
+      "text": "A certain pendulum may make one full swing every 0.75 s.",
+      "source_sentence": "We might, for example, observe that a certain pendulum makes one full swing every 0.75 s.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "A pendulum may swing once every 0.75 s.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by counting its swings.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "We can count these swings to measure time.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by connecting it to a clock mechanism that registers time on a dial.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "id": "f16",
+      "status": "missing",
+      "evidence": "We can also link it to a clock.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "section_id": "s2",
+      "text": "Measuring time allows for the determination of a sequence of events.",
+      "source_sentence": "This allows us to not only measure the amount of time, but also to determine a sequence of events.",
+      "id": "f17",
+      "status": "missing",
+      "evidence": "This helps us see the order of events.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "section_id": "s2",
+      "text": "In motion, there is often an interest in elapsed time.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "We often care about elapsed time.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "An example of elapsed time is how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "For example, how long does it take to walk to the back of a plane?",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "To find elapsed time, the time at the beginning and end of the motion are noted.",
+      "source_sentence": "To find elapsed time, we note the time at the beginning and end of the motion and subtract the two.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "To find elapsed time, we note the start time. We also note the end time.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "To find elapsed time, the beginning time is subtracted from the ending time.",
+      "source_sentence": "To find elapsed time, we note the time at the beginning and end of the motion and subtract the two.",
+      "id": "f21",
+      "status": "missing",
+      "evidence": "Then we subtract the start from the end.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "section_id": "s2",
+      "text": "An example of elapsed time is a lecture starting at 11:00 A.M. and ending at 11:50 A.M. resulting in 50 min.",
+      "source_sentence": "For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "A lecture may start at 11:00 A.M. It may end at 11:50 A.M. The elapsed time is 50 min.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Elapsed time is represented by the symbol Δt.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the end time minus the start time.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Elapsed time is the difference between the ending time and beginning time.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the end time minus the start time.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 13,
+      "total": 24,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 16,
+      "total": 24,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 20,
+      "total": 24,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "gemini-3-flash-preview"
+   },
+   "created_at": "2026-10-10T01:09:48+00:00",
+   "seconds": 195.3
+  }
+ },
+ "stress": {
+  "easier": {
+   "level": "easier",
+   "created_at": "2026-10-10T01:10:20+00:00",
+   "planted": [
+    {
+     "type": "changed_number",
+     "section_id": "s2",
+     "before": "For example, a pendulum might swing once every 0.75 s.",
+     "after": "For example, a pendulum might swing once every 1.5 s.",
+     "caught": true
+    },
+    {
+     "type": "deleted_fact",
+     "section_id": "s2",
+     "before": "The elapsed time is 50 min.",
+     "after": "",
+     "caught": false
+    },
+    {
+     "type": "added_claim",
+     "section_id": "s1",
+     "before": "",
+     "after": "This happens about 40 times faster at night than during the day.",
+     "caught": true
+    }
+   ],
+   "caught": 2,
+   "total_planted": 3,
+   "sabotaged_sections": [
+    {
+     "id": "s1",
+     "heading": "2.3 Time, Velocity, and Speed",
+     "text": "Motion has more parts than just distance and displacement. You need other ideas to answer questions. For example, how long does a foot race take? What was the runner’s speed? We need new words to describe motion better. This section defines time, velocity, and speed. This happens about 40 times faster at night than during the day.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Time",
+     "text": "We define basic physical quantities by how we measure them. Time works this way too. Measuring time means measuring a change in something. This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky. In physics, time is change. It is the interval over which change occurs. You cannot know time passed if nothing changes. We measure time by comparing it to a standard. The SI unit for time is the second, abbreviated s. For example, a pendulum might swing once every 1.5 s. We can use this pendulum to measure time. We can count its swings. We can also connect it to a clock. This helps us measure time and order events. How does time relate to motion? We often care about elapsed time. This is the time for a specific motion. For example, how long does it take a passenger to walk to the back of a plane? To find elapsed time, note the start and end times. Then subtract the start time from the end time. A lecture may start at 11:00 A.M. and end at 11:50 A.M. Elapsed time Δt is the difference between the ending time and beginning time.",
+     "simplified": true
+    }
+   ],
+   "sabotaged_report": {
+    "status": "amber",
+    "total": 21,
+    "kept": 16,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Motion involves more than just distance and displacement.",
+      "source_sentence": "There is more to motion than distance and displacement.",
+      "status": "kept",
+      "evidence": "Motion has more parts than just distance and displacement.",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Definitions of time, velocity, and speed are used to expand the description of motion.",
+      "source_sentence": "In this section we add definitions of time, velocity, and speed to expand our description of motion.",
+      "status": "kept",
+      "evidence": "This section defines time, velocity, and speed.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s2",
+      "text": "The most fundamental physical quantities are defined by how they are measured.",
+      "source_sentence": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured.",
+      "status": "kept",
+      "evidence": "We define basic physical quantities by how we measure them.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s2",
+      "text": "Time is defined by how it is measured.",
+      "source_sentence": "This is the case with time.",
+      "status": "missing",
+      "evidence": "Time works this way too.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f5",
+      "section_id": "s2",
+      "text": "Every measurement of time involves measuring a change in some physical quantity.",
+      "source_sentence": "Every measurement of time involves measuring a change in some physical quantity.",
+      "status": "kept",
+      "evidence": "Measuring time means measuring a change in something.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s2",
+      "text": "Examples of time measurement include a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "source_sentence": "It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "status": "kept",
+      "evidence": "This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s2",
+      "text": "In physics, time is defined as change, or the interval over which change occurs.",
+      "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
+      "status": "missing",
+      "evidence": "time is change.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f8",
+      "section_id": "s2",
+      "text": "It is impossible to know that time has passed unless something changes.",
+      "source_sentence": "It is impossible to know that time has passed unless something changes.",
+      "status": "kept",
+      "evidence": "You cannot know time passed if nothing changes.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s2",
+      "text": "The amount of time or change is calibrated by comparison with a standard.",
+      "source_sentence": "The amount of time or change is calibrated by comparison with a standard.",
+      "status": "kept",
+      "evidence": "We measure time by comparing it to a standard.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s2",
+      "text": "The SI unit for time is the second.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "status": "kept",
+      "evidence": "The SI unit for time is the second, abbreviated s.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s2",
+      "text": "The abbreviation for the second is s.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "status": "kept",
+      "evidence": "abbreviated s.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s2",
+      "text": "A pendulum may make one full swing every 0.75 s.",
+      "source_sentence": "We might, for example, observe that a certain pendulum makes one full swing every 0.75 s.",
+      "status": "changed",
+      "evidence": "a pendulum might swing once every 1.5 s",
+      "note": "original states 0.75 s"
+     },
+     {
+      "id": "f13",
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by counting its swings.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "status": "kept",
+      "evidence": "We can use this pendulum to measure time. We can count its swings.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by connecting it to a clock mechanism that registers time on a dial.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "status": "missing",
+      "evidence": "We can also connect it to a clock.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "Measuring time allows for the determination of a sequence of events.",
+      "source_sentence": "This allows us to not only measure the amount of time, but also to determine a sequence of events.",
+      "status": "kept",
+      "evidence": "This helps us measure time and order events.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Elapsed time is the duration of a particular motion.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "status": "kept",
+      "evidence": "elapsed time is the time for a specific motion.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "An example of elapsed time is how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "status": "missing",
+      "evidence": "how long does a passenger to walk to the back of a plane?",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "To find elapsed time, the time at the beginning and end of the motion are noted and subtracted.",
+      "source_sentence": "To find elapsed time, we note the time at the beginning and end of the motion and subtract the two.",
+      "status": "kept",
+      "evidence": "To find elapsed time, note the start and end times. Then subtract the start time from the end time.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "A lecture starting at 11:00 A.M. and ending at 11:50 A.M. results in an elapsed time of 50 min.",
+      "source_sentence": "For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min.",
+      "status": "kept",
+      "evidence": "A lecture may start at 11:00 A.M. and end at 11:50 A.M.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "Elapsed time is represented by the symbol Δt.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the difference between the ending time and beginning time.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "Elapsed time is the difference between the ending time and beginning time.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "status": "kept",
+      "evidence": "difference between the ending time and beginning time",
+      "note": ""
+     }
+    ],
+    "added_claims": [
+     {
+      "section_id": "s1",
+      "quote": "This happens about 40 times faster at night than during the day.",
+      "why": "The original text does not state any comparison of speed between night and day."
+     }
+    ],
+    "missing_tokens": [
+     {
+      "section_id": "s2",
+      "token": "0.75 s"
+     },
+     {
+      "section_id": "s2",
+      "token": "50 min"
+     }
+    ],
+    "checker_model": "openai/gpt-oss-20b"
+   },
+   "repaired_sections": [
+    {
+     "id": "s1",
+     "heading": "2.3 Time, Velocity, and Speed",
+     "text": "Motion has more parts than just distance and displacement. You need other ideas to answer questions. For example, how long does a foot race take? What was the runner’s speed? We need new words to describe motion better. This section defines time, velocity, and speed.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Time",
+     "text": "We define basic physical quantities by how we measure them. Time works this way too. Measuring time means measuring a change in something. This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky. In physics, time is change. It is the interval over which change occurs. You cannot know time passed if nothing changes. We measure time by comparing it to a standard. The SI unit for time is the second, abbreviated s. For example, a pendulum might swing once every 0.75 s. We can use this pendulum to measure time. We can count its swings. We can also connect it to a clock. This helps us measure time and order events. How does time relate to motion? We often care about elapsed time. This is the time for a specific motion. For example, how long does it take a passenger to walk to the back of a plane? To find elapsed time, note the start and end times. Then subtract the start time from the end time. A lecture may start at 11:00 A.M. and end at 11:50 A.M. The elapsed time would be 50 min. Elapsed time Δt is the difference between the ending time and beginning time.",
+     "simplified": true
+    }
+   ],
+   "repaired_report": {
+    "status": "green",
+    "total": 21,
+    "kept": 21,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Motion involves more than just distance and displacement.",
+      "source_sentence": "There is more to motion than distance and displacement.",
+      "status": "kept",
+      "evidence": "Motion has more parts than just distance and displacement",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Definitions of time, velocity, and speed are used to expand the description of motion.",
+      "source_sentence": "In this section we add definitions of time, velocity, and speed to expand our description of motion.",
+      "status": "kept",
+      "evidence": "This section defines time, velocity, and speed",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s2",
+      "text": "The most fundamental physical quantities are defined by how they are measured.",
+      "source_sentence": "As discussed in Physical Quantities and Units, the most fundamental physical quantities are defined by how they are measured.",
+      "status": "kept",
+      "evidence": "We define basic physical quantities by how we measure them",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s2",
+      "text": "Time is defined by how it is measured.",
+      "source_sentence": "This is the case with time.",
+      "status": "kept",
+      "evidence": "Time works this way too",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s2",
+      "text": "Every measurement of time involves measuring a change in some physical quantity.",
+      "source_sentence": "Every measurement of time involves measuring a change in some physical quantity.",
+      "status": "kept",
+      "evidence": "Measuring time means measuring a change in something",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s2",
+      "text": "Examples of time measurement include a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "source_sentence": "It may be a number on a digital clock, a heartbeat, or the position of the Sun in the sky.",
+      "status": "kept",
+      "evidence": "This could be a number on a digital clock. It could be a heartbeat. It could be the Sun’s position in the sky",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s2",
+      "text": "In physics, time is defined as change, or the interval over which change occurs.",
+      "source_sentence": "In physics, the definition of time is simple—time is change, or the interval over which change occurs.",
+      "status": "kept",
+      "evidence": "In physics, time is change. It is the interval over which change occurs",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s2",
+      "text": "It is impossible to know that time has passed unless something changes.",
+      "source_sentence": "It is impossible to know that time has passed unless something changes.",
+      "status": "kept",
+      "evidence": "You cannot know time passed if nothing changes",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s2",
+      "text": "The amount of time or change is calibrated by comparison with a standard.",
+      "source_sentence": "The amount of time or change is calibrated by comparison with a standard.",
+      "status": "kept",
+      "evidence": "We measure time by comparing it to a standard",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s2",
+      "text": "The SI unit for time is the second.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "status": "kept",
+      "evidence": "The SI unit for time is the second, abbreviated s",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s2",
+      "text": "The abbreviation for the second is s.",
+      "source_sentence": "The SI unit for time is the second, abbreviated s.",
+      "status": "kept",
+      "evidence": "The SI unit for time is the second, abbreviated s",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s2",
+      "text": "A pendulum may make one full swing every 0.75 s.",
+      "source_sentence": "We might, for example, observe that a certain pendulum makes one full swing every 0.75 s.",
+      "status": "kept",
+      "evidence": "For example, a pendulum might swing once every 0.75 s",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by counting its swings.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "status": "kept",
+      "evidence": "We can use this pendulum to measure time. We can count its swings",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s2",
+      "text": "A pendulum can be used to measure time by connecting it to a clock mechanism that registers time on a dial.",
+      "source_sentence": "We could then use the pendulum to measure time by counting its swings or, of course, by connecting the pendulum to a clock mechanism that registers time on a dial.",
+      "status": "kept",
+      "evidence": "We can also connect it to a clock",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "Measuring time allows for the determination of a sequence of events.",
+      "source_sentence": "This allows us to not only measure the amount of time, but also to determine a sequence of events.",
+      "status": "kept",
+      "evidence": "This helps us measure time and order events",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Elapsed time is the duration of a particular motion.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "status": "kept",
+      "evidence": "We often care about elapsed time. This is the time for a specific motion",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "An example of elapsed time is how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "source_sentence": "We are usually interested in elapsed time for a particular motion, such as how long it takes an airplane passenger to get from his seat to the back of the plane.",
+      "status": "kept",
+      "evidence": "For example, how long does it take a passenger to walk to the back of a plane",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "To find elapsed time, the time at the beginning and end of the motion are noted and subtracted.",
+      "source_sentence": "To find elapsed time, we note the time at the beginning and end of the motion and subtract the two.",
+      "status": "kept",
+      "evidence": "To find elapsed time, note the start and end times. Then subtract the start time from the end time",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "A lecture starting at 11:00 A.M. and ending at 11:50 A.M. results in an elapsed time of 50 min.",
+      "source_sentence": "For example, a lecture may start at 11:00 A.M. and end at 11:50 A.M., so that the elapsed time would be 50 min.",
+      "status": "kept",
+      "evidence": "A lecture may start at 11:00 A.M. and end at 11:50 A.M. The elapsed time would be 50 min",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "Elapsed time is represented by the symbol Δt.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the difference between the ending time and beginning time",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "Elapsed time is the difference between the ending time and beginning time.",
+      "source_sentence": "Elapsed time Δt is the difference between the ending time and beginning time,",
+      "status": "kept",
+      "evidence": "Elapsed time Δt is the difference between the ending time and beginning time",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b"
+   }
+  }
+ },
+ "glossary": null,
+ "quiz": {
+  "easier": "59ec087c883d254c540ae0b6"
+ },
+ "lecture_id": "2b54097dde1fc385a5549d00",
+ "prompt_version": "v1",
+ "timing": {
+  "read_seconds": 10.6
+ }
+}

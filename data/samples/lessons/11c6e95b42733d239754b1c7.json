@@ -1,0 +1,1493 @@
+{
+ "id": "11c6e95b42733d239754b1c7",
+ "title": "20.2 Biogeochemical Cycles",
+ "created_at": "2026-10-10T00:27:06+00:00",
+ "sample": true,
+ "source": {
+  "type": "image",
+  "filename": "earth-water-cycle.png",
+  "pages": 1,
+  "text_layer": false,
+  "images": [
+   "/api/lessons/11c6e95b42733d239754b1c7/image/1"
+  ]
+ },
+ "language": "en",
+ "sections": [
+  {
+   "heading": "20.2 Biogeochemical Cycles",
+   "level": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels. Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled. The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface. Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth. Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b2"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Water, which contains hydrogen and oxygen, is essential to all living processes. The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere. Carbon is found in all organic macromolecules and is an important constituent of fossil fuels. Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture. Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water. Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b3"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "The cycling of these elements is interconnected. For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans. The ocean is also a major reservoir for carbon. Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b4"
+    }
+   ],
+   "id": "s1",
+   "text": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels. Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled. The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface. Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth. Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.\nWater, which contains hydrogen and oxygen, is essential to all living processes. The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere. Carbon is found in all organic macromolecules and is an important constituent of fossil fuels. Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture. Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water. Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.\nThe cycling of these elements is interconnected. For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans. The ocean is also a major reservoir for carbon. Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another."
+  }
+ ],
+ "warnings": [],
+ "models": {
+  "reader": [
+   "gemini-flash-latest"
+  ]
+ },
+ "simplified": {
+  "easier": {
+   "level": "easier",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "20.2 Biogeochemical Cycles",
+     "text": "Energy moves in one direction through ecosystems. It enters as sunlight. Chemoautotrophs use inorganic molecules. Energy leaves as heat. This happens between trophic levels. Matter does not flow like energy. It is conserved and recycled. Six elements are common in organic molecules. They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur. These elements take many chemical forms. They can stay in the atmosphere for a long time. They can also be on land or in water. They may be beneath Earth’s surface. Geologic processes help cycle these elements. Weathering and erosion play a role. Water drainage is also important. The subduction of tectonic plates matters too. Geology and chemistry have major roles in this study. The recycling of inorganic matter is called a biogeochemical cycle. This cycle links living things and the nonliving environment. Water contains hydrogen and oxygen. It is essential to all living processes. The hydrosphere is the area of Earth where water moves. It is also where water is stored. Liquid water is on the surface. This includes rivers, lakes, and oceans. Groundwater is beneath the surface. Ice is found in polar ice caps and glaciers. Water vapor is in the atmosphere. Carbon is in all organic macromolecules. It is an important part of fossil fuels. Nitrogen is a major component of nucleic acids and proteins. It is critical to human agriculture. Phosphorus is a major component of nucleic acids. It is a main ingredient in artificial fertilizers. Nitrogen is also in these fertilizers. These fertilizers are used in agriculture. They have environmental impacts on surface water. Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding. Burning fossil fuels releases sulfur into the atmosphere. The cycling of these elements is interconnected. Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans. The ocean is a major reservoir for carbon. Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world. They also move from one living organism to another.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 14.9,
+     "avg_sentence_words": 22.2,
+     "hard_word_share": 0.3,
+     "words": 333
+    },
+    "after": {
+     "grade": 8.1,
+     "avg_sentence_words": 7.0,
+     "hard_word_share": 0.256,
+     "words": 344
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 31,
+    "kept": 31,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Energy flows directionally through ecosystems.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Energy moves in one direction through ecosystems.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy enters ecosystems as sunlight (or inorganic molecules for chemoautotrophs).",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "It enters as sunlight. Chemoautotrophs use inorganic molecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy leaves ecosystems as heat during transfers between trophic levels.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Energy leaves as heat. This happens between trophic levels.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The matter that makes up living organisms is conserved and recycled rather than flowing through an ecosystem.",
+      "source_sentence": "Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Matter does not flow like energy. It is conserved and recycled.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Six elements are common in organic molecules. They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules take a variety of chemical forms.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "These elements take many chemical forms.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "They can stay in the atmosphere for a long time. They can also be on land or in water. They may be beneath Earth’s surface.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, play a role in the cycling of elements on Earth.",
+      "source_sentence": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Geologic processes help cycle these elements. Weathering and erosion play a role. Water drainage is also important. The subduction of tectonic plates matters too.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Geology and chemistry have major roles in the study of the recycling of inorganic matter between living organisms and their nonliving environment.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "Geology and chemistry have major roles in this study.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "The recycling of inorganic matter is called a biogeochemical cycle. This cycle links living things and the nonliving environment.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water contains hydrogen and oxygen.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "Water contains hydrogen and oxygen.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water is essential to all living processes.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "It is essential to all living processes.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The hydrosphere is the area of Earth where water movement and storage occurs.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "The hydrosphere is the area of Earth where water moves. It is also where water is stored.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as liquid water on the surface (rivers, lakes, oceans).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "Liquid water is on the surface. This includes rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs beneath the surface as groundwater.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Groundwater is beneath the surface.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as ice (polar ice caps and glaciers).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "Ice is found in polar ice caps and glaciers.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as water vapor in the atmosphere.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Water vapor is in the atmosphere.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Carbon is found in all organic macromolecules.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "Carbon is in all organic macromolecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Carbon is an important constituent of fossil fuels.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "It is an important part of fossil fuels.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Nitrogen is a major component of our nucleic acids and proteins.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Nitrogen is a major component of nucleic acids and proteins.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Nitrogen is critical to human agriculture.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "It is critical to human agriculture.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Phosphorus is a major component of nucleic acids.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "Phosphorus is a major component of nucleic acids.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers used in agriculture.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "Phosphorus is a main ingredient in artificial fertilizers. Nitrogen is also in these fertilizers. These fertilizers are used in agriculture.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Artificial fertilizers used in agriculture have environmental impacts on surface water.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "They have environmental impacts on surface water.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Sulfur is critical to the three-dimensional folding of proteins (as in disulfide binding).",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Sulfur is released into the atmosphere by the burning of fossil fuels.",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "Burning fossil fuels releases sulfur into the atmosphere.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected.",
+      "source_sentence": "The cycling of these elements is interconnected.",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "The cycling of these elements is interconnected.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "source_sentence": "For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "id": "f28",
+      "status": "kept",
+      "evidence": "Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The ocean is a major reservoir for carbon.",
+      "source_sentence": "The ocean is also a major reservoir for carbon.",
+      "id": "f29",
+      "status": "kept",
+      "evidence": "The ocean is a major reservoir for carbon.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f30",
+      "status": "kept",
+      "evidence": "Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled from one living organism to another.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f31",
+      "status": "kept",
+      "evidence": "They also move from one living organism to another.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "gemini-flash-latest",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 23,
+      "total": 31,
+      "added_claims": 1,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 26,
+      "total": 31,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 31,
+      "total": 31,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "gemini-flash-latest"
+   },
+   "created_at": "2026-10-10T00:41:31+00:00",
+   "seconds": 654.3
+  },
+  "simplest": {
+   "level": "simplest",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "20.2 Biogeochemical Cycles",
+     "text": "Energy moves one way through ecosystems. It enters as sunlight. Chemoautotrophs use inorganic molecules for energy. They make food from chemicals. Energy leaves as heat during transfers between trophic levels. Matter in living things is conserved and recycled. It is saved and used again. Six elements are common in organic molecules. These are molecules in living things. These are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur. These six elements take a variety of chemical forms. They exist for long periods in the atmosphere. They exist on land and in water. They exist beneath Earth’s surface. Geologic processes help cycle these elements. These include weathering, erosion, and water drainage. Weathering is breaking rocks. Erosion is moving soil. They include subduction of tectonic plates. This is when plates move under each other. Geology and chemistry have major roles here. Inorganic matter cycles between living and nonliving things. This is called a biogeochemical cycle. Water has hydrogen and oxygen. All living processes need water. The hydrosphere is where water movement and storage occurs. Water is liquid on the surface. Surface water is in rivers, lakes, and oceans. Water exists beneath the surface as groundwater. Groundwater is water under the ground. Water exists as ice in polar ice caps. Water exists as ice in glaciers. It is water vapor in the atmosphere. Water vapor is water in the air. Carbon is in all organic macromolecules. Carbon is in fossil fuels. Fossil fuels are things like coal. Nitrogen is a major component of proteins. Nitrogen is in nucleic acids. Nitrogen is critical to human agriculture. Agriculture is farming. Phosphorus is a major component of nucleic acids. Phosphorus is a main ingredient in artificial fertilizers. These fertilizers are used in agriculture. They affect our surface water. Surface water is water on the ground. Sulfur is critical to three-dimensional folding of proteins. This helps proteins fold into shapes. This happens in disulfide binding. Burning fossil fuels releases sulfur. The cycling of these elements is interconnected. This means they are all linked together. Water movement helps nitrogen and phosphate leach. This means they wash away. They leach into rivers, lakes, and oceans. The ocean is a major reservoir for carbon. A reservoir is a place that stores things. Mineral nutrient cycling can be rapid or slow. They move fast or slow. They cycle through the entire biosphere. The biosphere is all life on Earth. They move between the biotic and abiotic world. Biotic means living. Abiotic means nonliving. Mineral nutrients cycle from one living organism to another. An organism is a living thing.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 14.9,
+     "avg_sentence_words": 22.2,
+     "hard_word_share": 0.3,
+     "words": 333
+    },
+    "after": {
+     "grade": 7.4,
+     "avg_sentence_words": 6.4,
+     "hard_word_share": 0.235,
+     "words": 425
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 34,
+    "kept": 34,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Energy flows directionally through ecosystems",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Energy moves one way through ecosystems. It enters as sunlight. Chemoautotrophs use inorganic molecules for energy. Energy leaves as heat during transfers between trophic levels.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy enters ecosystems as sunlight or inorganic molecules for chemoautotrophs",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "It enters as sunlight. Chemoautotrophs use inorganic molecules for energy.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy leaves ecosystems as heat during transfers between trophic levels",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Energy leaves as heat during transfers between trophic levels.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Matter that makes up living organisms is conserved and recycled",
+      "source_sentence": "Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Matter in living things is conserved and recycled. It is saved and used again.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Six elements are common in organic molecules. These are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "These six elements take a variety of chemical forms",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "These six elements take a variety of chemical forms.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "These six elements may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "They exist for long periods in the atmosphere. They exist on land and in water. They exist beneath Earth’s surface.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Weathering, erosion, water drainage, and subduction of tectonic plates play a role in the cycling of elements on Earth",
+      "source_sentence": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Geologic processes help cycle these elements. These include weathering, erosion, and water drainage. They include subduction of tectonic plates.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "Inorganic matter cycles between living and nonliving things. This is called a biogeochemical cycle.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water contains hydrogen and oxygen",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "Water has hydrogen and oxygen.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water is essential to all living processes",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "All living processes need water.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The hydrosphere is the area of Earth where water movement and storage occurs",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "The hydrosphere is where water movement and storage occurs.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water exists as liquid on the surface as rivers, lakes, and oceans",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "Water is liquid on the surface. Surface water is in rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water exists beneath the surface as groundwater",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "Water exists beneath the surface as groundwater.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water exists as ice in polar ice caps and glaciers",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Water exists as ice in polar ice caps. Water exists as ice in glaciers.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Water exists as vapor in the atmosphere",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "It is water vapor in the atmosphere.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Carbon is found in all organic macromolecules",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Carbon is in all organic macromolecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Carbon is an important constituent of fossil fuels",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "Carbon is in fossil fuels.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Nitrogen is a major component of nucleic acids",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Nitrogen is in nucleic acids.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Nitrogen is a major component of proteins",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Nitrogen is a major component of proteins.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Nitrogen is critical to human agriculture",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "Nitrogen is critical to human agriculture.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Phosphorus is a major component of nucleic acids",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "Phosphorus is a major component of nucleic acids.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Phosphorus is one of the main ingredients in artificial fertilizers used in agriculture",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "Phosphorus is a main ingredient in artificial fertilizers.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Artificial fertilizers have environmental impacts on surface water",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "These fertilizers are used in agriculture. They affect our surface water.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Sulfur is critical to the three-dimensional folding of proteins as in disulfide binding",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "Sulfur is critical to three-dimensional folding of proteins. This helps proteins fold into shapes. This happens in disulfide binding.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Sulfur is released into the atmosphere by the burning of fossil fuels",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "Burning fossil fuels releases sulfur.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The cycling of these elements is interconnected",
+      "source_sentence": "The cycling of these elements is interconnected.",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "The cycling of these elements is interconnected.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Movement of water is critical for the leaching of nitrogen into rivers, lakes, and oceans",
+      "source_sentence": "For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "id": "f28",
+      "status": "kept",
+      "evidence": "Water movement helps nitrogen and phosphate leach. They leach into rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Movement of water is critical for the leaching of phosphate into rivers, lakes, and oceans",
+      "source_sentence": "For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "id": "f29",
+      "status": "kept",
+      "evidence": "Water movement helps nitrogen and phosphate leach. They leach into rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The ocean is a major reservoir for carbon",
+      "source_sentence": "The ocean is also a major reservoir for carbon.",
+      "id": "f30",
+      "status": "kept",
+      "evidence": "The ocean is a major reservoir for carbon.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled through the entire biosphere",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f31",
+      "status": "kept",
+      "evidence": "Mineral nutrient cycling can be rapid or slow. They move fast or slow. They cycle through the entire biosphere.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrient cycling can be rapid or slow",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f32",
+      "status": "kept",
+      "evidence": "Mineral nutrient cycling can be rapid or slow. They move fast or slow.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled between the biotic and abiotic world",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f33",
+      "status": "kept",
+      "evidence": "They cycle through the entire biosphere. They move between the biotic and abiotic world.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled from one living organism to another",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "id": "f34",
+      "status": "kept",
+      "evidence": "Mineral nutrients cycle from one living organism to another.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 23,
+      "total": 34,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 29,
+      "total": 34,
+      "added_claims": 4,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 34,
+      "total": 34,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "gemini-3-flash-preview",
+    "extractor_model": "openai/gpt-oss-120b"
+   },
+   "created_at": "2026-10-10T00:50:37+00:00",
+   "seconds": 544.0
+  }
+ },
+ "stress": {
+  "easier": {
+   "level": "easier",
+   "created_at": "2026-10-10T00:57:08+00:00",
+   "planted": [
+    {
+     "type": "deleted_fact",
+     "section_id": "s1",
+     "before": "Weathering and erosion play a role.",
+     "after": "",
+     "caught": false
+    },
+    {
+     "type": "added_claim",
+     "section_id": "s1",
+     "before": "",
+     "after": "Only 12 percent of living things depend on this process.",
+     "caught": true
+    }
+   ],
+   "caught": 1,
+   "total_planted": 2,
+   "sabotaged_sections": [
+    {
+     "id": "s1",
+     "heading": "20.2 Biogeochemical Cycles",
+     "text": "Energy moves in one direction through ecosystems. It enters as sunlight. Chemoautotrophs use inorganic molecules. Energy leaves as heat. This happens between trophic levels. Matter does not flow like energy. It is conserved and recycled. Six elements are common in organic molecules. They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur. These elements take many chemical forms. They can stay in the atmosphere for a long time. They can also be on land or in water. They may be beneath Earth’s surface. Geologic processes help cycle these elements. Water drainage is also important. The subduction of tectonic plates matters too. Geology and chemistry have major roles in this study. The recycling of inorganic matter is called a biogeochemical cycle. This cycle links living things and the nonliving environment. Water contains hydrogen and oxygen. It is essential to all living processes. The hydrosphere is the area of Earth where water moves. It is also where water is stored. Liquid water is on the surface. This includes rivers, lakes, and oceans. Groundwater is beneath the surface. Ice is found in polar ice caps and glaciers. Water vapor is in the atmosphere. Carbon is in all organic macromolecules. It is an important part of fossil fuels. Nitrogen is a major component of nucleic acids and proteins. It is critical to human agriculture. Phosphorus is a major component of nucleic acids. It is a main ingredient in artificial fertilizers. Nitrogen is also in these fertilizers. These fertilizers are used in agriculture. They have environmental impacts on surface water. Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding. Burning fossil fuels releases sulfur into the atmosphere. The cycling of these elements is interconnected. Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans. The ocean is a major reservoir for carbon. Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world. They also move from one living organism to another. Only 12 percent of living things depend on this process.",
+     "simplified": true
+    }
+   ],
+   "sabotaged_report": {
+    "status": "amber",
+    "total": 31,
+    "kept": 25,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Energy flows directionally through ecosystems.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "Energy moves in one direction through ecosystems.",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Energy enters ecosystems as sunlight (or inorganic molecules for chemoautotrophs).",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "It enters as sunlight. Chemoautotrophs use inorganic molecules.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Energy leaves ecosystems as heat during transfers between trophic levels.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "Energy leaves as heat. This happens between trophic levels.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "The matter that makes up living organisms is conserved and recycled rather than flowing through an ecosystem.",
+      "source_sentence": "Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled.",
+      "status": "missing",
+      "evidence": "Matter does not flow like energy. It is conserved and recycled.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "kept",
+      "evidence": "Six elements are common in organic molecules. They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules take a variety of chemical forms.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "missing",
+      "evidence": "These elements take many chemical forms.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "missing",
+      "evidence": "They can stay in the atmosphere for a long time. They can also be on land or in water. They may be beneath Earth’s surface.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, play a role in the cycling of elements on Earth.",
+      "source_sentence": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth.",
+      "status": "changed",
+      "evidence": "Geologic processes help cycle these elements. Water drainage is also important. The subduction of tectonic plates matters too.",
+      "note": "The rewrite omits weathering and erosion as specific examples of geologic processes mentioned in the original."
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "Geology and chemistry have major roles in the study of the recycling of inorganic matter between living organisms and their nonliving environment.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "status": "kept",
+      "evidence": "Geology and chemistry have major roles in this study.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "The recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "status": "kept",
+      "evidence": "The recycling of inorganic matter is called a biogeochemical cycle.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "Water contains hydrogen and oxygen.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "status": "kept",
+      "evidence": "Water contains hydrogen and oxygen.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Water is essential to all living processes.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "status": "kept",
+      "evidence": "It is essential to all living processes.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "The hydrosphere is the area of Earth where water movement and storage occurs.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "The hydrosphere is the area of Earth where water moves. It is also where water is stored.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as liquid water on the surface (rivers, lakes, oceans).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Liquid water is on the surface. This includes rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs beneath the surface as groundwater.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Groundwater is beneath the surface.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as ice (polar ice caps and glaciers).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Ice is found in polar ice caps and glaciers.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as water vapor in the atmosphere.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Water vapor is in the atmosphere.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s1",
+      "text": "Carbon is found in all organic macromolecules.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "status": "kept",
+      "evidence": "Carbon is in all organic macromolecules.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s1",
+      "text": "Carbon is an important constituent of fossil fuels.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "status": "kept",
+      "evidence": "It is an important part of fossil fuels.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s1",
+      "text": "Nitrogen is a major component of our nucleic acids and proteins.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "status": "kept",
+      "evidence": "Nitrogen is a major component of nucleic acids and proteins.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s1",
+      "text": "Nitrogen is critical to human agriculture.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "status": "kept",
+      "evidence": "It is critical to human agriculture.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s1",
+      "text": "Phosphorus is a major component of nucleic acids.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "kept",
+      "evidence": "Phosphorus is a major component of nucleic acids.",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s1",
+      "text": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers used in agriculture.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "missing",
+      "evidence": "It is a main ingredient in artificial fertilizers. Nitrogen is also in these fertilizers.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f24",
+      "section_id": "s1",
+      "text": "Artificial fertilizers used in agriculture have environmental impacts on surface water.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "kept",
+      "evidence": "They have environmental impacts on surface water.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s1",
+      "text": "Sulfur is critical to the three-dimensional folding of proteins (as in disulfide binding).",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "status": "kept",
+      "evidence": "Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s1",
+      "text": "Sulfur is released into the atmosphere by the burning of fossil fuels.",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "status": "kept",
+      "evidence": "Burning fossil fuels releases sulfur into the atmosphere.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s1",
+      "text": "The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected.",
+      "source_sentence": "The cycling of these elements is interconnected.",
+      "status": "missing",
+      "evidence": "The cycling of these elements is interconnected.",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f28",
+      "section_id": "s1",
+      "text": "The movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "source_sentence": "For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "status": "kept",
+      "evidence": "Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "id": "f29",
+      "section_id": "s1",
+      "text": "The ocean is a major reservoir for carbon.",
+      "source_sentence": "The ocean is also a major reservoir for carbon.",
+      "status": "kept",
+      "evidence": "The ocean is a major reservoir for carbon.",
+      "note": ""
+     },
+     {
+      "id": "f30",
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "status": "kept",
+      "evidence": "Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world.",
+      "note": ""
+     },
+     {
+      "id": "f31",
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled from one living organism to another.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "status": "kept",
+      "evidence": "They also move from one living organism to another.",
+      "note": ""
+     }
+    ],
+    "added_claims": [
+     {
+      "section_id": "s1",
+      "quote": "Only 12 percent of living things depend on this process.",
+      "why": "The original text does not mention a specific percentage of living things that depend on this process."
+     }
+    ],
+    "missing_tokens": [],
+    "checker_model": "gemini-3-flash-preview"
+   },
+   "repaired_sections": [
+    {
+     "id": "s1",
+     "heading": "20.2 Biogeochemical Cycles",
+     "text": "Energy moves in one direction through ecosystems. It enters as sunlight. Chemoautotrophs use inorganic molecules. Energy leaves as heat. This happens between trophic levels. Matter in living things is conserved and recycled rather than flowing through ecosystems. Six elements are most common in organic molecules. They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur. These six elements take many chemical forms. They may exist for long periods in the atmosphere. They can be on land or in water. They may be beneath Earth’s surface. Geologic processes help cycle elements on Earth. These include weathering and erosion. Water drainage is also important. The subduction of tectonic plates matters too. Geology and chemistry have major roles in this study. The recycling of inorganic matter is called a biogeochemical cycle. This cycle links living things and the nonliving environment. Water contains hydrogen and oxygen. It is essential to all living processes. The hydrosphere is the area where water moves. It is also where water is stored. Liquid water is on the surface. This includes rivers, lakes, and oceans. Groundwater is beneath the surface. Ice is in polar ice caps and glaciers. Water vapor is in the atmosphere. Carbon is in all organic macromolecules. It is an important part of fossil fuels. Nitrogen is a major component of nucleic acids and proteins. It is critical to human agriculture. Phosphorus is a major component of nucleic acids. Phosphorus and nitrogen are main ingredients in artificial fertilizers. These fertilizers are used in agriculture. They have environmental impacts on surface water. Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding. Burning fossil fuels releases sulfur into the atmosphere. The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected. Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans. The ocean is a major reservoir for carbon. Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world. They also move from one living organism to another.",
+     "simplified": true
+    }
+   ],
+   "repaired_report": {
+    "status": "green",
+    "total": 31,
+    "kept": 31,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Energy flows directionally through ecosystems.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "Energy moves in one direction through ecosystems.",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Energy enters ecosystems as sunlight (or inorganic molecules for chemoautotrophs).",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "It enters as sunlight. Chemoautotrophs use inorganic molecules.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Energy leaves ecosystems as heat during transfers between trophic levels.",
+      "source_sentence": "Energy flows directionally through ecosystems, entering as sunlight (or inorganic molecules for chemoautotrophs) and leaving as heat during the transfers between trophic levels.",
+      "status": "kept",
+      "evidence": "Energy leaves as heat. This happens between trophic levels.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "The matter that makes up living organisms is conserved and recycled rather than flowing through an ecosystem.",
+      "source_sentence": "Rather than flowing through an ecosystem, the matter that makes up living organisms is conserved and recycled.",
+      "status": "kept",
+      "evidence": "Matter in living things is conserved and recycled rather than flowing through ecosystems.",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "kept",
+      "evidence": "They are carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules take a variety of chemical forms.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "kept",
+      "evidence": "These six elements take many chemical forms.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "The six most common elements associated with organic molecules may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "source_sentence": "The six most common elements associated with organic molecules—carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur—take a variety of chemical forms and may exist for long periods in the atmosphere, on land, in water, or beneath Earth’s surface.",
+      "status": "kept",
+      "evidence": "They may exist for long periods in the atmosphere. They can be on land or in water. They may be beneath Earth’s surface.",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, play a role in the cycling of elements on Earth.",
+      "source_sentence": "Geologic processes, such as weathering, erosion, water drainage, and the subduction of the tectonic plates, all play a role in the cycling of elements on Earth.",
+      "status": "kept",
+      "evidence": "Geologic processes help cycle elements on Earth. These include weathering and erosion. Water drainage is also important. The subduction of tectonic plates matters too.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "Geology and chemistry have major roles in the study of the recycling of inorganic matter between living organisms and their nonliving environment.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "status": "kept",
+      "evidence": "Geology and chemistry have major roles in this study.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "The recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "source_sentence": "Because geology and chemistry have major roles in the study of this process, the recycling of inorganic matter between living organisms and their nonliving environment is called a biogeochemical cycle.",
+      "status": "kept",
+      "evidence": "The recycling of inorganic matter is called a biogeochemical cycle.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "Water contains hydrogen and oxygen.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "status": "kept",
+      "evidence": "Water contains hydrogen and oxygen.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Water is essential to all living processes.",
+      "source_sentence": "Water, which contains hydrogen and oxygen, is essential to all living processes.",
+      "status": "kept",
+      "evidence": "It is essential to all living processes.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "The hydrosphere is the area of Earth where water movement and storage occurs.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "The hydrosphere is the area where water moves. It is also where water is stored.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as liquid water on the surface (rivers, lakes, oceans).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Liquid water is on the surface. This includes rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs beneath the surface as groundwater.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Groundwater is beneath the surface.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as ice (polar ice caps and glaciers).",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Ice is in polar ice caps and glaciers.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s1",
+      "text": "Water movement and storage in the hydrosphere occurs as water vapor in the atmosphere.",
+      "source_sentence": "The hydrosphere is the area of Earth where water movement and storage occurs: as liquid water on the surface (rivers, lakes, oceans) and beneath the surface (groundwater) or ice, (polar ice caps and glaciers), and as water vapor in the atmosphere.",
+      "status": "kept",
+      "evidence": "Water vapor is in the atmosphere.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s1",
+      "text": "Carbon is found in all organic macromolecules.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "status": "kept",
+      "evidence": "Carbon is in all organic macromolecules.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s1",
+      "text": "Carbon is an important constituent of fossil fuels.",
+      "source_sentence": "Carbon is found in all organic macromolecules and is an important constituent of fossil fuels.",
+      "status": "kept",
+      "evidence": "It is an important part of fossil fuels.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s1",
+      "text": "Nitrogen is a major component of our nucleic acids and proteins.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "status": "kept",
+      "evidence": "Nitrogen is a major component of nucleic acids and proteins.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s1",
+      "text": "Nitrogen is critical to human agriculture.",
+      "source_sentence": "Nitrogen is a major component of our nucleic acids and proteins and is critical to human agriculture.",
+      "status": "kept",
+      "evidence": "It is critical to human agriculture.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s1",
+      "text": "Phosphorus is a major component of nucleic acids.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "kept",
+      "evidence": "Phosphorus is a major component of nucleic acids.",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s1",
+      "text": "Phosphorus is one of the main ingredients, along with nitrogen, in artificial fertilizers used in agriculture.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "kept",
+      "evidence": "Phosphorus and nitrogen are main ingredients in artificial fertilizers.",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s1",
+      "text": "Artificial fertilizers used in agriculture have environmental impacts on surface water.",
+      "source_sentence": "Phosphorus, a major component of nucleic acids, is one of the main ingredients (along with nitrogen) in artificial fertilizers used in agriculture, which has environmental impacts on our surface water.",
+      "status": "kept",
+      "evidence": "They have environmental impacts on surface water.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s1",
+      "text": "Sulfur is critical to the three-dimensional folding of proteins (as in disulfide binding).",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "status": "kept",
+      "evidence": "Sulfur is critical to the three-dimensional folding of proteins. This is seen in disulfide binding.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s1",
+      "text": "Sulfur is released into the atmosphere by the burning of fossil fuels.",
+      "source_sentence": "Sulfur, critical to the three-dimensional folding of proteins (as in disulfide binding), is released into the atmosphere by the burning of fossil fuels.",
+      "status": "kept",
+      "evidence": "Burning fossil fuels releases sulfur into the atmosphere.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s1",
+      "text": "The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected.",
+      "source_sentence": "The cycling of these elements is interconnected.",
+      "status": "kept",
+      "evidence": "The cycling of carbon, nitrogen, hydrogen, oxygen, phosphorus, and sulfur is interconnected.",
+      "note": ""
+     },
+     {
+      "id": "f28",
+      "section_id": "s1",
+      "text": "The movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "source_sentence": "For example, the movement of water is critical for the leaching of nitrogen and phosphate into rivers, lakes, and oceans.",
+      "status": "kept",
+      "evidence": "Water movement is critical for leaching. It moves nitrogen and phosphate into rivers, lakes, and oceans.",
+      "note": ""
+     },
+     {
+      "id": "f29",
+      "section_id": "s1",
+      "text": "The ocean is a major reservoir for carbon.",
+      "source_sentence": "The ocean is also a major reservoir for carbon.",
+      "status": "kept",
+      "evidence": "The ocean is a major reservoir for carbon.",
+      "note": ""
+     },
+     {
+      "id": "f30",
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "status": "kept",
+      "evidence": "Mineral nutrients cycle through the entire biosphere. This can happen rapidly or slowly. They move between the biotic and abiotic world.",
+      "note": ""
+     },
+     {
+      "id": "f31",
+      "section_id": "s1",
+      "text": "Mineral nutrients are cycled from one living organism to another.",
+      "source_sentence": "Thus, mineral nutrients are cycled, either rapidly or slowly, through the entire biosphere between the biotic and abiotic world and from one living organism to another.",
+      "status": "kept",
+      "evidence": "They also move from one living organism to another.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "gemini-3-flash-preview"
+   }
+  }
+ },
+ "glossary": {
+  "items": [
+   {
+    "term": "chemoautotrophs",
+    "simple_en": "Organisms that make food using energy from inorganic chemical molecules.",
+    "urdu": "وہ جاندار جو کیمیکلز سے اپنی خوراک بناتے ہیں chemoautotrophs کہلاتے ہیں۔",
+    "example": "Some bacteria act as chemoautotrophs in deep ocean vents.",
+    "section_id": "s1"
+   },
+   {
+    "term": "hydrosphere",
+    "simple_en": "All the water found on, under, and above Earth's surface.",
+    "urdu": "زمین پر موجود تمام پانی کے ذخائر کو hydrosphere کہتے ہیں۔",
+    "example": "The hydrosphere includes oceans, rivers, and even water vapor.",
+    "section_id": "s1"
+   },
+   {
+    "term": "nonliving",
+    "simple_en": "Things that are not alive, like rocks, air, and water.",
+    "urdu": "بے جان چیزیں جیسے ہوا اور مٹی nonliving کہلاتی ہیں۔",
+    "example": "Rocks and minerals are nonliving parts of our environment.",
+    "section_id": "s1"
+   },
+   {
+    "term": "directionally",
+    "simple_en": "Moving or flowing in only one specific direction.",
+    "urdu": "جب کوئی چیز صرف ایک سمت میں چلے تو اسے directionally کہتے ہیں۔",
+    "example": "Energy flows directionally from the sun through the ecosystem.",
+    "section_id": "s1"
+   },
+   {
+    "term": "biogeochemical",
+    "simple_en": "The movement of elements through living things and the Earth.",
+    "urdu": "جانداروں اور زمین کے درمیان مادے کی گردش biogeochemical کہلاتی ہے۔",
+    "example": "The carbon cycle is a well-known biogeochemical process.",
+    "section_id": "s1"
+   },
+   {
+    "term": "macromolecules",
+    "simple_en": "Very large molecules that are essential for living organisms.",
+    "urdu": "بہت بڑے مالیکیولز جیسے پروٹین کو macromolecules کہا جاتا ہے۔",
+    "example": "DNA and proteins are important macromolecules in our bodies.",
+    "section_id": "s1"
+   },
+   {
+    "term": "abiotic",
+    "simple_en": "The non-living parts of an environment, like sunlight and soil.",
+    "urdu": "ماحول کے بے جان حصے جیسے دھوپ اور مٹی abiotic ہیں۔",
+    "example": "Temperature and water are abiotic factors in an ecosystem.",
+    "section_id": "s1"
+   },
+   {
+    "term": "trophic",
+    "simple_en": "Relating to the different levels of a food chain.",
+    "urdu": "خوراک کے مختلف درجوں یا لیول کو trophic کہتے ہیں۔",
+    "example": "Energy is lost as it moves between trophic levels.",
+    "section_id": "s1"
+   },
+   {
+    "term": "disulfide",
+    "simple_en": "A chemical bond that links two sulfur atoms together.",
+    "urdu": "دو سلفر ایٹمز کے درمیان بننے والے جوڑ کو disulfide کہتے ہیں۔",
+    "example": "A disulfide bond helps proteins maintain their 3D shape.",
+    "section_id": "s1"
+   },
+   {
+    "term": "biotic",
+    "simple_en": "The living components of an ecosystem, like plants and animals.",
+    "urdu": "ماحول کے تمام جاندار حصے جیسے پودے اور جانور biotic ہیں۔",
+    "example": "Plants and bacteria are biotic parts of the biosphere.",
+    "section_id": "s1"
+   }
+  ],
+  "model": "gemini-3-flash-preview",
+  "created_at": "2026-10-10T00:50:47+00:00"
+ },
+ "quiz": {
+  "easier": "4a981119da07dbd4379c6582"
+ },
+ "lecture_id": null,
+ "prompt_version": "v1",
+ "timing": {
+  "read_seconds": 101.2
+ }
+}

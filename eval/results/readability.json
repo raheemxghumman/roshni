@@ -1,0 +1,13 @@
+{
+  "metric": "readability",
+  "date": "2026-10-10",
+  "title": "Reading level lowered",
+  "display": "Grade 11.0 → 6.3",
+  "value": 4.66,
+  "detail": "Easier: grade 11.0 → 6.3, 19 → 8 words per sentence (5 pages); Simplest: grade 11.0 → 6.2, 19 → 7 words per sentence (5 pages)",
+  "dataset": "OpenStax textbook pages (CC BY 4.0)",
+  "n": "10 rewrites of 5 pages",
+  "method": "Flesch-Kincaid grade (textstat), original vs Fact-Guarded rewrite",
+  "models": "qwen3.8-27b / gemini-2.5-flash",
+  "data_type": "real"
+}

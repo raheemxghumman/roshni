@@ -1,0 +1,13 @@
+{
+  "metric": "asr_wer",
+  "date": "2026-10-10",
+  "title": "Lecture transcription accuracy",
+  "display": "100.0% of words correct",
+  "value": 0.0,
+  "detail": "Word error rate 0.00% on a 35-second lecture clip with a known script.",
+  "dataset": "Synthetic lecture clip (text-to-speech voice, known script)",
+  "n": "1 clip, 79 words",
+  "method": "jiwer word error rate after normalising case, punctuation and metre/meter spelling",
+  "models": "whisper-large-v3-turbo",
+  "data_type": "synthetic"
+}

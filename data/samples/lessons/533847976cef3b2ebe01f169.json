@@ -1,0 +1,1309 @@
+{
+ "id": "533847976cef3b2ebe01f169",
+ "title": "1.2 Phases and Classification of Matter",
+ "created_at": "2026-10-10T00:20:34+00:00",
+ "sample": true,
+ "source": {
+  "type": "image",
+  "filename": "chem-states-of-matter.png",
+  "pages": 1,
+  "text_layer": false,
+  "images": [
+   "/api/lessons/533847976cef3b2ebe01f169/image/1"
+  ]
+ },
+ "language": "en",
+ "sections": [
+  {
+   "heading": "1.2 Phases and Classification of Matter",
+   "level": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Matter is defined as anything that occupies space and has mass, and it is all around us. Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass. Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b2"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6). A solid is rigid and possesses a definite shape. A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity. (In zero gravity, liquids assume a spherical shape.) Both liquid and solid samples have volumes that are very nearly independent of pressure. A gas takes both the shape and volume of its container.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b3"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "A fourth state of matter, plasma, occurs naturally in the interiors of stars. A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7). The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases. In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b4"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color. The composite of these tiny dots of color makes up the image that you see. Watch this video to learn more about plasma and the places you encounter it.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b5"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time. This can occur when the sample is composed of many small pieces. For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand. Matter can also have properties of more than one state when it is a mixture, such as with clouds. Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b6"
+    }
+   ],
+   "id": "s1",
+   "text": "Matter is defined as anything that occupies space and has mass, and it is all around us. Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass. Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.\nSolids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6). A solid is rigid and possesses a definite shape. A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity. (In zero gravity, liquids assume a spherical shape.) Both liquid and solid samples have volumes that are very nearly independent of pressure. A gas takes both the shape and volume of its container.\nA fourth state of matter, plasma, occurs naturally in the interiors of stars. A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7). The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases. In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.\nIn a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color. The composite of these tiny dots of color makes up the image that you see. Watch this video to learn more about plasma and the places you encounter it.\nSome samples of matter appear to have properties of solids, liquids, and/or gases at the same time. This can occur when the sample is composed of many small pieces. For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand. Matter can also have properties of more than one state when it is a mixture, such as with clouds. Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid)."
+  }
+ ],
+ "warnings": [],
+ "models": {
+  "reader": [
+   "gemini-flash-latest"
+  ]
+ },
+ "simplified": {
+  "easier": {
+   "level": "easier",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "1.2 Phases and Classification of Matter",
+     "text": "Matter is anything that takes up space and has mass. Matter is all around us. Solids and liquids are more obviously matter. We can see that they take up space. Their weight tells us that they have mass. Gases are also matter. If gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas. Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6). A solid is rigid and has a definite shape. A liquid flows and takes the shape of its container. Under gravity, a liquid forms a flat or slightly curved top surface. In zero gravity, liquids take a spherical shape. Both liquid and solid samples have volumes that are almost independent of pressure. A gas takes both the shape and volume of its container. A fourth state of matter is plasma. Plasma occurs naturally in the interiors of stars. Plasma is a gaseous state of matter with many electrically charged particles (Figure 1.7). These charged particles give plasmas unique properties. These properties justify classifying plasma as a state of matter distinct from gases. Plasmas also exist in other high-temperature environments, both natural and man-made. They are found in lightning strikes and certain television screens. They are also used in specialized analytical instruments that detect trace amounts of metals. In a tiny cell in a plasma television, plasma emits ultraviolet light. This light causes the display at that spot to show a specific color. The mix of these tiny dots of color makes the image you see. Watch this video to learn more about plasma and the places you encounter it. Some samples of matter seem to have properties of solids, liquids, or gases at the same time. This can happen when a sample is made of many small pieces. For example, we can pour sand like a liquid because it consists of many small grains of solid sand. Matter can also have properties of more than one state when it is a mixture. Clouds are an example. Clouds seem to behave somewhat like gases. However, they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 9.7,
+     "avg_sentence_words": 18.4,
+     "hard_word_share": 0.205,
+     "words": 386
+    },
+    "after": {
+     "grade": 6.8,
+     "avg_sentence_words": 11.1,
+     "hard_word_share": 0.183,
+     "words": 366
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 26,
+    "kept": 26,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Matter is defined as anything that occupies space and has mass",
+      "source_sentence": "Matter is defined as anything that occupies space and has mass, and it is all around us.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Matter is anything that takes up space and has mass",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids and liquids are more obviously matter",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "Solids and liquids are more obviously matter",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids take up space",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Solids take up space",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids have mass",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Solids have mass",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Gases are also matter",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Gases are also matter",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "If gases did not take up space, a balloon would not inflate when filled with gas",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "If gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "source_sentence": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6).",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A solid is rigid and possesses a definite shape",
+      "source_sentence": "A solid is rigid and possesses a definite shape.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "A solid is rigid and has a definite shape",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A liquid flows and takes the shape of its container",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "A liquid flows and takes the shape of its container",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "Under gravity, a liquid forms a flat or slightly curved top surface",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In zero gravity, liquids assume a spherical shape",
+      "source_sentence": "(In zero gravity, liquids assume a spherical shape.)",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "In zero gravity, liquids take a spherical shape",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Both liquid and solid samples have volumes that are very nearly independent of pressure",
+      "source_sentence": "Both liquid and solid samples have volumes that are very nearly independent of pressure.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "Both liquid and solid samples have volumes that are almost independent of pressure",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A gas takes both the shape and volume of its container",
+      "source_sentence": "A gas takes both the shape and volume of its container.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "A gas takes both the shape and volume of its container",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A fourth state of matter, plasma, occurs naturally in the interiors of stars",
+      "source_sentence": "A fourth state of matter, plasma, occurs naturally in the interiors of stars.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "A fourth state of matter is plasma",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+      "source_sentence": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7).",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Plasma is a gaseous state of matter with many electrically charged particles",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The presence of charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases",
+      "source_sentence": "The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "These charged particles give plasmas unique properties. These properties justify classifying plasma as a state of matter distinct from gases",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Plasmas are found in some other high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+      "source_sentence": "In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Plasmas also exist in other high-temperature environments, both natural and man-made. They are found in lightning strikes and certain television screens. They are also used in specialized analytical instruments that detect trace amounts of metals",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In a tiny cell in a plasma television, the plasma emits ultraviolet light",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "In a tiny cell in a plasma television, plasma emits ultraviolet light",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The ultraviolet light causes the display at that location to appear a specific color",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "This light causes the display at that spot to show a specific color",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The composite of these tiny dots of color makes up the image that you see",
+      "source_sentence": "The composite of these tiny dots of color makes up the image that you see.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "The mix of these tiny dots of color makes the image you see",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time",
+      "source_sentence": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "Some samples of matter seem to have properties of solids, liquids, or gases at the same time",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "This can occur when the sample is composed of many small pieces",
+      "source_sentence": "This can occur when the sample is composed of many small pieces.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "This can happen when a sample is made of many small pieces",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "We can pour sand as if it were a liquid because it is composed of many small grains of solid sand",
+      "source_sentence": "For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "For example, we can pour sand like a liquid because it consists of many small grains of solid sand",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Matter can also have properties of more than one state when it is a mixture",
+      "source_sentence": "Matter can also have properties of more than one state when it is a mixture, such as with clouds.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "Matter can also have properties of more than one state when it is a mixture",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Clouds appear to behave somewhat like gases",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "Clouds seem to behave somewhat like gases",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Clouds are mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "However, they are actually mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "green",
+      "kept": 26,
+      "total": 26,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "gemini-flash-latest",
+    "extractor_model": "openai/gpt-oss-20b"
+   },
+   "created_at": "2026-10-10T00:20:57+00:00",
+   "seconds": 22.9
+  },
+  "simplest": {
+   "level": "simplest",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "1.2 Phases and Classification of Matter",
+     "text": "Matter is anything that occupies space and has mass. Matter is all around us. Solids and liquids are more obviously matter. We can see that they take up space. Their weight tells us that they have mass. Gases are also matter. A balloon inflates when filled with gas. Inflate means to increase its volume. If gases took no space, balloons would not inflate. Solids, liquids, and gases are the three states of matter. They are commonly found on earth (Figure 1.6). A solid is rigid. A solid possesses a definite shape. A liquid flows. It takes the shape of its container. A liquid forms a flat or slightly curved upper surface. This happens when acted upon by gravity. In zero gravity, liquids take a spherical shape. Solid and liquid volumes are nearly independent of pressure. A gas takes the shape of its container. A gas also takes the volume of its container. Plasma is a fourth state of matter. It occurs naturally in the interiors of stars. Plasma is a gaseous state of matter (Figure 1.7). It contains appreciable numbers of electrically charged particles. These charged particles give plasma unique properties. These properties separate plasma from gases as a distinct state. Plasmas are found in other high-temperature environments. These environments can be natural or man-made. Plasmas occur in lightning strikes. They are found in certain television screens. Special analytical instruments use plasma to detect trace amounts of metals. A plasma television has tiny cells. In each tiny cell, plasma emits ultraviolet light. This light makes that location display a specific color. These tiny dots of color make up the whole image. Watch this video to learn more about plasma. You can see the places where you encounter it. Some samples of matter have properties of solids, liquids, and/or gases. This can occur when the sample is composed of many small pieces. For example, we can pour sand as if it were a liquid. This is because it is composed of many small grains of solid sand. Matter can have properties of more than one state when it is a mixture. Clouds are an example of this. Clouds appear to behave somewhat like gases. In truth, clouds are mixtures. They mix air (gas) with tiny particles of water. These water particles are liquid or solid.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 9.7,
+     "avg_sentence_words": 18.4,
+     "hard_word_share": 0.205,
+     "words": 386
+    },
+    "after": {
+     "grade": 5.8,
+     "avg_sentence_words": 8.0,
+     "hard_word_share": 0.195,
+     "words": 384
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 27,
+    "kept": 27,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "Matter is defined as anything that occupies space and has mass",
+      "source_sentence": "Matter is defined as anything that occupies space and has mass, and it is all around us.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "Matter is anything that occupies space and has mass",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids take up space",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "Solids take up space",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids have mass",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Solids have mass",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Liquids take up space",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Liquids take up space",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Liquids have mass",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Liquids have mass",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Gases take up space",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "Gases take up space",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A balloon inflates when filled with gas",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "A balloon inflates when filled with gas",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "source_sentence": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6).",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A solid is rigid",
+      "source_sentence": "A solid is rigid and possesses a definite shape.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "A solid is rigid",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A solid possesses a definite shape",
+      "source_sentence": "A solid is rigid and possesses a definite shape.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "A solid possesses a definite shape",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A liquid flows",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "A liquid flows",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A liquid takes the shape of its container",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "A liquid takes the shape of its container",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In zero gravity, liquids assume a spherical shape",
+      "source_sentence": "(In zero gravity, liquids assume a spherical shape.)",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "In zero gravity, liquids take a spherical shape",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Liquid and solid samples have volumes that are very nearly independent of pressure",
+      "source_sentence": "Both liquid and solid samples have volumes that are very nearly independent of pressure.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Liquid and solid samples have volumes that are very nearly independent of pressure",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A gas takes both the shape and volume of its container",
+      "source_sentence": "A gas takes both the shape and volume of its container.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "A gas takes both the shape and volume of its container",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Plasma occurs naturally in the interiors of stars",
+      "source_sentence": "A fourth state of matter, plasma, occurs naturally in the interiors of stars.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Plasma occurs naturally in the interiors of stars",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+      "source_sentence": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7).",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "Plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Charged particles in plasma impart unique properties that justify its classification as a state of matter distinct from gases",
+      "source_sentence": "The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Charged particles in plasma impart unique properties that justify its classification as a state of matter distinct from gases",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Plasmas are found in high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+      "source_sentence": "In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Plasmas are found in high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In a plasma television, the plasma emits ultraviolet light that causes the display at that location to appear a specific color",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "In a plasma television, the plasma emits ultraviolet light that causes the display at that location to appear a specific color",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The composite of tiny dots of color makes up the image that you see",
+      "source_sentence": "The composite of these tiny dots of color makes up the image that you see.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "The composite of tiny dots of color makes up the image that you see",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Some samples of matter can have properties of solids, liquids, and/or gases at the same time",
+      "source_sentence": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "Some samples of matter can have properties of solids, liquids, and/or gases at the same time",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "This can occur when the sample is composed of many small pieces",
+      "source_sentence": "This can occur when the sample is composed of many small pieces.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "This can occur when the sample is composed of many small pieces",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Sand can be poured as if it were a liquid because it is composed of many small grains of solid sand",
+      "source_sentence": "For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "Sand can be poured as if it were a liquid because it is composed of many small grains of solid sand",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Matter can have properties of more than one state when it is a mixture",
+      "source_sentence": "Matter can also have properties of more than one state when it is a mixture, such as with clouds.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "Matter can have properties of more than one state when it is a mixture",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Clouds appear to behave somewhat like gases but are actually mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "Clouds appear to behave somewhat like gases but are actually mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 21,
+      "total": 27,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 26,
+      "total": 27,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 27,
+      "total": 27,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "gemini-flash-latest",
+    "extractor_model": "openai/gpt-oss-20b"
+   },
+   "created_at": "2026-10-10T00:24:45+00:00",
+   "seconds": 225.4
+  }
+ },
+ "stress": {
+  "easier": {
+   "level": "easier",
+   "created_at": "2026-10-10T00:30:37+00:00",
+   "planted": [
+    {
+     "type": "changed_number",
+     "section_id": "s1",
+     "before": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6).",
+     "after": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 3.2).",
+     "caught": true
+    },
+    {
+     "type": "deleted_fact",
+     "section_id": "s1",
+     "before": "Solids and liquids are more obviously matter.",
+     "after": "",
+     "caught": false
+    },
+    {
+     "type": "added_claim",
+     "section_id": "s1",
+     "before": "",
+     "after": "Only 12 percent of living things depend on this process.",
+     "caught": true
+    }
+   ],
+   "caught": 2,
+   "total_planted": 3,
+   "sabotaged_sections": [
+    {
+     "id": "s1",
+     "heading": "1.2 Phases and Classification of Matter",
+     "text": "Matter is anything that takes up space and has mass. Matter is all around us. We can see that they take up space. Their weight tells us that they have mass. Gases are also matter. If gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas. Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 3.2). A solid is rigid and has a definite shape. A liquid flows and takes the shape of its container. Under gravity, a liquid forms a flat or slightly curved top surface. In zero gravity, liquids take a spherical shape. Both liquid and solid samples have volumes that are almost independent of pressure. A gas takes both the shape and volume of its container. A fourth state of matter is plasma. Plasma occurs naturally in the interiors of stars. Plasma is a gaseous state of matter with many electrically charged particles (Figure 1.7). These charged particles give plasmas unique properties. These properties justify classifying plasma as a state of matter distinct from gases. Plasmas also exist in other high-temperature environments, both natural and man-made. They are found in lightning strikes and certain television screens. They are also used in specialized analytical instruments that detect trace amounts of metals. In a tiny cell in a plasma television, plasma emits ultraviolet light. This light causes the display at that spot to show a specific color. The mix of these tiny dots of color makes the image you see. Watch this video to learn more about plasma and the places you encounter it. Some samples of matter seem to have properties of solids, liquids, or gases at the same time. This can happen when a sample is made of many small pieces. For example, we can pour sand like a liquid because it consists of many small grains of solid sand. Matter can also have properties of more than one state when it is a mixture. Clouds are an example. Clouds seem to behave somewhat like gases. However, they are actually mixtures of air (gas) and tiny particles of water (liquid or solid). Only 12 percent of living things depend on this process.",
+     "simplified": true
+    }
+   ],
+   "sabotaged_report": {
+    "status": "amber",
+    "total": 26,
+    "kept": 25,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Matter is defined as anything that occupies space and has mass",
+      "source_sentence": "Matter is defined as anything that occupies space and has mass, and it is all around us.",
+      "status": "kept",
+      "evidence": "Matter is anything that takes up space and has mass",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Solids and liquids are more obviously matter",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "kept",
+      "evidence": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Solids take up space",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "missing",
+      "evidence": "A solid is rigid and has a definite shape",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "Solids have mass",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "kept",
+      "evidence": "A solid is rigid and has a definite shape",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "Gases are also matter",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "status": "kept",
+      "evidence": "Gases are also matter",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "If gases did not take up space, a balloon would not inflate when filled with gas",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "status": "kept",
+      "evidence": "If gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "source_sentence": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6).",
+      "status": "kept",
+      "evidence": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "A solid is rigid and possesses a definite shape",
+      "source_sentence": "A solid is rigid and possesses a definite shape.",
+      "status": "kept",
+      "evidence": "A solid is rigid and has a definite shape",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "A liquid flows and takes the shape of its container",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "status": "kept",
+      "evidence": "A liquid flows and takes the shape of its container",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "status": "kept",
+      "evidence": "Under gravity, a liquid forms a flat or slightly curved top surface",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "In zero gravity, liquids assume a spherical shape",
+      "source_sentence": "(In zero gravity, liquids assume a spherical shape.)",
+      "status": "kept",
+      "evidence": "In zero gravity, liquids take a spherical shape",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Both liquid and solid samples have volumes that are very nearly independent of pressure",
+      "source_sentence": "Both liquid and solid samples have volumes that are very nearly independent of pressure.",
+      "status": "kept",
+      "evidence": "Both liquid and solid samples have volumes that are almost independent of pressure",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "A gas takes both the shape and volume of its container",
+      "source_sentence": "A gas takes both the shape and volume of its container.",
+      "status": "kept",
+      "evidence": "A gas takes both the shape and volume of its container",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "A fourth state of matter, plasma, occurs naturally in the interiors of stars",
+      "source_sentence": "A fourth state of matter, plasma, occurs naturally in the interiors of stars.",
+      "status": "kept",
+      "evidence": "A fourth state of matter is plasma",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s1",
+      "text": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+      "source_sentence": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7).",
+      "status": "kept",
+      "evidence": "Plasma is a gaseous state of matter with many electrically charged particles",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s1",
+      "text": "The presence of charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases",
+      "source_sentence": "The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases.",
+      "status": "kept",
+      "evidence": "These charged particles give plasmas unique properties. These properties justify classifying plasma as a state of matter distinct from gases",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s1",
+      "text": "Plasmas are found in some other high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+      "source_sentence": "In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.",
+      "status": "kept",
+      "evidence": "Plasmas also exist in other high-temperature environments, both natural and man-made. They are found in lightning strikes and certain television screens. They are also used in specialized analytical instruments that detect trace amounts of metals",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s1",
+      "text": "In a tiny cell in a plasma television, the plasma emits ultraviolet light",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "status": "kept",
+      "evidence": "In a tiny cell in a plasma television, plasma emits ultraviolet light",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s1",
+      "text": "The ultraviolet light causes the display at that location to appear a specific color",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "status": "kept",
+      "evidence": "This light causes the display at that spot to show a specific color",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s1",
+      "text": "The composite of these tiny dots of color makes up the image that you see",
+      "source_sentence": "The composite of these tiny dots of color makes up the image that you see.",
+      "status": "kept",
+      "evidence": "The mix of these tiny dots of color makes the image you see",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s1",
+      "text": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time",
+      "source_sentence": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time.",
+      "status": "kept",
+      "evidence": "Some samples of matter seem to have properties of solids, liquids, or gases at the same time",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s1",
+      "text": "This can occur when the sample is composed of many small pieces",
+      "source_sentence": "This can occur when the sample is composed of many small pieces.",
+      "status": "kept",
+      "evidence": "This can happen when a sample is made of many small pieces",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s1",
+      "text": "We can pour sand as if it were a liquid because it is composed of many small grains of solid sand",
+      "source_sentence": "For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand.",
+      "status": "kept",
+      "evidence": "For example, we can pour sand like a liquid because it consists of many small grains of solid sand",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s1",
+      "text": "Matter can also have properties of more than one state when it is a mixture",
+      "source_sentence": "Matter can also have properties of more than one state when it is a mixture, such as with clouds.",
+      "status": "kept",
+      "evidence": "Matter can also have properties of more than one state when it is a mixture",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s1",
+      "text": "Clouds appear to behave somewhat like gases",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "status": "kept",
+      "evidence": "Clouds seem to behave somewhat like gases",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s1",
+      "text": "Clouds are mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "status": "kept",
+      "evidence": "However, they are actually mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "note": ""
+     }
+    ],
+    "added_claims": [
+     {
+      "section_id": "s1",
+      "quote": "Only 12 percent of living things depend on this process",
+      "why": "The original text does not mention any percentage of living things depending on the process"
+     }
+    ],
+    "missing_tokens": [
+     {
+      "section_id": "s1",
+      "token": "1.6"
+     }
+    ],
+    "checker_model": "openai/gpt-oss-20b"
+   },
+   "repaired_sections": [
+    {
+     "id": "s1",
+     "heading": "1.2 Phases and Classification of Matter",
+     "text": "Matter is anything that takes up space and has mass. Matter is all around us. Solids and liquids are more obviously matter. Solids take up space. Liquids also take up space. Their weight tells us that they have mass. Gases are also matter. If gases did not take up space, a balloon would not inflate. Inflating means it increases its volume when filled with gas. Solids, liquids, and gases are three states of matter (Figure 1.6). They are commonly found on earth. A solid is rigid and has a definite shape. A liquid flows and takes the shape of its container. Under gravity, a liquid forms a flat or slightly curved top surface. In zero gravity, liquids take a spherical shape. Both liquid and solid samples have volumes that are almost independent of pressure. A gas takes both the shape and volume of its container. A fourth state of matter is plasma. Plasma occurs naturally in the interiors of stars. Plasma is a gaseous state of matter (Figure 1.7). It has many electrically charged particles. These charged particles give plasmas unique properties. These properties justify classifying plasma as a state of matter distinct from gases. Plasmas also exist in other high-temperature environments, both natural and man-made. They are found in lightning strikes and certain television screens. They are also used in specialized analytical instruments that detect trace amounts of metals. In a tiny cell in a plasma television, plasma emits ultraviolet light. This light causes the display at that spot to show a specific color. The mix of these tiny dots of color makes the image you see. Watch this video to learn more about plasma and the places you encounter it. Some samples seem to have properties of solids, liquids, or gases. They can show these properties at the same time. This can happen when a sample is made of many small pieces. For example, we can pour sand like a liquid. This is because sand consists of many small grains of solid sand. Matter can also have properties of more than one state as a mixture. Clouds are an example. Clouds seem to behave somewhat like gases. However, they are mixtures of air (gas) and tiny water particles. These water particles can be liquid or solid.",
+     "simplified": true
+    }
+   ],
+   "repaired_report": {
+    "status": "amber",
+    "total": 26,
+    "kept": 25,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "Matter is defined as anything that occupies space and has mass",
+      "source_sentence": "Matter is defined as anything that occupies space and has mass, and it is all around us.",
+      "status": "kept",
+      "evidence": "Matter is anything that takes up space and has mass",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Solids and liquids are more obviously matter",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "kept",
+      "evidence": "Solids and liquids are more obviously matter",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Solids take up space",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "kept",
+      "evidence": "Solids take up space",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "Solids have mass",
+      "source_sentence": "Solids and liquids are more obviously matter: We can see that they take up space, and their weight tells us that they have mass.",
+      "status": "kept",
+      "evidence": "Their weight tells us that they have mass",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "Gases are also matter",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "status": "kept",
+      "evidence": "Gases are also matter",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "If gases did not take up space, a balloon would not inflate when filled with gas",
+      "source_sentence": "Gases are also matter; if gases did not take up space, a balloon would not inflate (increase its volume) when filled with gas.",
+      "status": "kept",
+      "evidence": "If gases did not take up space, a balloon would not inflate",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Solids, liquids, and gases are the three states of matter commonly found on earth",
+      "source_sentence": "Solids, liquids, and gases are the three states of matter commonly found on earth (Figure 1.6).",
+      "status": "kept",
+      "evidence": "Solids, liquids, and gases are three states of matter",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "A solid is rigid and possesses a definite shape",
+      "source_sentence": "A solid is rigid and possesses a definite shape.",
+      "status": "kept",
+      "evidence": "A solid is rigid and has a definite shape",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "A liquid flows and takes the shape of its container",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "status": "kept",
+      "evidence": "A liquid flows and takes the shape of its container",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "A liquid forms a flat or slightly curved upper surface when acted upon by gravity",
+      "source_sentence": "A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.",
+      "status": "kept",
+      "evidence": "Under gravity, a liquid forms a flat or slightly curved top surface",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "In zero gravity, liquids assume a spherical shape",
+      "source_sentence": "(In zero gravity, liquids assume a spherical shape.)",
+      "status": "kept",
+      "evidence": "In zero gravity, liquids take a spherical shape",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Both liquid and solid samples have volumes that are very nearly independent of pressure",
+      "source_sentence": "Both liquid and solid samples have volumes that are very nearly independent of pressure.",
+      "status": "kept",
+      "evidence": "Both liquid and solid samples have volumes that are almost independent of pressure",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "A gas takes both the shape and volume of its container",
+      "source_sentence": "A gas takes both the shape and volume of its container.",
+      "status": "kept",
+      "evidence": "A gas takes both the shape and volume of its container",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "A fourth state of matter, plasma, occurs naturally in the interiors of stars",
+      "source_sentence": "A fourth state of matter, plasma, occurs naturally in the interiors of stars.",
+      "status": "kept",
+      "evidence": "A fourth state of matter is plasma",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s1",
+      "text": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles",
+      "source_sentence": "A plasma is a gaseous state of matter that contains appreciable numbers of electrically charged particles (Figure 1.7).",
+      "status": "kept",
+      "evidence": "Plasma is a gaseous state of matter",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s1",
+      "text": "The presence of charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases",
+      "source_sentence": "The presence of these charged particles imparts unique properties to plasmas that justify their classification as a state of matter distinct from gases.",
+      "status": "kept",
+      "evidence": "These charged particles give plasmas unique properties",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s1",
+      "text": "Plasmas are found in some other high-temperature environments such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals",
+      "source_sentence": "In addition to stars, plasmas are found in some other high-temperature environments (both natural and man-made), such as lightning strikes, certain television screens, and specialized analytical instruments used to detect trace amounts of metals.",
+      "status": "missing",
+      "evidence": "Plasmas also exist in other high-temperature environments, both natural and man-made",
+      "note": "The quoted words don't state this fact, so it was not verified."
+     },
+     {
+      "id": "f18",
+      "section_id": "s1",
+      "text": "In a tiny cell in a plasma television, the plasma emits ultraviolet light",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "status": "kept",
+      "evidence": "In a tiny cell in a plasma television, plasma emits ultraviolet light",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s1",
+      "text": "The ultraviolet light causes the display at that location to appear a specific color",
+      "source_sentence": "In a tiny cell in a plasma television, the plasma emits ultraviolet light, which in turn causes the display at that location to appear a specific color.",
+      "status": "kept",
+      "evidence": "This light causes the display at that spot to show a specific color",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s1",
+      "text": "The composite of these tiny dots of color makes up the image that you see",
+      "source_sentence": "The composite of these tiny dots of color makes up the image that you see.",
+      "status": "kept",
+      "evidence": "The mix of these tiny dots of color makes the image you see",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s1",
+      "text": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time",
+      "source_sentence": "Some samples of matter appear to have properties of solids, liquids, and/or gases at the same time.",
+      "status": "kept",
+      "evidence": "Some samples seem to have properties of solids, liquids, or gases",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s1",
+      "text": "This can occur when the sample is composed of many small pieces",
+      "source_sentence": "This can occur when the sample is composed of many small pieces.",
+      "status": "kept",
+      "evidence": "This can happen when a sample is made of many small pieces",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s1",
+      "text": "We can pour sand as if it were a liquid because it is composed of many small grains of solid sand",
+      "source_sentence": "For example, we can pour sand as if it were a liquid because it is composed of many small grains of solid sand.",
+      "status": "kept",
+      "evidence": "We can pour sand like a liquid. This is because sand consists of many small grains of solid sand",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s1",
+      "text": "Matter can also have properties of more than one state when it is a mixture",
+      "source_sentence": "Matter can also have properties of more than one state when it is a mixture, such as with clouds.",
+      "status": "kept",
+      "evidence": "Matter can also have properties of more than one state as a mixture",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s1",
+      "text": "Clouds appear to behave somewhat like gases",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "status": "kept",
+      "evidence": "Clouds seem to behave somewhat like gases",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s1",
+      "text": "Clouds are mixtures of air (gas) and tiny particles of water (liquid or solid)",
+      "source_sentence": "Clouds appear to behave somewhat like gases, but they are actually mixtures of air (gas) and tiny particles of water (liquid or solid).",
+      "status": "kept",
+      "evidence": "However, they are mixtures of air (gas) and tiny water particles. These water particles can be liquid or solid",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-20b"
+   }
+  }
+ },
+ "glossary": {
+  "items": [
+   {
+    "term": "plasmas",
+    "simple_en": "States of matter made of gas with electrically charged particles.",
+    "urdu": "stars کے اندر پائے جانے والے مادے کو plasmas کہتے ہیں۔",
+    "example": "Plasmas contain charged particles and occur naturally in stars.",
+    "section_id": "s1"
+   },
+   {
+    "term": "imparts",
+    "simple_en": "Gives or provides a particular quality to something.",
+    "urdu": "چارج شدہ ذرات مادے کو نئی خصوصیات imparts کرتے ہیں۔",
+    "example": "The presence of particles imparts unique properties to plasma.",
+    "section_id": "s1"
+   },
+   {
+    "term": "appreciable",
+    "simple_en": "Large or noticeable enough to be important.",
+    "urdu": "اس گیس میں چارج شدہ ذرات کی ایک appreciable مقدار ہوتی ہے۔",
+    "example": "Plasma contains an appreciable number of charged particles.",
+    "section_id": "s1"
+   },
+   {
+    "term": "gaseous",
+    "simple_en": "Having the form or state of a gas.",
+    "urdu": "پلازما دراصل مادے کی ایک gaseous حالت ہے۔",
+    "example": "Plasma is a gaseous state containing charged particles.",
+    "section_id": "s1"
+   },
+   {
+    "term": "inflate",
+    "simple_en": "To fill with gas and increase in volume.",
+    "urdu": "گیس بھرنے سے غبارہ inflate ہو کر بڑا ہو جاتا ہے۔",
+    "example": "A balloon will inflate when filled with gas.",
+    "section_id": "s1"
+   },
+   {
+    "term": "mixtures",
+    "simple_en": "Combinations of two or more different substances mixed together.",
+    "urdu": "بادل دراصل ہوا اور پانی کے ذرات کے mixtures ہوتے ہیں۔",
+    "example": "Clouds are mixtures of air and tiny water particles.",
+    "section_id": "s1"
+   },
+   {
+    "term": "electrically",
+    "simple_en": "In a manner related to an electric charge.",
+    "urdu": "پلازما میں موجود ذرات electrically چارج شدہ ہوتے ہیں۔",
+    "example": "Plasmas contain electrically charged particles.",
+    "section_id": "s1"
+   },
+   {
+    "term": "solids",
+    "simple_en": "Rigid matter that has a definite shape and volume.",
+    "urdu": "ہم دیکھ سکتے ہیں کہ solids مخصوص شکل اور وزن رکھتے ہیں۔",
+    "example": "Solids are rigid and possess a definite shape.",
+    "section_id": "s1"
+   },
+   {
+    "term": "ultraviolet",
+    "simple_en": "A type of light emitted by plasma in screens.",
+    "urdu": "ٹیلی ویژن میں موجود پلازما ultraviolet روشنی خارج کرتا ہے۔",
+    "example": "The plasma emits ultraviolet light inside television cells.",
+    "section_id": "s1"
+   },
+   {
+    "term": "spherical",
+    "simple_en": "Having a round shape like a sphere or ball.",
+    "urdu": "کشش ثقل کے بغیر مائع چیزیں spherical شکل اختیار کر لیتی ہیں۔",
+    "example": "In zero gravity, liquids assume a spherical shape.",
+    "section_id": "s1"
+   }
+  ],
+  "model": "gemini-flash-latest",
+  "created_at": "2026-10-10T00:25:18+00:00"
+ },
+ "quiz": {
+  "easier": "06e965f5f877b6024ecf9b81"
+ },
+ "lecture_id": null,
+ "prompt_version": "v1",
+ "timing": {
+  "read_seconds": 153.7
+ }
+}

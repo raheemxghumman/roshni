@@ -22,6 +22,7 @@ planted_total = caught_total = 0
 by_type: dict[str, list[int]] = {}
 fa_flags = fa_facts = 0
 pages = 0
+checkers: set[str] = set()
 for lesson in lessons():
     source = original_sections(lesson)
     simplified = lesson.get("simplified", {}).get("easier")
@@ -33,6 +34,7 @@ for lesson in lessons():
     for seed in range(args.seeds):
         sabotaged, planted = factguard.sabotage(simplified["sections"], seed=f"{lesson['id']}-{seed}", facts=facts)
         report = factguard.audit(facts, source, sabotaged, avoid)
+        checkers.add(report['checker_model'])
         for p in factguard.caught(planted, report):
             planted_total += 1
             caught_total += p["caught"]
@@ -43,6 +45,7 @@ for lesson in lessons():
         time.sleep(3)
     # false alarms: original vs itself
     identity = factguard.audit(facts, source, [{"id": s["id"], "text": s["text"]} for s in source], avoid)
+    checkers.add(identity["checker_model"])
     flags = (identity["total"] - identity["kept"]) + len(identity["added_claims"]) + len(identity["missing_tokens"])
     fa_flags += flags
     fa_facts += identity["total"]
@@ -62,7 +65,7 @@ write(
     dataset="Sabotaged rewrites of OpenStax pages (synthetic errors, real text)",
     n=f"{planted_total} planted errors on {pages} pages × {args.seeds} seeds",
     method="Plant changed number + deleted fact + invented claim, run the audit, check each was flagged",
-    models="checker: gpt-oss-120b",
+    models="checker: " + ", ".join(sorted(m for m in checkers if m)),
     data_type="synthetic",
 )
 write(
@@ -74,6 +77,6 @@ write(
     dataset="OpenStax textbook pages (CC BY 4.0)",
     n=f"{fa_facts} facts on {pages} pages",
     method="Audit the original text against itself; every flag is a false alarm",
-    models="checker: gpt-oss-120b",
+    models="checker: " + ", ".join(sorted(m for m in checkers if m)),
     data_type="real",
 )

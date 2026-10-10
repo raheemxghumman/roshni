@@ -1,0 +1,1382 @@
+{
+ "id": "6d74124955abe118e4976774",
+ "title": "3.1 How Cells Are Studied",
+ "created_at": "2026-10-09T23:59:34+00:00",
+ "sample": true,
+ "source": {
+  "type": "image",
+  "filename": "bio-cell-theory.png",
+  "pages": 1,
+  "text_layer": false,
+  "images": [
+   "/api/lessons/6d74124955abe118e4976774/image/1"
+  ]
+ },
+ "language": "en",
+ "sections": [
+  {
+   "heading": "3.1 How Cells Are Studied",
+   "level": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "A cell is the smallest unit of a living thing. A living thing, like you, is called an organism. Thus, cells are the basic building blocks of all organisms.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b2"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue), several tissues combine to form an organ (for example, stomach, heart, or brain), and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system). Several systems functioning together form an organism (such as an elephant, for example).",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b3"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "There are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic. Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic. Before discussing the criteria for determining whether a cell is prokaryotic or eukaryotic, let us first examine how biologists study cells.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b4"
+    }
+   ],
+   "id": "s1",
+   "text": "A cell is the smallest unit of a living thing. A living thing, like you, is called an organism. Thus, cells are the basic building blocks of all organisms.\nIn multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue), several tissues combine to form an organ (for example, stomach, heart, or brain), and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system). Several systems functioning together form an organism (such as an elephant, for example).\nThere are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic. Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic. Before discussing the criteria for determining whether a cell is prokaryotic or eukaryotic, let us first examine how biologists study cells."
+  },
+  {
+   "heading": "Microscopy",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Cells vary in size. With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope and are called micrographs.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b6"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "To give you a sense of the size of a cell, a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter; the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter. That means that approximately 250 red blood cells could fit on the head of a pin.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b7"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "The optics of the lenses of a light microscope changes the orientation of the image. A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa. Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up. This occurs because microscopes use two sets of lenses to magnify the image. Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright).",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b8"
+    }
+   ],
+   "id": "s2",
+   "text": "Cells vary in size. With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope and are called micrographs.\nTo give you a sense of the size of a cell, a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter; the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter. That means that approximately 250 red blood cells could fit on the head of a pin.\nThe optics of the lenses of a light microscope changes the orientation of the image. A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa. Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up. This occurs because microscopes use two sets of lenses to magnify the image. Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright)."
+  }
+ ],
+ "warnings": [],
+ "models": {
+  "reader": [
+   "gemini-3.5-flash"
+  ]
+ },
+ "simplified": {
+  "easier": {
+   "level": "easier",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "3.1 How Cells Are Studied",
+     "text": "A cell is the smallest unit of a living thing. A living thing, like you, is called an organism. Cells are the basic building blocks of all organisms. In multicellular organisms, cells of one kind connect. They share functions to form tissues. Examples include muscle tissue, connective tissue, and nervous tissue. Several tissues combine to form an organ. Examples are the stomach, heart, or brain. Several organs make up an organ system. Examples are the digestive system, circulatory system, or nervous system. Several systems working together form an organism. An example is an elephant. There are many types of cells. They fall into two broad categories: prokaryotic and eukaryotic. Animal cells, plant cells, fungal cells, and protist cells are eukaryotic. Bacteria and archaea cells are prokaryotic. Before we look at how to tell them apart, let us see how biologists study cells.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Microscopy",
+     "text": "Cells vary in size. Most cells are too small to see with the naked eye. Scientists use microscopes to study them. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope. These images are called micrographs. A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter. The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter. Approximately 250 red blood cells could fit on the head of a pin. The lenses of a light microscope change the image orientation. A specimen right-side up and facing right on the slide looks upside-down and facing left. This happens when viewed through a microscope. If you move the slide left, it appears to move right. If you move it down, it seems to move up. This occurs because microscopes use two sets of lenses. Light travels through these lenses in a specific way. This system produces an inverted image. Binoculars and a dissecting microscope work similarly. They include an extra magnification system. This makes the final image appear upright.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 11.8,
+     "avg_sentence_words": 21.3,
+     "hard_word_share": 0.213,
+     "words": 404
+    },
+    "after": {
+     "grade": 6.7,
+     "avg_sentence_words": 8.6,
+     "hard_word_share": 0.208,
+     "words": 337
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 27,
+    "kept": 27,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "A cell is the smallest unit of a living thing.",
+      "source_sentence": "A cell is the smallest unit of a living thing.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "A cell is the smallest unit of a living thing.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A living thing, like you, is called an organism.",
+      "source_sentence": "A living thing, like you, is called an organism.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "A living thing, like you, is called an organism.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Cells are the basic building blocks of all organisms.",
+      "source_sentence": "Thus, cells are the basic building blocks of all organisms.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Cells are the basic building blocks of all organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In multicellular organisms, several cells of one particular kind interconnect and perform shared functions to form tissues.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "In multicellular organisms, cells of one kind connect. They share functions to form tissues.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of tissues are muscle tissue, connective tissue, and nervous tissue.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Examples include muscle tissue, connective tissue, and nervous tissue.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several tissues combine to form an organ.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "Several tissues combine to form an organ.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of organs are stomach, heart, or brain.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "Examples are the stomach, heart, or brain.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several organs make up an organ system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Several organs make up an organ system.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of organ systems are the digestive system, circulatory system, or nervous system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "Examples are the digestive system, circulatory system, or nervous system.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several systems functioning together form an organism.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "Several systems working together form an organism.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "An example organism is an elephant.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "An example is an elephant.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "All cell types are grouped into two broad categories: prokaryotic and eukaryotic.",
+      "source_sentence": "There are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "They fall into two broad categories: prokaryotic and eukaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Animal, plant, fungal, and protist cells are classified as eukaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "Animal cells, plant cells, fungal cells, and protist cells are eukaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Bacteria and archaea cells are classified as prokaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "Bacteria and archaea cells are prokaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Cells vary in size.",
+      "source_sentence": "Cells vary in size.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Cells vary in size.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Individual cells are too small to be seen with the naked eye (with few exceptions).",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "Most cells are too small to see with the naked eye.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Scientists use microscopes to study cells.",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Scientists use microscopes to study them.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A microscope is an instrument that magnifies an object.",
+      "source_sentence": "A microscope is an instrument that magnifies an object.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "A microscope is an instrument that magnifies an object.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Most images of cells taken with a microscope are called micrographs.",
+      "source_sentence": "Most images of cells are taken with a microscope and are called micrographs.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Most images of cells are taken with a microscope. These images are called micrographs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A typical human red blood cell is about eight millionths of a meter (8 µm) in diameter.",
+      "source_sentence": "a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter;",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The head of a pin is about two thousandths of a meter (mm) in diameter.",
+      "source_sentence": "the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "source_sentence": "That means that approximately 250 red blood cells could fit on the head of a pin.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "source_sentence": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "The lenses of a light microscope change the image orientation.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A specimen that is right-side up and facing right on the slide appears upside-down and facing left when viewed through a microscope, and vice versa.",
+      "source_sentence": "A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "A specimen right-side up and facing right on the slide looks upside-down and facing left.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "If the slide is moved left while looking through the microscope, it appears to move right; if moved down, it appears to move up.",
+      "source_sentence": "Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "If you move the slide left, it appears to move right. If you move it down, it seems to move up.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Microscopes use two sets of lenses to magnify the image.",
+      "source_sentence": "This occurs because microscopes use two sets of lenses to magnify the image.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "This occurs because microscopes use two sets of lenses.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The lens system of a light microscope produces an inverted image.",
+      "source_sentence": "Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright).",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "This system produces an inverted image.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-120b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "green",
+      "kept": 27,
+      "total": 27,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "openai/gpt-oss-120b"
+   },
+   "created_at": "2026-10-09T23:59:50+00:00"
+  },
+  "simplest": {
+   "level": "simplest",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "3.1 How Cells Are Studied",
+     "text": "A cell is the smallest unit of a living thing. A living thing is called an organism. You are an organism. Cells are the basic building blocks of all organisms. Multicellular organisms have many cells. Cells of one kind connect to form tissues. Muscle tissue is an example. Connective tissue is an example. Nervous tissue is an example. Several tissues combine to form an organ. The stomach is an organ. The heart is an organ. The brain is an organ. Several organs make up an organ system. The digestive system is an example. The circulatory system is an example. The nervous system is an example. Several systems work together to form an organism. An elephant is an example. There are many types of cells. All cells fall into two broad categories. These categories are prokaryotic and eukaryotic. Animal cells are eukaryotic. Plant cells are eukaryotic. Fungal cells are eukaryotic. Protist cells are eukaryotic. Bacteria cells are prokaryotic. Archaea cells are prokaryotic. We will look at how biologists study cells first.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Microscopy",
+     "text": "Cells vary in size. Most cells are too small to see. You cannot see them with the naked eye. Scientists use microscopes to study cells. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope. These images are called micrographs. A typical human red blood cell is about eight millionths of a meter in diameter. This is eight micrometers (abbreviated as µm). The head of a pin is about two thousandths of a meter in diameter. This is millimeters, or mm. Approximately 250 red blood cells could fit on the head of a pin. The lenses of a light microscope change the image. A specimen on the slide is right-side up. It faces right. Through the microscope, it appears upside-down. It faces left. If you move the slide left, it appears to move right. If you move the slide down, it appears to move up. Microscopes use two sets of lenses. Light travels through these lenses. This system produces an inverted image. Binoculars work in a similar manner. A dissecting microscope works in a similar manner. These tools have an additional magnification system. This makes the final image appear upright.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 11.8,
+     "avg_sentence_words": 21.3,
+     "hard_word_share": 0.213,
+     "words": 404
+    },
+    "after": {
+     "grade": 6.0,
+     "avg_sentence_words": 6.7,
+     "hard_word_share": 0.182,
+     "words": 368
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 28,
+    "kept": 28,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "A cell is the smallest unit of a living thing.",
+      "source_sentence": "A cell is the smallest unit of a living thing.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "A cell is the smallest unit of a living thing.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "A living thing, like you, is called an organism.",
+      "source_sentence": "A living thing, like you, is called an organism.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "A living thing is called an organism.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Cells are the basic building blocks of all organisms.",
+      "source_sentence": "Thus, cells are the basic building blocks of all organisms.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Cells are the basic building blocks of all organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "In multicellular organisms, several cells of one particular kind interconnect to form tissues.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Cells of one kind connect to form tissues.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of tissues are muscle tissue, connective tissue, and nervous tissue.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "Muscle tissue is an example. Connective tissue is an example. Nervous tissue is an example.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several tissues combine to form an organ.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "Several tissues combine to form an organ.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of organs are stomach, heart, and brain.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "The stomach is an organ. The heart is an organ. The brain is an organ.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several organs make up an organ system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Several organs make up an organ system.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Examples of organ systems are the digestive system, circulatory system, and nervous system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "The digestive system is an example. The circulatory system is an example. The nervous system is an example.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Several systems functioning together form an organism.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "Several systems work together to form an organism.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "An example of an organism formed by systems is an elephant.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "An elephant is an example.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "All cell types are grouped into two broad categories: prokaryotic and eukaryotic.",
+      "source_sentence": "There are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "All cells fall into two broad categories. These categories are prokaryotic and eukaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Animal, plant, fungal, and protist cells are classified as eukaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "Animal cells are eukaryotic. Plant cells are eukaryotic. Fungal cells are eukaryotic. Protist cells are eukaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Bacteria and archaea cells are classified as prokaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "Bacteria cells are prokaryotic. Archaea cells are prokaryotic.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Cells vary in size.",
+      "source_sentence": "Cells vary in size.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "Cells vary in size.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "With few exceptions, individual cells are too small to be seen with the naked eye.",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "Most cells are too small to see. You cannot see them with the naked eye.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Scientists use microscopes to study cells.",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Scientists use microscopes to study cells.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A microscope is an instrument that magnifies an object.",
+      "source_sentence": "A microscope is an instrument that magnifies an object.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "A microscope is an instrument that magnifies an object.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Images of cells taken with a microscope are called micrographs.",
+      "source_sentence": "Most images of cells are taken with a microscope and are called micrographs.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Most images of cells are taken with a microscope. These images are called micrographs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A typical human red blood cell is about eight micrometers (8 µm) in diameter.",
+      "source_sentence": "a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter;",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "A typical human red blood cell is about eight millionths of a meter in diameter. This is eight micrometers (abbreviated as µm).",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The head of a pin is about two thousandths of a meter (millimeters) in diameter.",
+      "source_sentence": "the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "The head of a pin is about two thousandths of a meter in diameter. This is millimeters, or mm.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "source_sentence": "That means that approximately 250 red blood cells could fit on the head of a pin.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The optics of a light microscope’s lenses change the orientation of the image.",
+      "source_sentence": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "The lenses of a light microscope change the image.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A specimen that is right-side up and facing right on the slide appears upside-down and facing left when viewed through a microscope, and vice versa.",
+      "source_sentence": "A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "A specimen on the slide is right-side up. It faces right. Through the microscope, it appears upside-down. It faces left.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "When the slide is moved left, the image appears to move right; when moved down, the image appears to move up.",
+      "source_sentence": "Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "If you move the slide left, it appears to move right. If you move the slide down, it appears to move up.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Microscopes use two sets of lenses to magnify the image.",
+      "source_sentence": "This occurs because microscopes use two sets of lenses to magnify the image.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "Microscopes use two sets of lenses.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The two‑lens system produces an inverted image.",
+      "source_sentence": "Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright).",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "This system produces an inverted image.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Binoculars and dissecting microscopes work similarly but include an additional magnification system that makes the final image appear upright.",
+      "source_sentence": "binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright.",
+      "id": "f28",
+      "status": "kept",
+      "evidence": "Binoculars work in a similar manner. A dissecting microscope works in a similar manner. These tools have an additional magnification system. This makes the final image appear upright.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-120b",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 27,
+      "total": 28,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "amber",
+      "kept": 27,
+      "total": 28,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 3,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 28,
+      "total": 28,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "openai/gpt-oss-120b"
+   },
+   "created_at": "2026-10-10T00:00:57+00:00"
+  }
+ },
+ "stress": {
+  "easier": {
+   "level": "easier",
+   "created_at": "2026-10-10T00:01:57+00:00",
+   "planted": [
+    {
+     "type": "changed_number",
+     "section_id": "s2",
+     "before": "Approximately 250 red blood cells could fit on the head of a pin.",
+     "after": "Approximately 500 red blood cells could fit on the head of a pin.",
+     "caught": true
+    },
+    {
+     "type": "deleted_fact",
+     "section_id": "s1",
+     "before": "A cell is the smallest unit of a living thing.",
+     "after": "",
+     "caught": true
+    },
+    {
+     "type": "added_claim",
+     "section_id": "s1",
+     "before": "",
+     "after": "Only 12 percent of living things depend on this process.",
+     "caught": true
+    }
+   ],
+   "caught": 3,
+   "total_planted": 3,
+   "sabotaged_sections": [
+    {
+     "id": "s1",
+     "heading": "3.1 How Cells Are Studied",
+     "text": "A living thing, like you, is called an organism. Cells are the basic building blocks of all organisms. In multicellular organisms, cells of one kind connect. They share functions to form tissues. Examples include muscle tissue, connective tissue, and nervous tissue. Several tissues combine to form an organ. Examples are the stomach, heart, or brain. Several organs make up an organ system. Examples are the digestive system, circulatory system, or nervous system. Several systems working together form an organism. An example is an elephant. There are many types of cells. They fall into two broad categories: prokaryotic and eukaryotic. Animal cells, plant cells, fungal cells, and protist cells are eukaryotic. Bacteria and archaea cells are prokaryotic. Before we look at how to tell them apart, let us see how biologists study cells. Only 12 percent of living things depend on this process.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Microscopy",
+     "text": "Cells vary in size. Most cells are too small to see with the naked eye. Scientists use microscopes to study them. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope. These images are called micrographs. A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter. The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter. Approximately 500 red blood cells could fit on the head of a pin. The lenses of a light microscope change the image orientation. A specimen right-side up and facing right on the slide looks upside-down and facing left. This happens when viewed through a microscope. If you move the slide left, it appears to move right. If you move it down, it seems to move up. This occurs because microscopes use two sets of lenses. Light travels through these lenses in a specific way. This system produces an inverted image. Binoculars and a dissecting microscope work similarly. They include an extra magnification system. This makes the final image appear upright.",
+     "simplified": true
+    }
+   ],
+   "sabotaged_report": {
+    "status": "amber",
+    "total": 27,
+    "kept": 25,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "A cell is the smallest unit of a living thing.",
+      "source_sentence": "A cell is the smallest unit of a living thing.",
+      "status": "missing",
+      "evidence": "",
+      "note": "The rewrite never states that a cell is the smallest unit of a living thing."
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "A living thing, like you, is called an organism.",
+      "source_sentence": "A living thing, like you, is called an organism.",
+      "status": "kept",
+      "evidence": "A living thing, like you, is called an organism.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Cells are the basic building blocks of all organisms.",
+      "source_sentence": "Thus, cells are the basic building blocks of all organisms.",
+      "status": "kept",
+      "evidence": "Cells are the basic building blocks of all organisms.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "In multicellular organisms, several cells of one particular kind interconnect and perform shared functions to form tissues.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "status": "kept",
+      "evidence": "In multicellular organisms, cells of one kind connect. They share functions to form tissues.",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "Examples of tissues are muscle tissue, connective tissue, and nervous tissue.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "status": "kept",
+      "evidence": "Examples include muscle tissue, connective tissue, and nervous tissue.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "Several tissues combine to form an organ.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "status": "kept",
+      "evidence": "Several tissues combine to form an organ.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Examples of organs are stomach, heart, or brain.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "status": "kept",
+      "evidence": "Examples are the stomach, heart, or brain.",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Several organs make up an organ system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "status": "kept",
+      "evidence": "Several organs make up an organ system.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "Examples of organ systems are the digestive system, circulatory system, or nervous system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "status": "kept",
+      "evidence": "Examples are the digestive system, circulatory system, or nervous system.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "Several systems functioning together form an organism.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "status": "kept",
+      "evidence": "Several systems working together form an organism.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "An example organism is an elephant.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "status": "kept",
+      "evidence": "An example is an elephant.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "All cell types are grouped into two broad categories: prokaryotic and eukaryotic.",
+      "source_sentence": "There are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic.",
+      "status": "kept",
+      "evidence": "They fall into two broad categories: prokaryotic and eukaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "Animal, plant, fungal, and protist cells are classified as eukaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "status": "kept",
+      "evidence": "Animal cells, plant cells, fungal cells, and protist cells are eukaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "Bacteria and archaea cells are classified as prokaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "status": "kept",
+      "evidence": "Bacteria and archaea cells are prokaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "Cells vary in size.",
+      "source_sentence": "Cells vary in size.",
+      "status": "kept",
+      "evidence": "Cells vary in size.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Individual cells are too small to be seen with the naked eye (with few exceptions).",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "status": "kept",
+      "evidence": "Most cells are too small to see with the naked eye.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "Scientists use microscopes to study cells.",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "status": "kept",
+      "evidence": "Scientists use microscopes to study them.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "A microscope is an instrument that magnifies an object.",
+      "source_sentence": "A microscope is an instrument that magnifies an object.",
+      "status": "kept",
+      "evidence": "A microscope is an instrument that magnifies an object.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "Most images of cells taken with a microscope are called micrographs.",
+      "source_sentence": "Most images of cells are taken with a microscope and are called micrographs.",
+      "status": "kept",
+      "evidence": "Most images of cells are taken with a microscope. These images are called micrographs.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "A typical human red blood cell is about eight millionths of a meter (8 µm) in diameter.",
+      "source_sentence": "a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter;",
+      "status": "kept",
+      "evidence": "A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "The head of a pin is about two thousandths of a meter (mm) in diameter.",
+      "source_sentence": "the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter.",
+      "status": "kept",
+      "evidence": "The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s2",
+      "text": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "source_sentence": "That means that approximately 250 red blood cells could fit on the head of a pin.",
+      "status": "changed",
+      "evidence": "Approximately 500 red blood cells could fit on the head of a pin.",
+      "note": "Original says about 250; rewrite says 500."
+     },
+     {
+      "id": "f23",
+      "section_id": "s2",
+      "text": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "source_sentence": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "status": "kept",
+      "evidence": "The lenses of a light microscope change the image orientation.",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s2",
+      "text": "A specimen that is right-side up and facing right on the slide appears upside-down and facing left when viewed through a microscope, and vice versa.",
+      "source_sentence": "A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa.",
+      "status": "kept",
+      "evidence": "A specimen right-side up and facing right on the slide looks upside-down and facing left.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s2",
+      "text": "If the slide is moved left while looking through the microscope, it appears to move right; if moved down, it appears to move up.",
+      "source_sentence": "Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up.",
+      "status": "kept",
+      "evidence": "If you move the slide left, it appears to move right. If you move it down, it seems to move up.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s2",
+      "text": "Microscopes use two sets of lenses to magnify the image.",
+      "source_sentence": "This occurs because microscopes use two sets of lenses to magnify the image.",
+      "status": "kept",
+      "evidence": "This occurs because microscopes use two sets of lenses.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s2",
+      "text": "The lens system of a light microscope produces an inverted image.",
+      "source_sentence": "Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright).",
+      "status": "kept",
+      "evidence": "This system produces an inverted image.",
+      "note": ""
+     }
+    ],
+    "added_claims": [
+     {
+      "section_id": "s1",
+      "quote": "Only 12 percent of living things depend on this process.",
+      "why": "The original text never mentions any percentage of living things depending on cell study; this claim is new and unsupported."
+     }
+    ],
+    "missing_tokens": [
+     {
+      "section_id": "s2",
+      "token": "250"
+     }
+    ],
+    "checker_model": "openai/gpt-oss-120b"
+   },
+   "repaired_sections": [
+    {
+     "id": "s1",
+     "heading": "3.1 How Cells Are Studied",
+     "text": "A cell is the smallest unit of a living thing. A living thing, like you, is called an organism. Cells are the basic building blocks of all organisms. In multicellular organisms, cells of one kind connect. They share functions to form tissues. Examples include muscle tissue, connective tissue, and nervous tissue. Several tissues combine to form an organ. Examples are the stomach, heart, or brain. Several organs make up an organ system. Examples are the digestive system, circulatory system, or nervous system. Several systems working together form an organism. An example is an elephant. There are many types of cells. They fall into two broad categories: prokaryotic and eukaryotic. Animal cells, plant cells, fungal cells, and protist cells are eukaryotic. Bacteria and archaea cells are prokaryotic. Before we look at how to tell them apart, let us see how biologists study cells.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Microscopy",
+     "text": "Cells vary in size. Most cells are too small to see with the naked eye. Scientists use microscopes to study them. A microscope is an instrument that magnifies an object. Most images of cells are taken with a microscope. These images are called micrographs. A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter. The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter. Approximately 250 red blood cells could fit on the head of a pin. The lenses of a light microscope change the image orientation. A specimen right-side up and facing right on the slide looks upside-down and facing left. This happens when viewed through a microscope. If you move the slide left, it appears to move right. If you move it down, it seems to move up. This occurs because microscopes use two sets of lenses. Light travels through these lenses in a specific way. This system produces an inverted image. Binoculars and a dissecting microscope work similarly. They include an extra magnification system. This makes the final image appear upright.",
+     "simplified": true
+    }
+   ],
+   "repaired_report": {
+    "status": "green",
+    "total": 27,
+    "kept": 27,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "A cell is the smallest unit of a living thing.",
+      "source_sentence": "A cell is the smallest unit of a living thing.",
+      "status": "kept",
+      "evidence": "A cell is the smallest unit of a living thing.",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "A living thing, like you, is called an organism.",
+      "source_sentence": "A living thing, like you, is called an organism.",
+      "status": "kept",
+      "evidence": "A living thing, like you, is called an organism.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "Cells are the basic building blocks of all organisms.",
+      "source_sentence": "Thus, cells are the basic building blocks of all organisms.",
+      "status": "kept",
+      "evidence": "Cells are the basic building blocks of all organisms.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "In multicellular organisms, several cells of one particular kind interconnect and perform shared functions to form tissues.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "status": "kept",
+      "evidence": "In multicellular organisms, cells of one kind connect. They share functions to form tissues.",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "Examples of tissues are muscle tissue, connective tissue, and nervous tissue.",
+      "source_sentence": "In multicellular organisms, several cells of one particular kind interconnect with each other and perform shared functions to form tissues (for example, muscle tissue, connective tissue, and nervous tissue),",
+      "status": "kept",
+      "evidence": "Examples include muscle tissue, connective tissue, and nervous tissue.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "Several tissues combine to form an organ.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "status": "kept",
+      "evidence": "Several tissues combine to form an organ.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Examples of organs are stomach, heart, or brain.",
+      "source_sentence": "several tissues combine to form an organ (for example, stomach, heart, or brain),",
+      "status": "kept",
+      "evidence": "Examples are the stomach, heart, or brain.",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Several organs make up an organ system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "status": "kept",
+      "evidence": "Several organs make up an organ system.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "Examples of organ systems are the digestive system, circulatory system, or nervous system.",
+      "source_sentence": "and several organs make up an organ system (such as the digestive system, circulatory system, or nervous system).",
+      "status": "kept",
+      "evidence": "Examples are the digestive system, circulatory system, or nervous system.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "Several systems functioning together form an organism.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "status": "kept",
+      "evidence": "Several systems working together form an organism.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "An example organism is an elephant.",
+      "source_sentence": "Several systems functioning together form an organism (such as an elephant, for example).",
+      "status": "kept",
+      "evidence": "An example is an elephant.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "All cell types are grouped into two broad categories: prokaryotic and eukaryotic.",
+      "source_sentence": "There are many types of cells, and all are grouped into one of two broad categories: prokaryotic and eukaryotic.",
+      "status": "kept",
+      "evidence": "They fall into two broad categories: prokaryotic and eukaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s1",
+      "text": "Animal, plant, fungal, and protist cells are classified as eukaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "status": "kept",
+      "evidence": "Animal cells, plant cells, fungal cells, and protist cells are eukaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s1",
+      "text": "Bacteria and archaea cells are classified as prokaryotic.",
+      "source_sentence": "Animal cells, plant cells, fungal cells, and protist cells are classified as eukaryotic, whereas bacteria and archaea cells are classified as prokaryotic.",
+      "status": "kept",
+      "evidence": "Bacteria and archaea cells are prokaryotic.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "Cells vary in size.",
+      "source_sentence": "Cells vary in size.",
+      "status": "kept",
+      "evidence": "Cells vary in size.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Individual cells are too small to be seen with the naked eye (with few exceptions).",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "status": "kept",
+      "evidence": "Most cells are too small to see with the naked eye.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "Scientists use microscopes to study cells.",
+      "source_sentence": "With few exceptions, individual cells are too small to be seen with the naked eye, so scientists use microscopes to study them.",
+      "status": "kept",
+      "evidence": "Scientists use microscopes to study them.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "A microscope is an instrument that magnifies an object.",
+      "source_sentence": "A microscope is an instrument that magnifies an object.",
+      "status": "kept",
+      "evidence": "A microscope is an instrument that magnifies an object.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "Most images of cells taken with a microscope are called micrographs.",
+      "source_sentence": "Most images of cells are taken with a microscope and are called micrographs.",
+      "status": "kept",
+      "evidence": "Most images of cells are taken with a microscope. These images are called micrographs.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "A typical human red blood cell is about eight millionths of a meter (8 µm) in diameter.",
+      "source_sentence": "a typical human red blood cell is about eight millionths of a meter or eight micrometers (abbreviated as µm) in diameter;",
+      "status": "kept",
+      "evidence": "A typical human red blood cell is about eight millionths of a meter. This is eight micrometers (abbreviated as µm) in diameter.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "The head of a pin is about two thousandths of a meter (mm) in diameter.",
+      "source_sentence": "the head of a pin is about two thousandths of a meter (millimeters, or mm) in diameter.",
+      "status": "kept",
+      "evidence": "The head of a pin is about two thousandths of a meter. This is millimeters, or mm, in diameter.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s2",
+      "text": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "source_sentence": "That means that approximately 250 red blood cells could fit on the head of a pin.",
+      "status": "kept",
+      "evidence": "Approximately 250 red blood cells could fit on the head of a pin.",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s2",
+      "text": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "source_sentence": "The optics of the lenses of a light microscope changes the orientation of the image.",
+      "status": "kept",
+      "evidence": "The lenses of a light microscope change the image orientation.",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s2",
+      "text": "A specimen that is right-side up and facing right on the slide appears upside-down and facing left when viewed through a microscope, and vice versa.",
+      "source_sentence": "A specimen that is right-side up and facing right on the microscope slide will appear upside-down and facing left when viewed through a microscope, and vice versa.",
+      "status": "kept",
+      "evidence": "A specimen right-side up and facing right on the slide looks upside-down and facing left.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s2",
+      "text": "If the slide is moved left while looking through the microscope, it appears to move right; if moved down, it appears to move up.",
+      "source_sentence": "Similarly, if the slide is moved left while looking through the microscope, it will appear to move right, and if moved down, it will seem to move up.",
+      "status": "kept",
+      "evidence": "If you move the slide left, it appears to move right. If you move it down, it seems to move up.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s2",
+      "text": "Microscopes use two sets of lenses to magnify the image.",
+      "source_sentence": "This occurs because microscopes use two sets of lenses to magnify the image.",
+      "status": "kept",
+      "evidence": "This occurs because microscopes use two sets of lenses.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s2",
+      "text": "The lens system of a light microscope produces an inverted image.",
+      "source_sentence": "Due to the manner in which light travels through the lenses, this system of lenses produces an inverted image (binoculars and a dissecting microscope work in a similar manner, but include an additional magnification system that makes the final image appear to be upright).",
+      "status": "kept",
+      "evidence": "This system produces an inverted image.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-120b"
+   }
+  }
+ },
+ "glossary": {
+  "items": [
+   {
+    "term": "protist",
+    "simple_en": "A type of single-celled eukaryotic organism.",
+    "urdu": "Protist ایک ایسا جاندار ہے جس کے خلیات میں نکیلا ہوتا ہے۔",
+    "example": "Protist cells are eukaryotic.",
+    "section_id": "s1"
+   },
+   {
+    "term": "millionths",
+    "simple_en": "One part out of one million parts.",
+    "urdu": "Millionths کا مطلب ہے ایک لاکھ میں سے ایک حصہ۔",
+    "example": "Eight millionths of a meter.",
+    "section_id": "s2"
+   },
+   {
+    "term": "micrographs",
+    "simple_en": "Images of cells taken using a microscope.",
+    "urdu": "Micrographs وہ تصاویر ہیں جو مائیکروسکوپ کے ذریعے لی جاتی ہیں۔",
+    "example": "Most cell images are micrographs.",
+    "section_id": "s2"
+   },
+   {
+    "term": "thousandths",
+    "simple_en": "One part out of one thousand parts.",
+    "urdu": "Thousandths کا مطلب ہے ایک ہزار میں سے ایک حصہ۔",
+    "example": "Two thousandths of a meter.",
+    "section_id": "s2"
+   },
+   {
+    "term": "prokaryotic",
+    "simple_en": "Cells without a distinct nucleus inside.",
+    "urdu": "Prokaryotic خلیات وہ ہیں جن میں الگ نکیلا نہیں ہوتا۔",
+    "example": "Bacteria are prokaryotic cells.",
+    "section_id": "s1"
+   },
+   {
+    "term": "archaea",
+    "simple_en": "Single-celled prokaryotic organisms similar to bacteria.",
+    "urdu": "Archaea وہ خلیات ہیں جو بیکٹیریا کی طرح پروکاریاٹ ہوتے ہیں۔",
+    "example": "Archaea cells are prokaryotic.",
+    "section_id": "s1"
+   },
+   {
+    "term": "magnifies",
+    "simple_en": "Makes an object appear larger than it is.",
+    "urdu": "Magnifies کا مطلب ہے کسی چیز کو بڑا دکھانا۔",
+    "example": "A microscope magnifies an object.",
+    "section_id": "s2"
+   },
+   {
+    "term": "micrometers",
+    "simple_en": "A tiny unit of length, one millionth of a meter.",
+    "urdu": "Micrometers لمبائی کا ایک بہت چھوٹا پیمانہ ہے۔",
+    "example": "A red blood cell is eight micrometers.",
+    "section_id": "s2"
+   },
+   {
+    "term": "multicellular",
+    "simple_en": "Organisms made up of many different cells.",
+    "urdu": "Multicellular جاندار وہ ہیں جو بہت سے خلیات سے بنے ہوتے ہیں۔",
+    "example": "Humans are multicellular organisms.",
+    "section_id": "s1"
+   },
+   {
+    "term": "microscopes",
+    "simple_en": "Instruments used to see very small objects clearly.",
+    "urdu": "Microscopes وہ آلات ہیں جن سے چھوٹی چیزیں دیکھی جاتی ہیں۔",
+    "example": "Scientists use microscopes to study cells.",
+    "section_id": "s2"
+   }
+  ],
+  "model": "qwen/qwen3.8-27b",
+  "created_at": "2026-10-10T00:01:01+00:00"
+ },
+ "quiz": {
+  "easier": "40b82e67b1a1ec2a2eee8e54"
+ },
+ "lecture_id": null,
+ "prompt_version": "v1"
+}

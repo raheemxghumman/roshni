@@ -1,0 +1,1719 @@
+{
+ "id": "ef76879933d22960c40bda3f",
+ "title": "5.1 Overview of Photosynthesis",
+ "created_at": "2026-10-10T00:02:15+00:00",
+ "sample": true,
+ "source": {
+  "type": "image",
+  "filename": "bio-photosynthesis.png",
+  "pages": 1,
+  "text_layer": false,
+  "images": [
+   "/api/lessons/ef76879933d22960c40bda3f/image/1"
+  ]
+ },
+ "language": "en",
+ "sections": [
+  {
+   "heading": "5.1 Overview of Photosynthesis",
+   "level": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "All living organisms on earth consist of one or more cells. Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis. Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules. The energy used to hold these molecules together is released when an organism breaks down food. Cells then use this energy to perform work, such as cellular respiration.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b2"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another. Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b3"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Photosynthesis also results in the release of oxygen into the atmosphere. In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b4"
+    }
+   ],
+   "id": "s1",
+   "text": "All living organisms on earth consist of one or more cells. Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis. Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules. The energy used to hold these molecules together is released when an organism breaks down food. Cells then use this energy to perform work, such as cellular respiration.\nThe energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another. Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.\nPhotosynthesis also results in the release of oxygen into the atmosphere. In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis."
+  },
+  {
+   "heading": "Solar Dependence and Food Production",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Some organisms can carry out photosynthesis, whereas others cannot. An autotroph is an organism that can produce its own food. The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph). Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2). Oceanic algae contribute enormous quantities of food and oxygen to global food chains. Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates. All organisms carrying out photosynthesis require sunlight.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b6"
+    },
+    {
+     "type": "paragraph",
+     "level": null,
+     "text": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms. The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms. Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis. Humans are heterotrophs, as are all animals. Heterotrophs depend on autotrophs, either directly or indirectly. Deer and wolves are heterotrophs. A deer obtains energy by eating plants. A wolf eating a deer obtains energy that originally came from the plants eaten by that deer. The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3). Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+     "description": "",
+     "rows": null,
+     "unclear": false,
+     "page": 1,
+     "id": "b7"
+    }
+   ],
+   "id": "s2",
+   "text": "Some organisms can carry out photosynthesis, whereas others cannot. An autotroph is an organism that can produce its own food. The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph). Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2). Oceanic algae contribute enormous quantities of food and oxygen to global food chains. Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates. All organisms carrying out photosynthesis require sunlight.\nHeterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms. The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms. Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis. Humans are heterotrophs, as are all animals. Heterotrophs depend on autotrophs, either directly or indirectly. Deer and wolves are heterotrophs. A deer obtains energy by eating plants. A wolf eating a deer obtains energy that originally came from the plants eaten by that deer. The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3). Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis."
+  }
+ ],
+ "warnings": [],
+ "models": {
+  "reader": [
+   "gemini-3.5-flash"
+  ]
+ },
+ "simplified": {
+  "easier": {
+   "level": "easier",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "5.1 Overview of Photosynthesis",
+     "text": "All living organisms on earth consist of one or more cells. Each cell runs on chemical energy. This energy is found in food molecules. Most of these food molecules are carbohydrates. One process makes most of these molecules. This process is called photosynthesis. Some organisms use photosynthesis. They turn sunlight into chemical energy. They use this energy to build food molecules. The energy holds these molecules together. An organism breaks down food to release this energy. Cells use this energy to do work. One type of work is cellular respiration. Energy from photosynthesis enters our planet's ecosystems. It moves from one organism to another. Photosynthesis gives most energy to living things. It does this directly or indirectly. Photosynthesis also releases oxygen. This oxygen goes into the air. Humans need photosynthesis to eat and breathe. We depend on organisms that do this process.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Solar Dependence and Food Production",
+     "text": "Some organisms can do photosynthesis. Others cannot. An autotroph is an organism that makes its own food. The word autotroph comes from Greek. Auto means self. Troph means feeder. Plants are the best-known autotrophs. Some bacteria and algae are also autotrophs. See Figure 5.2. Ocean algae make lots of food and oxygen. This helps global food chains. Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates. All organisms that do photosynthesis need sunlight. Heterotrophs cannot do photosynthesis. They must get energy and carbon from food. They eat other organisms. The word heterotroph comes from Greek. Hetero means other. Troph means feeder. Their food comes from other organisms. Even if the food is an animal, it started with autotrophs. It started with photosynthesis. Humans are heterotrophs. All animals are heterotrophs. Heterotrophs depend on autotrophs. This happens directly or indirectly. Deer and wolves are heterotrophs. A deer gets energy by eating plants. A wolf eats a deer. The wolf gets energy from the deer. That energy came from the plants the deer ate. The plant energy came from photosynthesis. The plant is the only autotroph here. See Figure 5.3. All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 11.4,
+     "avg_sentence_words": 14.9,
+     "hard_word_share": 0.204,
+     "words": 387
+    },
+    "after": {
+     "grade": 6.5,
+     "avg_sentence_words": 6.0,
+     "hard_word_share": 0.123,
+     "words": 357
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 37,
+    "kept": 37,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "All living organisms on earth consist of one or more cells.",
+      "source_sentence": "All living organisms on earth consist of one or more cells.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "All living organisms on earth consist of one or more cells.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food).",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "Each cell runs on chemical energy. This energy is found in food molecules. Most of these food molecules are carbohydrates.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The majority of carbohydrate molecules are produced by photosynthesis.",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "One process makes most of these molecules. This process is called photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Through photosynthesis certain organisms convert solar energy (sunlight) into chemical energy.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Some organisms use photosynthesis. They turn sunlight into chemical energy.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The chemical energy from photosynthesis is used to build carbohydrate molecules.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "They use this energy to build food molecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The energy used to hold carbohydrate molecules together is released when an organism breaks down food.",
+      "source_sentence": "The energy used to hold these molecules together is released when an organism breaks down food.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "The energy holds these molecules together. An organism breaks down food to release this energy.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Cells use the released energy to perform work such as cellular respiration.",
+      "source_sentence": "Cells then use this energy to perform work, such as cellular respiration.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "Cells use this energy to do work. One type of work is cellular respiration.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy harnessed from photosynthesis continuously enters Earth’s ecosystems.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "Energy from photosynthesis enters our planet's ecosystems.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "That energy is transferred from one organism to another.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "It moves from one organism to another.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Photosynthesis provides most of the energy required by living things on earth, directly or indirectly.",
+      "source_sentence": "Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "Photosynthesis gives most energy to living things. It does this directly or indirectly.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Photosynthesis results in the release of oxygen into the atmosphere.",
+      "source_sentence": "Photosynthesis also results in the release of oxygen into the atmosphere.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "Photosynthesis also releases oxygen. This oxygen goes into the air.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Humans depend almost entirely on organisms that carry out photosynthesis to eat and breathe.",
+      "source_sentence": "In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "Humans need photosynthesis to eat and breathe. We depend on organisms that do this process.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "source_sentence": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "Some organisms can do photosynthesis. Others cannot.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "An autotroph is an organism that can produce its own food.",
+      "source_sentence": "An autotroph is an organism that can produce its own food.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "An autotroph is an organism that makes its own food.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "The word autotroph comes from Greek. Auto means self. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Plants are the best‑known autotrophs.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "Plants are the best-known autotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Other autotrophs include certain types of bacteria and algae.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Some bacteria and algae are also autotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of food to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of food and oxygen. This helps global food chains.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of oxygen to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of food and oxygen. This helps global food chains.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Plants are photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy as carbohydrates.",
+      "source_sentence": "Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All organisms that carry out photosynthesis require sunlight.",
+      "source_sentence": "All organisms carrying out photosynthesis require sunlight.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "All organisms that do photosynthesis need sunlight.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs are organisms incapable of photosynthesis.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "Heterotrophs cannot do photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs must obtain energy and carbon from food by consuming other organisms.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "They must get energy and carbon from food. They eat other organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "The word heterotroph comes from Greek. Hetero means other. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs obtain their food from other organisms.",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "Their food comes from other organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Food from other animals traces its origins back to autotrophs and photosynthesis.",
+      "source_sentence": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "Even if the food is an animal, it started with autotrophs. It started with photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Humans are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "Humans are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All animals are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "id": "f28",
+      "status": "kept",
+      "evidence": "All animals are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs depend on autotrophs directly or indirectly.",
+      "source_sentence": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "id": "f29",
+      "status": "kept",
+      "evidence": "Heterotrophs depend on autotrophs. This happens directly or indirectly.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Deer are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "id": "f30",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Wolves are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "id": "f31",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A deer obtains energy by eating plants.",
+      "source_sentence": "A deer obtains energy by eating plants.",
+      "id": "f32",
+      "status": "kept",
+      "evidence": "A deer gets energy by eating plants.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A wolf obtains energy by eating a deer.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "id": "f33",
+      "status": "kept",
+      "evidence": "A wolf eats a deer. The wolf gets energy from the deer.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The energy a wolf obtains from a deer originally came from the plants the deer ate.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "id": "f34",
+      "status": "kept",
+      "evidence": "That energy came from the plants the deer ate.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The energy in the plant came from photosynthesis.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "id": "f35",
+      "status": "kept",
+      "evidence": "The plant energy came from photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "In that example the plant is the only autotroph.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "id": "f36",
+      "status": "kept",
+      "evidence": "The plant is the only autotroph here.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All food eaten by humans links back to autotrophs that carry out photosynthesis.",
+      "source_sentence": "Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+      "id": "f37",
+      "status": "kept",
+      "evidence": "All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "gemini-3.5-flash",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 36,
+      "total": 37,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 37,
+      "total": 37,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "openai/gpt-oss-120b"
+   },
+   "created_at": "2026-10-10T00:03:40+00:00"
+  },
+  "simplest": {
+   "level": "simplest",
+   "sections": [
+    {
+     "id": "s1",
+     "heading": "5.1 Overview of Photosynthesis",
+     "text": "All living organisms on earth consist of one or more cells. Each cell runs on chemical energy. This energy is in carbohydrate molecules. Most of these molecules come from photosynthesis. Certain organisms convert solar energy into chemical energy. This energy is used to build carbohydrate molecules. The energy holds these molecules together. An organism breaks down food to release this energy. Cells use this energy to perform work. One type of work is cellular respiration. Energy from photosynthesis enters the ecosystems of our planet continuously. It is transferred from one organism to another. Directly or indirectly, photosynthesis provides most of the energy required by living things on earth. Photosynthesis also releases oxygen into the atmosphere. To eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Solar Dependence and Food Production",
+     "text": "Some organisms can carry out photosynthesis. Others cannot. An autotroph is an organism that can produce its own food. The Greek roots of autotroph mean \"self\" (auto) \"feeder\" (troph). Plants are the best-known autotrophs. Other autotrophs besides plants exist. These include certain types of bacteria and algae (Figure 5.2). Oceanic algae contribute enormous quantities of food and oxygen to global food chains. Plants are also photoautotrophs. This is a type of autotroph. They use sunlight and carbon from carbon dioxide. They synthesize chemical energy in the form of carbohydrates. All organisms carrying out photosynthesis require sunlight. Heterotrophs are organisms incapable of photosynthesis. They must obtain energy and carbon from food. They do this by consuming other organisms. The Greek roots of heterotroph mean \"other\" (hetero) \"feeder\" (troph). This means their food comes from other organisms. Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis. Humans are heterotrophs. All animals are heterotrophs. Heterotrophs depend on autotrophs, either directly or indirectly. Deer and wolves are heterotrophs. A deer obtains energy by eating plants. A wolf eating a deer obtains energy that originally came from the plants eaten by that deer. The energy in the plant came from photosynthesis. Therefore, it is the only autotroph in this example (Figure 5.3). Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+     "simplified": true
+    }
+   ],
+   "readability": {
+    "before": {
+     "grade": 11.4,
+     "avg_sentence_words": 14.9,
+     "hard_word_share": 0.204,
+     "words": 387
+    },
+    "after": {
+     "grade": 9.2,
+     "avg_sentence_words": 8.5,
+     "hard_word_share": 0.197,
+     "words": 366
+    }
+   },
+   "factguard": {
+    "status": "green",
+    "total": 36,
+    "kept": 36,
+    "facts": [
+     {
+      "section_id": "s1",
+      "text": "All living organisms on earth consist of one or more cells.",
+      "source_sentence": "All living organisms on earth consist of one or more cells.",
+      "id": "f1",
+      "status": "kept",
+      "evidence": "All living organisms on earth consist of one or more cells.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food).",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "id": "f2",
+      "status": "kept",
+      "evidence": "Each cell runs on chemical energy. This energy is in carbohydrate molecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The majority of carbohydrate molecules are produced by photosynthesis.",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "id": "f3",
+      "status": "kept",
+      "evidence": "Most of these molecules come from photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "id": "f4",
+      "status": "kept",
+      "evidence": "Certain organisms convert solar energy into chemical energy.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The chemical energy converted from solar energy is used to build carbohydrate molecules.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "id": "f5",
+      "status": "kept",
+      "evidence": "This energy is used to build carbohydrate molecules.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The energy used to hold carbohydrate molecules together is released when an organism breaks down food.",
+      "source_sentence": "The energy used to hold these molecules together is released when an organism breaks down food.",
+      "id": "f6",
+      "status": "kept",
+      "evidence": "The energy holds these molecules together. An organism breaks down food to release this energy.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Cells use the energy released from food to perform work.",
+      "source_sentence": "Cells then use this energy to perform work, such as cellular respiration.",
+      "id": "f7",
+      "status": "kept",
+      "evidence": "Cells use this energy to perform work.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Cellular respiration is an example of work performed by cells.",
+      "source_sentence": "Cells then use this energy to perform work, such as cellular respiration.",
+      "id": "f8",
+      "status": "kept",
+      "evidence": "One type of work is cellular respiration.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "The energy harnessed from photosynthesis enters the ecosystems of our planet continuously.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "id": "f9",
+      "status": "kept",
+      "evidence": "Energy from photosynthesis enters the ecosystems of our planet continuously.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Energy harnessed from photosynthesis is transferred from one organism to another.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "id": "f10",
+      "status": "kept",
+      "evidence": "It is transferred from one organism to another.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+      "source_sentence": "Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+      "id": "f11",
+      "status": "kept",
+      "evidence": "Directly or indirectly, photosynthesis provides most of the energy required by living things on earth.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "Photosynthesis results in the release of oxygen into the atmosphere.",
+      "source_sentence": "Photosynthesis also results in the release of oxygen into the atmosphere.",
+      "id": "f12",
+      "status": "kept",
+      "evidence": "Photosynthesis also releases oxygen into the atmosphere.",
+      "note": ""
+     },
+     {
+      "section_id": "s1",
+      "text": "To eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "source_sentence": "In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "id": "f13",
+      "status": "kept",
+      "evidence": "To eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "source_sentence": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "id": "f14",
+      "status": "kept",
+      "evidence": "Some organisms can carry out photosynthesis. Others cannot.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "An autotroph is an organism that can produce its own food.",
+      "source_sentence": "An autotroph is an organism that can produce its own food.",
+      "id": "f15",
+      "status": "kept",
+      "evidence": "An autotroph is an organism that can produce its own food.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "id": "f16",
+      "status": "kept",
+      "evidence": "The Greek roots of autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Plants are the best-known autotrophs.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae.",
+      "id": "f17",
+      "status": "kept",
+      "evidence": "Plants are the best-known autotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Other autotrophs besides plants exist, including certain types of bacteria and algae.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae.",
+      "id": "f18",
+      "status": "kept",
+      "evidence": "Other autotrophs besides plants exist. These include certain types of bacteria and algae",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "id": "f19",
+      "status": "kept",
+      "evidence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Plants are photoautotrophs.",
+      "source_sentence": "Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "id": "f20",
+      "status": "kept",
+      "evidence": "Plants are also photoautotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A photoautotroph is a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "source_sentence": "Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "id": "f21",
+      "status": "kept",
+      "evidence": "This is a type of autotroph. They use sunlight and carbon from carbon dioxide. They synthesize chemical energy in the form of carbohydrates.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All organisms carrying out photosynthesis require sunlight.",
+      "source_sentence": "All organisms carrying out photosynthesis require sunlight.",
+      "id": "f22",
+      "status": "kept",
+      "evidence": "All organisms carrying out photosynthesis require sunlight.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs are organisms incapable of photosynthesis.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "id": "f23",
+      "status": "kept",
+      "evidence": "Heterotrophs are organisms incapable of photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs must obtain energy and carbon from food by consuming other organisms.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "id": "f24",
+      "status": "kept",
+      "evidence": "They must obtain energy and carbon from food. They do this by consuming other organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "id": "f25",
+      "status": "kept",
+      "evidence": "The Greek roots of heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The Greek roots of heterotroph mean that their food comes from other organisms.",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "id": "f26",
+      "status": "kept",
+      "evidence": "This means their food comes from other organisms.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "source_sentence": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "id": "f27",
+      "status": "kept",
+      "evidence": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Humans are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "id": "f28",
+      "status": "kept",
+      "evidence": "Humans are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All animals are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "id": "f29",
+      "status": "kept",
+      "evidence": "All animals are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "source_sentence": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "id": "f30",
+      "status": "kept",
+      "evidence": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "Deer and wolves are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "id": "f31",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A deer obtains energy by eating plants.",
+      "source_sentence": "A deer obtains energy by eating plants.",
+      "id": "f32",
+      "status": "kept",
+      "evidence": "A deer obtains energy by eating plants.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "id": "f33",
+      "status": "kept",
+      "evidence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The energy in the plant came from photosynthesis.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example.",
+      "id": "f34",
+      "status": "kept",
+      "evidence": "The energy in the plant came from photosynthesis.",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "The plant is the only autotroph in the deer and wolf example.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example.",
+      "id": "f35",
+      "status": "kept",
+      "evidence": "Therefore, it is the only autotroph in this example",
+      "note": ""
+     },
+     {
+      "section_id": "s2",
+      "text": "All food eaten by humans links back to autotrophs that carry out photosynthesis.",
+      "source_sentence": "Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+      "id": "f36",
+      "status": "kept",
+      "evidence": "Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "gemini-3.5-flash",
+    "rounds": [
+     {
+      "round": 1,
+      "action": "Checked the first rewrite",
+      "status": "amber",
+      "kept": 28,
+      "total": 36,
+      "added_claims": 0,
+      "missing_tokens": 0
+     },
+     {
+      "round": 2,
+      "action": "Repaired the flagged sentences and checked again",
+      "status": "green",
+      "kept": 36,
+      "total": 36,
+      "added_claims": 0,
+      "missing_tokens": 0
+     }
+    ],
+    "rewriter_model": "qwen/qwen3.8-27b",
+    "extractor_model": "gemini-3.5-flash"
+   },
+   "created_at": "2026-10-10T00:04:50+00:00"
+  }
+ },
+ "stress": {
+  "easier": {
+   "level": "easier",
+   "created_at": "2026-10-10T00:15:10+00:00",
+   "planted": [
+    {
+     "type": "changed_number",
+     "section_id": "s2",
+     "before": "See Figure 5.3.",
+     "after": "See Figure 10.6.",
+     "caught": true
+    },
+    {
+     "type": "deleted_fact",
+     "section_id": "s1",
+     "before": "All living organisms on earth consist of one or more cells.",
+     "after": "",
+     "caught": true
+    },
+    {
+     "type": "added_claim",
+     "section_id": "s1",
+     "before": "",
+     "after": "This happens about 40 times faster at night than during the day.",
+     "caught": true
+    }
+   ],
+   "caught": 3,
+   "total_planted": 3,
+   "sabotaged_sections": [
+    {
+     "id": "s1",
+     "heading": "5.1 Overview of Photosynthesis",
+     "text": "Each cell runs on chemical energy. This energy is found in food molecules. Most of these food molecules are carbohydrates. One process makes most of these molecules. This process is called photosynthesis. Some organisms use photosynthesis. They turn sunlight into chemical energy. They use this energy to build food molecules. The energy holds these molecules together. An organism breaks down food to release this energy. Cells use this energy to do work. One type of work is cellular respiration. Energy from photosynthesis enters our planet's ecosystems. It moves from one organism to another. Photosynthesis gives most energy to living things. It does this directly or indirectly. Photosynthesis also releases oxygen. This oxygen goes into the air. Humans need photosynthesis to eat and breathe. We depend on organisms that do this process. This happens about 40 times faster at night than during the day.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Solar Dependence and Food Production",
+     "text": "Some organisms can do photosynthesis. Others cannot. An autotroph is an organism that makes its own food. The word autotroph comes from Greek. Auto means self. Troph means feeder. Plants are the best-known autotrophs. Some bacteria and algae are also autotrophs. See Figure 5.2. Ocean algae make lots of food and oxygen. This helps global food chains. Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates. All organisms that do photosynthesis need sunlight. Heterotrophs cannot do photosynthesis. They must get energy and carbon from food. They eat other organisms. The word heterotroph comes from Greek. Hetero means other. Troph means feeder. Their food comes from other organisms. Even if the food is an animal, it started with autotrophs. It started with photosynthesis. Humans are heterotrophs. All animals are heterotrophs. Heterotrophs depend on autotrophs. This happens directly or indirectly. Deer and wolves are heterotrophs. A deer gets energy by eating plants. A wolf eats a deer. The wolf gets energy from the deer. That energy came from the plants the deer ate. The plant energy came from photosynthesis. The plant is the only autotroph here. See Figure 10.6. All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+     "simplified": true
+    }
+   ],
+   "sabotaged_report": {
+    "status": "amber",
+    "total": 37,
+    "kept": 36,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "All living organisms on earth consist of one or more cells.",
+      "source_sentence": "All living organisms on earth consist of one or more cells.",
+      "status": "missing",
+      "evidence": "",
+      "note": "The rewrite does not mention that all living organisms consist of one or more cells."
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food).",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "status": "kept",
+      "evidence": "Each cell runs on chemical energy. This energy is found in food molecules. Most of these food molecules are carbohydrates.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "The majority of carbohydrate molecules are produced by photosynthesis.",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "status": "kept",
+      "evidence": "One process makes most of these molecules. This process is called photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "Through photosynthesis certain organisms convert solar energy (sunlight) into chemical energy.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "status": "kept",
+      "evidence": "Some organisms use photosynthesis. They turn sunlight into chemical energy.",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "The chemical energy from photosynthesis is used to build carbohydrate molecules.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "status": "kept",
+      "evidence": "They use this energy to build food molecules.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "The energy used to hold carbohydrate molecules together is released when an organism breaks down food.",
+      "source_sentence": "The energy used to hold these molecules together is released when an organism breaks down food.",
+      "status": "kept",
+      "evidence": "The energy holds these molecules together. An organism breaks down food to release this energy.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Cells use the released energy to perform work such as cellular respiration.",
+      "source_sentence": "Cells then use this energy to perform work, such as cellular respiration.",
+      "status": "kept",
+      "evidence": "Cells use this energy to do work. One type of work is cellular respiration.",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Energy harnessed from photosynthesis continuously enters Earth’s ecosystems.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "status": "kept",
+      "evidence": "Energy from photosynthesis enters our planet's ecosystems.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "That energy is transferred from one organism to another.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "status": "kept",
+      "evidence": "It moves from one organism to another.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "Photosynthesis provides most of the energy required by living things on earth, directly or indirectly.",
+      "source_sentence": "Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+      "status": "kept",
+      "evidence": "Photosynthesis gives most energy to living things. It does this directly or indirectly.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "Photosynthesis results in the release of oxygen into the atmosphere.",
+      "source_sentence": "Photosynthesis also results in the release of oxygen into the atmosphere.",
+      "status": "kept",
+      "evidence": "Photosynthesis also releases oxygen. This oxygen goes into the air.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Humans depend almost entirely on organisms that carry out photosynthesis to eat and breathe.",
+      "source_sentence": "In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "status": "kept",
+      "evidence": "Humans need photosynthesis to eat and breathe. We depend on organisms that do this process.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s2",
+      "text": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "source_sentence": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "status": "kept",
+      "evidence": "Some organisms can do photosynthesis. Others cannot.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s2",
+      "text": "An autotroph is an organism that can produce its own food.",
+      "source_sentence": "An autotroph is an organism that can produce its own food.",
+      "status": "kept",
+      "evidence": "An autotroph is an organism that makes its own food.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "status": "kept",
+      "evidence": "The word autotroph comes from Greek. Auto means self. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Plants are the best‑known autotrophs.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "status": "kept",
+      "evidence": "Plants are the best-known autotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "Other autotrophs include certain types of bacteria and algae.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "status": "kept",
+      "evidence": "Some bacteria and algae are also autotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of food to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of food... This helps global food chains.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of oxygen to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of... oxygen. This helps global food chains.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "Plants are photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy as carbohydrates.",
+      "source_sentence": "Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "status": "kept",
+      "evidence": "Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "All organisms that carry out photosynthesis require sunlight.",
+      "source_sentence": "All organisms carrying out photosynthesis require sunlight.",
+      "status": "kept",
+      "evidence": "All organisms that do photosynthesis need sunlight.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s2",
+      "text": "Heterotrophs are organisms incapable of photosynthesis.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "status": "kept",
+      "evidence": "Heterotrophs cannot do photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s2",
+      "text": "Heterotrophs must obtain energy and carbon from food by consuming other organisms.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "status": "kept",
+      "evidence": "They must get energy and carbon from food. They eat other organisms.",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s2",
+      "text": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "status": "kept",
+      "evidence": "The word heterotroph comes from Greek. Hetero means other. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s2",
+      "text": "Heterotrophs obtain their food from other organisms.",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "status": "kept",
+      "evidence": "Their food comes from other organisms.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s2",
+      "text": "Food from other animals traces its origins back to autotrophs and photosynthesis.",
+      "source_sentence": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "status": "kept",
+      "evidence": "Even if the food is an animal, it started with autotrophs. It started with photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s2",
+      "text": "Humans are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "status": "kept",
+      "evidence": "Humans are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f28",
+      "section_id": "s2",
+      "text": "All animals are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "status": "kept",
+      "evidence": "All animals are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f29",
+      "section_id": "s2",
+      "text": "Heterotrophs depend on autotrophs directly or indirectly.",
+      "source_sentence": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "status": "kept",
+      "evidence": "Heterotrophs depend on autotrophs. This happens directly or indirectly.",
+      "note": ""
+     },
+     {
+      "id": "f30",
+      "section_id": "s2",
+      "text": "Deer are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f31",
+      "section_id": "s2",
+      "text": "Wolves are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f32",
+      "section_id": "s2",
+      "text": "A deer obtains energy by eating plants.",
+      "source_sentence": "A deer obtains energy by eating plants.",
+      "status": "kept",
+      "evidence": "A deer gets energy by eating plants.",
+      "note": ""
+     },
+     {
+      "id": "f33",
+      "section_id": "s2",
+      "text": "A wolf obtains energy by eating a deer.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "status": "kept",
+      "evidence": "A wolf eats a deer. The wolf gets energy from the deer.",
+      "note": ""
+     },
+     {
+      "id": "f34",
+      "section_id": "s2",
+      "text": "The energy a wolf obtains from a deer originally came from the plants the deer ate.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "status": "kept",
+      "evidence": "That energy came from the plants the deer ate.",
+      "note": ""
+     },
+     {
+      "id": "f35",
+      "section_id": "s2",
+      "text": "The energy in the plant came from photosynthesis.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "status": "kept",
+      "evidence": "The plant energy came from photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f36",
+      "section_id": "s2",
+      "text": "In that example the plant is the only autotroph.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "status": "kept",
+      "evidence": "The plant is the only autotroph here.",
+      "note": ""
+     },
+     {
+      "id": "f37",
+      "section_id": "s2",
+      "text": "All food eaten by humans links back to autotrophs that carry out photosynthesis.",
+      "source_sentence": "Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+      "status": "kept",
+      "evidence": "All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+      "note": ""
+     }
+    ],
+    "added_claims": [
+     {
+      "section_id": "s1",
+      "quote": "This happens about 40 times faster at night than during the day.",
+      "why": "The original text does not mention the speed of photosynthesis or any comparison between night and day rates."
+     },
+     {
+      "section_id": "s2",
+      "quote": "See Figure 10.6.",
+      "why": "The original text refers to Figure 5.3 for this example, not Figure 10.6."
+     }
+    ],
+    "missing_tokens": [
+     {
+      "section_id": "s2",
+      "token": "5.3"
+     }
+    ],
+    "checker_model": "gemini-3-flash-preview"
+   },
+   "repaired_sections": [
+    {
+     "id": "s1",
+     "heading": "5.1 Overview of Photosynthesis",
+     "text": "All living organisms on earth consist of one or more cells. Each cell runs on chemical energy. This energy is found in food molecules. Most of these food molecules are carbohydrates. One process makes most of these molecules. This process is called photosynthesis. Some organisms use photosynthesis. They turn sunlight into chemical energy. They use this energy to build food molecules. The energy holds these molecules together. An organism breaks down food to release this energy. Cells use this energy to do work. One type of work is cellular respiration. Energy from photosynthesis enters our planet's ecosystems. It moves from one organism to another. Photosynthesis gives most energy to living things. It does this directly or indirectly. Photosynthesis also releases oxygen. This oxygen goes into the air. Humans need photosynthesis to eat and breathe. We depend on organisms that do this process.",
+     "simplified": true
+    },
+    {
+     "id": "s2",
+     "heading": "Solar Dependence and Food Production",
+     "text": "Some organisms can do photosynthesis. Others cannot. An autotroph is an organism that makes its own food. The word autotroph comes from Greek. Auto means self. Troph means feeder. Plants are the best-known autotrophs. Some bacteria and algae are also autotrophs. See Figure 5.2. Ocean algae make lots of food and oxygen. This helps global food chains. Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates. All organisms that do photosynthesis need sunlight. Heterotrophs cannot do photosynthesis. They must get energy and carbon from food. They eat other organisms. The word heterotroph comes from Greek. Hetero means other. Troph means feeder. Their food comes from other organisms. Even if the food is an animal, it started with autotrophs. It started with photosynthesis. Humans are heterotrophs. All animals are heterotrophs. Heterotrophs depend on autotrophs. This happens directly or indirectly. Deer and wolves are heterotrophs. A deer gets energy by eating plants. A wolf eats a deer. The wolf gets energy from the deer. That energy came from the plants the deer ate. The plant energy came from photosynthesis. The plant is the only autotroph here. See Figure 5.3. All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+     "simplified": true
+    }
+   ],
+   "repaired_report": {
+    "status": "green",
+    "total": 37,
+    "kept": 37,
+    "facts": [
+     {
+      "id": "f1",
+      "section_id": "s1",
+      "text": "All living organisms on earth consist of one or more cells.",
+      "source_sentence": "All living organisms on earth consist of one or more cells.",
+      "status": "kept",
+      "evidence": "All living organisms on earth consist of one or more cells.",
+      "note": ""
+     },
+     {
+      "id": "f2",
+      "section_id": "s1",
+      "text": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food).",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "status": "kept",
+      "evidence": "Each cell runs on chemical energy. This energy is found in food molecules.",
+      "note": ""
+     },
+     {
+      "id": "f3",
+      "section_id": "s1",
+      "text": "The majority of carbohydrate molecules are produced by photosynthesis.",
+      "source_sentence": "Each cell runs on the chemical energy found mainly in carbohydrate molecules (food), and the majority of these molecules are produced by one process: photosynthesis.",
+      "status": "kept",
+      "evidence": "Most of these food molecules are carbohydrates. One process makes most of these molecules. This process is called photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f4",
+      "section_id": "s1",
+      "text": "Through photosynthesis certain organisms convert solar energy (sunlight) into chemical energy.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "status": "kept",
+      "evidence": "Some organisms use photosynthesis. They turn sunlight into chemical energy.",
+      "note": ""
+     },
+     {
+      "id": "f5",
+      "section_id": "s1",
+      "text": "The chemical energy from photosynthesis is used to build carbohydrate molecules.",
+      "source_sentence": "Through photosynthesis, certain organisms convert solar energy (sunlight) into chemical energy, which is then used to build carbohydrate molecules.",
+      "status": "kept",
+      "evidence": "They use this energy to build food molecules.",
+      "note": ""
+     },
+     {
+      "id": "f6",
+      "section_id": "s1",
+      "text": "The energy used to hold carbohydrate molecules together is released when an organism breaks down food.",
+      "source_sentence": "The energy used to hold these molecules together is released when an organism breaks down food.",
+      "status": "kept",
+      "evidence": "The energy holds these molecules together. An organism breaks down food to release this energy.",
+      "note": ""
+     },
+     {
+      "id": "f7",
+      "section_id": "s1",
+      "text": "Cells use the released energy to perform work such as cellular respiration.",
+      "source_sentence": "Cells then use this energy to perform work, such as cellular respiration.",
+      "status": "kept",
+      "evidence": "Cells use this energy to do work. One type of work is cellular respiration.",
+      "note": ""
+     },
+     {
+      "id": "f8",
+      "section_id": "s1",
+      "text": "Energy harnessed from photosynthesis continuously enters Earth’s ecosystems.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "status": "kept",
+      "evidence": "Energy from photosynthesis enters our planet's ecosystems.",
+      "note": ""
+     },
+     {
+      "id": "f9",
+      "section_id": "s1",
+      "text": "That energy is transferred from one organism to another.",
+      "source_sentence": "The energy that is harnessed from photosynthesis enters the ecosystems of our planet continuously and is transferred from one organism to another.",
+      "status": "kept",
+      "evidence": "It moves from one organism to another.",
+      "note": ""
+     },
+     {
+      "id": "f10",
+      "section_id": "s1",
+      "text": "Photosynthesis provides most of the energy required by living things on earth, directly or indirectly.",
+      "source_sentence": "Therefore, directly or indirectly, the process of photosynthesis provides most of the energy required by living things on earth.",
+      "status": "kept",
+      "evidence": "Photosynthesis gives most energy to living things. It does this directly or indirectly.",
+      "note": ""
+     },
+     {
+      "id": "f11",
+      "section_id": "s1",
+      "text": "Photosynthesis results in the release of oxygen into the atmosphere.",
+      "source_sentence": "Photosynthesis also results in the release of oxygen into the atmosphere.",
+      "status": "kept",
+      "evidence": "Photosynthesis also releases oxygen. This oxygen goes into the air.",
+      "note": ""
+     },
+     {
+      "id": "f12",
+      "section_id": "s1",
+      "text": "Humans depend almost entirely on organisms that carry out photosynthesis to eat and breathe.",
+      "source_sentence": "In short, to eat and breathe, humans depend almost entirely on the organisms that carry out photosynthesis.",
+      "status": "kept",
+      "evidence": "Humans need photosynthesis to eat and breathe. We depend on organisms that do this process.",
+      "note": ""
+     },
+     {
+      "id": "f13",
+      "section_id": "s2",
+      "text": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "source_sentence": "Some organisms can carry out photosynthesis, whereas others cannot.",
+      "status": "kept",
+      "evidence": "Some organisms can do photosynthesis. Others cannot.",
+      "note": ""
+     },
+     {
+      "id": "f14",
+      "section_id": "s2",
+      "text": "An autotroph is an organism that can produce its own food.",
+      "source_sentence": "An autotroph is an organism that can produce its own food.",
+      "status": "kept",
+      "evidence": "An autotroph is an organism that makes its own food.",
+      "note": ""
+     },
+     {
+      "id": "f15",
+      "section_id": "s2",
+      "text": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word autotroph mean \"self\" (auto) \"feeder\" (troph).",
+      "status": "kept",
+      "evidence": "The word autotroph comes from Greek. Auto means self. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "id": "f16",
+      "section_id": "s2",
+      "text": "Plants are the best‑known autotrophs.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "status": "kept",
+      "evidence": "Plants are the best-known autotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f17",
+      "section_id": "s2",
+      "text": "Other autotrophs include certain types of bacteria and algae.",
+      "source_sentence": "Plants are the best-known autotrophs, but others exist, including certain types of bacteria and algae (Figure 5.2).",
+      "status": "kept",
+      "evidence": "Some bacteria and algae are also autotrophs. See Figure 5.2.",
+      "note": ""
+     },
+     {
+      "id": "f18",
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of food to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of food and oxygen. This helps global food chains.",
+      "note": ""
+     },
+     {
+      "id": "f19",
+      "section_id": "s2",
+      "text": "Oceanic algae contribute enormous quantities of oxygen to global food chains.",
+      "source_sentence": "Oceanic algae contribute enormous quantities of food and oxygen to global food chains.",
+      "status": "kept",
+      "evidence": "Ocean algae make lots of food and oxygen. This helps global food chains.",
+      "note": ""
+     },
+     {
+      "id": "f20",
+      "section_id": "s2",
+      "text": "Plants are photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy as carbohydrates.",
+      "source_sentence": "Plants are also photoautotrophs, a type of autotroph that uses sunlight and carbon from carbon dioxide to synthesize chemical energy in the form of carbohydrates.",
+      "status": "kept",
+      "evidence": "Plants are also photoautotrophs. A photoautotroph is a type of autotroph. It uses sunlight and carbon from carbon dioxide. It makes chemical energy as carbohydrates.",
+      "note": ""
+     },
+     {
+      "id": "f21",
+      "section_id": "s2",
+      "text": "All organisms that carry out photosynthesis require sunlight.",
+      "source_sentence": "All organisms carrying out photosynthesis require sunlight.",
+      "status": "kept",
+      "evidence": "All organisms that do photosynthesis need sunlight.",
+      "note": ""
+     },
+     {
+      "id": "f22",
+      "section_id": "s2",
+      "text": "Heterotrophs are organisms incapable of photosynthesis.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "status": "kept",
+      "evidence": "Heterotrophs cannot do photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f23",
+      "section_id": "s2",
+      "text": "Heterotrophs must obtain energy and carbon from food by consuming other organisms.",
+      "source_sentence": "Heterotrophs are organisms incapable of photosynthesis that must therefore obtain energy and carbon from food by consuming other organisms.",
+      "status": "kept",
+      "evidence": "They must get energy and carbon from food. They eat other organisms.",
+      "note": ""
+     },
+     {
+      "id": "f24",
+      "section_id": "s2",
+      "text": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph).",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "status": "kept",
+      "evidence": "The word heterotroph comes from Greek. Hetero means other. Troph means feeder.",
+      "note": ""
+     },
+     {
+      "id": "f25",
+      "section_id": "s2",
+      "text": "Heterotrophs obtain their food from other organisms.",
+      "source_sentence": "The Greek roots of the word heterotroph mean \"other\" (hetero) \"feeder\" (troph), meaning that their food comes from other organisms.",
+      "status": "kept",
+      "evidence": "Their food comes from other organisms.",
+      "note": ""
+     },
+     {
+      "id": "f26",
+      "section_id": "s2",
+      "text": "Food from other animals traces its origins back to autotrophs and photosynthesis.",
+      "source_sentence": "Even if the food organism is another animal, this food traces its origins back to autotrophs and the process of photosynthesis.",
+      "status": "kept",
+      "evidence": "Even if the food is an animal, it started with autotrophs. It started with photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f27",
+      "section_id": "s2",
+      "text": "Humans are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "status": "kept",
+      "evidence": "Humans are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f28",
+      "section_id": "s2",
+      "text": "All animals are heterotrophs.",
+      "source_sentence": "Humans are heterotrophs, as are all animals.",
+      "status": "kept",
+      "evidence": "All animals are heterotrophs.",
+      "note": ""
+     },
+     {
+      "id": "f29",
+      "section_id": "s2",
+      "text": "Heterotrophs depend on autotrophs directly or indirectly.",
+      "source_sentence": "Heterotrophs depend on autotrophs, either directly or indirectly.",
+      "status": "kept",
+      "evidence": "Heterotrophs depend on autotrophs. This happens directly or indirectly.",
+      "note": ""
+     },
+     {
+      "id": "f30",
+      "section_id": "s2",
+      "text": "Deer are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs. A deer gets energy by eating plants.",
+      "note": ""
+     },
+     {
+      "id": "f31",
+      "section_id": "s2",
+      "text": "Wolves are heterotrophs.",
+      "source_sentence": "Deer and wolves are heterotrophs.",
+      "status": "kept",
+      "evidence": "Deer and wolves are heterotrophs. A wolf eats a deer.",
+      "note": ""
+     },
+     {
+      "id": "f32",
+      "section_id": "s2",
+      "text": "A deer obtains energy by eating plants.",
+      "source_sentence": "A deer obtains energy by eating plants.",
+      "status": "kept",
+      "evidence": "A deer gets energy by eating plants.",
+      "note": ""
+     },
+     {
+      "id": "f33",
+      "section_id": "s2",
+      "text": "A wolf obtains energy by eating a deer.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "status": "kept",
+      "evidence": "A wolf eats a deer. The wolf gets energy from the deer.",
+      "note": ""
+     },
+     {
+      "id": "f34",
+      "section_id": "s2",
+      "text": "The energy a wolf obtains from a deer originally came from the plants the deer ate.",
+      "source_sentence": "A wolf eating a deer obtains energy that originally came from the plants eaten by that deer.",
+      "status": "kept",
+      "evidence": "That energy came from the plants the deer ate.",
+      "note": ""
+     },
+     {
+      "id": "f35",
+      "section_id": "s2",
+      "text": "The energy in the plant came from photosynthesis.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "status": "kept",
+      "evidence": "The plant energy came from photosynthesis.",
+      "note": ""
+     },
+     {
+      "id": "f36",
+      "section_id": "s2",
+      "text": "In that example the plant is the only autotroph.",
+      "source_sentence": "The energy in the plant came from photosynthesis, and therefore it is the only autotroph in this example (Figure 5.3).",
+      "status": "kept",
+      "evidence": "The plant is the only autotroph here.",
+      "note": ""
+     },
+     {
+      "id": "f37",
+      "section_id": "s2",
+      "text": "All food eaten by humans links back to autotrophs that carry out photosynthesis.",
+      "source_sentence": "Using this reasoning, all food eaten by humans also links back to autotrophs that carry out photosynthesis.",
+      "status": "kept",
+      "evidence": "All human food links back to autotrophs. These autotrophs carry out photosynthesis.",
+      "note": ""
+     }
+    ],
+    "added_claims": [],
+    "missing_tokens": [],
+    "checker_model": "openai/gpt-oss-120b"
+   }
+  }
+ },
+ "glossary": {
+  "items": [
+   {
+    "term": "autotroph",
+    "simple_en": "An organism that can make its own food.",
+    "urdu": "autotroph ایک ایسا جاندار ہے جو اپنی خوراک خود بنا سکتا ہے۔",
+    "example": "Plants are well-known autotrophs that make their own food.",
+    "section_id": "s2"
+   },
+   {
+    "term": "photoautotrophs",
+    "simple_en": "Organisms that use sunlight to make their own food.",
+    "urdu": "photoautotrophs ایسے جاندار ہیں جو سورج کی روشنی سے خوراک بناتے ہیں۔",
+    "example": "Plants are photoautotrophs because they use sunlight for energy.",
+    "section_id": "s2"
+   },
+   {
+    "term": "heterotroph",
+    "simple_en": "An organism that must eat other living things for food.",
+    "urdu": "heterotroph وہ جاندار ہے جو اپنی خوراک خود نہیں بنا سکتا۔",
+    "example": "A human is a heterotroph because we eat other organisms.",
+    "section_id": "s2"
+   },
+   {
+    "term": "heterotrophs",
+    "simple_en": "Organisms that cannot make food and must eat other organisms.",
+    "urdu": "heterotrophs اپنی خوراک کے لیے دوسرے جانداروں کو کھاتے ہیں۔",
+    "example": "Deer and wolves are heterotrophs that depend on other organisms.",
+    "section_id": "s2"
+   },
+   {
+    "term": "autotrophs",
+    "simple_en": "Organisms that produce their own food, like plants and algae.",
+    "urdu": "autotrophs ایسے جاندار ہیں جو اپنی خوراک خود تیار کرتے ہیں۔",
+    "example": "Plants and algae are autotrophs that support global food chains.",
+    "section_id": "s2"
+   },
+   {
+    "term": "hetero",
+    "simple_en": "A Greek word root that means \"other\".",
+    "urdu": "یونانی زبان میں hetero کا مطلب \"دوسرا\" ہوتا ہے۔",
+    "example": "The word hetero in heterotroph means \"other\" feeder.",
+    "section_id": "s2"
+   },
+   {
+    "term": "harnessed",
+    "simple_en": "Captured and controlled to be used for a specific purpose.",
+    "urdu": "harnessed کا مطلب ہے کسی توانائی کو قابو میں لا کر استعمال کرنا۔",
+    "example": "Energy harnessed from sunlight enters the ecosystems of our planet.",
+    "section_id": "s1"
+   },
+   {
+    "term": "synthesize",
+    "simple_en": "To make or produce something by combining different parts.",
+    "urdu": "synthesize کا مطلب ہے ملا کر کوئی نئی چیز تیار کرنا۔",
+    "example": "Plants use sunlight to synthesize chemical energy in carbohydrates.",
+    "section_id": "s2"
+   },
+   {
+    "term": "photosynthesis",
+    "simple_en": "The process of turning sunlight into chemical energy for food.",
+    "urdu": "photosynthesis وہ عمل ہے جس سے پودے سورج کی روشنی استعمال کرتے ہیں۔",
+    "example": "Plants use photosynthesis to release oxygen into the atmosphere.",
+    "section_id": "s1"
+   },
+   {
+    "term": "obtains",
+    "simple_en": "To get, receive, or acquire something.",
+    "urdu": "obtains کا مطلب ہے کوئی چیز حاصل کرنا۔",
+    "example": "A deer obtains energy by eating green plants.",
+    "section_id": "s2"
+   }
+  ],
+  "model": "gemini-3.5-flash",
+  "created_at": "2026-10-10T00:04:51+00:00"
+ },
+ "quiz": {
+  "easier": "ad919ab24906054d081e23eb"
+ },
+ "lecture_id": null,
+ "prompt_version": "v1"
+}

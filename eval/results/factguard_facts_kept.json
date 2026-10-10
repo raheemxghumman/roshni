@@ -1,0 +1,13 @@
+{
+  "metric": "factguard_facts_kept",
+  "date": "2026-10-10",
+  "title": "Facts kept after Fact Guard",
+  "display": "99%",
+  "value": 0.9863,
+  "detail": "287 of 291 extracted facts verified with a quote from the final rewrite; 9 of 10 rewrites fully green.",
+  "dataset": "OpenStax textbook pages (CC BY 4.0)",
+  "n": "291 facts, 10 rewrites",
+  "method": "Independent checker extracts facts, audits rewrite, repairs up to 2 rounds",
+  "models": "checker: gpt-oss-120b",
+  "data_type": "real"
+}

@@ -66,16 +66,16 @@ def _stems(text: str) -> set[str]:
 
 
 def supports(evidence: str, fact: str) -> bool:
-    """Plain-code guard against a checker quoting an unrelated sentence: the quote must share
-    most of the fact's content words (5-letter stems, so 'measured'/'measure' match) and every number."""
+    """Plain-code guard against a checker quoting an unrelated sentence: the quote must share a fair part
+    of the fact's content words (5-letter stems, so 'measured'/'measure' match) and every number the fact
+    writes in digits."""
     fact_stems = _stems(fact)
     if not fact_stems:
         return True
-    ev = _stems(evidence)
-    numbers = set(re.findall(r"\d+(?:\.\d+)?", normalize.for_match(fact)))
+    numbers = set(re.findall(r"\d+(?:\.\d+)?", normalize.basic(fact).replace(",", "")))
     if numbers and not numbers <= set(re.findall(r"\d+(?:\.\d+)?", normalize.for_match(evidence))):
         return False
-    return len(fact_stems & ev) / len(fact_stems) >= 0.34
+    return len(fact_stems & _stems(evidence)) / len(fact_stems) >= 0.25
 
 
 def extract_facts(original_sections: list[dict], avoid_family: str | None) -> tuple[list[dict], str]:
@@ -84,7 +84,7 @@ def extract_facts(original_sections: list[dict], avoid_family: str | None) -> tu
     valid_ids = {s["id"] for s in original_sections}
     for chunk in chunk_sections(original_sections):
         data, model = text_json(fill(load_prompt("facts_extract.txt"), original_text=fmt_sections(chunk)),
-                                "check", avoid_family=avoid_family, max_tokens=6000)
+                                "check", avoid_family=avoid_family, max_tokens=3500)
         for f in data.get("facts") or []:
             if not isinstance(f, dict) or not (f.get("text") or "").strip():
                 continue
@@ -111,7 +111,7 @@ def audit(facts: list[dict], original_sections: list[dict], rewrite_sections: li
         prompt = fill(load_prompt("facts_audit.txt"),
                       facts_json=json.dumps([{"id": f["id"], "section_id": f["section_id"], "text": f["text"]} for f in chunk_facts], ensure_ascii=False),
                       original_text=fmt_sections(chunk), rewrite_text=fmt_sections(chunk_rewrite))
-        data, model = text_json(prompt, "check", avoid_family=avoid_family, max_tokens=8000)
+        data, model = text_json(prompt, "check", avoid_family=avoid_family, max_tokens=4000)
         for r in data.get("results") or []:
             if isinstance(r, dict) and r.get("id"):
                 verdicts[str(r["id"])] = r

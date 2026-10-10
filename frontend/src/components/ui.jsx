@@ -181,10 +181,10 @@ export function Segmented({ label, options, value, onChange, id = 'seg' }) {
           role="radio"
           aria-checked={value === o.value}
           onClick={() => onChange(o.value)}
-          className={cx('relative rounded-xl px-4 py-1.5 text-sm font-semibold transition-colors', value === o.value ? 'text-ink' : 'text-muted hover:text-ink')}
+          data-group={id}
+          className={cx('rounded-xl px-4 py-1.5 text-sm font-semibold transition-all duration-300', value === o.value ? 'bg-surface text-ink shadow-sm' : 'text-muted hover:text-ink')}
         >
-          {value === o.value && <motion.span layoutId={`${id}-pill`} className="absolute inset-0 rounded-xl bg-surface shadow-sm" transition={{ type: 'spring', stiffness: 420, damping: 32 }} />}
-          <span className="relative">{o.label}</span>
+          {o.label}
         </button>
       ))}
     </div>

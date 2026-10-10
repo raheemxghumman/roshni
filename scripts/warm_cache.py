@@ -25,7 +25,7 @@ PAGES = ROOT / "data" / "openstax" / "pages"
 LECTURE = ROOT / "data" / "lectures" / "sample-lecture-synthetic.mp3"
 
 
-def call(api: str, path: str, *, body: dict | None = None, files: dict | None = None, fields: dict | None = None, timeout: int = 300) -> dict:
+def call(api: str, path: str, *, body: dict | None = None, files: dict | None = None, fields: dict | None = None, timeout: int = 1200) -> dict:
     headers, data = {}, None
     if files:
         boundary = uuid.uuid4().hex

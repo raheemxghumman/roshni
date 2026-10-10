@@ -1,0 +1,54 @@
+{
+ "id": "59ec087c883d254c540ae0b6",
+ "lesson_id": "d52f30071edf19661036f98f",
+ "level": "easier",
+ "questions": [
+  {
+   "id": "q1",
+   "type": "mcq",
+   "question": "What is the SI unit for time?",
+   "options": [
+    "Second",
+    "Meter",
+    "Kilogram"
+   ],
+   "answer": "Second",
+   "fact_id": "f10"
+  },
+  {
+   "id": "q2",
+   "type": "true_false",
+   "question": "The abbreviation for the second is 's'.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": "True",
+   "fact_id": "f11"
+  },
+  {
+   "id": "q3",
+   "type": "mcq",
+   "question": "How can a pendulum be used to measure time?",
+   "options": [
+    "By counting its swings",
+    "By weighing it",
+    "By painting it"
+   ],
+   "answer": "By counting its swings",
+   "fact_id": "f13"
+  },
+  {
+   "id": "q4",
+   "type": "true_false",
+   "question": "In physics, time is defined as change.",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": "True",
+   "fact_id": "f7"
+  }
+ ],
+ "model": "qwen/qwen3.8-27b"
+}

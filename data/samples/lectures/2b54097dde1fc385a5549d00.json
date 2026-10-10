@@ -1,0 +1,127 @@
+{
+ "id": "2b54097dde1fc385a5549d00",
+ "created_at": "2026-10-10T01:10:57+00:00",
+ "filename": "sample-lecture-synthetic.mp3",
+ "language": "English",
+ "duration": 34.752,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 9.04,
+   "text": "Good morning class. Today we continue with motion. Remember, time is change. The SI unit of time is"
+  },
+  {
+   "start": 9.04,
+   "end": 16.1,
+   "text": "the second. Now, velocity is not the same as speed. Average velocity is displacement divided"
+  },
+  {
+   "start": 16.1,
+   "end": 22.62,
+   "text": "by the time of travel. So if a car moves 100 meters east in 20 seconds, its average velocity"
+  },
+  {
+   "start": 22.62,
+   "end": 29.68,
+   "text": "is 5 meters per second east. Speed has no direction. For homework, please solve questions"
+  },
+  {
+   "start": 29.68,
+   "end": 33.74,
+   "text": "3 to 6 from section 2.3 and bring your notebooks on Monday."
+  }
+ ],
+ "text": "Good morning class. Today we continue with motion. Remember, time is change. The SI unit of time is the second. Now, velocity is not the same as speed. Average velocity is displacement divided by the time of travel. So if a car moves 100 meters east in 20 seconds, its average velocity is 5 meters per second east. Speed has no direction. For homework, please solve questions 3 to 6 from section 2.3 and bring your notebooks on Monday.",
+ "summary": [
+  "Time is change; the SI unit of time is the second.",
+  "Velocity differs from speed because velocity includes direction.",
+  "Average velocity equals displacement divided by the time of travel.",
+  "A car moving 100 meters east in 20 seconds has 5 meters per second east velocity.",
+  "Speed has no direction."
+ ],
+ "key_terms": [
+  {
+   "term": "time",
+   "meaning": "Change; SI unit is the second."
+  },
+  {
+   "term": "velocity",
+   "meaning": "Displacement divided by time; includes direction."
+  },
+  {
+   "term": "speed",
+   "meaning": "Rate of travel without direction."
+  }
+ ],
+ "actions": [
+  "Solve questions 3 to 6 from section 2.3.",
+  "Bring your notebooks on Monday."
+ ],
+ "factguard": {
+  "status": "amber",
+  "kept": 3,
+  "total": 5,
+  "claims": [
+   {
+    "id": "c1",
+    "claim": "Time is change; the SI unit of time is the second.",
+    "status": "supported",
+    "evidence": "Remember, time is change. The SI unit of time is the second.",
+    "note": ""
+   },
+   {
+    "id": "c2",
+    "claim": "Velocity differs from speed because velocity includes direction.",
+    "status": "changed",
+    "evidence": "Now, velocity is not the same as speed. Speed has no direction.",
+    "note": "adds reason \"because velocity includes direction\" which is not explicitly stated"
+   },
+   {
+    "id": "c3",
+    "claim": "Average velocity equals displacement divided by the time of travel.",
+    "status": "supported",
+    "evidence": "Average velocity is displacement divided by the time of travel.",
+    "note": ""
+   },
+   {
+    "id": "c4",
+    "claim": "A car moving 100 meters east in 20 seconds has 5 meters per second east velocity.",
+    "status": "changed",
+    "evidence": "So if a car moves 100 meters east in 20 seconds, its average velocity is 5 meters per second east.",
+    "note": "omits the word \"average\""
+   },
+   {
+    "id": "c5",
+    "claim": "Speed has no direction.",
+    "status": "supported",
+    "evidence": "Speed has no direction.",
+    "note": ""
+   }
+  ],
+  "checker_model": "openai/gpt-oss-120b",
+  "rewriter_model": "qwen/qwen3.8-27b",
+  "rounds": [
+   {
+    "round": 1,
+    "action": "Checked the first summary",
+    "status": "amber",
+    "kept": 4,
+    "total": 5
+   },
+   {
+    "round": 2,
+    "action": "Fixed the flagged bullets and checked again",
+    "status": "amber",
+    "kept": 3,
+    "total": 5
+   }
+  ]
+ },
+ "audio_url": "/api/lectures/2b54097dde1fc385a5549d00/audio",
+ "audio_type": "mp3",
+ "models": {
+  "speech_to_text": "whisper-large-v3-turbo",
+  "summary": "qwen/qwen3.8-27b",
+  "checker": "openai/gpt-oss-120b"
+ }
+}

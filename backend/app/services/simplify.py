@@ -33,13 +33,13 @@ def rewrite(original_sections: list[dict], level: str) -> tuple[list[dict], str]
     out: dict[str, str] = {}
     model = ""
     for chunk in factguard.chunk_sections(original_sections):
-        data, model = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(chunk), **cfg), "rewrite", max_tokens=6000)
+        data, model = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(chunk), **cfg), "rewrite", max_tokens=3500)
         for s in data.get("sections") or []:
             if isinstance(s, dict) and s.get("id") and (s.get("text") or "").strip():
                 out[str(s["id"])] = _clean(s["text"])
     missing = [s for s in original_sections if s["id"] not in out]
     if out and missing:  # the model skipped some sections: ask again for just those
-        data, _ = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(missing), **cfg), "rewrite", max_tokens=6000)
+        data, _ = text_json(fill(load_prompt("simplify_sections.txt"), sections_json=_payload(missing), **cfg), "rewrite", max_tokens=3500)
         for s in data.get("sections") or []:
             if isinstance(s, dict) and s.get("id") and (s.get("text") or "").strip():
                 out[str(s["id"])] = _clean(s["text"])
@@ -61,7 +61,7 @@ def repair(original_sections: list[dict], rewrite_sections: list[dict], problems
     payload = json.dumps([{"id": s["id"], "original": originals[s["id"]]["text"], "current_rewrite": s["text"],
                            "protected_items": normalize.protected_tokens(originals[s["id"]]["text"])} for s in targets], ensure_ascii=False)
     data, _ = text_json(fill(load_prompt("repair.txt"), problems_json=json.dumps(problems, ensure_ascii=False), sections_json=payload, **cfg),
-                        "rewrite", max_tokens=6000)
+                        "rewrite", max_tokens=3500)
     fixed = {str(s["id"]): _clean(s["text"]) for s in data.get("sections") or [] if isinstance(s, dict) and s.get("id") and s.get("text")}
     return [{**s, "text": fixed.get(s["id"], s["text"])} for s in rewrite_sections]
 
