@@ -13,10 +13,12 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ROOT_DIR / ".env", env_file_encoding="utf-8", extra="ignore")
 
     gemini_api_key: str = ""
+    gemini_api_keys: str = ""  # extra keys, comma separated; rotated when one is rate-limited
     gemini_model: str = "gemini-3.5-flash"
     gemini_fallback_model: str = "gemini-flash-latest,gemini-3-flash-preview,gemini-3.1-flash-lite,gemini-2.5-flash"  # comma list; each has its own free quota
 
     groq_api_key: str = ""
+    groq_api_keys: str = ""  # extra keys, comma separated; rotated when one is rate-limited
     groq_rewrite_model: str = "qwen/qwen3.8-27b"
     groq_factguard_model: str = "openai/gpt-oss-120b"
     groq_fallback_model: str = "openai/gpt-oss-20b"
@@ -48,6 +50,14 @@ class Settings(BaseSettings):
         return path
 
     @property
+    def gemini_keys(self) -> list[str]:
+        return _key_list(self.gemini_api_key, self.gemini_api_keys)
+
+    @property
+    def groq_keys(self) -> list[str]:
+        return _key_list(self.groq_api_key, self.groq_api_keys)
+
+    @property
     def gemini_models(self) -> list[str]:
         models = [self.gemini_model] + [m.strip() for m in self.gemini_fallback_model.split(",") if m.strip()]
         return list(dict.fromkeys(models))
@@ -55,6 +65,11 @@ class Settings(BaseSettings):
     @property
     def origins(self) -> list[str]:
         return [o.strip() for o in self.allowed_origins.split(",") if o.strip()]
+
+
+def _key_list(first: str, extra: str) -> list[str]:
+    keys = [first.strip()] + [k.strip() for k in extra.split(",")]
+    return list(dict.fromkeys(k for k in keys if k))
 
 
 @lru_cache

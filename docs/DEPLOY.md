@@ -7,6 +7,8 @@ One Hugging Face Space runs everything: the root `Dockerfile` builds the React a
 2. Space **Settings → Variables and secrets → New secret**:
    - `GEMINI_API_KEY`
    - `GROQ_API_KEY`
+   - `GEMINI_API_KEYS` and `GROQ_API_KEYS`: the extra keys, comma separated (copy the lines from your local `.env`). They are rotated when one is rate-limited.
+   - `DEEPSEEK_API_KEY` (optional paid backup, capped)
    - optional: `DEMO_MODE` = `false`
 3. Push this repo to the Space (an HF access token with *write* permission is the password):
    ```bash

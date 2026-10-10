@@ -26,17 +26,22 @@ def check(name, fn):
         rows.append((name, "RATE LIMITED", str(e)[:90]))
     except Exception as e:  # noqa: BLE001
         msg = str(e)
-        rows.append((name, "RATE LIMITED" if "429" in msg else "FAILED", msg[:90]))
+        rows.append((name, "RATE LIMITED" if "429" in msg else "BAD KEY" if "403" in msg or "401" in msg else "FAILED", msg[:90]))
 
 
-g = genai.Client(api_key=s.gemini_api_key)
-for m in s.gemini_models:
-    check(f"Gemini {m}", lambda m=m: g.models.generate_content(model=m, contents="Say OK"))
+# every key is checked on the main model (each key has its own quota); the fallback models on the first working key
+gemini_clients = [genai.Client(api_key=k) for k in s.gemini_keys]  # kept alive: a discarded client closes its connection
+for i, g in enumerate(gemini_clients):
+    check(f"Gemini key #{i + 1} {s.gemini_model}", lambda g=g: g.models.generate_content(model=s.gemini_model, contents="Say OK"))
+for m in s.gemini_models[1:]:
+    check(f"Gemini key #1 {m}", lambda m=m: gemini_clients[0].models.generate_content(model=m, contents="Say OK"))
 
-q = Groq(api_key=s.groq_api_key)
-for m in (s.groq_rewrite_model, s.groq_factguard_model, s.groq_fallback_model):
-    extra = {"reasoning_effort": "none"} if "qwen" in m else {"reasoning_effort": "low"} if "gpt-oss" in m else {}
-    check(f"Groq {m}", lambda m=m, extra=extra: q.chat.completions.create(model=m, messages=[{"role": "user", "content": "Say OK"}], max_tokens=20, **extra))
+groq_clients = [Groq(api_key=k) for k in s.groq_keys]
+for i, q in enumerate(groq_clients):
+    for m in (s.groq_rewrite_model, s.groq_factguard_model, s.groq_fallback_model):
+        extra = {"reasoning_effort": "none"} if "qwen" in m else {"reasoning_effort": "low"} if "gpt-oss" in m else {}
+        check(f"Groq key #{i + 1} {m}", lambda q=q, m=m, extra=extra: q.chat.completions.create(model=m, messages=[{"role": "user", "content": "Say OK"}], max_tokens=20, **extra))
+q = groq_clients[0]
 check(f"Groq {s.groq_stt_model}", lambda: q.models.retrieve(s.groq_stt_model))
 
 

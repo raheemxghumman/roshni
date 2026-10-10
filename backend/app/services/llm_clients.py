@@ -24,17 +24,69 @@ from ..errors import AppError
 
 log = logging.getLogger("roshni.llm")
 
-_gemini_client: genai.Client | None = None
-_groq_client: Groq | None = None
+_gemini_clients: dict[int, genai.Client] = {}
+_groq_clients: dict[int, Groq] = {}
 
 MAX_WAIT_SECONDS = 25
-_cooldown: dict[str, float] = {}  # model -> time until which it is skipped (quota spent / long wait)
+# Every provider key has its own quota per model, so cooldowns are kept per (model, key):
+# "model@i" -> time until which key i is skipped for that model (rate-limited or quota spent).
+_cooldown: dict[str, float] = {}
+_bad_keys: set[str] = set()  # "gemini#i" / "groq#i": rejected as invalid, never used again this run
+_next_key: dict[str, int] = {}  # model -> where round-robin starts, so load is spread over all keys
 GEMINI_DAILY_COOLDOWN = 3600
-GROQ_TPM = 8000  # free-tier tokens per minute; Groq counts max_tokens against it, so requests must fit
+GROQ_TPM = 8000  # free-tier tokens per minute per key; Groq counts max_tokens against it, so requests must fit
+
+
+def _provider(model: str) -> str:
+    return "gemini" if "gemini" in model else "deepseek" if "deepseek" in model else "groq"
+
+
+def _key_count(model: str) -> int:
+    s = get_settings()
+    return {"gemini": len(s.gemini_keys), "groq": len(s.groq_keys)}.get(_provider(model), 1)
+
+
+def _usable_keys(model: str) -> list[int]:
+    p = _provider(model)
+    return [i for i in range(_key_count(model)) if f"{p}#{i}" not in _bad_keys]
+
+
+def _cool(model: str, key: int, seconds: float) -> None:
+    slot = f"{model}@{key}"
+    _cooldown[slot] = max(_cooldown.get(slot, 0), time.time() + seconds)
 
 
 def cooling(model: str) -> bool:
-    return time.time() < _cooldown.get(model, 0)
+    """True when every key is resting for this model, so a fallback chain should skip it."""
+    now = time.time()
+    return all(now < _cooldown.get(f"{model}@{i}", 0) for i in _usable_keys(model) or [0])
+
+
+def _pick_key(model: str, max_wait: float) -> int:
+    """Next key for this model: round-robin over keys that aren't resting. If all are resting, waits for
+    the first one to come back when that is within max_wait; otherwise raises so the chain moves on."""
+    keys = _usable_keys(model)
+    if not keys:
+        raise AppError("MODEL_UNAVAILABLE", f"No working {_provider(model)} API key.", 503)
+    start = _next_key.get(model, 0)
+    order = sorted(keys, key=lambda i: (i - start) % _key_count(model))  # start, start+1, ..., wrapping round
+    now = time.time()
+    for i in order:
+        if now >= _cooldown.get(f"{model}@{i}", 0):
+            _next_key[model] = i + 1
+            return i
+    soonest = min(keys, key=lambda i: _cooldown[f"{model}@{i}"])
+    wait = _cooldown[f"{model}@{soonest}"] - now
+    if wait <= max_wait:
+        log.warning("All %s keys busy for %s, waiting %.0fs", len(keys), model, wait)
+        time.sleep(wait)
+        return soonest
+    raise AppError("RATE_LIMITED", "The free AI quota is busy right now. Please try again in a minute.", 429, True)
+
+
+def _mark_bad(provider: str, key: int, error: Exception) -> None:
+    _bad_keys.add(f"{provider}#{key}")
+    log.error("%s key #%s rejected (%s), skipping it from now on", provider, key + 1, str(error)[:120])
 
 
 OUTPUT_CAPS = {"qwen": 950}  # Groq free tier: Qwen rejects any request asking for more than 1,000 output tokens per minute
@@ -66,24 +118,27 @@ def family(model: str) -> str:
     return m
 
 
-def _gemini() -> genai.Client:
-    global _gemini_client
-    if _gemini_client is None:
-        key = get_settings().gemini_api_key
-        if not key:
+def _gemini(i: int = 0) -> genai.Client:
+    if i not in _gemini_clients:
+        keys = get_settings().gemini_keys
+        if not keys:
             raise AppError("MODEL_UNAVAILABLE", "The page-reading service is not configured (missing Gemini key).", 503)
-        _gemini_client = genai.Client(api_key=key)
-    return _gemini_client
+        _gemini_clients[i] = genai.Client(api_key=keys[i])
+    return _gemini_clients[i]
 
 
-def _groq() -> Groq:
-    global _groq_client
-    if _groq_client is None:
-        key = get_settings().groq_api_key
-        if not key:
+def _groq(i: int = 0) -> Groq:
+    if i not in _groq_clients:
+        keys = get_settings().groq_keys
+        if not keys:
             raise AppError("MODEL_UNAVAILABLE", "The writing service is not configured (missing Groq key).", 503)
-        _groq_client = Groq(api_key=key, timeout=60, max_retries=0)
-    return _groq_client
+        _groq_clients[i] = Groq(api_key=keys[i], timeout=60, max_retries=0)
+    return _groq_clients[i]
+
+
+def _is_auth_error(e: Exception) -> bool:
+    msg = str(e).lower()
+    return getattr(e, "code", None) in (401, 403) or getattr(e, "status_code", None) in (401, 403) or "api key not valid" in msg or "invalid api key" in msg or "api_key_invalid" in msg
 
 
 def parse_json(text: str) -> dict:
@@ -102,42 +157,51 @@ def parse_json(text: str) -> dict:
 # ---------------------------------------------------------------- Gemini (vision + fallback text)
 
 def gemini_json(prompt: str, *, image: bytes | None = None, mime: str = "image/jpeg", models: list[str] | None = None) -> tuple[dict, str]:
+    """Tries each model in turn; within a model, every Gemini key (each has its own free quota)."""
     s = get_settings()
     last_error: Exception | None = None
-    candidates = [m for m in (models or s.gemini_models) if not cooling(m)] or (models or s.gemini_models)
+    all_models = models or s.gemini_models
+    candidates = [m for m in all_models if not cooling(m)] or all_models
+    contents = [types.Part.from_bytes(data=image, mime_type=mime), prompt] if image else prompt
     for model in candidates:
-        for attempt in range(3):
+        for _ in range(max(1, len(_usable_keys(model)))):
             try:
-                contents = [types.Part.from_bytes(data=image, mime_type=mime), prompt] if image else prompt
-                resp = _gemini().models.generate_content(
-                    model=model,
-                    contents=contents,
-                    config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1),
-                )
-                return parse_json(resp.text), model
-            except genai_errors.ClientError as e:
+                key = _pick_key(model, max_wait=0)
+            except AppError as e:
                 last_error = e
-                if getattr(e, "code", None) == 429:
-                    log.warning("Gemini %s rate limited (attempt %s)", model, attempt + 1)
-                    msg = str(e).lower().replace(" ", "")
-                    if "perday" in msg:
-                        _cooldown[model] = time.time() + GEMINI_DAILY_COOLDOWN  # daily quota gone: skip for an hour
+                break  # every key is resting for this model: next model
+            for attempt in range(2):
+                try:
+                    resp = _gemini(key).models.generate_content(
+                        model=model,
+                        contents=contents,
+                        config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1),
+                    )
+                    return parse_json(resp.text), model
+                except genai_errors.ClientError as e:
+                    last_error = e
+                    if getattr(e, "code", None) == 429:
+                        msg = str(e).lower().replace(" ", "")
+                        if "perday" in msg:
+                            _cool(model, key, GEMINI_DAILY_COOLDOWN)  # this key's daily quota is gone: rest it an hour
+                        else:
+                            m = re.search(r"retryin([\d.]+)s", msg)
+                            _cool(model, key, min(float(m.group(1)) if m else 15.0, 90))  # per-minute limit
+                        log.warning("Gemini %s key #%s rate limited, rotating", model, key + 1)
+                        break  # next key
+                    if _is_auth_error(e):
+                        _mark_bad("gemini", key, e)
                         break
-                    m = re.search(r"retryin([\d.]+)s", msg)
-                    wait = float(m.group(1)) if m else 15.0
-                    if attempt == 0 and wait <= 8:
-                        time.sleep(wait)
-                        continue
-                    _cooldown[model] = time.time() + min(wait, 90)  # per-minute limit: skip just until it resets
-                    break  # move to the next model, which has its own quota
-                raise AppError("MODEL_UNAVAILABLE", f"The page-reading model rejected the request: {e}", 502) from e
-            except genai_errors.ServerError as e:
-                last_error = e
-                time.sleep(2 * (attempt + 1))
-            except (json.JSONDecodeError, ValueError) as e:
-                last_error = e
-                log.warning("Gemini %s returned invalid JSON (attempt %s)", model, attempt + 1)
-    if isinstance(last_error, genai_errors.ClientError) and getattr(last_error, "code", None) == 429:
+                    if getattr(e, "code", None) == 404:
+                        break  # model not available on this key's project
+                    raise AppError("MODEL_UNAVAILABLE", f"The page-reading model rejected the request: {e}", 502) from e
+                except genai_errors.ServerError as e:
+                    last_error = e
+                    time.sleep(2 * (attempt + 1))
+                except (json.JSONDecodeError, ValueError) as e:
+                    last_error = e
+                    log.warning("Gemini %s returned invalid JSON (attempt %s)", model, attempt + 1)
+    if isinstance(last_error, AppError) or (isinstance(last_error, genai_errors.ClientError) and getattr(last_error, "code", None) == 429):
         raise AppError("RATE_LIMITED", "The free page-reading quota is used up for now. Try again in a minute, or open a sample lesson.", 429, True)
     raise AppError("MODEL_UNAVAILABLE", "The page-reading service is not responding right now. Please try again.", 503, True)
 
@@ -179,13 +243,13 @@ def _deepseek_allowed() -> None:
         raise AppError("MODEL_UNAVAILABLE", "DeepSeek is not configured.", 503)
     spend = deepseek_spend()
     if spend["usd"] >= s.deepseek_budget_usd:
-        _cooldown[s.deepseek_model] = time.time() + 10**9
+        _cool(s.deepseek_model, 0, 10**9)
         raise AppError("RATE_LIMITED", "The paid backup budget is used up.", 429, True)
     if _balance_checked_at_call < 0 or spend["calls"] - _balance_checked_at_call >= 20:
         balance = deepseek_balance()
         _balance_checked_at_call = spend["calls"]
         if balance is not None and balance < s.deepseek_min_balance_usd:
-            _cooldown[s.deepseek_model] = time.time() + 10**9
+            _cool(s.deepseek_model, 0, 10**9)
             raise AppError("RATE_LIMITED", "The paid backup has too little credit left.", 429, True)
 
 
@@ -229,10 +293,10 @@ def deepseek_json(prompt: str, *, max_tokens: int = 3000, image: bytes | None = 
         except httpx.HTTPError as e:
             raise AppError("MODEL_UNAVAILABLE", "DeepSeek is not responding.", 503, True) from e
         if r.status_code == 402:  # insufficient balance
-            _cooldown[s.deepseek_model] = time.time() + 10**9
+            _cool(s.deepseek_model, 0, 10**9)
             raise AppError("RATE_LIMITED", "The paid backup has no credit left.", 429, True)
         if r.status_code == 429:
-            _cooldown[s.deepseek_model] = time.time() + 30
+            _cool(s.deepseek_model, 0, 30)
             raise AppError("RATE_LIMITED", "DeepSeek is busy.", 429, True)
         if r.status_code >= 400:
             log.warning("DeepSeek %s: %s", r.status_code, r.text[:300])
@@ -259,9 +323,10 @@ def _groq_extra(model: str) -> dict:
 
 
 def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: float = 0.2, max_wait: float = MAX_WAIT_SECONDS) -> dict:
-    client = _groq()
+    """One JSON call. A rate-limited key rests and the next Groq key takes over; waits only when all keys are busy."""
     use_json_mode = True
-    for attempt in range(4):
+    for attempt in range(4 + 2 * _key_count(model)):
+        key = _pick_key(model, max_wait)  # raises RATE_LIMITED when every key is busy for longer than max_wait
         try:
             kwargs = dict(
                 model=model,
@@ -275,20 +340,14 @@ def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: f
             )
             if use_json_mode:
                 kwargs["response_format"] = {"type": "json_object"}
-            resp = client.chat.completions.create(**kwargs)
+            resp = _groq(key).chat.completions.create(**kwargs)
             return parse_json(resp.choices[0].message.content)
         except RateLimitError as e:
-            wait = _retry_after(e)
             if "request too large" in str(e).lower():
-                raise  # waiting won't help; let the chain try a model with room
-            if wait > 120:
-                _cooldown[model] = time.time() + wait  # long window used up: skip this model until it resets
-                log.warning("Groq %s quota used up for %ss, skipping it", model, int(wait))
-                raise
-            log.warning("Groq %s rate limited, waiting %ss", model, wait)
-            if wait > max_wait or attempt == 3:
-                raise
-            time.sleep(wait)
+                raise  # the same on every key; let the chain try a model with room
+            wait = _retry_after(e)
+            _cool(model, key, wait)
+            log.warning("Groq %s key #%s rate limited for %ss, rotating", model, key + 1, int(wait))
         except BadRequestError as e:
             if "json" in str(e).lower() and use_json_mode:
                 use_json_mode = False  # some models fail strict JSON validation; parse manually instead
@@ -298,7 +357,12 @@ def groq_json(prompt: str, *, model: str, max_tokens: int = 4096, temperature: f
             log.warning("Groq %s returned invalid JSON (attempt %s)", model, attempt + 1)
             prompt += "\n\nYour previous reply was not valid JSON. Reply with valid JSON only."
         except (APIConnectionError, APITimeoutError, InternalServerError):
-            time.sleep(2 * (attempt + 1))
+            time.sleep(2)
+        except Exception as e:  # noqa: BLE001
+            if _is_auth_error(e):
+                _mark_bad("groq", key, e)
+                continue
+            raise
     raise AppError("MODEL_UNAVAILABLE", "The writing model did not return a usable answer.", 503, True)
 
 
@@ -351,25 +415,34 @@ def transcribe(audio: bytes, filename: str, language: str | None = None) -> dict
     s = get_settings()
     last: Exception | None = None
     for model in [s.groq_stt_model, "whisper-large-v3"]:
-        for attempt in range(3):
+        for attempt in range(3 + _key_count(model)):
+            try:
+                key = _pick_key(model, MAX_WAIT_SECONDS)
+            except AppError as e:
+                last = e
+                break  # every key is busy for this model: try the other Whisper model
             try:
                 kwargs = dict(file=(filename, audio), model=model, response_format="verbose_json", temperature=0.0)
                 if language and language != "auto":
                     kwargs["language"] = language
-                resp = _groq().audio.transcriptions.create(**kwargs)
+                resp = _groq(key).audio.transcriptions.create(**kwargs)
                 data = resp.model_dump() if hasattr(resp, "model_dump") else dict(resp)
                 data["model"] = model
                 return data
             except RateLimitError as e:
                 last = e
-                wait = _retry_after(e)
-                if wait > MAX_WAIT_SECONDS:
-                    break
-                time.sleep(wait)
+                _cool(model, key, _retry_after(e))
+                log.warning("Whisper %s key #%s rate limited, rotating", model, key + 1)
             except (APIConnectionError, APITimeoutError, InternalServerError) as e:
                 last = e
                 time.sleep(2)
             except BadRequestError as e:
                 raise AppError("UNSUPPORTED_FILE", "The speech service could not read this audio file. Try MP3, M4A or WAV.", 400) from e
+            except Exception as e:  # noqa: BLE001
+                if _is_auth_error(e):
+                    _mark_bad("groq", key, e)
+                    last = e
+                    continue
+                raise
     log.error("Transcription failed: %s", last)
     raise AppError("RATE_LIMITED", "The free transcription quota is busy. Please try again in a minute.", 429, True)
