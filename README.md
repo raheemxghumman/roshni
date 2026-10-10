@@ -9,7 +9,7 @@ Roshni turns a photo of any printed page, a lecture recording or a YouTube video
 | | |
 |---|---|
 | **Live app** | _Render link added after deployment_ |
-| **Demo deck** | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx) (5 minutes, script in [`docs/DEMO.md`](docs/DEMO.md)) |
+| **Demo deck** | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx): 8 slides, about 5 minutes, two speakers; script, timings and click cues in the speaker notes and [`docs/DEMO.md`](docs/DEMO.md) |
 | **Evidence** | [Measured results](#5-evidence), all reproducible from [`eval/`](eval) |
 
 ---
@@ -304,7 +304,7 @@ roshni/
 │   └── samples/               ready-made sample lessons, quizzes and a video
 ├── eval/                      evaluation scripts and results
 ├── scripts/                   sample building, quota checks, README evidence table
-├── slides/                    demo deck and its build script
+├── slides/                    8-slide demo deck (Morph transitions) and its build script
 ├── docs/                      plan, demo script, deployment, APIs, disclosures
 └── Dockerfile                 single container: builds the site, runs the API
 ```
@@ -317,7 +317,7 @@ roshni/
 | Problem → Data → AI → Solution → Impact | [Sections 1–2](#1-the-problem), [`docs/PLAN.md`](docs/PLAN.md) |
 | Meaningful AI, not a chatbot | [System design](#4-system-design): a multi-model pipeline plus an independent checker |
 | Working MVP and deployed link | This repository, [Live app](#roshni--روشنی) |
-| Demo presentation (5 minutes) | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx), [`docs/DEMO.md`](docs/DEMO.md) |
+| Demo presentation (5 minutes) | [`slides/Roshni-AICON26-Demo.pptx`](slides/Roshni-AICON26-Demo.pptx) (8 slides: problem, solution, live demo, Fact Guard, personalized learning, evidence, impact), [`docs/DEMO.md`](docs/DEMO.md) |
 | Measurable impact | [Evidence](#5-evidence), `eval/` |
 | Public, synthetic or authorised data only | OpenStax CC BY 4.0; synthetic test data labelled |
 | Disclosures (tools, AI assistance) | [`docs/DISCLOSURES.md`](docs/DISCLOSURES.md) |
